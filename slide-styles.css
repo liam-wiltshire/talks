@@ -1,0 +1,33 @@
+
+.section-title-a {
+    background-color: #FAC73A;
+}
+
+.section-title-b {
+    background-color: #C6D3B3;
+}
+
+.section-title-c {
+    background-color: #DD6D6C;
+    color: #FFF;
+}
+
+.content-odd {
+    background-color: #E6E6E6;
+}
+
+.content-even {
+    background-color: #A7C5D4;
+    color: #FFF;
+}
+
+.summary-slide {
+    background-color: #292F33;
+    color: #FFF;
+}
+
+.centralimg img {
+    min-width:40%;
+    max-width:90%;
+    max-height:430px;
+}

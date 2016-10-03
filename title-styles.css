@@ -1,0 +1,38 @@
+
+.title-slide {
+    background-color: #C6D3B3;
+}
+
+.conference {
+    width:15%;
+    float:right;
+    margin-right:5%;
+}
+
+.conference img {
+    width:100%;
+}
+
+.introimg {
+    width:30%;
+    float:right;
+    clear:right;
+    margin-top:10%;
+}
+
+.introimg img {
+    width:100%;
+}
+
+.title-slide h1 {
+    margin-top:35%;
+    margin-bottom:0em;
+    font-size:75pt !important;
+    color: #FFF;
+    font-weight:bold;
+}
+
+.title-slide h2 {
+    font-size:60pt !important;
+    color:#555;
+}

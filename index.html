@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Title</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="fonts.css" />
+      <link rel="stylesheet" href="core-styles.css" />
+      <link rel="stylesheet" href="title-styles.css" />
+      <link rel="stylesheet" href="slide-styles.css" />
+  </head>
+  <body>
+    <script src="remark.js">
+    </script>
+    <script>
+
+        var qs = (function(a) {
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i)
+            {
+                var p=a[i].split('=', 2);
+                if (p.length == 1)
+                    b[p[0]] = "";
+                else
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+            }
+            return b;
+        })(window.location.search.substr(1).split('&'));
+
+      var slideshow = remark.create({
+          ratio: '16:9',
+          sourceUrl: qs.talk + '/content.md',
+          navigation: {
+              scroll: false,
+              click: true
+          },
+
+          highlightLines : true,
+          placeholders: qs
+
+      });
+    </script>
+  </body>
+</html>
+

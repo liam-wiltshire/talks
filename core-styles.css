@@ -1,0 +1,33 @@
+
+body, .remark-slide-content { font-family: 'Lato'; color:#222;font-size:30pt !important; line-height:160%}
+
+h1, h2, h3 {
+    font-family: 'Roboto';
+    font-weight:100;
+    margin-top:0em;
+    margin-bottom:0.3em;
+    x-font-weight:bold;
+    line-height:110%;
+}
+
+h1 {
+    font-size:58pt !important;
+}
+
+h2 {
+    font-size: 48pt !important;
+}
+
+h3 {
+    font-size: 39pt !important;
+}
+.remark-code, .remark-inline-code { font-family: 'Source Code Pro'; font-size:22pt !important;}
+
+li {
+    line-height:160%;
+}
+
+.remark-slide-content {
+    padding: 1em 2em 1em 2em !important;
+
+}
