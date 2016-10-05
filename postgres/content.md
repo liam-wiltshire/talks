@@ -192,7 +192,7 @@ class: content-odd
 
 class: content-odd
 
-```bash
+```sql
 [root@w ~]# su postgres 
 bash-4.1$ psql
 psql (8.4.20)
@@ -201,4 +201,21 @@ postgres=# CREATE DATABASE lwdatabase;
 CREATE DATABASE 
 postgres=# CREATE USER lwuser;
 CREATE ROLE
+```
+
+---
+
+class: content-odd
+
+```sql
+postgres=# GRANT ALL ON DATABASE lwdatabase TO lwuser;
+GRANT
+postgres=# ALTER USER lwuser WITH PASSWORD 'pgpass';
+ALTER ROLE
+```
+
+## Now you can access postgres with that user
+
+```bash
+[root@w ~]# psql lwdatabase lwuser
 ```
