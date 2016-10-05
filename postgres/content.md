@@ -214,7 +214,7 @@ postgres=# ALTER USER lwuser WITH PASSWORD 'pgpass';
 ALTER ROLE
 ```
 
-## Now you can access postgres with that user
+## Now you can access postgres as that user
 
 ```bash
 [root@w ~]# psql lwdatabase lwuser
