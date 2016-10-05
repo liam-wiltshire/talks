@@ -31,3 +31,27 @@
     max-width:90%;
     max-height:430px;
 }
+
+.halfhalf h1, .halfhalf h2{
+    display:block;
+    width:50%;
+    float:left;
+    clear:left;
+}
+
+.halfhalf  {
+
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position:right;
+}
+
+.halfhalf.reverse {
+    background-position:left;
+}
+
+.halfhalf.reverse h1, .halfhalf.reverse h2 {
+    float:right;
+    clear:right;
+}
+

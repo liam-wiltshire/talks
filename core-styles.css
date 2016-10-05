@@ -12,6 +12,7 @@ h1, h2, h3 {
 
 h1 {
     font-size:58pt !important;
+    text-align:center;
 }
 
 h2 {
@@ -29,5 +30,4 @@ li {
 
 .remark-slide-content {
     padding: 1em 2em 1em 2em !important;
-
 }

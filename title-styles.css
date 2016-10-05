@@ -30,9 +30,14 @@
     font-size:75pt !important;
     color: #FFF;
     font-weight:bold;
+    text-align:left;
 }
 
 .title-slide h2 {
     font-size:60pt !important;
     color:#555;
+}
+
+.vanity-slide h1 {
+    text-align:left;
 }
