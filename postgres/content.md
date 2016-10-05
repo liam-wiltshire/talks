@@ -219,3 +219,66 @@ ALTER ROLE
 ```bash
 [root@w ~]# psql lwdatabase lwuser
 ```
+
+---
+
+class: content-even
+# Schemas
+
+- A single database can have multiple chemas
+    - The default is 'public'
+- Essentially gives a single database namespaces
+    - Different schemas can have different owners / users with different levels of access
+    
+---
+
+class: content-even
+
+```sql
+SELECT * FROM public.staff;
+-- ewwww
+
+set search_path TO public;
+SELECT * FROM staff;
+```
+
+---
+
+class: content-odd
+# Auto Increment
+
+- `AUTO_INCREMENT` doesn't exist!
+    - Isn't SQL-Standard
+- In Postgres, we define a `SEQUENCE` - this is a separate entity to the table
+- We then use the `nextval()` function to use it in our table
+
+---
+
+class: content-odd
+
+```sql
+CREATE SEQUENCE talks_sequence_id INCREMENT BY 1 START 1 NO CYCLE;
+CREATE SEQUENCE 
+```
+
+---
+
+class: content-odd
+
+```sql
+CREATE TABLE talks (
+* talk_id smallint NOT NULL DEFAULT nextval('talks_sequence_id'),
+date timestamp,
+* title character varying(254),
+slides character varying(254)
+);
+CREATE TABLE
+```
+
+---
+
+class: content-odd
+# Auto Increment
+
+- We don't have to do it all manually
+- There is a 'serial' datatype that will create a sequence automagically
