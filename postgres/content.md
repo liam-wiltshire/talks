@@ -178,3 +178,27 @@ background-image: url(postgres/images/elephantsbetter.png)
 
 # Using Postgres
 ## (as a mySQL user)
+
+---
+
+class: content-odd
+#Installation
+
+- Can be installed using your OS package manager (yum, apt, dnf etc)
+- Creates a user `postgres`
+    - This account is required for admin access
+    
+---
+
+class: content-odd
+
+```bash
+[root@w ~]# su postgres 
+bash-4.1$ psql
+psql (8.4.20)
+Type "help" for help.
+postgres=# CREATE DATABASE lwdatabase;
+CREATE DATABASE 
+postgres=# CREATE USER lwuser;
+CREATE ROLE
+```
