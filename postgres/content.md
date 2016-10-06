@@ -321,3 +321,38 @@ CREATE TABLE
 ---
 
 class: content-odd
+#What Fields Did We Have Again?
+
+```sql
+DESCRIBE talks;
+ERROR:  syntax error at or near "DESCRIBE" 
+```
+Ahh...
+```sql
+SELECT column_name, data_type, character_maximum_length 
+  FROM INFORMATION_SCHEMA.COLUMNS 
+  WHERE table_name = 'abstracts';
+```
+
+---
+
+class: content-odd
+```
+column_name  | 	data_type 	      | character_maximum_length
+-------------+-------------------+--------------------------
+ abstract_id | integer       	   |
+ title   	   | character varying |                  	254
+ description | text          	   |
+ notes   	   | text          	   |
+ slides  	   | character varying |                  	254
+ display 	   | USER-DEFINED  	   |
+(6 rows) 
+```
+
+---
+
+class: summary-slide middle
+
+---
+
+class: thanks-slide
