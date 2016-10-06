@@ -313,8 +313,8 @@ CREATE TABLE abstracts (
 title character varying(254), description text,
 * display display_state );
 
-NOTICE:  CREATE TABLE will create implicit sequence "abstracts_abstract_id_seq" 
-for serial column "abstracts.abstract_id"
+NOTICE:  CREATE TABLE will create implicit sequence 
+"abstracts_abstract_id_seq" for serial column "abstracts.abstract_id"
 CREATE TABLE
 ```
 
