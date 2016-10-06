@@ -282,3 +282,42 @@ class: content-odd
 
 - We don't have to do it all manually
 - There is a 'serial' datatype that will create a sequence automagically
+
+---
+
+class: content-even
+# Enums
+
+- Postgres doesn't have an enum type
+    - Instead, you have to define an enum as it's own data type
+- Enums are not directly comparable
+    - You have to cast them to something else (a string usually) to compare them
+    
+---
+
+class: content-even
+
+```sql
+CREATE TYPE display_state AS ENUM
+   ('public','password','private');
+CREATE TYPE
+```
+
+---
+
+class: content-even
+
+```sql
+CREATE TABLE abstracts (
+* abstract_id SERIAL, 
+title character varying(254), description text,
+* display display_state );
+
+NOTICE:  CREATE TABLE will create implicit sequence "abstracts_abstract_id_seq" 
+for serial column "abstracts.abstract_id"
+CREATE TABLE
+```
+
+---
+
+class: content-odd
