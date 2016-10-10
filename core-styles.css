@@ -28,6 +28,16 @@ li {
     line-height:160%;
 }
 
+
+li p {
+    margin:0px;
+}
+
+
+ul ul {
+    margin-bottom:15px;
+}
+
 .remark-slide-content {
     padding: 1em 2em 1em 2em !important;
 }

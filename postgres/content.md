@@ -62,7 +62,36 @@ class: section-title-a center centralimg
 
 ---
 
-Todo
+class: content-even
+- For simple uses, there isn't going to be much difference
+   - Until recently, mySQL was faster for simple SELECTs
+   - This has become more even in recent releases
+   - mySQL still tends to be faster for writes
+
+- Performance benefits come in more complex situations
+   - Joins
+   - Unions
+   - Sub Queries
+
+---
+
+class: content-even
+# Basic SELECT
+
+---
+
+class: content-even
+# JOINs
+
+---
+
+class: content-even
+# UNIONs
+
+---
+
+class: content-even
+# Sub Select
 
 ---
 
@@ -257,7 +286,8 @@ class: content-odd
 class: content-odd
 
 ```sql
-CREATE SEQUENCE talks_sequence_id INCREMENT BY 1 START 1 NO CYCLE;
+CREATE SEQUENCE talks_sequence_id INCREMENT BY 1
+ ↳ START 1 NO CYCLE;
 CREATE SEQUENCE 
 ```
 
@@ -267,7 +297,8 @@ class: content-odd
 
 ```sql
 CREATE TABLE talks (
-* talk_id smallint NOT NULL DEFAULT nextval('talks_sequence_id'),
+* talk_id smallint NOT NULL DEFAULT
+*   ↳ nextval('talks_sequence_id'),
 date timestamp,
 * title character varying(254),
 slides character varying(254)
@@ -321,7 +352,7 @@ CREATE TABLE
 ---
 
 class: content-odd
-#What Fields Did We Have Again?
+#What Fields Do We Have?
 
 ```sql
 DESCRIBE talks;
@@ -338,14 +369,14 @@ SELECT column_name, data_type, character_maximum_length
 
 class: content-odd
 ```
-column_name  | 	data_type 	      | character_maximum_length
+column_name  | 	data_type     | character_maximum_length
 -------------+-------------------+--------------------------
- abstract_id | integer       	   |
- title   	   | character varying |                  	254
- description | text          	   |
- notes   	   | text          	   |
- slides  	   | character varying |                  	254
- display 	   | USER-DEFINED  	   |
+ abstract_id | integer           |
+ title       | character varying |                  	254
+ description | text              |
+ notes       | text              |
+ slides      | character varying |                  	254
+ display     | USER-DEFINED      |
 (6 rows) 
 ```
 
