@@ -16,6 +16,8 @@ class: section-title-c bottom left vanity-slide
 
 ---
 
+class: vanity-cover
+
 background-image: url(logos/mcft.png)
 
 ---
