@@ -1,5 +1,5 @@
 
-.title-slide {
+.title-slide, .thanks-slide {
     background-color: #C6D3B3;
 }
 
@@ -35,6 +35,20 @@
 
 .title-slide h2 {
     font-size:60pt !important;
+    color:#555;
+}
+
+.thanks-slide h1 {
+    margin-top:25%;
+    margin-bottom:0em;
+    font-size:65pt !important;
+    color: #FFF;
+    font-weight:bold;
+    text-align:left;
+}
+
+.title-slide h3 {
+    font-size:50pt !important;
     color:#555;
 }
 
