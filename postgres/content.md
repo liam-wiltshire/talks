@@ -22,14 +22,6 @@ background-image: url(logos/mcft.png)
 
 ---
 
-class: summary-slide middle
-
-- Working with PHP for 10 years
-- Still involved in a hands-on role
-- Awesome Facilitator, great leader
-
----
-
 class: section-title-a middle center
 # What is PostgreSQL?
 
