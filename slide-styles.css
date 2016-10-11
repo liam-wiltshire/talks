@@ -55,3 +55,6 @@
     clear:right;
 }
 
+.vanity-cover {
+ background-size: contain;   
+}
