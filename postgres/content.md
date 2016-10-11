@@ -45,7 +45,7 @@ class: centralimg middle center
 
 class: summary-slide middle center
 
-?
+<span style='font-size:100px'>?</span>
 
 ---
 
@@ -378,6 +378,21 @@ column_name  | 	data_type     | character_maximum_length
 
 class: summary-slide middle
 
+- Postgres *isn't* the solution for every database requirement
+- But it should be considered as an option, particularly in complex-read-heavy situations
+- Benchmark!
+
 ---
 
 class: thanks-slide
+
+.conference[![](logos/%%conference%%.png)]
+.introimg[![](http://tebex.co.uk/img/tebex.svg)]
+
+# Thank You
+### https://joind.in/talk/4dced 
+### Liam Wiltshire
+### @l_wiltshire
+### liam.wiltshire@tebex.co.uk
+
+
