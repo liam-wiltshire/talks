@@ -12,7 +12,7 @@ class: title-slide
 class: section-title-c bottom left vanity-slide
 
 # Liam Wiltshire
-## Senior PHP Developer & Business Manager
+## Senior PHP Developer<br /> & Business Manager
 
 ---
 
