@@ -39,16 +39,16 @@
 }
 
 .thanks-slide h1 {
-    margin-top:20%;
-    margin-bottom:0.5em;
-    font-size:62pt !important;
+    margin-top:25%;
+    margin-bottom:1em;
+    font-size:63pt !important;
     color: #555;
     font-weight:bold;
     text-align:left;
 }
 
 .thanks-slide h3, .thanks-slide h3 a {
-    font-size:40pt !important;
+    font-size:35pt !important;
     color:#555 !important;
     text-decoration: none !important;
 }
