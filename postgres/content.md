@@ -390,7 +390,9 @@ class: thanks-slide
 .introimg[![](http://tebex.co.uk/img/tebex.svg)]
 
 # Thank You
-### https://joind.in/talk/4dced 
+
+<script> if ("%%joindin%%" != "") document.write("https://joind.in/talk/%%joindin%%"); </script>
+
 ### Liam Wiltshire
 ### @l_wiltshire
 ### liam.wiltshire@tebex.co.uk
