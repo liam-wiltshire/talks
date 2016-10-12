@@ -391,7 +391,7 @@ class: thanks-slide
 
 # Thank You
 
-<script> if ("%%joindin%%" != "") document.write("https://joind.in/talk/%%joindin%%"); </script>
+<script>alert("%%joindin%%"); if ("%%joindin%%" != ""){ alert("Hi!"); document.write("https://joind.in/talk/%%joindin%%"); } </script>
 
 ### Liam Wiltshire
 ### @l_wiltshire
