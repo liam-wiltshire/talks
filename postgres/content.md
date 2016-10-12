@@ -391,8 +391,7 @@ class: thanks-slide
 
 # Thank You
 
-<script>alert("%%joindin%%"); if ("%%joindin%%" != ""){ alert("Hi!"); document.write("https://joind.in/talk/%%joindin%%"); } </script>
-
+### %%joindin%%
 ### Liam Wiltshire
 ### @l_wiltshire
 ### liam.wiltshire@tebex.co.uk
