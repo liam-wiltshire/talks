@@ -184,6 +184,11 @@ background-image: url(postgres/images/nosql.png)
 class: content-even
 # JSON/JSONB
 
+- Postgres has two JSON document types
+   - JSON is really just a text field that enforces validation
+   - JSONB stores the data as a binary representation with various functions to help use and query the data
+- JSONB data tends to be larger than JSON data, but is much more flexible and quicker to query
+
 ---
 
 class: content-odd
