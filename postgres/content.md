@@ -186,8 +186,30 @@ class: content-even
 
 - Postgres has two JSON document types
    - JSON is really just a text field that enforces validation
-   - JSONB stores the data as a binary representation with various functions to help use and query the data
+   - JSONB stores the data as a binary representation
 - JSONB data tends to be larger than JSON data, but is much more flexible and quicker to query
+
+---
+
+class: content-even
+# JSONB
+
+- Slightly slower write, much quicker read
+- Indexable with a GIN index
+- Data returned may not be identical
+
+???
+
+Doesn't need re-parsing
+Steal this example: https://www.citusdata.com/blog/2016/07/14/choosing-nosql-hstore-json-jsonb/
+
+---
+
+class: content-even
+http://schinckel.net/2014/05/25/querying-json-in-postgres/
+```sql
+
+```
 
 ---
 
