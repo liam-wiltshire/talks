@@ -206,9 +206,33 @@ Steal this example: https://www.citusdata.com/blog/2016/07/14/choosing-nosql-hst
 ---
 
 class: content-even
-http://schinckel.net/2014/05/25/querying-json-in-postgres/
-```sql
 
+```sql
+CREATE TABLE talks (id UUID, data JSONB);
+INSERT INTO talks (
+  uuid_generate_v4(),
+  '{
+     "title": "Postgres for mySQL Users",
+     "summary": "An awesome talk"
+   }');
+```
+
+---
+
+class: content-even
+```sql
+CREATE INDEX idx_integrations_data 
+ON integrations USING gin(data);
+```
+
+---
+
+class: content-even
+```sql
+-- Find rows that contains this data
+SELECT * FROM talks WHERE data @> '{"title": "Postgres for mySQL Users"}';
+-- Find rows that have any summary
+SELECT * FROM talks WHERE data ? 'summary';
 ```
 
 ---
