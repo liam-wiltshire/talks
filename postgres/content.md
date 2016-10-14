@@ -230,7 +230,8 @@ ON talks USING gin(data);
 class: content-even
 ```sql
 -- Find rows that contains this data
-SELECT * FROM talks WHERE data @> '{"title": "Postgres for mySQL Users"}';
+SELECT * FROM talks 
+WHERE data @> '{"title": "Postgres for mySQL Users"}';
 -- Find rows that have any summary
 SELECT * FROM talks WHERE data ? 'summary';
 ```
