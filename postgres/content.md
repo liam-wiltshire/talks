@@ -221,8 +221,8 @@ INSERT INTO talks (
 
 class: content-even
 ```sql
-CREATE INDEX idx_integrations_data 
-ON integrations USING gin(data);
+CREATE INDEX idx_talks_data 
+ON talks USING gin(data);
 ```
 
 ---
