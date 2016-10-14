@@ -225,9 +225,6 @@ CREATE INDEX idx_talks_data
 ON talks USING gin(data);
 ```
 
----
-
-class: content-even
 ```sql
 -- Find rows that contains this data
 SELECT * FROM talks 
