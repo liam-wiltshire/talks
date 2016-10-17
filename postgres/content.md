@@ -101,7 +101,7 @@ class: content-odd
 # Partial Indexes
 
 - Indexes can be defined that are only created for rows that meet a certain condition
-- For example, if you had a table that used soft delets, then you could index *only* non-deleted rows
+- For example, if you had a table that used soft deletes, then you could index *only* non-deleted rows
 
 ---
 
@@ -243,6 +243,11 @@ class: content-odd
 - Can be queried using xpath
 - Indexing is limited - fulltext or functional indexes
 
+???
+
+Wouldn't usually recommend using the XML datatype - certainly for large tables, queries are going to be slow
+Functional indexes would help, but would need to be well designed
+
 ---
 
 class: content-odd
@@ -257,6 +262,12 @@ INSERT INTO talks values (
       </talk>')
    );
 ```
+
+???
+
+xmlparse converts the string to an XML document.
+Be careful with version numbers - postgres doesn't support 1.1
+
 ---
 
 class: content-odd
@@ -269,6 +280,12 @@ WHERE xmlexists('/talk/title[text() =
 SELECT * FROM talks
 WHERE xmlexists('/talk/summary' PASSING data);
 ```
+
+???
+
+We are using xmlexists here which returns a true of false value
+There is also an xpath function which can be used to exract the data from a specific path
+
 ---
 
 class: content-even
