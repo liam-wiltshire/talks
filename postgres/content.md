@@ -238,6 +238,38 @@ SELECT * FROM talks WHERE data ? 'summary';
 class: content-odd
 # XML
 
+- The XML datatype was the first 'document' storage available for Postgres
+- Allows the storing of full documents or fragments
+- Can be queried using xpath
+- Indexing is limited - fulltext or functional indexes
+
+---
+
+class: content-odd
+```sql
+CREATE TABLE talks (id UUID, data XML);
+INSERT INTO talks values (
+   uuid_generate_v4(),
+   xmlparse (DOCUMENT '<?xml version="1.1"?>
+      <talk>
+         <title>Postgres for mySQL Users</title>
+         <summary>An awesome talk</summary>
+      </talk>
+   ')
+   );
+```
+---
+
+class: content-odd
+```sql
+-- Find rows that contains this data
+SELECT * FROM talks 
+WHERE xmlexists('/talk/title[text() = 
+ ↳ ''Postgres for mySQL Users'']' PASSING data);
+-- Find rows that have any summary
+SELECT * FROM talks
+WHERE xmlexists('/talk/summary' PASSING data);
+```
 ---
 
 class: content-even
