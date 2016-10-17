@@ -254,8 +254,7 @@ INSERT INTO talks values (
       <talk>
          <title>Postgres for mySQL Users</title>
          <summary>An awesome talk</summary>
-      </talk>
-   ')
+      </talk>')
    );
 ```
 ---
