@@ -209,7 +209,7 @@ class: content-even
 
 ```sql
 CREATE TABLE talks (id UUID, data JSONB);
-INSERT INTO talks (
+INSERT INTO talks values (
   uuid_generate_v4(),
   '{
      "title": "Postgres for mySQL Users",
