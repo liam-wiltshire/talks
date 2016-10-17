@@ -250,7 +250,7 @@ class: content-odd
 CREATE TABLE talks (id UUID, data XML);
 INSERT INTO talks values (
    uuid_generate_v4(),
-   xmlparse (DOCUMENT '<?xml version="1.1"?>
+   xmlparse (DOCUMENT '<?xml version="1.0"?>
       <talk>
          <title>Postgres for mySQL Users</title>
          <summary>An awesome talk</summary>
