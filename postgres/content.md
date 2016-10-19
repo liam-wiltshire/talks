@@ -35,6 +35,16 @@ class: summary-slide middle
 - Feature rich
 - ACID compliant
 
+???
+
+- Postgres is a mature, well-established RDBMS
+- Often considered the FOSS Oracle
+- Has always been focused on data consistency, ACID compliancy - enterprise issues
+- Now is focusing more on additional features and performance
+
+- **before next slide**
+- So, why would we use Postgres
+
 ---
 
 class: centralimg middle center
@@ -46,6 +56,11 @@ class: centralimg middle center
 class: summary-slide middle center
 
 <span style='font-size:100px'>?</span>
+
+???
+
+- Ok, so perhaps it's not to do with mascots
+- But there are a number of reasons to consider it for a project
 
 ---
 
@@ -103,6 +118,12 @@ class: content-odd
 - Indexes can be defined that are only created for rows that meet a certain condition
 - For example, if you had a table that used soft deletes, then you could index *only* non-deleted rows
 
+???
+
+- Creating good indexes are important for getting the best performance out of any RDBMS
+- However, you can end up in situations where you index data you don't need - making updating the INDEX slower
+- With PostGres, you can add a where clause to your INDEX, to only index rows that satisfy that condition
+
 ---
 
 class: content-odd
@@ -150,6 +171,12 @@ class: content-even
 - Postgres will let you create an index based on the result of an expression
 - This can then be relied on in queries that would otherwise have to run this (potentially expensive expression at runtime)
 
+???
+
+- Similar to partial indexes before, Postgres will also let you create an index on the result of an expression
+- This might be a function that would otherwise be expensive, or some data transformation that is regularly needed
+- Arguably, you should store the data better if you are having to perform expensive functions often, but sometimes it's unavoidable
+
 ---
 
 class: content-even
@@ -189,6 +216,13 @@ class: content-even
    - JSONB stores the data as a binary representation
 - JSONB data tends to be larger than JSON data, but is much more flexible and quicker to query
 
+???
+
+- As a rule, there isn't really a reason to use JSON over JSONB
+    - JSONB is very new (last 2 releases)
+- There are functions to perform json-operations on a JSON field
+- But JSONB will almost certainly be quicker
+
 ---
 
 class: content-even
@@ -200,8 +234,9 @@ class: content-even
 
 ???
 
-Doesn't need re-parsing
-Steal this example: https://www.citusdata.com/blog/2016/07/14/choosing-nosql-hstore-json-jsonb/
+- Doesn't need re-parsing
+- Doesn't work if the sequence of the keys is important
+- Not very easy to edit in place - can be done by making use of the fact that JSONB only preserves the last of duplicate keys, but far from ideal
 
 ---
 
@@ -245,8 +280,9 @@ class: content-odd
 
 ???
 
-Wouldn't usually recommend using the XML datatype - certainly for large tables, queries are going to be slow
-Functional indexes would help, but would need to be well designed
+- Wouldn't usually recommend using the XML datatype - certainly for large tables, queries are going to be slow
+- Functional indexes would help, but would need to be well designed
+- More useful if you need to store valid XML primarily for archiving purposes, but might want to query it occassionally
 
 ---
 
@@ -265,8 +301,8 @@ INSERT INTO talks values (
 
 ???
 
-xmlparse converts the string to an XML document.
-Be careful with version numbers - postgres doesn't support 1.1
+- xmlparse converts the string to an XML document.
+- Be careful with version numbers - postgres doesn't support 1.1
 
 ---
 
@@ -283,13 +319,51 @@ WHERE xmlexists('/talk/summary' PASSING data);
 
 ???
 
-We are using xmlexists here which returns a true of false value
-There is also an xpath function which can be used to exract the data from a specific path
+- We are using xmlexists here which returns a true of false value
+- There is also an xpath function which can be used to exract the data from a specific path
 
 ---
 
 class: content-even
 # hstore
+
+- Postgres data type for storing key value pairs
+- Similar to JSONB, data can be indexed
+- Everything is stored as strings
+
+---
+
+class: content-even
+
+```sql
+CREATE TABLE talks (id UUID, data HSTORE);
+INSERT INTO talks values (
+  uuid_generate_v4(),
+  'title => "Postgres for mySQL Users".
+   summary => "An awesome talk"');
+```
+
+---
+
+class: content-even
+```sql
+CREATE INDEX idx_talks_data
+ON talks USING gin(data);
+```
+
+```sql
+-- Find rows that contains this data
+SELECT * FROM talks
+WHERE data @> 'title => "Postgres for mySQL Users"';
+-- Find rows that have any summary
+SELECT * FROM talks WHERE data ? 'summary';
+```
+
+???
+
+- Very similar syntax to JSONB - alot of the operators are the same
+- Not many reasons to pick hstore over JSONB
+    - Mainly if you are on a slightly older version of Postgres
 
 ---
 
@@ -307,7 +381,18 @@ class: content-odd
 - Can be installed using your OS package manager (yum, apt, dnf etc)
 - Creates a user `postgres`
     - This account is required for admin access
-    
+- Out of the box, very few features are installed
+    - Most need enabling (hstore, uuid_generate, jsonb)
+    - Enabling is done at a database level
+
+???
+
+- With new versions of Postgres, there are a few oddities about the way it installs
+- Doesn't use the same binary name for each version - similar to using SCL
+- The Postgres user is authed by 'ident' out of the box - doens't require a password
+- Enabling new features is easy - is actually done in SQL
+    - Per database features are interesting, as it means you can just enable what you need for each database.
+
 ---
 
 class: content-odd
@@ -345,11 +430,17 @@ ALTER ROLE
 class: content-even
 # Schemas
 
-- A single database can have multiple chemas
+- A single database can have multiple schemas
     - The default is 'public'
 - Essentially gives a single database namespaces
     - Different schemas can have different owners / users with different levels of access
-    
+
+???
+
+- Multiple schemas is one of the wierdest things about Postgres as a mySQL users
+- Alot of the time you'll probably just use the one schema and not think about it
+- The common example of a use case is if you need the separation of data, but with the ability to query accross the whole dataset
+
 ---
 
 class: content-even
