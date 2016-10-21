@@ -84,8 +84,9 @@ class: content-even
 
 ???
 
-- These examples are by no means exaustive
+- These examples are by no means exhaustive
 - Testing on a pretty standard server
+- Just gives a rough idea of performance
 - Using a modified version of a dummy 'employee' database with c. 300,000 records 
 
 ---
@@ -94,12 +95,9 @@ class: content-even
 # Basic SELECT (no index)
 
 ```sql
-lwdatabase=> \timing
-Timing is on.
 lwdatabase=> SELECT * FROM employees WHERE gender = 'F';
-Time: 359.260 ms
--
-120051 rows in set (0.15 sec)
+
+Time: 0.35 sec / 0.15 sec
 ```
 
 
@@ -110,10 +108,12 @@ class: content-even
 # JOINs
 
 ```sql
-SELECT * FROM employees e INNER JOIN dept_emp de on de.emp_no = e.emp_no INNER JOIN departments d ON d.dept_no = de.dept_no WHERE e.gender = 'F' AND d.dept_name = 'Development';
-Time: 571.410 ms
--
-34258 rows in set (0.61 sec)
+SELECT * FROM employees e
+ INNER JOIN dept_emp de ON de.emp_no = e.emp_no
+ INNER JOIN departments d ON d.dept_no = de.dept_no
+ WHERE e.gender = 'F' AND d.dept_name = 'Development';
+
+Time: 0.57 sec / 0.61 sec
 ```
 
 ---
@@ -121,10 +121,14 @@ Time: 571.410 ms
 class: content-even
 # UNIONs
 ```sql
-SELECT * FROM  ( SELECT e.* FROM employees e INNER JOIN dept_emp de on de.emp_no = e.emp_no INNER JOIN departments d ON d.dept_no = de.dept_no WHERE e.gender = 'M' AND d.dept_name = 'Finance' ) a UNION ( SELECT e.* FROM employees e INNER JOIN dept_emp de on de.emp_no = e.emp_no INNER JOIN departments d ON d.dept_no = de.dept_no WHERE e.gender = 'F' AND d.dept_name = 'Development' );
-Time: 614.478 ms
--
-44589 rows in set (0.81 sec)
+( SELECT e.* FROM employees e INNER JOIN dept_emp de ON de.emp_no = e.emp_no
+ INNER JOIN departments d ON d.dept_no = de.dept_no
+ WHERE e.gender = 'M' AND d.dept_name = 'Finance' )
+UNION ( SELECT e.* FROM employees e INNER JOIN dept_emp de ON de.emp_no = e.emp_no
+ INNER JOIN departments d ON d.dept_no = de.dept_no
+ WHERE e.gender = 'F' AND d.dept_name = 'Development' );
+
+Time: 0.61 sec / 0.81 sec
 ```
 ---
 
@@ -132,14 +136,13 @@ class: content-even
 # Sub Select
 
 ```sql
-SELECT * FROM 
-(
-SELECT e.* FROM employees e INNER JOIN dept_emp de on de.emp_no = e.emp_no INNER JOIN departments d ON d.dept_no = de.dept_no WHERE e.gender = 'F' AND d.dept_name = 'Development'
+SELECT * FROM (
+SELECT e.* FROM employees e INNER JOIN dept_emp de ON de.emp_no = e.emp_no
+INNER JOIN departments d ON d.dept_no = de.dept_no
+WHERE e.gender = 'F' AND d.dept_name = 'Development'
 ) a 
 WHERE first_name LIKE 'F%';
-Time: 377.364 ms
--
-34258 rows in set (0.60 sec)
+Time: 0.37 sec / 0.60 sec
 ```
 
 ---
