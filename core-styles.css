@@ -41,3 +41,8 @@ ul ul {
 .remark-slide-content {
     padding: 1em 2em 1em 2em !important;
 }
+
+
+.remark-notes-area {
+    font-size:65% !important;
+}
