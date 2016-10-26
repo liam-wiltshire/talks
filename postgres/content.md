@@ -7,6 +7,18 @@ class: title-slide
 # PostgreSQL
 ## For mySQL users
 
+???
+
+- Postgres is a DB that we've probably all heard of, but perhaps not used
+- It's actually has a lot of selling points in a number of situations
+- Hopefully by the end of the talk I'll have convinced you to consider Postgres for your next project
+
+---
+
+class: center middle
+
+![](postgres/images/gareth.jpg)
+
 ---
 
 class: section-title-c bottom left vanity-slide
@@ -267,6 +279,26 @@ class: content-odd
 - The range fields are particularly interesting
 
 ---
+
+class: content-even
+# RETURNING
+
+- In Postgres we can define an expression to return from an input
+- This could be one column (say the increment ID), or the whole row
+
+```sql
+INSERT INTO talks (title)
+ VALUES ('Postgres for mySQL Users') RETURNING talk_id
+```
+
+
+
+???
+
+- This works in the same way as aclling last_insert_id(), but without having to call it!!
+
+---
+
 
 class: section-title-c middle halfhalf
 background-image: url(postgres/images/nosql.png)
