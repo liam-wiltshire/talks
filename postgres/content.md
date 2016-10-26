@@ -100,7 +100,9 @@ lwdatabase=> SELECT * FROM employees WHERE gender = 'F';
 Time: 0.35 sec / 0.15 sec
 ```
 
+???
 
+- First value is postgres, second is mySQL
 
 ---
 
@@ -186,6 +188,11 @@ class: content-even
     - By comparison, mySQL has a single process with multiple threads
 - While it does create extra overhad when creating the connection, there are multiple benefits
 
+???
+
+- THis is similar to Firefox/Chrome
+
+
 ---
 
 class: content-even
@@ -196,6 +203,11 @@ class: content-even
 - Processes are isolated from each other
 - Concurrency tends to be improved
 
+???
+
+- Who has had the situation where all the mySQL connections are used, and you can't even get onto the server to kill some?
+- Postgres this isn't an issue as you can use your standard *nix tools to remove processes
+
 ---
 
 class: content-odd
@@ -205,6 +217,11 @@ class: content-odd
 - Postgres will let you write them in many languages:
     - SQL, Perl, Python, JavaScript etc.
 - mySQL only supports SQL
+
+???
+
+- Most languages support stored procedures in some way, so why is this a feature?
+- It's to do with the wide range of languages you can write stored procedures in
 
 ---
 
@@ -241,6 +258,13 @@ class: content-odd
     - Network - macaddr, cidr, inet
     - UUID
     - Range - int4range, tsrange, daterange
+
+???
+
+- Some of this stuff is starting to working into it's way into mySQL
+ - Spatial data for example
+ - But it's more mature in Postgres
+- The range fields are particularly interesting
 
 ---
 
@@ -411,10 +435,15 @@ SELECT * FROM talks WHERE data ? 'summary';
 ---
 
 class: section-title-a middle halfhalf reverse
-background-image: url(postgres/images/elephantsbetter.png)
+background-image: url(postgres/images/confusion.jpg)
 
 # Using Postgres
 ## (as a mySQL user)
+
+???
+- Despite my 'halarious' image, ut's not that bad!
+- But there are a few things that are different that are likely to trip you up
+- These are a few things I ran into that particularly caught me out
 
 ---
 
