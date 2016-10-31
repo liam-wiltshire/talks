@@ -22,7 +22,9 @@ h2 {
 h3 {
     font-size: 35pt !important;
 }
-.remark-code, .remark-inline-code { font-family: 'Source Code Pro'; font-size:22pt !important;}
+.remark-code, .remark-inline-code { font-family: 'Source Code Pro'; font-size:21pt !important; line-height:140%}
+
+.tinycode .remark-code { font-size:18pt !important; }
 
 li {
     line-height:160%;
