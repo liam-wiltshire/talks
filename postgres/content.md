@@ -15,12 +15,6 @@ class: title-slide
 
 ---
 
-class: center middle
-
-![](postgres/images/gareth.jpg)
-
----
-
 class: section-title-c bottom left vanity-slide
 
 # Liam Wiltshire
@@ -234,6 +228,20 @@ class: content-odd
 
 - Most languages support stored procedures in some way, so why is this a feature?
 - It's to do with the wide range of languages you can write stored procedures in
+
+---
+
+class: content-odd
+
+```sql
+CREATE FUNCTION stripwww(text) RETURNS text AS
+'
+import re
+Text1 = re.sub(''www.'', '''',args[0])
+return Text1
+'
+LANGUAGE 'plpython';
+```
 
 ---
 
@@ -665,6 +673,40 @@ column_name  | 	data_type     | character_maximum_length
  display     | USER-DEFINED      |
 (6 rows) 
 ```
+
+---
+
+class: content-odd
+
+- If you are using the psql cli, you can use \d
+
+```bash
+liamwiltshire=# \dS+ talks;
+```
+
+---
+
+class: content-odd tinycode
+
+```bash
+                                  Table "public.talks"
+  Column   |            Type             |  Modifiers  | Storage  | Description 
+-----------+-----------------------------+-------------+----------+-------------
+ talk_id   | smallint                    | not null... | plain    | 
+ date      | timestamp without time zone |             | plain    | 
+ title     | character varying(254)      |             | extended | 
+ slides    | character varying(254)      |             | extended | 
+ location  | character varying(254)      |             | extended | 
+ eventlink | character varying(254)      |             | extended | 
+ icon      | character varying(15)       |             | extended | 
+ logo      | character varying(254)      |             | extended | 
+ joindin   | character varying(254)      |             | extended | 
+Indexes:
+    "talk_id" UNIQUE, btree (talk_id)
+Has OIDs: no
+
+```
+
 
 ---
 
