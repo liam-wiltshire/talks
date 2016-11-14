@@ -246,5 +246,34 @@ class: content-even
 
 - The forward slashes mark the start and end of the pattern
     - With some flags which we'll come to
-- `.*?` match 0 or more of any character
+- `.*?` - match 0 or more of any character (except newlines *usualy*)
     - The `?` makes it lazy
+    
+---
+
+class: content-odd
+
+#Flags
+
+- There are a number of flags available that modify the behaviour of RegEx
+    - Some of these vary between different RegEx flavours
+- The common ones are
+    - `i` - case insensitive
+    - `s` - make the period character match anything including newlines
+    - `g` - global
+    
+???
+- The s flag we used in our expression means that the script can be on multiple lines
+- Global is handled by different functions in some languages (e.g. PHP), but is needed in others (e.g. JS)
+
+---
+
+class: content-even
+
+#Extracting Data
+
+- As well as testing/replacing data, RegEx is useful for extracting data
+- In this example, we are going to extract the temperature from a location page on Accuweather
+
+???
+- Specifically, my hometown of Nottingham
