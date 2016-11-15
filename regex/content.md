@@ -435,6 +435,7 @@ class: content-odd
 ```regexp
 ([0-9]+[MKG])\s+([a-z0-9:]+\s+){3}([^\n]+)
 ```
+
 ???
 
 - This would extract the data we want, but also various bits of data we don't need - by default groups in RegEx are 'capturing'
@@ -453,3 +454,13 @@ class: content-odd
 ???
 
 -This doesn't reduce the number of steps needed, but will reduce the memory required to store the data
+
+---
+
+class: content-even
+#<del>Don't</del> Be Lazy
+
+- Regular expressions are greedy by default. 
+- If we consider the pattern `(.*)PHP` and the string "I really like PHP, but I also like Perl", 
+    - It requires 108 steps. 
+    - Adding ? to make the matchall lazy doesn't change the result, but brings it down to 84 steps
