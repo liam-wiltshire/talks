@@ -464,3 +464,20 @@ class: content-even
 - If we consider the pattern `(.*)PHP` and the string "I really like PHP, but I also like Perl", 
     - It requires 108 steps. 
     - Adding ? to make the matchall lazy doesn't change the result, but brings it down to 84 steps
+    
+---
+
+#Lazy Is Good (Sometimes)
+- With a greedy selector, the engine has to check every character position to the end of the string in order to ensure that PHP doesn't appear again
+- Making the match lazy however means it can stop as soon as it hits the first PHP string, saving these additional lookups.
+
+???
+
+We can see that PHP doesn't appear again, but the engine doesn't know that without checking every character.
+
+---
+
+class: section-title-c middle center
+
+# RegEx
+# `/(?![02-9])\d[^a-z](?<![1-9])\063/`
