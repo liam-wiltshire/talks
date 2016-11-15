@@ -179,6 +179,8 @@ class: section-title-a top center
 
 # RegEx 101
 
+![](regex/images/regex101.jpg)
+
 ---
 
 class: content-even
@@ -259,7 +261,7 @@ class: content-odd
     - Some of these vary between different RegEx flavours
 - The common ones are
     - `i` - case insensitive
-    - `s` - make the period character match anything including newlines
+    - `s` - `.` character matches everything (includes newlines)
     - `g` - global
     
 ???
@@ -277,3 +279,78 @@ class: content-even
 
 ???
 - Specifically, my hometown of Nottingham
+
+---
+
+class: content-even
+
+#Extracting Data
+
+- Checking the source code of the page, we can see the temperature is displayed with `<span class="temp">12&deg;</span>`
+- This means we have a predictable pattern we can use to get the temperature
+- We can fetch the contents of the page, and then extract the content we need
+
+---
+
+class: content-even
+
+```php
+$data = file_get_contents(
+  "http://www.accuweather.com/en/gb/nottingham/ng1-7/weather-forecast/330088"
+);
+
+preg_match_all(
+  "/<span class=\"temp\">(-?[0-9]+)&deg;</span>/i",
+  $data,
+  $matches
+);
+
+var_dump($matches);
+```
+
+???
+
+- Notice how we are not using start and end anchors this time - we are matching content within a larger piece of text.
+- This also uses a new symbol - the + character. Similar to *, this matches one or more, instead of 0 or more.
+
+---
+
+class: content-even
+
+```
+    array(2) {
+      [0]=>
+      array(4) {
+        [0]=>
+        string(29) "<strong class="temp">13<span>"
+        [1]=>
+        string(29) "<strong class="temp">24<span>"
+      }
+      [1]=>
+      array(4) {
+        [0]=>
+        string(2) "13"
+        [1]=>
+        string(2) "24"
+      }
+    }
+```
+
+???
+
+- Notice how we have both the full match, but also the part of the pattern we enclosed in brackets is extracted seperately.
+- If we had multiple groupings, each one would be extracted separately
+
+---
+
+class: section-title-b top center
+
+# RegEx 102
+
+&nbsp;
+### What regex are you most likely to see at Christmas?
+
+## [^L]
+
+---
+
