@@ -364,19 +364,66 @@ class: content-odd
 
 ---
 
-class content-odd center middle
+class: content-odd center middle
 
 ```regexp
 (.*?)!
 ```
 ---
 
-class: cotent-odd
+class: content-odd
 # (.*?)!
 
-- If we test this against the string I really like PHP!
+- If we test this against the string "I really like PHP!"
     - It will take 39 steps to match the whole string!
     
 ![](regex/images/regexsteps.png)
 
 ---
+
+class: content-odd
+
+- Where possible, avoid using matchall
+    - Be as specific as possible in your regex, so that the work the engine needs to do is reduced.
+- But what if you can't? What if you need to match everything?
+    - First of all, try to use + instead of *
+    
+???
+
+Where * is 0 or more, it involves alot more tests than + does, which must match at least once
+
+---
+
+class: content-even center middle
+
+```regexp
+([^!]+)
+```
+---
+
+class: content-even
+# ([^!]+)
+
+- This is a negative character class
+    - We are basically definine a match rule that matches anything *except* !, one or more times
+- Negative character classes are typically quicker and use less steps than a similar positive character class
+
+???
+
+It also means we don't need to use the lazy ? as it will automatically stop at the first !, so generally it's a much tigher expression.
+
+---
+
+class: content-odd
+
+#Data Capture
+
+- We use brackets to group our expressions
+    - The engine will also return the matched data of each group as separate parts
+- However, if you have lots of groups, you are probably returning plenty of data that you don't actually need!
+    
+???
+
+As we saw in the weather example
+
+
