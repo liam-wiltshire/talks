@@ -426,4 +426,30 @@ class: content-odd
 
 As we saw in the weather example
 
+---
 
+class: content-odd
+
+- Let's assume we want to extract the filename and filesize from a *nix `ls -lah` command
+
+```regexp
+([0-9]+[MKG])\s+([a-z0-9:]+\s+){3}([^\n]+)
+```
+???
+
+- This would extract the data we want, but also various bits of data we don't need - by default groups in RegEx are 'capturing'
+
+---
+
+class: content-odd
+#Non-Capturing Groups
+
+- We can use ?: at the start of the group to make it non-capturing:
+
+```regexp
+([0-9]+[MKG])\s+(?:[a-z0-9:]+\s+){3}([^\n]+)
+```
+
+???
+
+-This doesn't reduce the number of steps needed, but will reduce the memory required to store the data
