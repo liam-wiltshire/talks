@@ -354,3 +354,29 @@ class: section-title-b top center
 
 ---
 
+class: content-odd
+
+#Performance
+
+- Regular Expressions can be quite complicated to process and execute
+- Often what appears to be a simple expression can take lots of 'steps' to test
+- We need to understand and test the execution of our expressions to ensure they perform well
+
+---
+
+class content-odd center middle
+
+```regexp
+(.*?)!
+```
+---
+
+class: cotent-odd
+# (.*?)!
+
+- If we test this against the string I really like PHP!
+    - It will take 39 steps to match the whole string!
+    
+![](regex/images/regexsteps.png)
+
+---
