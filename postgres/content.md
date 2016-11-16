@@ -17,6 +17,9 @@ class: title-slide
 
 class: section-title-c bottom left vanity-slide
 
+.introimg[![](http://tebex.co.uk/img/tebex.svg)]
+
+
 # Liam Wiltshire
 ## Senior PHP Developer<br /> & Business Manager
 

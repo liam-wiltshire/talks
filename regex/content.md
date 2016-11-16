@@ -9,7 +9,11 @@ class: title-slide
 
 ???
 
-Regular expressions are scary. At least, if you ask Google, that's what you might think (500,000 results). And slow (1,460,000). For many developers they are something best avoided, something unmaintainable and difficult to understand. From personal experience, I've seen some amazing attempts to avoid using them - from 10 chained explodes to str_replaceing everything except the bits you need, piece by piece. However, this doesn't have to be the case - regular expressions are neither scary or slow, and indeed when used correctly are a powerful tool in your utility belt.
+I've spoken to alot of developers, and something I hear regularly is that they don't 'do' RegEx.
+
+They might call it scary, or slow, and I've seem some amazing attempts to avoid them.
+
+However, this doesn't have to be the case - treated well, RegEx can be a powerful tool in your toolbox
 
 Yes, there are alternatives, and sometimes these will do the job better than regular expressions could (more on that below), but often a regular expression is the right tool for the job.
 
@@ -17,6 +21,8 @@ Yes, there are alternatives, and sometimes these will do the job better than reg
 ---
 
 class: section-title-c bottom left vanity-slide
+
+.introimg[![](http://tebex.co.uk/img/tebex.svg)]
 
 # Liam Wiltshire
 ## Senior PHP Developer<br /> & Business Manager
@@ -466,7 +472,7 @@ class: content-even
     - Adding ? to make the matchall lazy doesn't change the result, but brings it down to 84 steps
     
 ---
-
+class: content-event
 #Lazy Is Good (Sometimes)
 - With a greedy selector, the engine has to check every character position to the end of the string in order to ensure that PHP doesn't appear again
 - Making the match lazy however means it can stop as soon as it hits the first PHP string, saving these additional lookups.
@@ -481,3 +487,268 @@ class: section-title-c middle center
 
 # RegEx
 # `/(?![02-9])\d[^a-z](?<![1-9])\063/`
+
+---
+
+class: content-odd
+#Atomic Groups
+
+- A cause of slowdowns can be multiple options in a match
+- Consider `\b(package|packed|pack)\b`
+- If we consider the phrase "Delivery rejected - badly packaged", a RegEx engine will take 27 steps to figure out there isn't a match
+    - The engine has to test every variation in the group and then test if it satisfies the word boundaries
+
+???
+
+- In RegEx, `\b` is a word boundary - in other words we are matching a whole word
+- In other words, we want to match the extact word package, or packed, or pack
+
+---
+
+class: content-odd
+#Atomic Groups
+
+- Atomic groups allow use to tell the engine to skip the rest of the group as soon as a match is found
+- If we consider `\b(?>package|packed|pack)\b`, this brings the number of steps down to 16
+    - The engine will match 'package' to the string
+    - It will then ignore the other options - the boundary test will still fail, but it won't try packed or pack
+
+???
+
+- The ?> is the atomic group operator
+- We are essentially telling the engine that if the first option is matched, then the other two can't possibly be better options
+
+---
+
+class: content-odd
+#Atomic Groups
+
+- The sequence of the options is important
+- Consider `\b(?>pack|packaged|packed)\b`
+    - With the previous string, 'packaged' would be a match
+    - The engine would match 'pack', forget about the other options, and would fail the word boundary test
+- \b(?>packaged|packed|pack)\b fixes this
+
+???
+
+- As a general rule, putting the options in length order ensures your atomic groups will behave as you expect
+- As a side note, atomic groups are non-capturing - in other words they don't return the match within the group, in the same way as ?: above
+
+---
+
+class: content-even
+# Conditionals
+
+- RegEx supports conditionals, alowing you to define different patterns depending on a certain condition
+- Combined with lookaheads, it can make life much easier!
+- The general pattern for a conditional is
+
+    `(?(Condition)Then|Else)`
+
+???
+Lookaheads - which allows you to check for something later in the subject string first
+We've got a nice simple example to show this
+
+---
+
+class: content-even
+#GB/US Postal Code
+
+```regexp
+(?
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
+)
+```
+
+???
+
+Ok, let's take this one step at a time
+
+---
+
+class: content-even
+#GB/US Postal Code
+
+```regexp
+* (?
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
+* )
+```
+
+???
+
+This shows that the group is a conditional
+
+---
+
+class: content-even
+#GB/US Postal Code
+
+```regexp
+(?
+* ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
+)
+```
+
+???
+
+- This is the condition - this is a lookahead that means we are looking for GB
+- So, if we find GB, then we will look for the first pattern
+
+---
+
+class: content-even
+#GB/US Postal Code
+
+```regexp
+(?
+ ↳ (?=.*GB)
+* ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+*    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+*    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
+)
+```
+
+???
+
+- This matches a British postcode
+- Trust me, it just does :-)
+
+---
+
+class: content-even
+#GB/US Postal Code
+
+```regexp
+(?
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+* ↳ |
+ ↳ ([0-9]{5})
+)
+```
+
+???
+
+- If the lookahead didn't find GB
+
+---
+
+class: content-even
+#GB/US Postal Code
+
+```regexp
+(?
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+* ↳ ([0-9]{5})
+)
+```
+
+???
+
+Look for a US zip code
+
+---
+
+class: content-odd
+#Backrefernces
+
+- Backreferences allow you to create a capturing group, and then use it later in the pattern
+- In different situations, the syntax is different
+
+---
+
+class: content-odd
+#Backreferences
+
+```regexp
+<([A-Z]+).*?>.+?<\/\1>
+```
+
+- This is a backreference in it's most basic form
+- Each capturing group is numbered from 1 - 99
+
+???
+
+This example will match a HTML tag, the contents of that tag, and then the backreference to test for a matching closing tag
+
+---
+
+
+
+class: content-odd
+#Backreferences
+
+```regexp
+^(?:(START)|(BEGIN))(.*?)(?(1)STOP|END)$
+```
+
+- By combining conditionals with backreferences, we can vary what we look for later in the expression based on what we saw earlier.
+
+???
+
+-This example assumes that you know that text is delineated by either START/STOP or BEGIN/END, but you don't know which.
+-Depending on what is matched in the first group, it acts as a backreference in the conditional at the end
+
+---
+
+class: content-odd
+#Named Backreferences
+
+```regexp
+(?P<msg>[0-9]+)\|(?P<dock>[0-9]+)\|
+ ↳ (?P<tstamp>[0-9]+)\|DOOR (?P<doorstate>OPEN|CLOSED)
+```
+
+- By default, capturing groups are numbered.
+- However by using ?P<name>, you can give each group a name
+
+???
+
+This is useful if you are matching quite a few pieces of data to be extracted and used elswhere in your application, without having to remember the numbers
+
+---
+
+class: summary-slide middle
+
+- Regular expressions are a powerful tool in your toolbelt
+- With great power comes great responsibility
+- Understand how your expressions work, and how the engine will process them
+- It's biggest benifit is portability - with a few exceptions, your expressions will work cross-language and cross-OS.
+
+---
+
+class: thanks-slide
+
+.conference[![](logos/%%conference%%.png)]
+.introimg[![](http://tebex.co.uk/img/tebex.svg)]
+
+# Thank You
+
+### %%joindin%%
+### Liam Wiltshire
+### @l_wiltshire
+### liam.wiltshire@tebex.co.uk
