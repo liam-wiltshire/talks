@@ -116,7 +116,12 @@ class: section-title-a bottom center centralimg
 
 ???
 
-In our jobs, we tend to deal with alot of data manipulation. Hopefully all your data is well formatted, structured and easy to deal with... but let's face it, everyone has had to pull data out of a webpage at some point! Regular expressions can be used to extract a block of text from within a larger block, by using simple patterns. What's more, if you want to pull out multiple pieces of data (perhaps you work for 'S. Pammer' and want to extract all the email addresses for example!), you could use regular expressions to do that too.
+In our jobs, we tend to deal with alot of data manipulation. Hopefully all your data is well formatted, structured and easy to deal with... 
+
+Regular expressions can be used to extract a block of text from within a larger block, by using simple patterns.
+
+For example, if you work for a spam.... I mean, email marketing company...
+Want to sell your viagra and let people know about Nigerian princes, this is the tool for you
 
 ---
 
@@ -205,11 +210,11 @@ class: content-odd
 
 # Phone Number
 
-- Simple example, we are validating input of a US phone number
-- (123) 456-7890, (123) 456 7890 or 123-456-7890
+- Simple example, we are validating input of a Canadian phone number
+- 1-123-456-7890, 123-456-7890, 1 123 456-7890, (123) 456-7890
 
 ```regexp
-^\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
+^(1(-| ))?\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
 ```
 
 ---
@@ -217,31 +222,26 @@ class: content-odd
 class: content-odd
 
 ```regexp
-^\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
+^(1(-| ))?\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
 ```
 
 - `^...$` is the string anchor (must start and end)
-- `\(?` optionally, start with an open bracket
+- `(1(-| ))?` optionally, there could be a 1 followed by a dash or a space
+- `\(?` optional open bracket
     - `[\^$.|?*+()` are reserved characters
 - `[0-9]{3}` exactly 3 numbers between 0-9
     - `{3,6}` would mean between 3 and 6
-- `( |-)` either a space or a dash
 
 ---
 
 class: content-even
 
-# &lt;script> is not allowed!
+# No Images Please!
 
-- Can't use `str_replace` as we don't know what's between tags
-- Can't use `strip_tags` as that only strips the tags themselves
+- Can't use a string replace as we don't know the specific image or alt will be
 
-```php
-    $noscript = preg_replace(
-      "/<script.*?>.*?<\/script.*?>/is",
-      "NO JAVASCRIPT ALLOWED!",
-      $text
-    );
+```perl
+$text =~ s/!\[.*?\]\(.*?\)/"NO IMAGES ALLOWED!"/sg;
 ```
 
 ---
@@ -249,7 +249,7 @@ class: content-even
 class: content-even
 
 ```regexp
-/<script.*?>.*?<\/script.*?>/is
+/!\[.*?\]\(.*?\)/sg
 ```
 
 - The forward slashes mark the start and end of the pattern
