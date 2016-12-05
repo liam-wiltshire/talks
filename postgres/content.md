@@ -271,6 +271,10 @@ SELECT * FROM people WHERE
   lower(last_name) = lower('Wiltshire');
 ```
 
+???
+
+- This is a common example, because Postgres is case sensitive
+
 ---
 
 class: content-odd
@@ -716,7 +720,7 @@ Has OIDs: no
 class: summary-slide middle
 
 - Postgres *isn't* the solution for every database requirement
-- But it should be considered as an option, particularly in complex-read-heavy situations
+- But if it's performance strengths match your requirements, or you need it's features, then do it!
 - Benchmark!
 
 ---
@@ -731,6 +735,6 @@ class: thanks-slide
 ### %%joindin%%
 ### Liam Wiltshire
 ### @l_wiltshire
-### liam.wiltshire@tebex.co.uk
+### liam@tebex.co.uk
 
 
