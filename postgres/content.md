@@ -106,7 +106,7 @@ class: content-even
 ```sql
 lwdatabase=> SELECT * FROM employees WHERE gender = 'F';
 
-Time: 0.35 sec / 0.15 sec
+Postgres: 0.35 sec / mySQL: 0.15 sec
 ```
 
 ???
@@ -124,7 +124,7 @@ SELECT * FROM employees e
  INNER JOIN departments d ON d.dept_no = de.dept_no
  WHERE e.gender = 'F' AND d.dept_name = 'Development';
 
-Time: 0.57 sec / 0.61 sec
+Postgres: 0.57 sec / mySQL: 0.61 sec
 ```
 
 ---
@@ -139,7 +139,7 @@ UNION ( SELECT e.* FROM employees e INNER JOIN dept_emp de ON de.emp_no = e.emp_
  INNER JOIN departments d ON d.dept_no = de.dept_no
  WHERE e.gender = 'F' AND d.dept_name = 'Development' );
 
-Time: 0.61 sec / 0.81 sec
+Postgres: 0.61 sec / mySQL: 0.81 sec
 ```
 ---
 
@@ -153,7 +153,7 @@ INNER JOIN departments d ON d.dept_no = de.dept_no
 WHERE e.gender = 'F' AND d.dept_name = 'Development'
 ) a 
 WHERE first_name LIKE 'F%';
-Time: 0.37 sec / 0.60 sec
+Postgres: 0.37 sec / mySQL: 0.60 sec
 ```
 
 ---

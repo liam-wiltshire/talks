@@ -201,7 +201,7 @@ class: content-even
 - Regular Expressions are massively powerful
 - We will work through a few common examples
     - Validating a phone number
-    - Replacing `<script>` tags
+    - Replacing images in markdown
     - Extracing data from a webpage
 
 ---
@@ -417,6 +417,12 @@ class: content-even
 ???
 
 It also means we don't need to use the lazy ? as it will automatically stop at the first !, so generally it's a much tigher expression.
+
+---
+
+class: middle center
+
+![](regex/images/negative.png)
 
 ---
 
@@ -729,6 +735,39 @@ class: content-odd
 ???
 
 This is useful if you are matching quite a few pieces of data to be extracted and used elswhere in your application, without having to remember the numbers
+
+---
+
+class: middle center
+
+![](regex/images/free-bonuses.gif)
+
+---
+
+class: content-even
+#The 'x' Flag
+
+- In most modern RegEx flavours, there is an 'x' flag
+- This makes the engine ignore whitespace
+- *and* provide the ability to add comments with #
+
+???
+
+- Certainly, PHP, Perl, Python (using re.VERBOSE), .NET all support it
+
+---
+
+class: content-even
+
+```regexp
+/# Match a 20th or 21st century date in yyyy-mm-dd format
+(19|20)\d\d                # year (19 or 20, then two digits)
+[- \/.]                    # separator - one of dash, space, slash or dot
+(0[1-9]|1[012])            # month (group 2)
+[- \/.]                    # separator
+(0[1-9]|[12][0-9]|3[01])   # day (group 3)
+/x
+```
 
 ---
 
