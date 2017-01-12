@@ -1,5 +1,5 @@
 
-class: title-slide
+class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
 .introimg[![](scaling/images/shark.png)]
@@ -13,7 +13,7 @@ Scaling is one of those things that we're often guilty of ignoring early on.
 
 It's only when the spikes start happening, and your application gets slower and slower, that we realise we need to do something about it
 
-There are alot of different ways we can scale - this talk covers some of the basic approches, including how you can apply them to existing applications
+There are a lot of different ways we can scale - this talk covers some of the basic approaches, including how you can apply them to existing applications
 
 ---
 
@@ -36,6 +36,11 @@ class: section-title-a center centralimage
 # What We Will Cover
 ![](scaling/images/film-shot.jpg)
 
+???
+
+- Scaling is a very big topic, with hundreds of books, articles etc
+- This talk is very much an introduction to the topic
+
 ---
 
 class: summary-slide middle
@@ -48,34 +53,55 @@ class: summary-slide middle
 
 ???
 
-Scaling is a very big topic, with hundres of books, articles etc
-This talk is very much an introduction to the topic
-Most of these things are either things we have done on our platform
-Or things we are doing on the new product we are currently building
+- We are going to take a high-level look at various scaling strategies
+- Most of these things are either things we have done on our platform
+- Or things we are doing on the new product we are currently building
 
 ---
 
 class: section-title-b middle
-background-image: url(regex/images/qbert.png)
-# Control Panel
+background-image: url(scaling/images/overview/1.png)
+
+???
+
+- First we have the admin panel
+ - Nothing really to write home about, Laravel, DB, not much to see
 
 ---
 
 class: section-title-b middle
-background-image: url(regex/images/qbert.png)
-# Admin Panel
+background-image: url(scaling/images/overview/2.png)
+
+???
+
+- THen we have our customer control panel
+ - This gets quite a bit of use
+ - Does all the customer reporting
+ - Pulls data in not just from the DB, but a third party service we use to do some of the stats/analytics
+
+- Then it gets interesting....
 
 ---
 
 class: section-title-b middle
-background-image: url(regex/images/qbert.png)
-# Web Stores
+background-image: url(scaling/images/overview/3.png)
+
+???
+
+- Every single customer has one or more web stores - these are unique to each customer in that it shows their products, categories and content, and on the paid plans they can build their own themes and templates as well
+
+- At the moment we have a little more than 475,000 of these
 
 ---
 
 class: section-title-b middle
-background-image: url(regex/images/qbert.png)
-# Minecraft Servers
+background-image: url(scaling/images/overview/4.png)
+
+???
+- Every webstore than has at least one minecraft server attached to it
+ - These phone home at different intervals depending on the account type, pulling down any commands to be run on the server
+ - But also you can buy directly in game via commands, so on top of the phone home, there are other API calls being made all the time
+- We have just under 510,000 servers
 
 ---
 
@@ -83,723 +109,462 @@ background-image: url(regex/images/qbert.png)
 class: summary-slide middle
 
 - On an 'average' day, we serve 400k - 500k requests an hour
-- Regular spikes
+- Regular spikes - up to 3 or 4x the traffic
  - Black Friday
  - Enterprise customer releases a new product / has a sale
  - Christmas Day (!) - at one point we served 1.2m requests in an hour
 - DOS attacks - up to 100k requests per hour
 
----
-
-class: section-title-a middle halfhalf reverse
-background-image: url(regex/images/usesofregex.png)
-
-# What Can
-# We Use
-# RegEx For?
-
 ???
 
-While it's easy to find plenty of examples of regular expressions in use, and it's easy to list all sorts of things they can be used for, most uses boil down to one of the following:
+- One client on xmas day did nearly $200k
 
 ---
 
-class: section-title-b center centralimg
+class: section-title-c middle halfhalf reverse
+background-image: url(scaling/images/worst-case.jpg)
 
-#Data Validation
-
-&nbsp;
-
-![](regex/images/datavalidation.png)
-
-???
-
-If you are handing user data, you almost certainly want to check that the data matches what you are expecting - that if you've asked for a phone number then the user has entered a phone number, or that you're not about to add 'Little Bobby Tables' to your database https://xkcd.com/327/. Checking user provided data (for example from a form, or $_SERVER variables that the user could have spoofed) against a regular expression pattern that matches the format you are expecting can be a very effective way of validating data you receive. Equally a regular expression can be used to validate that some data doesn't contain something - for example checking that the bio that the user has provided doesn't contain HTML if you don't want it to.
-
----
-
-class: section-title-c bottom left vanity-cover
-
-background-image: url(regex/images/textreplacement.png)
-
-# .left[Text]
-# .left[Replacement]
+# Why Do 
+# We Need
+# To Scale
 
 ???
 
-Find and replace is a tool that most of us use regularly. That could be in your OS (for example sed), in your email client or word processor, amongst many other things. Regular expressions are often used (including in sed mentioned above) to allow you to do text replacement when you don't know the exact text you want to replace. For example, if you want to strip out HTML from some text (where you might not know what the tags are), or you want to strip all URLs out of a posted comment (where you don't know what the URL might be). The key benefit of regular expressions here is the unknown bit - you can replace based on text that 'looks like' something, rather than requiring an exact match.
-
----
-
-class: section-title-a bottom center centralimg
-
-![](regex/images/textextraction.png)
-
-# Text Extraction
-
-???
-
-In our jobs, we tend to deal with alot of data manipulation. Hopefully all your data is well formatted, structured and easy to deal with... 
-
-Regular expressions can be used to extract a block of text from within a larger block, by using simple patterns.
-
-For example, if you work for a spam.... I mean, email marketing company...
-Want to sell your viagra and let people know about Nigerian princes, this is the tool for you
-
----
-
-class: section-title-b center centralimg
-
-# Pattern Matching/Configuration
-
-&nbsp;
-
-![](regex/images/configuration.png)
-
-???
-
-If you've ever had to set up redirects on a web server (be that Apache or NGINX), you've probably had to work with regular expressions. Many different servers use regular expressions as a test for conditional rules, such as IP address matches, or partial URL matches, user agent matches etc. Understanding how regular expressions work makes this process substantially easier!
-
-
----
-
-class: section-title-c halfhalf reverse middle
-
-background-image: url(regex/images/yesterdayregex.png)
-
-# When Shouldn't
-# We Use
-# Regular Expressions?
-
-???
-
-Wait, so an article about regular expressions is telling us not to use regular expressions? As with anything in PHP (or even PHP itself), it is only one tool in your arsenal, and as always it's a case of using the right tool for the job - there are certainly alternatives to regular expressions, and they may do a better job in some situations.
-
----
-
-class: content-even
-
-# Simple String Replacements
-
-- Most programming languages have built in string replacement functions
-- If you are trying to replace a fixed string, these are almost always going to be quicker
-- Obviously if your string contains unknowns, then this isn't an option
-
-???
-
-This goes for most situations - if there is a built in alternative, then there is probably a good reason to use that!!
-Certainly something that is built in will usually be faster, and it means you don't need to maintain it!
+- Scaling is something that I wouldn't do if I didn't have to!
+- We do it becuase we are too successful!
+- We get to a point where we are handling too much data, too much traffic - our servers are under too much load
 
 ---
 
 class: content-odd
 
-# Data Validation Libraries
-
-- In alot of languages there are either built in methods of libraries for basic data validation
-- Sometimes there will be performance benifits if they do things in an optimised way
-- Otherwise, why not let the library maintain the expressions for you?
+- Slow Performance
+ - Users trying to access your application, but the wait for resources to be available makes it skow
+- Outages
+ - Hardware cannot keep up - errors for some users
+- Unavailability
+ - High load eventually causes your server to thrash, taking everything down
 
 ???
 
-For example, filter_* functions in PHP or Fluent in .NET
-If your validation is on 'standard' types - emails, URLs etc, then built in or existing libraries will usually cover these
-Looking at emails as an example, there is a regular expression for validating RFC 822 email addresses which is over 6,000 characters long (seriously!). While no-one would recommend using that expression in practice, any shorter ones result in tradeoffs between what is practical, and the 'official' rules on what an email address can be
-The argument here is similar to the above - if there is something available that will be faster, or mean that you don't need to maintain the RegEx, then use it!
+- This results in Slow performance, Outages and Unavailability
 
 ---
 
-class: section-title-a top center
+class: section-title-a center
 
-# RegEx 101
+# First Steps
 
-![](regex/images/regex101.jpg)
+![](scaling/images/first-step.jpg)
+
+???
 
 ---
 
 class: content-even
 
-#RegEx 101
+# Separation Of Concerns
 
-- Regular Expressions are massively powerful
-- We will work through a few common examples
-    - Validating a phone number
-    - Replacing images in markdown
-    - Extracing data from a webpage
+- Not just web/db
+ - Separate server to handle queued tasks/cron
+- When you work out your architecture, consider if different componants of your platform could be standalone
+ - These can then communicate using APIs when required
+
+???
+
+- Separating your platform out onto different servers provides more resources
+- Allows you to scale just the parts of the application that need it
+- Also means that if one part was to go down, it doesn't take everything else down with it
+- On our existing application, we have a separate web server handing the Laravel Queue
+- In the new version of the product we are building, we are building wholly separate platforms for different parts of the product, which will be hosted separately, and then use OAuth and APIs when we need to communicate between them
 
 ---
 
 class: content-odd
 
-# Phone Number
+# Optimisation
 
-- Simple example, we are validating input of a Canadian phone number
-- 1-123-456-7890, 123-456-7890, 1 123 456-7890, (123) 456-7890
-
-```regexp
-^(1(-| ))?\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
-```
-
----
-
-class: content-odd
-
-```regexp
-^(1(-| ))?\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
-```
-
-- `^...$` is the string anchor (must start and end)
-- `(1(-| ))?` optionally, there could be a 1 followed by a dash or a space
-- `\(?` optional open bracket
-    - `[\^$.|?*+()` are reserved characters
-- `[0-9]{3}` exactly 3 numbers between 0-9
-    - `{3,6}` would mean between 3 and 6
-
----
-
-class: content-even
-
-# No Images Please!
-
-- Can't use a string replace as we don't know the specific image or alt will be
-
-```perl
-$text =~ s/!\[.*?\]\(.*?\)/"NO IMAGES ALLOWED!"/sg;
-```
-
----
-
-class: content-even
-
-```regexp
-/!\[.*?\]\(.*?\)/sg
-```
-
-- The forward slashes mark the start and end of the pattern
-    - With some flags which we'll come to
-- `.*?` - match 0 or more of any character (except newlines *usualy*)
-    - The `?` makes it lazy
-    
----
-
-class: content-odd
-
-#Flags
-
-- There are a number of flags available that modify the behaviour of RegEx
-    - Some of these vary between different RegEx flavours
-- The common ones are
-    - `i` - case insensitive
-    - `s` - `.` character matches everything (includes newlines)
-    - `g` - global
-    
-???
-- The s flag we used in our expression means that the script can be on multiple lines
-- Global is handled by different functions in some languages (e.g. PHP), but is needed in others (e.g. JS)
-
----
-
-class: content-even
-
-#Extracting Data
-
-- As well as testing/replacing data, RegEx is useful for extracting data
-- In this example, we are going to extract the temperature from a location page on Accuweather
+- Isn't strictly scaling, but achieves the same
+ - More throughput from your existing hardware
+- Install something like NewRelic, enable your DB slow query log
+ - Tackle the common bottlenecks
 
 ???
-- Specifically, my hometown of Nottingham
+
+- Consider what is taking up the most resource - a transaction taking 40 seconds, but only run once a day during quiet times isn't a problem, but perhaps a transaction that locks up a DB connection for 150ms that is run 10 times a second would be a problem
 
 ---
 
 class: content-even
 
-#Extracting Data
+#N+1 Issue
 
-- Checking the source code of the page, we can see the temperature is displayed with `<span class="temp">12&deg;</span>`
-- This means we have a predictable pattern we can use to get the temperature
-- We can fetch the contents of the page, and then extract the content we need
+- The N+1 issue is common when using many ORMs
+- ORMs usually lazy-load relationships by default
+- This means that data related to the model will only be loaded on request
+ - Less data to start, but consider when we use it in a loop...
 
 ---
 
 class: content-even
+# N+1 Issue
 
 ```php
-$data = file_get_contents(
-  "http://www.accuweather.com/en/gb/nottingham/ng1-7/weather-forecast/330088"
-);
+$users = User::where('company',5)->get();
 
-preg_match_all(
-  "/<span class=\"temp\">(-?[0-9]+)&deg;</span>/i",
-  $data,
-  $matches
-);
-
-var_dump($matches);
+foreach($users as $user) {
+	$departmentName = $user->relatedDepartment->name;
+}
 ```
 
 ???
 
-- Notice how we are not using start and end anchors this time - we are matching content within a larger piece of text.
-- This also uses a new symbol - the + character. Similar to *, this matches one or more, instead of 0 or more.
+- In this example, we will load all the user records for that company
+- Then we will loop through each user, and run another query to fetch the department for each user
+- If a company had 5000 users, that's a lot of queries!
+
+---
+
+class: content-even
+# 2N+1 Issue
+
+```php
+$users = User::where('company',5)->get();
+
+foreach($users as $user) {
+	$departmentName = $user->relatedDepartment->name;
+	$supervisorName = $user->relatedDepartment
+						↳	->relatedSupervisor->name;
+}
+```
+
+???
+
+- Very quick, the number of queries will spiral out of control!
+
+---
+class: content-odd
+
+#JIT Model
+
+- We use Laravel, and we had a number of N+1 issues
+- Most ORMs will provide a way to eager load relationships
+ - Difficult to find all of them
+ - They can change over time
+- We extended standard Eloquent model 
+ - Check if a model is part of a collection, load the relationship for the whole collection
+
+???
+
+- When you change your views, new relationships might be needed, or a relationship you previously needed might become redundant
+
+---
+
+class: content-odd
+
+```php
+public function getRelationshipFromMethod($method)
+{
+   $relations = $this->$method();
+
+*  if ($this->parentCollection && count($this->parentCollection) > 1) {
+*     $this->parentCollection->load($method);
+*  }
+
+   if (!$relations instanceof Relation) {
+      throw new LogicException('Relationship method must return an object of type '
+      . 'Illuminate\Database\Eloquent\Relations\Relation');
+   }
+   return $this->relations[$method] = $relations->getResults();
+}
+```
+
+???
+
+
+
+---
+
+class: section-title-b halfhalf reverse middle
+background-image: url(scaling/images/scaling.jpg)
+
+# &nbsp;&nbsp;&nbsp;&nbsp;Hardware<br /> &nbsp;&nbsp;&nbsp;&nbsp;Scaling
+
+???
+
+Improving the nperformance of your application will probably get you so far, but there will be a point where you need more hardware.
+
+Hardware scaling can be quite straightforward, but needs to be well thought out before you just jump in to be successful
 
 ---
 
 class: content-even
 
-```
-    array(2) {
-      [0]=>
-      array(4) {
-        [0]=>
-        string(29) "<strong class="temp">13<span>"
-        [1]=>
-        string(29) "<strong class="temp">24<span>"
-      }
-      [1]=>
-      array(4) {
-        [0]=>
-        string(2) "13"
-        [1]=>
-        string(2) "24"
-      }
-    }
-```
+# What Are You Scaling?
 
-???
-
-- Notice how we have both the full match, but also the part of the pattern we enclosed in brackets is extracted seperately.
-- If we had multiple groupings, each one would be extracted separately
+- Scaling only works if you scale the right thing
+- Often the DB will start to struggle before the web nodes
+- Use a performance monitoring tool to prioritise
 
 ---
 
-class: section-title-b top center
+class: content-odd
 
-# RegEx 102
+# Vertical Scaling
+
+- In other words - a bigger server
+- Simple to set up
+ - Less moving parts 
+- Higher cost
+- Single point of failure
+
+???
+
+- The usual first 'port of call' when scaling is vertical.
+- Vertical scaling is nice and straight forward - you get a bigger box, and migrate the application to it.
+- It is pretty much a one-way transaction however - if you have seasonal peaks, you can't really move to a bigger server and then move back
+- A single server is still a single point of failure - if your single DB server goes down, you need some other failover in place.
+
+---
+
+class: content-even
+
+# Horizontal Scaling
+
+- Lots of smaller servers working in unison
+- You might have different clusters of servers for web, db etc
+- More complicated to set up
+ - Particularly if you rely on storing things to the filesystem 
+- Built in redundancy, burstable
+
+???
+- Horizontal scaling allows you to have many smaller, cheaper servers
+- We are focusing on horizontal scaling of web services at the moment
+- Will come onto applying this to DBs in more detail in a minute
+- Potential issues: Storing things to filesystem - file uploads, user sessions
+- You can add and remove nodes as demand requires, and if a node fails, the whole system doesn't go down
+
+---
+
+class: content-even center
+
+# Horizontal Scaling
+
+
+![](scaling/images/horizontal.png)
+
+---
+
+class: content-odd
+
+# Horizontal Scaling DBs
+
+- Scaling out DBs horizontally is achieved by one of two methods
+ - Sharding
+ - Replication
+
+- Both of which are valid, but potentially have their problems
+
+???
+
+- Scaling DBs is something that can be quite trickey
+- Blog post - "Relational DBs are not designed to scale"
+ - We have a few ways we can go about it, but non of them are really 'complete' - there are usually compomises to be made
+
+---
+
+class: content-odd
+
+# Sharding
+
+- The data is shared accross different servers
+ - Each server contains different data
+- Either the database server or your application layer need to know which DB to use to fetch the specific data
+
+???
+
+Sharding is something you often hear spoken about at really big companies (Google, Facebook etc)
+
+However, Sharding is very difficult to get right
+
+You have to come up with a scheme of sharding your data - doing queries that involve getting data from multiple shards becomes complex, and your sharding scheme needs to avoid it as far as possible.
+
+If you have an existing application, sharding is even more difficult - you'd have to migrate your existing data onto multiple shards, then update your application logic to know which shard to go to etc.
+
+Not normally a route I'd recommend unless you've exahusted all other options.
+
+---
+
+class: content-even
+
+# Replication
+
+- Unlike sharding, a replicated database will have the entire DB on evey instance
+- This means you can query any instance of the DB and get the same data out of it
+ - Mostly...
+
+---
+
+class: content-even
+
+# Master -> Slave Replication
+
+- Generally, when we talk about DB replication, we mean Master -> Slave replication
+ - One DB instance is the master, write requests are directed to this
+ - The DB changes are then propagated to the slave nodes
+
+- However this only increases your read capacity
+ - There can be a delay on the slaves being updated
+
+???
+
+Master -> Slave replication means you have one master DB which gets written to, and the changes are then written to the slaves
+ - This usually happens quickly (within 100ms or so), but sometimes the slaves can fall behind
+This does allow for failover, since if a slave dies, as long as you a monitoring, it's fine, and if the master dies, you promote one of the slaves to master and away you go...
+In theory at least
+
+This should give you an infinitely scalable read-throughput (as long as you can handle the small times when a replica falls behind). But what if you have a write heavy application?
+
+---
+
+class: content-odd
+
+# Master -> Master Replication
+
+- Galera Cluster allows for Master -> Master replication
+- It works synchronously, allowing writes to be to any node
+- We had three DB nodes and used Galera to keep them in sync
+
+???
+
+This is what we did - we set up three nodes with master -> master -> master replication
+
+Using HAproxy again to monitor the health of the nodes and to route the traffic as appropriate.
+
+---
+
+class: content-even
+
+# How Did It Go?
+
+- Not well!
+ - We experienced big issues with write performance and network latency
+- Temporarily we moved back to vertical scaling
+- Now moving to Aurora which only provides read-replicas
+ - But with a substantially better throughput
+
+???
+
+Notice how we use 'had' - we had issues where our writes were too frequent, and the replication queue grew to a point where Galera would start throtelling our DBs... not good
+
+As a temporary solution we went back to vertical scaling, but we are now moving to Amazon aurora which provides better throughput, and low latency read-replicas.
+
+As mentioned before, for our new product, we are building each componant totally standalone, which essentially is a form of sharding.
+
+---
+
+class: section-title-c center
+
+# Caching
 
 &nbsp;
-### What regex are you most likely to see at Christmas?
 
-## [^L]
+![](scaling/images/cache.jpg)
 
----
-
-class: content-odd
-
-#Performance
-
-- Regular Expressions can be quite complicated to process and execute
-- Often what appears to be a simple expression can take lots of 'steps' to test
-- We need to understand and test the execution of our expressions to ensure they perform well
-
----
-
-class: content-odd center middle
-
-```regexp
-(.*?)!
-```
----
-
-class: content-odd
-# (.*?)!
-
-- If we test this against the string "I really like PHP!"
-    - It will take 39 steps to match the whole string!
-    
-![](regex/images/regexsteps.png)
-
----
-
-class: content-odd
-
-- Where possible, avoid using matchall
-    - Be as specific as possible in your regex, so that the work the engine needs to do is reduced.
-- But what if you can't? What if you need to match everything?
-    - First of all, try to use + instead of *
-    
-???
-
-Where * is 0 or more, it involves alot more tests than + does, which must match at least once
-
----
-
-class: content-even center middle
-
-```regexp
-([^!]+)
-```
 ---
 
 class: content-even
-# ([^!]+)
 
-- This is a negative character class
-    - We are basically definine a match rule that matches anything *except* !, one or more times
-- Negative character classes are typically quicker and use less steps than a similar positive character class
+# Dynamic Content Is Bad
 
-???
+- Serving static content is always faster
+- Anything that requires 'work' to be generated will be slow
+ - 3rd party API calls
+ - DB queries
+ - Even data processing
+- Use a memory cache to improve response times, and reduce server load
 
-It also means we don't need to use the lazy ? as it will automatically stop at the first !, so generally it's a much tigher expression.
 
 ---
-
 class: middle center
 
-![](regex/images/negative.png)
-
----
-
-class: content-odd
-
-#Data Capture
-
-- We use brackets to group our expressions
-    - The engine will also return the matched data of each group as separate parts
-- However, if you have lots of groups, you are probably returning plenty of data that you don't actually need!
-    
-???
-
-As we saw in the weather example
-
----
-
-class: content-odd
-
-- Let's assume we want to extract the filename and filesize from a *nix `ls -lah` command
-
-```regexp
-([0-9]+[MKG])\s+([a-z0-9:]+\s+){3}([^\n]+)
-```
+![](scaling/images/cache-all-the-things.jpg)
 
 ???
 
-- This would extract the data we want, but also various bits of data we don't need - by default groups in RegEx are 'capturing'
-
----
-
-class: content-odd
-#Non-Capturing Groups
-
-- We can use ?: at the start of the group to make it non-capturing:
-
-```regexp
-([0-9]+[MKG])\s+(?:[a-z0-9:]+\s+){3}([^\n]+)
-```
-
-???
-
--This doesn't reduce the number of steps needed, but will reduce the memory required to store the data
-
----
-
-class: content-even
-#<del>Don't</del> Be Lazy
-
-- Regular expressions are greedy by default. 
-- If we consider the pattern `(.*)PHP` and the string "I really like PHP, but I also like Perl", 
-    - It requires 108 steps. 
-    - Adding ? to make the matchall lazy doesn't change the result, but brings it down to 84 steps
-    
----
-class: content-event
-#Lazy Is Good (Sometimes)
-- With a greedy selector, the engine has to check every character position to the end of the string in order to ensure that PHP doesn't appear again
-- Making the match lazy however means it can stop as soon as it hits the first PHP string, saving these additional lookups.
-
-???
-
-We can see that PHP doesn't appear again, but the engine doesn't know that without checking every character.
-
----
-
-class: section-title-c middle center
-
-# RegEx
-# `/(?![02-9])\d[^a-z](?<![1-9])\063/`
-
----
-
-class: content-odd
-#Atomic Groups
-
-- A cause of slowdowns can be multiple options in a match
-- Consider `\b(package|packed|pack)\b`
-- If we consider the phrase "Delivery rejected - badly packaged", a RegEx engine will take 27 steps to figure out there isn't a match
-    - The engine has to test every variation in the group and then test if it satisfies the word boundaries
-
-???
-
-- In RegEx, `\b` is a word boundary - in other words we are matching a whole word
-- In other words, we want to match the extact word package, or packed, or pack
-
----
-
-class: content-odd
-#Atomic Groups
-
-- Atomic groups allow use to tell the engine to skip the rest of the group as soon as a match is found
-- If we consider `\b(?>package|packed|pack)\b`, this brings the number of steps down to 16
-    - The engine will match 'package' to the string
-    - It will then ignore the other options - the boundary test will still fail, but it won't try packed or pack
-
-???
-
-- The ?> is the atomic group operator
-- We are essentially telling the engine that if the first option is matched, then the other two can't possibly be better options
-
----
-
-class: content-odd
-#Atomic Groups
-
-- The sequence of the options is important
-- Consider `\b(?>pack|packaged|packed)\b`
-    - With the previous string, 'packaged' would be a match
-    - The engine would match 'pack', forget about the other options, and would fail the word boundary test
-- \b(?>packaged|packed|pack)\b fixes this
-
-???
-
-- As a general rule, putting the options in length order ensures your atomic groups will behave as you expect
-- As a side note, atomic groups are non-capturing - in other words they don't return the match within the group, in the same way as ?: above
-
----
-
-class: content-even
-# Conditionals
-
-- RegEx supports conditionals, alowing you to define different patterns depending on a certain condition
-- Combined with lookaheads, it can make life much easier!
-- The general pattern for a conditional is
-
-    `(?(Condition)Then|Else)`
-
-???
-Lookaheads - which allows you to check for something later in the subject string first
-We've got a nice simple example to show this
-
----
-
-class: content-even
-#GB/US Postal Code
-
-```regexp
-(?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
-)
-```
-
-???
-
-Ok, let's take this one step at a time
-
----
-
-class: content-even
-#GB/US Postal Code
-
-```regexp
-* (?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
-* )
-```
-
-???
-
-This shows that the group is a conditional
-
----
-
-class: content-even
-#GB/US Postal Code
-
-```regexp
-(?
-* ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
-)
-```
-
-???
-
-- This is the condition - this is a lookahead that means we are looking for GB
-- So, if we find GB, then we will look for the first pattern
-
----
-
-class: content-even
-#GB/US Postal Code
-
-```regexp
-(?
- ↳ (?=.*GB)
-* ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-*    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-*    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
-)
-```
-
-???
-
-- This matches a British postcode
-- Trust me, it just does :-)
-
----
-
-class: content-even
-#GB/US Postal Code
-
-```regexp
-(?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
-* ↳ |
- ↳ ([0-9]{5})
-)
-```
-
-???
-
-- If the lookahead didn't find GB
-
----
-
-class: content-even
-#GB/US Postal Code
-
-```regexp
-(?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
-* ↳ ([0-9]{5})
-)
-```
-
-???
-
-Look for a US zip code
-
----
-
-class: content-odd
-#Backrefernces
-
-- Backreferences allow you to create a capturing group, and then use it later in the pattern
-- In different situations, the syntax is different
-
----
-
-class: content-odd
-#Backreferences
-
-```regexp
-<([A-Z]+).*?>.+?<\/\1>
-```
-
-- This is a backreference in it's most basic form
-- Each capturing group is numbered from 1 - 99
-
-???
-
-This example will match a HTML tag, the contents of that tag, and then the backreference to test for a matching closing tag
-
----
-
-
-
-class: content-odd
-#Backreferences
-
-```regexp
-^(?:(START)|(BEGIN))(.*?)(?(1)STOP|END)$
-```
-
-- By combining conditionals with backreferences, we can vary what we look for later in the expression based on what we saw earlier.
-
-???
-
--This example assumes that you know that text is delineated by either START/STOP or BEGIN/END, but you don't know which.
--Depending on what is matched in the first group, it acts as a backreference in the conditional at the end
-
----
-
-class: content-odd
-#Named Backreferences
-
-```regexp
-(?P<msg>[0-9]+)\|(?P<dock>[0-9]+)\|
- ↳ (?P<tstamp>[0-9]+)\|DOOR (?P<doorstate>OPEN|CLOSED)
-```
-
-- By default, capturing groups are numbered.
-- However by using ?P<name>, you can give each group a name
-
-???
-
-This is useful if you are matching quite a few pieces of data to be extracted and used elswhere in your application, without having to remember the numbers
-
----
-
-class: middle center
-
-![](regex/images/free-bonuses.gif)
-
----
-
-class: content-even
-#The 'x' Flag
-
-- In most modern RegEx flavours, there is an 'x' flag
-- This makes the engine ignore whitespace
-- *and* provide the ability to add comments with #
-
-???
-
-- Certainly, PHP, Perl, Python (using re.VERBOSE), .NET all support it
+- Ok, so maybe we don't cache all the things
+ - Something that will only be loaded once every 24 hours is a waste of cache
+ - But we do cache as much as possible
+- We use a shared Redis instance
+ - Available to all our web nodes
 
 ---
 
 class: content-even
 
-```regexp
-/# Match a 20th or 21st century date in yyyy-mm-dd format
-(19|20)\d\d                # year (19 or 20, then two digits)
-[- \/.]                    # separator - one of dash, space, slash or dot
-(0[1-9]|1[012])            # month (group 2)
-[- \/.]                    # separator
-(0[1-9]|[12][0-9]|3[01])   # day (group 3)
-/x
-```
+# How Long Should I Cache?
+
+- Different data can be cached for different periods of time
+ - Particularly in high-traffic areas (such as our webstores), even caching for 1 minute can save a huge number of DB requests
+ - The reporting data is cached for 15 minutes
+ - Some 'fixed' data in the APIs is cached for an hour or more
+
+???
+
+Something that we don't currently do is full page caching.
+We cache static HTML pages, but actually, we could potentially full page cache quite a few webstore pages, even API outputs
+ - This is something we are looking at for our new product
+
+---
+
+class: section-title-a halfhalf middle
+background-image: url(scaling/images/DDOS.jpg)
+
+# Threat Protection
+
+
+---
+
+class: content-odd
+
+# Threat Protection
+
+- Without realising it, you could potentially be burning requests on illegitamate traffic
+ - DDOS attacks
+ - API consumers gone mad
+ - Rougue crawlers
+
+???
+
+- You might be surprised at how much 'background noise' is actually
+threat traffic - we have a continual 70k requests per hour on an almost
+continual basis - this would quickly consume your resources (and your
+network) if you let that traffic through to your servers.
+
+---
+
+class: content-odd
+
+#CloudFlare
+
+- Make use of a service like CloudFlare
+ - Caches static pages
+ - Provides a CDN
+ - Protects us against a variety of attacks through traffic profiling, rate limiting and shared intelligence
+
+???
+
+ We use
+CloudFlare to mitigate, as well as providing caching for our static pages.
 
 ---
 
 class: summary-slide middle
 
-- Regular expressions are a powerful tool in your toolbelt
-- With great power comes great responsibility
-- Understand how your expressions work, and how the engine will process them
-- It's biggest benifit is portability - with a few exceptions, your expressions will work cross-language and cross-OS.
+- In an ideal world, scalability is considered during the original build
+- However, this is often not the case, but there are still things you can do
+- Critical to understand your profile first - use tools such as NewRelic, and measure your platform
+- Isolate the problem parts of your application from everything else, this will make it much easier to scale where it's needed
 
 ---
 
