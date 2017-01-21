@@ -1,4 +1,3 @@
-
 class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
@@ -517,6 +516,25 @@ We cache static HTML pages, but actually, we could potentially full page cache q
 
 ---
 
+class: content-odd
+
+#Pre-Warming
+
+- If you have high traffic pages you *know* will be requested
+ - Particularly if those pages as slow to build
+- Automate the flushing and re-caching of the busiest pages
+- Again consider how long the cache is valid
+
+???
+
+- In a previous life I worked for a Magento house
+ - Often pages such as top level categories, offers pages etc would be slow
+- We'd use pre-warming to fetch those pages once the daily imports etc were run, and expire the cache the following day
+ - This wouldn't work on pages that change regularly, such as if you different content depending on the user login
+ - However in that instance you could pre-cache the 'fixed' areas of the page, and then have a placeholder to replace with the dynamic content.
+
+---
+
 class: section-title-a halfhalf middle
 background-image: url(scaling/images/DDOS.jpg)
 
@@ -540,6 +558,24 @@ class: content-odd
 threat traffic - we have a continual 70k requests per hour on an almost
 continual basis - this would quickly consume your resources (and your
 network) if you let that traffic through to your servers.
+
+---
+
+class: content-even
+
+#Rate Limiting
+
+- Consider what a reasonable number of requests would be
+	- In many cases, even 1 request a second is probably high
+- As a starting point, rate-limiting the entire API platform would rule out the worse offenders
+
+???
+
+- We looked at our worst case - enterprise customers with 10 servers behind one external IP
+ - 1 request a minute + 20 store requests pm = 105 total
+- For simplicity we just rate-limited the entire API platform, but you could put more granularity in
+ - Rate limit different IPs different depending on use.
+- Rate limiting can be done in the application layer, but equally you could use something like fail2ban to monitor the logs and block at a firewall level from that.
 
 ---
 
