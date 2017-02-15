@@ -12,13 +12,13 @@
 
 ---
 
-class: title-slide
+class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
-.introimg[![](postgres/images/pglogo.png)]
+.introimg[![](mysql/images/mysql.png)]
 
-# PostgreSQL
-## For mySQL users
+# Adventures in mySQL
+## Awesome features<br />you're probably missing
 
 ???
 
@@ -45,33 +45,39 @@ background-image: url(logos/mcft.png)
 ---
 
 class: section-title-a middle center
-# What is PostgreSQL?
+# But, everyone knows MySQL right?
 
 ---
 
 class: summary-slide middle
 
-- A database management system
-- Over 20 years old
-- Obsessed with data consistency
-- Feature rich
-- ACID compliant
+- MySQL has always been the 'go to' RDBMS for most PHP devs
+- However, we tend to use the same core features over and over
+- Over the years MySQL has added lots of new features
 
 ???
 
-- Postgres is a mature, well-established RDBMS
-- Often considered the FOSS Oracle
-- Has always been focused on data consistency, ACID compliancy - enterprise issues
-- Now is focusing more on additional features and performance
 
-- **before next slide**
-- So, why would we use Postgres
 
 ---
 
-class: centralimg middle center
+class: middle center section-title-b
 
-![](postgres/images/elephantsbetter.png)
+# New Storage Engine: IRLdb
+
+![](mysql/images/query.png)
+
+---
+
+class: middle center section-title-b
+
+# New Storage Engine: IRLdb
+
+![](mysql/images/query-no.png)
+
+???
+
+- In real life DB... ok, so that doens't exist yet, but I'm sure we'll get there!
 
 ---
 
@@ -81,9 +87,73 @@ class: summary-slide middle center
 
 ???
 
-- Ok, so perhaps it's not to do with mascots
-- But there are a number of reasons to consider it for a project
+- Ok, so we will look at some actual features that are in mySQL
+- Some of them are brand new, some of them are a little older, but possibly overlooked
+- If any of you know about all of these features, come see me afterwards, and you can deliver the talk next time!
 
+
+---
+
+
+class: section-title-c middle halfhalf
+background-image: url(postgres/images/nosql.png)
+
+.col1[# 'NoSQL' - JSON]
+
+---
+
+class: content-even
+# [5.7] JSON
+
+- MySQL now has a native JSON type
+- Data is stored in a binary format
+   - This means that the text doens't need to be parsed each time.
+   - Sub-objects and nested values can be queried directly
+
+???
+
+---
+
+class: content-even
+# Indexing
+
+- Like other binary columns, you cannot index JSON columns
+- There are some alternative solutions
+- MySQL will do some type juggling of JSON data
+    - Review the documentation
+
+???
+
+
+---
+
+class: content-even
+
+```sql
+CREATE TABLE talks (id UUID, data JSONB);
+INSERT INTO talks values (
+  uuid_generate_v4(),
+  '{
+     "title": "Postgres for mySQL Users",
+     "summary": "An awesome talk"
+   }');
+```
+
+---
+
+class: content-even
+```sql
+CREATE INDEX idx_talks_data 
+ON talks USING gin(data);
+```
+
+```sql
+-- Find rows that contains this data
+SELECT * FROM talks 
+WHERE data @> '{"title": "Postgres for mySQL Users"}';
+-- Find rows that have any summary
+SELECT * FROM talks WHERE data ? 'summary';
+```
 ---
 
 class: section-title-a center centralimg
@@ -324,173 +394,6 @@ INSERT INTO talks (title)
 ???
 
 - This works in the same way as aclling last_insert_id(), but without having to call it!!
-
----
-
-
-class: section-title-c middle halfhalf
-background-image: url(postgres/images/nosql.png)
-
-.col1[# 'NoSQL' Features]
-
----
-
-class: content-even
-# JSON/JSONB
-
-- Postgres has two JSON document types
-   - JSON is really just a text field that enforces validation
-   - JSONB stores the data as a binary representation
-- JSONB data tends to be larger than JSON data, but is much more flexible and quicker to query
-
-???
-
-- As a rule, there isn't really a reason to use JSON over JSONB
-    - JSONB is very new (last 2 releases)
-- There are functions to perform json-operations on a JSON field
-- But JSONB will almost certainly be quicker
-
----
-
-class: content-even
-# JSONB
-
-- Slightly slower write, much quicker read
-- Indexable with a GIN index
-- Data returned may not be identical
-
-???
-
-- Doesn't need re-parsing
-- Doesn't work if the sequence of the keys is important
-- Not very easy to edit in place - can be done by making use of the fact that JSONB only preserves the last of duplicate keys, but far from ideal
-
----
-
-class: content-even
-
-```sql
-CREATE TABLE talks (id UUID, data JSONB);
-INSERT INTO talks values (
-  uuid_generate_v4(),
-  '{
-     "title": "Postgres for mySQL Users",
-     "summary": "An awesome talk"
-   }');
-```
-
----
-
-class: content-even
-```sql
-CREATE INDEX idx_talks_data 
-ON talks USING gin(data);
-```
-
-```sql
--- Find rows that contains this data
-SELECT * FROM talks 
-WHERE data @> '{"title": "Postgres for mySQL Users"}';
--- Find rows that have any summary
-SELECT * FROM talks WHERE data ? 'summary';
-```
-
----
-
-class: content-odd
-# XML
-
-- The XML datatype was the first 'document' storage available for Postgres
-- Allows the storing of full documents or fragments
-- Can be queried using xpath
-- Indexing is limited - fulltext or functional indexes
-
-???
-
-- Wouldn't usually recommend using the XML datatype - certainly for large tables, queries are going to be slow
-- Functional indexes would help, but would need to be well designed
-- More useful if you need to store valid XML primarily for archiving purposes, but might want to query it occassionally
-
----
-
-class: content-odd
-```sql
-CREATE TABLE talks (id UUID, data XML);
-INSERT INTO talks values (
-   uuid_generate_v4(),
-   xmlparse (DOCUMENT '<?xml version="1.0"?>
-      <talk>
-         <title>Postgres for mySQL Users</title>
-         <summary>An awesome talk</summary>
-      </talk>')
-   );
-```
-
-???
-
-- xmlparse converts the string to an XML document.
-- Be careful with version numbers - postgres doesn't support 1.1
-
----
-
-class: content-odd
-```sql
--- Find rows that contains this data
-SELECT * FROM talks 
-WHERE xmlexists('/talk/title[text() = 
- ↳ ''Postgres for mySQL Users'']' PASSING data);
--- Find rows that have any summary
-SELECT * FROM talks
-WHERE xmlexists('/talk/summary' PASSING data);
-```
-
-???
-
-- We are using xmlexists here which returns a true of false value
-- There is also an xpath function which can be used to exract the data from a specific path
-
----
-
-class: content-even
-# hstore
-
-- Postgres data type for storing key value pairs
-- Similar to JSONB, data can be indexed
-- Everything is stored as strings
-
----
-
-class: content-even
-
-```sql
-CREATE TABLE talks (id UUID, data HSTORE);
-INSERT INTO talks values (
-  uuid_generate_v4(),
-  'title => "Postgres for mySQL Users".
-   summary => "An awesome talk"');
-```
-
----
-
-class: content-even
-```sql
-CREATE INDEX idx_talks_data
-ON talks USING gin(data);
-```
-
-```sql
--- Find rows that contains this data
-SELECT * FROM talks
-WHERE data @> 'title => "Postgres for mySQL Users"';
--- Find rows that have any summary
-SELECT * FROM talks WHERE data ? 'summary';
-```
-
-???
-
-- Very similar syntax to JSONB - alot of the operators are the same
-- Not many reasons to pick hstore over JSONB
-    - Mainly if you are on a slightly older version of Postgres
 
 ---
 
