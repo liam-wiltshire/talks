@@ -1,14 +1,9 @@
 
-- NoSQL Features
-- Spatial Data
-- GTID replicas
-- EXPLAIN on DELETE/UPDATE/INSERT/REPLACE
-- User Roles
-- Generated Columns
-- EXPLAIN FORMAT = JSON
+
 - Offline Mode
 - Invisible Indexes
 - Descending Indexes
+- I am a dummy flag
 
 ---
 
@@ -90,7 +85,7 @@ class: summary-slide middle center
 - Ok, so we will look at some actual features that are in mySQL
 - Some of them are brand new, some of them are a little older, but possibly overlooked
 - If any of you know about all of these features, come see me afterwards, and you can deliver the talk next time!
-
+- I've provided version numbers of when these things came inyl mySQL - if you use MariaDB or Percona versions will be different (or the feature may not be availalbe at all!)
 
 ---
 
@@ -130,514 +125,242 @@ class: content-even
 class: content-even
 
 ```sql
-CREATE TABLE talks (id UUID, data JSONB);
+CREATE TABLE talks (id BINARY(16), data JSON);
+
 INSERT INTO talks values (
-  uuid_generate_v4(),
+  unhex(replace(uuid(),'-','')),
   '{
-     "title": "Postgres for mySQL Users",
+     "title": "Adventures in mySQL",
      "summary": "An awesome talk"
    }');
 ```
+
+???
+- Because, of course we're all using UUIDs now right?!
+- As an aside, mySQL 8.0 has a new UUID_TO_BIN() method to do the above
 
 ---
 
 class: content-even
 ```sql
-CREATE INDEX idx_talks_data 
-ON talks USING gin(data);
-```
-
-```sql
 -- Find rows that contains this data
 SELECT * FROM talks 
-WHERE data @> '{"title": "Postgres for mySQL Users"}';
+JSON_CONTAINS(data, '{"title": "Adventures in mySQL"}');
 -- Find rows that have any summary
-SELECT * FROM talks WHERE data ? 'summary';
+SELECT * FROM talks WHERE data->"$.summary" IS NOT NULL;
+-- Extract a part of the JSON
+SELECT id, data->"$.title" FROM talks;
 ```
+
+???
+
+- When dealing with JSON, there are a couple of options
+ - mySQL provides a number of functions JSON_CONTAINS, JSON_EXTRACT etc
+ - mySQL also provides some shortcut methods
+- In all instances, the $ is used to represent the root of the document
+
 ---
 
 class: section-title-a center centralimg
-# Performance
+# Spatial Data
 
 ![](postgres/images/performance.png)
 
 ---
 
-class: content-even
-- For simple uses, there isn't going to be much difference
-   - Until recently, mySQL was faster for simple SELECTs
-   - This has become more even in recent releases
-   - mySQL still tends to be faster for writes
+class: content-odd
+# [5.5+] OpenGIS Support
 
-- Performance benefits come in more complex situations
-   - Joins
-   - Unions
-   - Sub Queries
+- Unless you've had prior experience, OpenGIS is pretty hard to get into
+- mySQL support is getting better with each new release
+- Consider if you really need to use it, or it could be done another way
 
 ???
 
-- These examples are by no means exhaustive
-- Testing on a pretty standard server
-- Just gives a rough idea of performance
-- Using a modified version of a dummy 'employee' database with c. 300,000 records 
+- OpenGIS is fairly unwieldy, and the mySQL implementation is still changing on a verson-by-version basis
+- GeoSpatial allows you to use points, lines, polygons etc to do spatial operations
+- Contains specialised functions and indexes for better performance
+- You could use it to find your nearest store from your list of 5, but realistically there are probably easier and quicker ways to do it!
+
+---
+
+class: content-odd
+# Spatial Data Types
+
+---
+
+class: content-odd
+# Querying Spatial Data
+
+- ST_Distance_Sphere
+- ST_Within
+
+---
+
+class: section-title-a middle
+
+# GTID Replication
 
 ---
 
 class: content-even
-# Basic SELECT (no index)
 
-```sql
-lwdatabase=> SELECT * FROM employees WHERE gender = 'F';
+# [5.6] Master->Slave Replication with GITD
 
-Postgres: 0.35 sec / mySQL: 0.15 sec
-```
+- Anyone who has set up mySQL slaves before knows it's not always straightforward
+- GTIDs are a unique references to every transaction in a cluster
+- We can leverage GTIDs to make replication easier to setup and more robust
+
+---
+
+class: content-even
+
+---
+
+class: section-title-b middle
+
+# EXPLAIN
 
 ???
 
-- First value is postgres, second is mySQL
-
----
-
-class: content-even
-# JOINs
-
-```sql
-SELECT * FROM employees e
- INNER JOIN dept_emp de ON de.emp_no = e.emp_no
- INNER JOIN departments d ON d.dept_no = de.dept_no
- WHERE e.gender = 'F' AND d.dept_name = 'Development';
-
-Postgres: 0.57 sec / mySQL: 0.61 sec
-```
-
----
-
-class: content-even
-# UNIONs
-```sql
-( SELECT e.* FROM employees e INNER JOIN dept_emp de ON de.emp_no = e.emp_no
- INNER JOIN departments d ON d.dept_no = de.dept_no
- WHERE e.gender = 'M' AND d.dept_name = 'Finance' )
-UNION ( SELECT e.* FROM employees e INNER JOIN dept_emp de ON de.emp_no = e.emp_no
- INNER JOIN departments d ON d.dept_no = de.dept_no
- WHERE e.gender = 'F' AND d.dept_name = 'Development' );
-
-Postgres: 0.61 sec / mySQL: 0.81 sec
-```
----
-
-class: content-even
-# Sub Select
-
-```sql
-SELECT * FROM (
-SELECT e.* FROM employees e INNER JOIN dept_emp de ON de.emp_no = e.emp_no
-INNER JOIN departments d ON d.dept_no = de.dept_no
-WHERE e.gender = 'F' AND d.dept_name = 'Development'
-) a 
-WHERE first_name LIKE 'F%';
-Postgres: 0.37 sec / mySQL: 0.60 sec
-```
-
----
-
-class: section-title-b center centralimg
-
-![](postgres/images/swissarmy.png)
-
-# Features
+- Now obviously, explain isn't new!
+- However, they've added some pretty cool new wrinkles to it
 
 ---
 
 class: content-odd
-# Partial Indexes
 
-- Indexes can be defined that are only created for rows that meet a certain condition
-- For example, if you had a table that used soft deletes, then you could index *only* non-deleted rows
+# [5.6] EXPLAIN on Write Queries
+
+- Previously, we could only use EXPLAIN on SELECTs
+- This allows us to profile UPDATE, DELETE INSERT...SELECT etc.
 
 ???
 
-- Creating good indexes are important for getting the best performance out of any RDBMS
-- However, you can end up in situations where you index data you don't need - making updating the INDEX slower
-- With PostGres, you can add a where clause to your INDEX, to only index rows that satisfy that condition
-
----
-
-class: content-odd
-
-```sql
-liamwiltshire=> CREATE INDEX page_slugs ON pages  ( slug )
- ↳ WHERE deleted = 0;
- CREATE INDEX
-```
-
----
-
-class: content-even
-# Connection Model
-
-- Postgres uses a process per connection model
-    - By comparison, mySQL has a single process with multiple threads
-- While it does create extra overhad when creating the connection, there are multiple benefits
-
-???
-
-- THis is similar to Firefox/Chrome
-
-
----
-
-class: content-even
-# Connection Model
-
-- Works with *nix tools like ps, top, kill
-    - Use the OS to identify/kill individual problem connections
-- Processes are isolated from each other
-- Concurrency tends to be improved
-
-???
-
-- Who has had the situation where all the mySQL connections are used, and you can't even get onto the server to kill some?
-- Postgres this isn't an issue as you can use your standard *nix tools to remove processes
-
----
-
-class: content-odd
-# Stored Procedures
-
-- Both Postgres and mySQL support stored procedures (stored functions)
-- Postgres will let you write them in many languages:
-    - SQL, Perl, Python, JavaScript etc.
-- mySQL only supports SQL
-
-???
-
-- Most languages support stored procedures in some way, so why is this a feature?
-- It's to do with the wide range of languages you can write stored procedures in
-
----
-
-class: content-odd
-
-```sql
-CREATE FUNCTION stripwww(text) RETURNS text AS
-'
-import re
-Text1 = re.sub(''www.'', '''',args[0])
-return Text1
-'
-LANGUAGE 'plpython';
-```
-
----
-
-class: content-even
-# Expression Indexes
-
-- Postgres will let you create an index based on the result of an expression
-- This can then be relied on in queries that would otherwise have to run this (potentially expensive expression at runtime)
-
-???
-
-- Similar to partial indexes before, Postgres will also let you create an index on the result of an expression
-- This might be a function that would otherwise be expensive, or some data transformation that is regularly needed
-- Arguably, you should store the data better if you are having to perform expensive functions often, but sometimes it's unavoidable
+- As a workaround we could re-write UPDATES to SELECTs, but it's not always ideal
+- There are some limitations - for example EXPLAIN INSERT is pretty useless unless you are using an INSERT...SELECT
+- Would be nice to see the FK checks, but because of the architecture (the FK checks are handled by the storage engine, not the optimizer) this is difficult (if not impossible) to impliment
 
 ---
 
 class: content-even
 
-```sql
-CREATE INDEX last_name_lower ON people (lower(last_name));
+# [5.6] EXPLAIN FORMAT=json
 
-SELECT * FROM people WHERE
-  lower(last_name) = lower('Wiltshire');
-```
-
-???
-
-- This is a common example, because Postgres is case sensitive
-
----
-
-class: content-odd
-# Data Types
-
-- Postgres has lots of interesting data types for specific cases:
-    - Geometry - point, line, box, polygon, circle.
-    - Network - macaddr, cidr, inet
-    - UUID
-    - Range - int4range, tsrange, daterange
-
-???
-
-- Some of this stuff is starting to working into it's way into mySQL
- - Spatial data for example
- - But it's more mature in Postgres
-- The range fields are particularly interesting
+- Because everyone needs more JSON!
+- Using JSON gives us a much more flexible output format
+- Allows greater depth of detail
+ - Including the EXTENDED and PARTITIONS data
 
 ---
 
 class: content-even
-# RETURNING
-
-- In Postgres we can define an expression to return from an input
-- This could be one column (say the increment ID), or the whole row
-
 ```sql
-INSERT INTO talks (title)
- VALUES ('Postgres for mySQL Users') RETURNING talk_id
+EXPLAIN FORMAT=json
+   INSERT INTO talks
+     SELECT * FROM talks
+        WHERE data->"$.name" LIKE '%mySQL%'
 ```
 
-
-
-???
-
-- This works in the same way as aclling last_insert_id(), but without having to call it!!
-
 ---
 
-class: section-title-a middle halfhalf reverse
-background-image: url(postgres/images/confusion.jpg)
+class: content-even tinycode noheader
 
-# Using Postgres
-## (as a mySQL user)
-
-???
-- Despite my 'halarious' image, ut's not that bad!
-- But there are a few things that are different that are likely to trip you up
-- These are a few things I ran into that particularly caught me out
-
----
-
-class: content-odd
-#Installation
-
-- Can be installed using your OS package manager (yum, apt, dnf etc)
-- Creates a user `postgres`
-    - This account is required for admin access
-- Out of the box, very few features are installed
-    - Most need enabling (hstore, uuid_generate, jsonb)
-    - Enabling is done at a database level
-
-???
-
-- With new versions of Postgres, there are a few oddities about the way it installs
-- Doesn't use the same binary name for each version - similar to using SCL
-- The Postgres user is authed by 'ident' out of the box - doens't require a password
-- Enabling new features is easy - is actually done in SQL
-    - Per database features are interesting, as it means you can just enable what you need for each database.
-
----
-
-class: content-odd
-
-```sql
-[root@w ~]# su postgres 
-bash-4.1$ psql
-psql (8.4.20)
-Type "help" for help.
-postgres=# CREATE DATABASE lwdatabase;
-CREATE DATABASE 
-postgres=# CREATE USER lwuser;
-CREATE ROLE
+```json
+EXPLAIN: {
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "1.20"
+    },
+    "table": {
+      "insert": true,
+      "select_id": 1,
+      "table_name": "talks",
+      "access_type": "ALL"
+    },
+    "insert_from": {
+      "buffer_result": {
+        "using_temporary_table": true,
+        "table": {
+          "table_name": "talks",
+          "access_type": "ALL",
 ```
+---
+
+class: content-even tinycode noheader
+
+```json
+          "rows_examined_per_scan": 1,
+          "rows_produced_per_join": 1,
+          "filtered": "100.00",
+          "cost_info": {
+            "read_cost": "1.00",
+            "eval_cost": "0.20",
+            "prefix_cost": "1.20",
+            "data_read_per_join": "32"
+          },
+          "used_columns": [
+            "id",
+            "data"
+          ],
+          "attached_condition": "(json_extract(`mysqltest`.`talks`.`data`,'$.name') like '%mySQL%')"
+        }
+      }
+    }
+  }
+}
+```
+---
+
+class: section-title-c middle
+
+# User Roles
 
 ---
 
 class: content-odd
 
-```sql
-postgres=# GRANT ALL ON DATABASE lwdatabase TO lwuser;
-GRANT
-postgres=# ALTER USER lwuser WITH PASSWORD 'pgpass';
-ALTER ROLE
-```
+# [8.0] User Roles
 
-## Now you can access postgres as that user
-
-```bash
-[root@w ~]# psql lwdatabase lwuser
-```
-
----
-
-class: content-even
-# Schemas
-
-- A single database can have multiple schemas
-    - The default is 'public'
-- Essentially gives a single database namespaces
-    - Different schemas can have different owners / users with different levels of access
-
-???
-
-- Multiple schemas is one of the wierdest things about Postgres as a mySQL users
-- Alot of the time you'll probably just use the one schema and not think about it
-- The common example of a use case is if you need the separation of data, but with the ability to query accross the whole dataset
-
----
-
-class: content-even
-
-```sql
-SELECT * FROM public.staff;
--- ewwww
-
-set search_path TO public;
-SELECT * FROM staff;
-```
-
----
-
-class: content-odd
-# Auto Increment
-
-- `AUTO_INCREMENT` doesn't exist!
-    - Isn't SQL-Standard
-- In Postgres, we define a `SEQUENCE` - this is a separate entity to the table
-- We then use the `nextval()` function to use it in our table
+- Roles are groups of privileges that are given a label
+- For example you could have an `analytics` role, a `maintenance` role
+ - Each would have a predefined list of privileges
+- If requirements change, privileges can be added/removed from a role
+ - This will then apply to all users already given that role
 
 ---
 
 class: content-odd
 
-```sql
-CREATE SEQUENCE talks_sequence_id INCREMENT BY 1
- ↳ START 1 NO CYCLE;
-CREATE SEQUENCE 
-```
-
----
-
-class: content-odd
 
 ```sql
-CREATE TABLE talks (
-* talk_id smallint NOT NULL DEFAULT
-*   ↳ nextval('talks_sequence_id'),
-date timestamp,
-* title character varying(254),
-slides character varying(254)
-);
-CREATE TABLE
+--- Create two new roles
+CREATE ROLE 'developer', 'analytics';
+
+--- Define the privileges for each role
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE
+   ON testdb.* TO 'developer';
+GRANT SELECT ON testdb.stats TO 'analytics';
+
+--- Assign the roles to users
+GRANT 'developer' TO 'liam'@'localhost';
+GRANT 'analytics' TO 'seo'@'localhost';
+
 ```
 
 ---
 
-class: content-odd
-# Auto Increment
-
-- We don't have to do it all manually
-- There is a 'serial' datatype that will create a sequence automagically
-
----
-
-class: content-even
-# Enums
-
-- Postgres doesn't have an enum type
-    - Instead, you have to define an enum as it's own data type
-- Enums are not directly comparable
-    - You have to cast them to something else (a string usually) to compare them
-    
----
-
-class: content-even
-
-```sql
-CREATE TYPE display_state AS ENUM
-   ('public','password','private');
-CREATE TYPE
-```
-
----
-
-class: content-even
-
-```sql
-CREATE TABLE abstracts (
-* abstract_id SERIAL, 
-title character varying(254), description text,
-* display display_state );
-
-NOTICE:  CREATE TABLE will create implicit sequence 
-"abstracts_abstract_id_seq" for serial column "abstracts.abstract_id"
-CREATE TABLE
-```
-
----
-
-class: content-odd
-#What Fields Do We Have?
-
-```sql
-DESCRIBE talks;
-ERROR:  syntax error at or near "DESCRIBE" 
-```
-Ahh...
-```sql
-SELECT column_name, data_type, character_maximum_length 
-  FROM INFORMATION_SCHEMA.COLUMNS 
-  WHERE table_name = 'abstracts';
-```
-
----
-
-class: content-odd
-```
-column_name  | 	data_type     | character_maximum_length
--------------+-------------------+--------------------------
- abstract_id | integer           |
- title       | character varying |                  	254
- description | text              |
- notes       | text              |
- slides      | character varying |                  	254
- display     | USER-DEFINED      |
-(6 rows) 
-```
-
----
-
-class: content-odd
-
-- If you are using the psql cli, you can use \d
-
-```bash
-liamwiltshire=# \dS+ talks;
-```
-
----
-
-class: content-odd tinycode
-
-```bash
-                                  Table "public.talks"
-  Column   |            Type             |  Modifiers  | Storage  | Description 
------------+-----------------------------+-------------+----------+-------------
- talk_id   | smallint                    | not null... | plain    | 
- date      | timestamp without time zone |             | plain    | 
- title     | character varying(254)      |             | extended | 
- slides    | character varying(254)      |             | extended | 
- location  | character varying(254)      |             | extended | 
- eventlink | character varying(254)      |             | extended | 
- icon      | character varying(15)       |             | extended | 
- logo      | character varying(254)      |             | extended | 
- joindin   | character varying(254)      |             | extended | 
-Indexes:
-    "talk_id" UNIQUE, btree (talk_id)
-Has OIDs: no
-
-```
-
+class: section-title-a middle
+# Generated Columns
 
 ---
 
 class: summary-slide middle
 
-- Postgres *isn't* the solution for every database requirement
-- But if it's performance strengths match your requirements, or you need it's features, then do it!
-- Benchmark!
+- With the wide range of technologies we use, it's easy to fall behind of the latest updates
+- By keeping track of what's going on, it just might make our lives easier, and help us build better apps
+- This is just a selection of a few new features - there are many more, so go forth and explore!
 
 ---
 

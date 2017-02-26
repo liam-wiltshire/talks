@@ -89,7 +89,7 @@ background-image: url(scaling/images/overview/3.png)
 
 - Every single customer has one or more web stores - these are unique to each customer in that it shows their products, categories and content, and on the paid plans they can build their own themes and templates as well
 
-- At the moment we have a little more than 475,000 of these
+- At the moment we have around 500,000 of these
 
 ---
 
@@ -100,7 +100,7 @@ background-image: url(scaling/images/overview/4.png)
 - Every webstore than has at least one minecraft server attached to it
  - These phone home at different intervals depending on the account type, pulling down any commands to be run on the server
  - But also you can buy directly in game via commands, so on top of the phone home, there are other API calls being made all the time
-- We have just under 510,000 servers
+- We have just under 520,000 servers
 
 ---
 
@@ -138,7 +138,7 @@ background-image: url(scaling/images/worst-case.jpg)
 class: content-odd
 
 - Slow Performance
- - Users trying to access your application, but the wait for resources to be available makes it skow
+ - Users trying to access your application, but the wait for resources to be available makes it slow
 - Outages
  - Hardware cannot keep up - errors for some users
 - Unavailability
@@ -449,7 +449,7 @@ class: content-even
 - Not well!
  - We experienced big issues with write performance and network latency
 - Temporarily we moved back to vertical scaling
-- Now moving to Aurora which only provides read-replicas
+- Longer term, moved to Amazon Aurora - only provides read-replicas
  - But with a substantially better throughput
 
 ???

@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core-styles.css" afterPath="$PROJECT_DIR$/core-styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysql/content.md" afterPath="$PROJECT_DIR$/mysql/content.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scaling/content.md" afterPath="$PROJECT_DIR$/scaling/content.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slide-styles.css" afterPath="$PROJECT_DIR$/slide-styles.css" />
     </list>
     <ignored path="talks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,40 +28,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="content.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/postgres/content.md">
+      <file leaf-file-name="content.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysql/content.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <first_editor relative-caret-position="15">
+                <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                 <folding>
-                  <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-                  <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-                  <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-                  <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-                  <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-                  <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-                  <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-                  <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-                  <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-                  <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-                  <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-                  <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-                  <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-                  <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-                  <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-                  <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-                  <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-                  <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-                  <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-                  <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-                  <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-                  <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-                  <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-                  <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-                  <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-                  <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-                  <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
+                  <marker date="1488102044413" expanded="true" signature="2490:2535" ph="CREATE TABLE... talks" />
+                  <marker date="1488102044413" expanded="true" signature="2538:2680" ph="INSERT INTO talks... " />
+                  <marker date="1488102044413" expanded="true" signature="2888:2964" ph="SELECT * FRO... talks" />
+                  <marker date="1488102044413" expanded="true" signature="3001:3056" ph="SELECT * FRO... talks" />
+                  <marker date="1488102044413" expanded="true" signature="3088:3125" ph="SELECT id, d... talks" />
+                  <marker date="1488102044413" expanded="true" signature="5670:5732" ph="SELECT * FRO... talks" />
+                  <marker date="1488102044413" expanded="true" signature="5670:5733" ph="SELECT * FRO... talks" />
+                  <marker date="1488102044413" expanded="true" signature="7284:7358" ph="GRANT SELECT... " />
+                  <marker date="1488102044413" expanded="true" signature="7360:7375" ph="GRANT SELECT... " />
+                  <marker date="1488102044413" expanded="true" signature="7360:7399" ph="GRANT SELECT... " />
+                  <marker date="1488102044413" expanded="true" signature="7360:7403" ph="GRANT SELECT... " />
                 </folding>
               </first_editor>
               <second_editor />
@@ -65,34 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="remark.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/remark.js">
+      <file leaf-file-name="fonts.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fonts.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39795">
-              <caret line="2653" column="42" selection-start-line="2653" selection-start-column="36" selection-end-line="2653" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/regex/content.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="113">
-                <caret line="723" column="3" selection-start-line="723" selection-start-column="3" selection-end-line="723" selection-end-column="3" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slide-styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slide-styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,8 +66,8 @@
       <file leaf-file-name="core-styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core-styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+            <state relative-caret-position="224">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -120,11 +85,12 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/remark.js" />
         <option value="$PROJECT_DIR$/fonts.css" />
-        <option value="$PROJECT_DIR$/slide-styles.css" />
         <option value="$PROJECT_DIR$/title-styles.css" />
-        <option value="$PROJECT_DIR$/core-styles.css" />
         <option value="$PROJECT_DIR$/postgres/content.md" />
         <option value="$PROJECT_DIR$/regex/content.md" />
+        <option value="$PROJECT_DIR$/slide-styles.css" />
+        <option value="$PROJECT_DIR$/core-styles.css" />
+        <option value="$PROJECT_DIR$/mysql/content.md" />
       </list>
     </option>
   </component>
@@ -139,8 +105,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1360" />
-    <option name="height" value="768" />
+    <option name="x" value="1360" />
+    <option name="y" value="27" />
+    <option name="width" value="1366" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -186,7 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -195,9 +163,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="talks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="talks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="talks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="talks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,17 +265,19 @@
       <workItem from="1477948913082" duration="35000" />
       <workItem from="1478044143898" duration="11145000" />
       <workItem from="1479158384522" duration="12047000" />
+      <workItem from="1488042011604" duration="3455000" />
+      <workItem from="1488092906398" duration="6884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46498000" />
+    <option name="totallyTimeSpent" value="56837000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1360" height="768" extended-state="6" />
+    <frame x="1360" y="27" width="1366" height="741" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31707317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32776934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -321,37 +315,8 @@
     <entry file="file://$PROJECT_DIR$/postgres/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="3660">
-            <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
+          <first_editor relative-caret-position="315">
+            <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
@@ -361,7 +326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39795">
           <caret line="2653" column="42" selection-start-line="2653" selection-start-column="36" selection-end-line="2653" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -370,7 +334,49 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slide-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postgres/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="3660">
+            <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remark.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39795">
+          <caret line="2653" column="42" selection-start-line="2653" selection-start-column="36" selection-end-line="2653" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
@@ -389,35 +395,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -427,7 +404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164325">
           <caret line="10955" column="445" selection-start-line="10955" selection-start-column="438" selection-end-line="10955" selection-end-column="445" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -473,35 +449,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -549,35 +496,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -625,35 +543,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -694,35 +583,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1365">
             <caret line="91" column="3" selection-start-line="91" selection-start-column="3" selection-end-line="91" selection-end-column="3" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -763,35 +623,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1365">
             <caret line="91" column="3" selection-start-line="91" selection-start-column="3" selection-end-line="91" selection-end-column="3" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -802,35 +633,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1080">
             <caret line="72" column="11" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -858,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fonts.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/title-styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-128">
@@ -876,60 +671,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39795">
           <caret line="2653" column="42" selection-start-line="2653" selection-start-column="36" selection-end-line="2653" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slide-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/postgres/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
+          <first_editor relative-caret-position="315">
             <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-            <folding>
-              <marker date="1479258430991" expanded="true" signature="2297:2476" ph="SELECT * FRO... employees" />
-              <marker date="1479258430991" expanded="true" signature="2551:2922" ph="( SELECT e.*... " />
-              <marker date="1479258430991" expanded="true" signature="2553:2729" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="2740:2920" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="3001:3227" ph="SELECT * FRO... *" />
-              <marker date="1479258430991" expanded="true" signature="3017:3195" ph="SELECT e.* F... employees" />
-              <marker date="1479258430991" expanded="true" signature="6066:6132" ph="SELECT * FRO... people" />
-              <marker date="1479258430991" expanded="true" signature="6754:6834" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="7984:8024" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="8026:8162" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="8305:8379" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="8416:8458" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9044:9082" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="9084:9305" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="9502:9609" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="9646:9711" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10074:10115" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="10117:10239" ph="INSERT INTO talks... " />
-              <marker date="1479258430991" expanded="true" signature="10381:10452" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="10489:10531" ph="SELECT * FRO... talks" />
-              <marker date="1479258430991" expanded="true" signature="12872:12898" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="12937:12956" ph="SELECT * FRO... staff" />
-              <marker date="1479258430991" expanded="true" signature="13362:13534" ph="CREATE TABLE... talks" />
-              <marker date="1479258430991" expanded="true" signature="14118:14239" ph="CREATE TABLE... abstracts" />
-              <marker date="1479258430991" expanded="true" signature="14251:14364" ph="CREATE TABLE... will" />
-              <marker date="1479258430991" expanded="true" signature="14440:14454" ph="DESCRIBE tal... " />
-              <marker date="1479258430991" expanded="true" signature="14518:14642" ph="SELECT colum... COLUMNS" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -939,8 +688,54 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="113">
-            <caret line="723" column="3" selection-start-line="723" selection-start-column="3" selection-end-line="723" selection-end-column="3" />
-            <folding />
+            <caret line="762" column="3" selection-start-line="762" selection-start-column="3" selection-end-line="762" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slide-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fonts.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <folding>
+              <marker date="1488102044413" expanded="true" signature="2490:2535" ph="CREATE TABLE... talks" />
+              <marker date="1488102044413" expanded="true" signature="2538:2680" ph="INSERT INTO talks... " />
+              <marker date="1488102044413" expanded="true" signature="2888:2964" ph="SELECT * FRO... talks" />
+              <marker date="1488102044413" expanded="true" signature="3001:3056" ph="SELECT * FRO... talks" />
+              <marker date="1488102044413" expanded="true" signature="3088:3125" ph="SELECT id, d... talks" />
+              <marker date="1488102044413" expanded="true" signature="5670:5732" ph="SELECT * FRO... talks" />
+              <marker date="1488102044413" expanded="true" signature="5670:5733" ph="SELECT * FRO... talks" />
+              <marker date="1488102044413" expanded="true" signature="7284:7358" ph="GRANT SELECT... " />
+              <marker date="1488102044413" expanded="true" signature="7360:7375" ph="GRANT SELECT... " />
+              <marker date="1488102044413" expanded="true" signature="7360:7399" ph="GRANT SELECT... " />
+              <marker date="1488102044413" expanded="true" signature="7360:7403" ph="GRANT SELECT... " />
+            </folding>
           </first_editor>
           <second_editor />
         </state>

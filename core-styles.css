@@ -26,6 +26,8 @@ h3 {
 
 .tinycode .remark-code { font-size:18pt !important; }
 
+.noheader pre { margin-top: 0em; }
+
 li {
     line-height:160%;
 }
