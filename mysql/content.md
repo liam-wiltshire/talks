@@ -1,6 +1,3 @@
-
-
-- Offline Mode
 - Invisible Indexes
 - Descending Indexes
 - I am a dummy flag
@@ -353,6 +350,94 @@ GRANT 'analytics' TO 'seo'@'localhost';
 
 class: section-title-a middle
 # Generated Columns
+
+---
+
+class: content-even
+
+# [5.6] Generated Columns
+
+- Generated columns are defined when you create a mySQL table
+ - They are effectively defining an expression that generates a value for that row
+- There are two types of generated columns:
+ - Virtual
+ - Stored
+
+???
+
+- For example, you might have a firstname and lastname in separate columns, and need the full name - this could be defined as a generated column
+- Or more likely you might use it to create indexes on otherwise unindexable data - for example a part of a JSON document!
+
+---
+
+class: content-even noheader
+
+```sql
+--- No index, every row will need checking
+SELECT * FROM talks WHERE data->>"$.title" LIKE 'Adventure%';
+
+--- Add a generated column and index it
+ALTER TABLE talks
+  ADD talk_title varchar(256) GENERATED ALWAYS
+    AS (data->"$.title") STORED;
+
+ALTER TABLE talks
+  ADD INDEX (talk_title(25));
+
+--- Now we can use the index :)
+SELECT * FROM talks WHERE talk_title LIKE 'Adventure%';
+```
+
+---
+
+class: content-odd
+
+# Virtual Generated Column
+
+- A virtual generated column is materialized at read time
+ - No additional storage requirements
+ - Changes to virtual columns are fast
+- If you have a large resultset with an expensive expression, it will get quite slow
+
+???
+
+- Indexing: With InnoDB you can generate an index on a virtual column
+ - The index value is materialized ON INSERT or UPDATE
+ - If you make a covering index, then mySQL won't re-materialize the values
+ - If it's not a covering index however then the values will be re-materizlied as part of the row reads
+
+---
+
+class: content-even
+
+# Stored Generated Column
+
+- As the name suggests, the value for this column is martialized as part of the INSERT or UPDATE, and stored
+- After this point, it acts just like a normal column
+- Doesn't have the performance impact at read time, but lots of generated columns will bloat your tables
+
+---
+
+class: section-title-b middle
+
+# Offline Mode
+
+---
+
+# [5.7] Offline Mode
+
+- Restrict access to the DB to only users with SUPER
+- Can be done without server restart - e.g. to do maintenance
+ - May have application-level restrictions anyway
+ - Provides an extra failsafe - no-one can touch the DB while you are making your changes
+
+```sql
+SET GLOBAL offline_mode = on;
+```
+
+---
+
+class: section-title-c middle
 
 ---
 
