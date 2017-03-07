@@ -1,9 +1,3 @@
-- Invisible Indexes
-- Descending Indexes
-- I am a dummy flag
-
----
-
 class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
@@ -438,6 +432,110 @@ SET GLOBAL offline_mode = on;
 ---
 
 class: section-title-c middle
+
+# Indexes
+
+---
+
+class: content-odd
+
+# [8.0] Invisible Indexes
+
+- Allows you to test the impact of removing an index without doing so
+- The index will still be maintined
+- But will not be visible to the optimizer
+
+???
+
+- Being able to test the impact of indexes is a great feature
+- Particularly on big tables, dropping or adding indexes can be really expensive
+- So being able to test the impact of removing an index without actually having to do it us useful
+ - Of course, if you do deduce that the index isn't required then you should then remove it, to remove the overhead of maintining the index
+
+---
+
+class: content-odd
+
+&nbsp;
+
+```sql
+ALTER TABLE t1 ALTER INDEX i_idx INVISIBLE;
+
+
+ALTER TABLE t1 ALTER INDEX i_idx VISIBLE;
+```
+
+---
+
+class: content-even
+
+# [8.0] Descending Indexes
+
+- We regularly use indexes to speed up queries, lookups etc
+- However currently all indexes are stored ascending
+- This results in performance issues when we need descending data
+
+???
+
+- You probably have plenty of situations where you almost always want the data in descending order
+ - Showing the neweset records first
+ - Since mySQL 5.7 we can scan an index in reverse, but it is still slower than reading an index forwards
+
+---
+
+class: content-even
+
+```sql
+SELECT `date`, `headline` FROM news  ORDER BY date DESC;
+75000 rows in set (0.10 sec)
+
+
+SELECT `date`, `headline` FROM news  ORDER BY date ASC;
+75000 rows in set (0.05 sec)
+```
+
+???
+
+- As a very basic example, let's assume you have a news table
+- You show summaries (headline, date), so you create a covering index
+ - Presumably you want to show latest first
+- Because of the reverse scan, even in 5.7 the query is slower
+
+---
+
+class: content-even
+
+- Instead, if you have a common requirement to use a descending index, you can do so:
+
+```sql
+ALTER TABLE news ADD INDEX summary (date DESC, headline ASC));
+```
+
+---
+
+class: center middle
+
+![](mysql/images/snes.jpg)
+
+???
+
+- Ok, so I said that there would be 10 features
+- However, like the SNES there is one that is an oldie, but a goodie
+
+---
+
+class: content-odd
+
+# --i-am-a-dummy
+
+- Only allow UPDATE or DELETE to be used with a WHERE clause that specifies a key
+- In other words, you can accidently UPDATE or DELETE everything
+- Only available in the mySQL CLI
+
+???
+
+- The i am a dummy CLI flag has been around forever more or less
+ - And yet, I only found out about it 6 months ago
 
 ---
 
