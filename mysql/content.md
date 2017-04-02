@@ -8,10 +8,10 @@ class: title-slide longtitle
 
 ???
 
-- Postgres is a DB that we've probably all heard of, but perhaps not used
-- It's actually has a lot of selling points in a number of situations
-- Hopefully by the end of the talk I'll have convinced you to consider Postgres for your next project
-
+- In all liklihood, we've been using mySQL for years
+- Many projects use, you learn to persist data with mySQL very early on
+- However, if you're like me, you might not keep up to date with it
+ - With our other tools, languages, frameworks, IDEs, we keep abreast of the latest goings-on, but mySQL can be forgotton
 ---
 
 class: section-title-c bottom left vanity-slide
@@ -33,6 +33,10 @@ background-image: url(logos/mcft.png)
 class: section-title-a middle center
 # But, everyone knows MySQL right?
 
+???
+
+- We're probably all using mySQL every day, it stores data - surely there isn't much more to learn?
+
 ---
 
 class: summary-slide middle
@@ -43,6 +47,11 @@ class: summary-slide middle
 
 ???
 
+- Yes, we sometimes use other things, Mongo, maybe even Postgres, but if you open a 'learn to build websites with PHP' - type book,
+- Or you look at the online resources, mySQL is probably where it'll lead you.
+- However, (and this doesn't apply to everyone), many developers just us it to persist data, and perhaps don't look at how it could actually make your apps better, and your development lives easier
+- So, in the next 45 minutes, we are going to look at 10 features from mySQl you may not know
+- I'm going to start with what I think is the biggest new feature:
 
 
 ---
@@ -178,14 +187,57 @@ class: content-odd
 class: content-odd
 # Spatial Data Types
 
+- Geometry
+ - Point
+ - Linestring
+ - Polygon
+
+- Also has some multi data types that allow storage of multiple points, lines etc
+
+???
+
+- mySQL has a number of data types that allow representation of different data
+ - For our most common use cases, store locators, we'd be storing a point
+- The generic Geometry type can store any geometric representation, the other types only allow storage of that specific type
+- There are also multiple entry types for each one, so you can store a collection of points, a collection of polygons etc
+
 ---
 
 class: content-odd
 # Querying Spatial Data
 
-- ST_Distance_Sphere
-- ST_Within
+- mySQL has functions for both 'flat' spatial calculations, and spherical ones (since 5.7)
+- For most of our purposes, we are probably dealing with the Earth!
+ - ST_Distance_Sphere
 
+---
+
+class: content-odd tinycode noheader
+
+```sql
+CREATE TABLE conferences (
+  id BINARY(16),
+  name VARCHAR(32),
+*  location POINT
+);
+
+INSERT into conferences (id, name, location)
+values
+(unhex(replace(uuid(),'-','')), 'php[tek]',
+*  Point(-84.451879, 33.62397)),
+(unhex(replace(uuid(),'-','')), 'Sunshine PHP',
+*  Point(-80.264138, 25.806893));
+
+SELECT *,
+* ST_Distance_Sphere(Point(-80.017949, 40.4467648), location)
+FROM conferences;
+```
+
+???
+
+- WE set up a basic table, and add some data - notice when specifying points, the longitude comes first
+- Then we want to find out how far away from Heinz field they are
+- This will give you the distance in meters
 ---
 
 class: section-title-a middle
@@ -418,6 +470,8 @@ class: section-title-b middle
 
 ---
 
+class: content-odd
+
 # [5.7] Offline Mode
 
 - Restrict access to the DB to only users with SUPER
@@ -529,7 +583,7 @@ class: content-odd
 # --i-am-a-dummy
 
 - Only allow UPDATE or DELETE to be used with a WHERE clause that specifies a key
-- In other words, you can accidently UPDATE or DELETE everything
+- In other words, you can't accidently UPDATE or DELETE everything!
 - Only available in the mySQL CLI
 
 ???
