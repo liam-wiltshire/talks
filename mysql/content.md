@@ -102,7 +102,7 @@ class: content-even
 
 - MySQL now has a native JSON type
 - Data is stored in a binary format
-   - This means that the text doens't need to be parsed each time.
+   - This means that the text doesn't need to be parsed each time.
    - Sub-objects and nested values can be queried directly
 
 ???
@@ -239,6 +239,56 @@ FROM conferences;
 - Then we want to find out how far away from Heinz field they are
 - This will give you the distance in meters
 ---
+class: content-odd tinycode noheader
+
+```sql
+root@localhost:[mysqltest]> SELECT *, ST_Distance_Sphere(
+  Point(-80.017949, 40.4467648), location
+) AS distance FROM conferences;
+
++------------------+--------------+---------------------------+-------------------+
+| id               | name         | location                  | distance          |
++------------------+--------------+---------------------------+-------------------+
+| ��B_��7�<�$]�  | php[tek]     |  |N՘�U�#K�X��@@    | 854361.4989842452 |
+| ��}_��7�<�$]�  | Sunshine PHP |  ����T�]X����9@ | 1628035.220738256 |
++------------------+--------------+---------------------------+-------------------+
+2 rows in set (0.00 sec)
+```
+
+???
+
+- You can see, as with the JSON data beforem that the Geo data is stored in binary
+ - So of no use on it's own, you have to apply functions to it ot make sense of it
+- Also, just to re-iterate, the distance result is in meters
+
+---
+
+class: content-odd tinycode
+
+# Readable Data
+- Few different ways to make your geo data readable:
+ - ST_AsText - Converts to WKT
+ - ST_AsGeoJSON - Converts to JSON
+
+```sql
+root@localhost:[mysqltest]> SELECT ST_AsGeoJSON(location) FROM conferences;
++-------------------------------------------------------------+
+| ST_AsGeoJSON(location)                                      |
++-------------------------------------------------------------+
+| {"type": "Point", "coordinates": [-84.4518797, 33.623973]}  |
+| {"type": "Point", "coordinates": [-80.2641387, 25.8068938]} |
++-------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+```
+
+???
+So, let's assume you actually need this data in a usable format
+There are a few ways of doing it, but the two you are most likely to use are
+ST_AsText and ST_AsGeoJSON
+Your use will guide you hwere - there are PHP Geo libraries that use WKT, but if you are just wanting to output it, JSON may be the way to go
+
+---
 
 class: section-title-a middle
 
@@ -248,7 +298,7 @@ class: section-title-a middle
 
 class: content-even
 
-# [5.6] Master->Slave Replication with GITD
+# [5.6] Master->Slave Replication with GTID
 
 - Anyone who has set up mySQL slaves before knows it's not always straightforward
 - GTIDs are a unique references to every transaction in a cluster
@@ -256,7 +306,47 @@ class: content-even
 
 ---
 
+class: content-even tinycode
+
+# Replication with GTID
+
+- GTID must be enabled - my.cnf
+
+```bash
+[mysqld]
+gtid_mode=on
+enforce_gtid_consistency=true
+```
+
+```sql
+CHANGE MASTER TO MASTER_HOST='192.168.1.110', MASTER_USER='replication', MASTER_PASSWORD='reppwd',
+* MASTER_AUTO_POSITION=1;
+START SLAVE;
+
+```
+
+???
+
+This isn't every step to setting up replication - this is assuming that you have used the binary logs to do replication before, and just highlights some of the changes to make use of GTID
+
+- You have to configure all the nodes to use GTID
+- Once they are all configured (and the usual settings such as server ids, binary logging are done),
+you can make and load a db dump as usual, and then use auto-positioning to allow mySQL to worry about getting everything in step
+
+---
+
 class: content-even
+
+```sql
+root@localhost:[mysqltest]> SHOW MASTER STATUS \G
+ *************************** 1. row ***************************
+             File: li443-233-bin.000001
+         Position: 492
+     Binlog_Do_DB:
+ Binlog_Ignore_DB:
+* Executed_Gtid_Set: 29faeb5e-fb7f-11e6-bad3-f23c91245dba:1
+
+```
 
 ---
 
@@ -283,6 +373,29 @@ class: content-odd
 - As a workaround we could re-write UPDATES to SELECTs, but it's not always ideal
 - There are some limitations - for example EXPLAIN INSERT is pretty useless unless you are using an INSERT...SELECT
 - Would be nice to see the FK checks, but because of the architecture (the FK checks are handled by the storage engine, not the optimizer) this is difficult (if not impossible) to impliment
+
+---
+class: content-odd noheader tinycode
+
+```sql
+root@localhost:[mysqltest]> EXPLAIN INSERT into news_archive
+  SELECT * FROM news WHERE date < '2015-01-01';
+
++----+-------------+--------------+------------+-------+---------------+
+-- ------+---------+------+------+----------+-----------------------+
+| id | select_type | table        | partitions | type  | possible_keys |
+ key  | key_len | ref  | rows | filtered | Extra                 |
++----+-------------+--------------+------------+-------+---------------+
+-- ------+---------+------+------+----------+-----------------------+
+|  1 | INSERT      | news_archive | NULL       | ALL   | NULL          |
+NULL | NULL    | NULL | NULL |     NULL | NULL                  |
+
+|  1 | SIMPLE      | news         | NULL       | range | date,summary  |
+date | 6       | NULL |    1 |   100.00 | Using index condition |
++----+-------------+--------------+------------+-------+---------------+
+-- ------+---------+------+------+----------+-----------------------+
+
+```
 
 ---
 
@@ -425,7 +538,7 @@ SELECT * FROM talks WHERE data->>"$.title" LIKE 'Adventure%';
 --- Add a generated column and index it
 ALTER TABLE talks
   ADD talk_title varchar(256) GENERATED ALWAYS
-    AS (data->"$.title") STORED;
+    AS (data->>"$.title") STORED;
 
 ALTER TABLE talks
   ADD INDEX (talk_title(25));
