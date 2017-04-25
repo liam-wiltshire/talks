@@ -164,7 +164,7 @@ SELECT id, data->"$.title" FROM talks;
 class: section-title-a center centralimg
 # Spatial Data
 
-![](postgres/images/performance.png)
+![](mysql/images/map.jpg)
 
 ---
 
@@ -290,9 +290,10 @@ Your use will guide you hwere - there are PHP Geo libraries that use WKT, but if
 
 ---
 
-class: section-title-a middle
+class: section-title-a middle halfhalf reverse
+background-image: url(mysql/images/replication.jpg)
 
-# GTID Replication
+# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GTID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replication
 
 ---
 
@@ -577,10 +578,11 @@ class: content-even
 
 ---
 
-class: section-title-b middle
+class: section-title-b middle center
 
 # Offline Mode
 
+![](mysql/images/offline.jpg)
 ---
 
 class: content-odd
@@ -598,7 +600,8 @@ SET GLOBAL offline_mode = on;
 
 ---
 
-class: section-title-c middle
+class: section-title-c middle halfhalf
+background-image: url(mysql/images/index.jpg)
 
 # Indexes
 
