@@ -83,7 +83,17 @@ class: content-odd
  - Authentication
  - Audit
 
-TASK: Think about your platforms - list ways you satisfy each standard, and things you could add to improve
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+Think about your day-to-day server platform
+- List the things you do to satisfy each standards
+- List the things you could add to improve.
+
+TODO: Worksheet
 
 ---
 
@@ -96,7 +106,14 @@ class: content-even
 - Overlapping
 - Multiple small security mechanisms are better than one big one
 
-TASK: Think of examples of defense in depth
+---
+
+class: content-even
+
+.center[![](security/images/task.png)]
+
+What examples of defense in depth (multiple overlapping security mechanisms) are you using?
+
 
 ???
 
@@ -129,7 +146,18 @@ class: content-even
 - In any situation, we should be able to see exactly what happened and why
 - Data can be used to improve the system and prevent future attacks
 
-TASK: Think about your existing systems - do you have holes in your logging?
+---
+
+class: content-even
+
+.center[![](security/images/task.png)]
+
+Think about your existing platform
+ - What are you logging
+ - What are you not logging
+
+
+TODO: Worksheet
 
 ---
 
@@ -140,7 +168,14 @@ class: content-odd
  - Worst case, someone can't access something they should
 - The opposite, where prohibitions are added makes it very easy to accidently give someone access to something they shouldn't
 
-TASK: Give examples of granting of privilege and addition of prohibitions
+
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+- What examples can you think of of good failsafe defaults
 
 ---
 
@@ -150,10 +185,12 @@ class: content-even
 
 - Users and applications should have *just enough* access to do what they need to do
  - You almost never need full root access!
- - 777 file permissions
 
-TASK: Think about times where you've granted too much access
+---
 
+class: content-even middle center noheader
+
+![](security/images/chmod.jpg)
 
 ---
 
@@ -164,11 +201,19 @@ class: content-odd
  - List every component of your platform (software, network, users etc.) and grade it's existing security
  - Then work from the lowest score up
 
-TASK: Do the exercise above!
-
 ???
 
 Imagine you are charged with transporting some gold securely from one homeless guy who lives in a park bench (we’ll call him Linux) to another homeless person who lives across town on a steam grate (we’ll call her Android).  You hire an armored truck to transport the gold.  The name of the transport company is "Applied Crypto, Inc."  Now imagine you’re an attacker who is supposed to steal the gold.  Would you attack the Applied Crypto truck, Linux the homeless guy, or Android the homeless woman?  Pretty easy experiment, huh?  (Hint: the answer is, "Anything but the crypto.")
+
+
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+- Identify the weak links in your platform
+- What could you do today to secure them?
 
 ---
 
@@ -192,7 +237,15 @@ class: content-even
 - Includes monitoring appropriate mailling lists
 - If you are using RHEL based OSes, the updates may not be available in the main REPO
 
-TASK: Update the OS - adding a new source (remi) if required
+---
+
+class: content-even
+
+.center[![](security/images/task.png)]
+
+- Check the current update status of the platform
+- Add a new yum repo (remi)
+- Update all the packages on your server.
 
 ???
 
@@ -207,10 +260,16 @@ class: content-odd
 - Remove default accounts / change default passwords
 - Enforce password strength
 
-TASK: List running servers, disable unneeded
-      Look though list of users, remove unneeded
-      Change passwords
-      Configure enforced password strengh
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+- Look at the list of currently running services
+ - Remove un-needed services
+- Look through the list of system user
+ - Remove un-ndeeded users
 
 ???
 
@@ -220,11 +279,19 @@ class: content-even
 # User security
 
 - Users should have minimal access by default
+- Enforce strong passwords
 - Root access is almost never required
 - Configure sudo for just the required commands
 - Log use of sudo
 
-TASK: Sudo configuration
+---
+
+class: content-even
+
+.center[![](security/images/task.png)]
+
+- Configure sudo to allow access to certain commands for each user
+- Enforce the use of strong passwords
 
 ???
 
@@ -250,7 +317,13 @@ class: content-even
 - Regularly review the logs
 - Ensure logs are enabled for every running service
 
-TASK: Review some logs for things that might be suspicious
+---
+
+class: content-even
+
+.center[![](security/images/task.png)]
+
+- Review the logs for evidence of an attack
 
 ???
 
@@ -261,17 +334,26 @@ class: content-odd
 
 - Use it - clamav
 - Rootkits are also a problem - which clamAV may or may not secure against
-- Show example rootkit
+- Example rootkit
 - Rootkit hunter is a good RK detector
 
-TASK: Install clamAV and update / Install rkhunter
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+- Install clamAV
+- Update definitions
+- Install rkhunter
+- Scan for rootkits
 
 ???
 
 ---
 
 class: section-title-b halfhalf reverse middle
-background-image: url(scaling/images/scaling.jpg)
+
 
 # Securing Common Services
 
@@ -319,7 +401,7 @@ class: content-even
 - Disable unwanted HTTP Methods
 - Install ModSecurity
 - Turn off server_tokens
--  Enable X-XSS Protection
+- Enable X-XSS Protection
 
 ???
 
@@ -341,7 +423,13 @@ class: content-even
 # SELinux
 
 - Use it!
-- How to properly configure
+
+---
+
+class: content-even
+
+# Configuring SELinux
+
 
 ???
 
@@ -353,7 +441,7 @@ class: section-title-c center
 
 &nbsp;
 
-![](scaling/images/cache.jpg)
+![](security/images/wificonfig.png)
 
 ---
 
@@ -364,7 +452,14 @@ class: content-even
 - What parts of your network do need public addess? Which parts don't
 - Set up internal firewalls (and ideally user authorization) to separate public and private areas of the network
 
-TASK: Given a list of servers, identify which zones they should go into
+---
+class: content-even
+
+.center[![](security/images/task.png)]
+
+- From the given list of servers, identify which zones they should go into
+
+TODO: Worksheet!
 
 ---
 
@@ -378,7 +473,16 @@ class: content-odd
 - If not, use IPTables
 - Don't just lock down ports, lock down ports to IP addresses
 
-TASK: Configure IP tables
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+- Configure IPTables to allow:
+ - Global access to HTTP/HTTPS
+ - Single-IP access to SSH
+ - Local network access to mySQL
 
 ???
 
@@ -391,7 +495,16 @@ class: content-even
 - If you know there is never a reason for more than 100 requests a minute to a section of your network, then don't alow more!
 - Use mod_evasive
 
-TASK: Install mod_evasive
+---
+
+class: content-even
+
+.center[![](security/images/task.png)]
+
+- Install mod_evasive
+ - Configure to block visitors for 1 minute if they:
+  - Hit the same page 5 or more times a second -or-
+  - Hit any page on the site more than 100 times a minute
 
 ???
 
@@ -424,7 +537,13 @@ class: content-odd
 - Network Level
 - Layer 7
 
-TASK: How can we mitigate a (D)DOS attack
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+- Suggest ways we can mitigate a DDOS attack
 
 ???
 
@@ -439,22 +558,17 @@ class: content-even
  - Cryptolocker variants
  - Mail spam/Botnets
 
-TASK: How can we protected against viruses/Ransomeware
+---
+
+class: content-even
+
+.center[![](security/images/task.png)]
+
+- Suggest ways we can protect against viruses/ransomware
 
 ???
 
 ---
-
-class: content-odd
-
-# Man in the Middle
-
-?!?
-
-???
-
----
-
 class: content-even
 
 # Phishing
@@ -462,7 +576,12 @@ class: content-even
 - Scenario - dumpster diving
 - Scenario - someone rings/emails pretending to be someone else
 
-TASK: How can we protect against phishing
+---
+class: content-even
+
+.center[![](security/images/task.png)]
+
+- Suggest ways we can protect against phishing
 
 ---
 
@@ -470,7 +589,13 @@ class: content-odd
 
 # Brute force
 
-?!?
+---
+
+class: content-odd
+
+.center[![](security/images/task.png)]
+
+- Suggest ways we can protect against brute force attacks
 
 ---
 
@@ -480,7 +605,7 @@ class: section-title-b center
 
 &nbsp;
 
-![](scaling/images/cache.jpg)
+![](security/images/firewall.gif)
 
 ---
 
@@ -490,9 +615,9 @@ class: content-even
 
 - A log analyser and firewall configurator
 - You can write rules for it to check against for given log files, and then define actions to take based on those rules
- - Filters / Jails
-
-TASK: Example
+ - Filters define the rules to search for
+ - Actions are the result of a match - ban, send email etc
+ - Jails are the combination of a filter and one or more actions
 
 ---
 
@@ -515,6 +640,7 @@ class: content-even
 
 # Installing Fail2Ban
 
+- Install Fail2Ban using yum
 
 ???
 
@@ -524,6 +650,9 @@ class: content-odd
 
 # Creating Filters
 
+- Filters are stored in /etc/fail2ban/filters.d/
+- Create a filter that checks for users trying to access c99.php
+
 
 ???
 
@@ -531,8 +660,22 @@ class: content-odd
 
 class: content-even
 
+# Available Actions
+
+- Actions are stored in /etc/fail2ban/actions.d/
+- Probably little need to create new ones (unless you want to integrate with external APIs etc)
+- Review the act exist
+
+???
+
+
+class: content-odd
+
 # Creating Jails
 
+- You can have has many jails as you like watching different things
+- Jails are stored in
+- Create a jail for our c99.php filter that blocks the user for 1 hour if that jail is accessed once
 
 ???
 
@@ -554,13 +697,21 @@ class: section-title-c center
 
 &nbsp;
 
-![](scaling/images/cache.jpg)
+![]()
 
 ---
 
 class: content-even
 
 # Cardholder Data
+
+- Almost everything in PCI-DSS-land is focussed around 'cardholder data'
+ - Full PAN (card number)
+ - Cardholder name
+ - Expiry date
+ - Service code
+
+- If you are holding/sending the PAN, PCI-DSS compliance becomes a whole lots more complicated
 
 
 ---
@@ -569,8 +720,18 @@ class: content-odd
 
 # Levels of Compliance
 
+- For most sites (the rules are different if you process 6 million+ card transactions), there are 3 main levels:
+ - SAQ-A
+  - This is mostly for sites that use a redirect or iframe - where the *entire* payment page is hosted and managed by a third party
+ - SAQ-A-EP
+  - This covers other situations where card data doesn't touch your server, but your codebase has a hand in generating the inputs for that data - direct post, javascript etc
+ - SAQ-D
+  - This covers situations where card data does hit your server (even if only in memory before being passed on via XML for example)
 
 ???
+
+- Personally, I don't like the SAQ-A - this mostly removes your website from scope, but I don't see that it's any more secure. If your website contains an iframe to yor payment processor, what is to stop a hacker from gaining access and re-pointing the iframe to their own server to collect card details?
+- The further down the list you are, the more difficult compliance is. Unless you have dedicated staff, I really don't recommend you do anything that puts you in SAQ-D band!
 
 ---
 
@@ -578,6 +739,8 @@ class: content-even
 
 # Requirements of Compliance
 
+- SAQs
+ - Every compliance level has a self-assessment questionnaire.
 - AVS scans
 - PEN tests
 - Policy documents
