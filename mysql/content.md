@@ -470,9 +470,11 @@ class: content-even tinycode noheader
 ```
 ---
 
-class: section-title-c middle
+class: section-title-c middle center
 
 # User Roles
+
+![](mysql/images/authorization.png)
 
 ---
 
