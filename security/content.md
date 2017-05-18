@@ -85,7 +85,7 @@ class: content-odd
 
 ---
 
-class: content-odd
+class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
@@ -108,7 +108,7 @@ class: content-even
 
 ---
 
-class: content-even
+class: content-even noheader
 
 .center[![](security/images/task.png)]
 
@@ -148,7 +148,7 @@ class: content-even
 
 ---
 
-class: content-even
+class: content-even noheader
 
 .center[![](security/images/task.png)]
 
@@ -171,7 +171,7 @@ class: content-odd
 
 ---
 
-class: content-odd
+class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
@@ -208,7 +208,7 @@ Imagine you are charged with transporting some gold securely from one homeless g
 
 ---
 
-class: content-odd
+class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
@@ -239,43 +239,120 @@ class: content-even
 
 ---
 
-class: content-even
+class: content-even noheader
 
 .center[![](security/images/task.png)]
 
 - Check the current update status of the platform
-- Add a new yum repo (remi)
-- Update all the packages on your server.
+
+```bash
+# yum check-update
+```
 
 ???
 
----
-
-class: content-odd
-
-# Secure Configuration
-
-- Ensure user accounts are as restricted as possible
-- Only install/enable required services
-- Remove default accounts / change default passwords
-- Enforce password strength
+- This may take a few seconds to run, as we are waiting for yum to fetch latest information
+- Everyone done? Take a look through, look at the versions being updated to particulary httpd, php
+ - What do you notice (old versions)
+- RHEL - not most up to date
+ - Does backport fixes, but it's up to you. The alterntaive is to install an alternative repo that contains up to date software
 
 ---
 
 class: content-odd
+
+# Alternative Repos
+- There are lots of repos out there
+ - Some are officially supported by RHEL or CentOS
+ - Others are provided by third party
+- It comes down to trust
+ - Personally, I use EPEL and Remi
+
+---
+
+class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
-- Look at the list of currently running services
- - Remove un-needed services
-- Look through the list of system user
- - Remove un-ndeeded users
+- Add the EPEL and Remi repos
+ - https://blog.remirepo.net/pages/Config-en
+
+```
+[remi-php71]
+name=Remi's PHP 7.1 RPM repository for Enterprise Linux 6 - $basearch
+#baseurl=http://rpms.remirepo.net/enterprise/6/php71/$basearch/
+mirrorlist=http://rpms.remirepo.net/enterprise/6/php71/mirror
+* enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi
+```
+---
+
+class: content-odd noheader
+
+.center[![](security/images/task.png)]
+
+
+- Update all the packages on your server.
+
+```bash
+# yum update
+```
 
 ???
+- Go to https://blog.remirepo.net/post/2016/02/14/Install-PHP-7-on-CentOS-RHEL-Fedora
 
 ---
 
 class: content-even
+
+# Secure Configuration
+
+- Only install/enable required services
+- Remove unneeded users
+ - There are some system users installed by default
+ - There might also be old users that are no longer needed
+ - Or even a backdoor user that someone has added!
+
+---
+
+class: content-even noheader
+
+.center[![](security/images/task.png)]
+
+- Look at the list of installed services
+ - Remove un-needed services using `yum erase`
+ - You may find that some services are a dependency of something else
+
+```bash
+# chkconfig --list
+```
+
+???
+- Have a look through the list - what is there that is unneeded (vsftpd, smb)
+- postfix is a dependency of cron, so if you need scheduled tasks, then you cant remove it
+
+---
+
+class: content-even noheader
+
+.center[![](security/images/task.png)]
+
+
+- Look through the list of users
+ - Remove un-ndeeded users
+
+ ```bash
+ # cat /etc/password
+ # ps aux
+ # userdel [username]
+ ```
+
+???
+
+---
+
+class: content-odd
 # User security
 
 - Users should have minimal access by default
@@ -286,14 +363,126 @@ class: content-even
 
 ---
 
-class: content-even
+class: content-odd noheader tinycode
+
+.center[![](security/images/task.png)]
+
+- Enforce the use of strong passwords
+
+```bash
+# cat /etc/pam.d/system-auth
+
+# password  requisite  pam_cracklib.so try_first_pass retry=3
+* minlength=12
+* ocredit=-1
+* ucredit=-1
+* dcredit=-1
+* lcredit=-1
+```
+
+???
+
+Minimum complexity of 12, at least one upper, at least one digit at least one lower, at least one other
+
+---
+
+class: content-odd noheader
+
+- Add a new user `useradd [username]`
+- Set a temporary password `passwd [username]`
+- Switch to that user account `su [username]`
+- Try to change the password to something insecure `passwd`
+
+```bash
+BAD PASSWORD: it does not contain enough DIFFERENT characters
+BAD PASSWORD: it is too short
+```
+
+---
+
+class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
 - Configure sudo to allow access to certain commands for each user
-- Enforce the use of strong passwords
+ - By default, sudo isn't allowed for any users in CentOS
+ - Open up a new terminal, login with your new user and try to restart httpd
+ - `service httpd restart`
 
 ???
+- First off, login with another terminal and your new user
+ - Try to restart httpd (service httpd restart) - what happens?
+- Let's add a rule to sudo
+
+---
+
+
+class: noheader content-odd tinycode
+
+```bash
+# visudo
+[username] ALL=[commands]
+```
+
+???
+
+- The sudoers file can be shared between multiple machines, so there are ways of setting rules by user and machine
+ - However, we're going to keep it simple
+ - The general format is username ALL= comma separated list of commands. The command must include a full path
+- So, can anyone suggest what the line will look like?
+
+---
+
+class: noheader content-odd tinycode
+
+```bash
+# visudo
+[username] ALL=[commands]
+* liam ALL=/sbin/service httpd restart
+```
+
+```bash
+sudo service httpd restart
+```
+
+???
+
+- At the moment, you can only restart that one service - what if you need access to another service?
+
+---
+
+class: noheader content-odd tinycode
+
+```bash
+# visudo
+[username] ALL=[commands]
+liam ALL=/sbin/service httpd restart
+```
+
+```bash
+sudo service httpd restart
+```
+
+```bash
+* liam ALL=/sbin/service httpd restart, /sbin/service mysqld restart
+```
+
+---
+
+class: content-even tinycode
+
+# Sudo logs
+
+- Sudo actions are stored in the `/var/log/secure` file
+
+```bash
+grep "sudo" /var/log/secure
+
+May 13 16:12:07 li1167-84 sudo:     liam : TTY=pts/1 ; PWD=/home/liam ; USER=root ; COMMAND=/sbin/service httpd restart
+May 13 16:20:02 li1167-84 sudo:     liam : TTY=pts/1 ; PWD=/home/liam ; USER=root ; COMMAND=/sbin/service httpd restart
+May 13 16:20:09 li1167-84 sudo:     liam : command not allowed ; TTY=pts/1 ; PWD=/home/liam ; USER=root ; COMMAND=/sbin/service mysqld restart
+May 13 16:20:36 li1167-84 sudo:     liam : TTY=pts/1 ; PWD=/home/liam ; USER=root ; COMMAND=/sbin/service mysqld restart
+```
 
 ---
 
@@ -312,20 +501,80 @@ class: content-odd
 class: content-even
 # Logging/Audit
 
-- Log user actions
-- Log all access attempts (successful or otherwise) on all exposed ports
-- Regularly review the logs
-- Ensure logs are enabled for every running service
+.center[![](security/images/Log-all-the-things.png)]
+
+???
+- Log as much as possible - user actions, login attempts, running services, SQL queries, everything
+- Logging servces two purposes
+ - Being able to catch issues before they become a problem - *so long as you are reviewing your logs regularly*
+ - If the worst does happen, the more logging you have, the more likely you can identify what happened and why
 
 ---
 
-class: content-even
+class: content-even tinycode noheader
 
 .center[![](security/images/task.png)]
 
-- Review the logs for evidence of an attack
+- Log all user commands
+ - To log all entered (bash) commands, we will tweak the global bash config, and create a new syslog
+
+```bash
+# vi /etc/profile.d/userlog.sh
+
+export PROMPT_COMMAND='RETRN_VAL=$?;logger -p local6.debug
+"$(whoami) [$$]: $(history 1 | sed "s/^[ ]*[0-9]\+[ ]*//" ) [$RETRN_VAL]"'
+```
 
 ???
+
+- That's quite a long command do type, so I have put it in a text file - /root/log.txt!
+- Explain what it does
+- Limitation - can be overridden if someone resets the PROMPT_COMMAND variable
+ - Could be used in conjunction with the acct service, but that only provides commands, not arguments
+
+---
+
+class: content-even tinycode noheader
+
+```bash
+# vi /etc/rsyslog.d/bash.conf
+
+local6.*    /var/log/commands.log
+
+service rsyslog restart
+tail -f /var/log/commands.log
+```
+
+???
+
+Now logout. and log back in with your other terminal, and start running some commands - you should see them show up in the log
+
+---
+
+class: content-even tinycode noheader
+
+.center[![](security/images/task.png)]
+
+- Log all mySQL queries
+ - This is useful in the instance of a suspected data breach, as you can see exactly what queries were run and thus what data was accessed
+ - It is a tradeoff between performance and logging
+
+---
+
+class: content-even noheader
+
+```bash
+# mkdir /var/log/mysql
+# chown -R mysql:mysql /var/log/mysql
+# vi /etc/my.cnf
+
+[mysqld]
+log = /var/log/mysql/general.log
+```
+
+???
+
+- Once you set up the log, restart mysqld, and then connect to the database in your other connection - you should see connection and query information in the log file.
 
 ---
 
@@ -334,19 +583,65 @@ class: content-odd
 
 - Use it - clamav
 - Rootkits are also a problem - which clamAV may or may not secure against
-- Example rootkit
-- Rootkit hunter is a good RK detector
+- Linux Malware Detect is a good malware solution, and works well alongside clamav
+
+???
+
+- More and more, viruses are being written to target linux
+ - Ransomware, Mail spammers and rootkits are common
+- No reason not to install antivirus.
+ - There are paid-for sollutions such as McAfee, so by all means use those
+ - But at the least, use ClamAV
+- Multiple layers of protection are good - clamAV may not pick up on rootkits
+ - Open up a browser and go to your ip address /shell.php
+ - ClamAV may not pick up things such as this, so a dedicated rootkit scanner is valuable
+- Until recently I mostly used rkhunter, but I've switched to LMD as I found it to be more accurate, and it uses the clamav scan engine instead of rolling it's own.
 
 ---
 
-class: content-odd
+class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
 - Install clamAV
 - Update definitions
-- Install rkhunter
+- Perform a scan
+
+```bash
+# yum install clamav
+# freshclam
+# clamscan -r /root
+```
+
+---
+
+class: content-odd noheader tinycode
+
+.center[![](security/images/task.png)]
+
+- Install LMD
 - Scan for rootkits
+
+```bash
+# wget http://www.rfxn.com/downloads/c-current.tar.gz
+# tar -xzf maldetect-current.tar.gz
+# cd maldetect-1.6/
+# chmod +x install.sh
+# ./install.sh
+```
+
+---
+
+class: content-odd noheader tinycode
+
+```bash
+# vi /usr/local/maldetect/conf.maldet
+scan_ignore_root="0"
+
+# /usr/local/maldetect/maldet --update-sigs
+# /usr/local/maldetect/maldet --scan-all /var/www/html
+
+```
 
 ???
 
@@ -361,20 +656,129 @@ class: section-title-b halfhalf reverse middle
 
 ---
 
-class: content-even
+class: content-even tinycode
 
 # SSH
 
 - Disable root
-- Key based auth
-- Change IP
-- Limit number of sign-ins
+ - Root access should never be needed, and there is no reason anyone should need to ssh in as root
+
+```bash
+# vi /etc/ssh/sshd_config
+PermitRootLogin no
+```
+
+???
+- Restart the service, then try to connect a new terminal as root
 
 ---
 
+class: content-even tinycode
+
+# SSH
+
+- Limit number of sign-ins
+ - Slow down brute force attempts
+
+```bash
+# vi /etc/ssh/sshd_config
+MaxAuthTries 3
+```
+
+???
+
+- We set it to 3 as some ssh clients will always try to login with an ssh key first.
+- Reset the service and try it out :-)
+
+---
+
+class: content-even tinycode
+
+# SSH
+
+- Change default port
+
+```bash
+# vi /etc/ssh/sshd_config
+Port 2002
+```
+
+???
+
+- Restart the service, and try to login on port 22 - should be rejected
+
+
+---
+
+class: content-even tinycode
+
+# SSH
+
+- Restrict who can login
+ - Useful if you have system users for other services who should't have SSH access
+
+```bash
+# vi /etc/ssh/sshd_config
+AllowUsers liam
+```
+
+???
+
+- Create a test user (who isn't on the list, and try to login with them)
+
+---
+
+class: content-even
+
+# SSH
+
+- No matter what we do, passwords tend to be weak, and are susceptible to brute force
+ - Using key-based authentication removes these problems
+- The issue is that someone with access to your computer has your private key
+ - But this can be mitigated by using a passphrase on the key
+
+---
+
+class: content-even
+
+# SSH
+
+- We generate the key on our local machine - for Linux/Mac:
+```bash
+ssh-keygen
+```
+- For Windowsm PuTTY comes with a PuTTYgen tool
+ - Key Type: SSH-2 RSA
+
+- Follow the steps, make sure you save the private key on your machine
+
+---
+
+class: content-even noheader
+
+- Copy the public key into your clipboard
+
+- On the server (logged in as the user you are securing):
+```bash
+# vi ~/.ssh/authorized_keys
+```
+- Paste the public key onto a new line
+- Only allow key based authentication:
+```bash
+# vi /etc/ssh/sshd_config
+PasswordAuthentication no
+```
+
+???
+
+Make sure you test your ssh key before you disable password login - if you don't and it doesn't work, you'll be locked out!!!
+
+---
+
+
 class: content-odd
 
-# Apache
+# Apache - Todo
 
 - Install mod_security
 - Disable unwanted HTTP Methods
@@ -392,16 +796,8 @@ class: content-odd
 
 class: content-even
 
-# Nginx
+# mySQL - Todo
 
-- Only allow TLS encryption
-- Disable weak ciphers
-- Reduce buffer sizes
-- Generate Unique DH Group
-- Disable unwanted HTTP Methods
-- Install ModSecurity
-- Turn off server_tokens
-- Enable X-XSS Protection
 
 ???
 
@@ -409,7 +805,7 @@ class: content-even
 
 class: content-odd
 
-# PHP
+# PHP - ToDo
 
 - Disable shell/OS functions if you don't need them
 - Enforce a basedir
@@ -420,7 +816,7 @@ class: content-odd
 
 class: content-even
 
-# SELinux
+# SELinux - ToDo
 
 - Use it!
 
@@ -428,7 +824,7 @@ class: content-even
 
 class: content-even
 
-# Configuring SELinux
+# Configuring SELinux  - ToDo
 
 
 ???
@@ -475,22 +871,47 @@ class: content-odd
 
 ---
 
-class: content-odd
+class: content-odd noheader tinycode
 
 .center[![](security/images/task.png)]
 
 - Configure IPTables to allow:
+ - Access to established connections
  - Global access to HTTP/HTTPS
  - Single-IP access to SSH
- - Local network access to mySQL
 
 ???
 
 ---
 
+class: content-odd noheader tinycode
+
+```bash
+# iptables -L
+# iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+# iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+- To specify a specific source, use `-s` - This can take a /mask
+```bash
+# iptables -L
+```
+- We need to deny everything else! (But first, we need to accept everything local!)
+```bash
+# iptables -L --line-numbers
+# iptables -I INPUT 1 -i lo -j ACCEPT
+# iptables -A INPUT -j DROP
+```
+
+???
+- Explain
+- So, do the same for port 443, and then the same for port 2002, but with a source set
+- Explain line numbers, inserting, and dropping
+
+---
+
 class: content-even
 
-# Frequency of access
+# Frequency of access  - ToDo
 
 - If you know there is never a reason for more than 100 requests a minute to a section of your network, then don't alow more!
 - Use mod_evasive
@@ -587,7 +1008,7 @@ class: content-even
 
 class: content-odd
 
-# Brute force
+# Brute force  - ToDo
 
 ---
 
@@ -642,6 +1063,11 @@ class: content-even
 
 - Install Fail2Ban using yum
 
+```bash
+# yum install fail2ban
+# chkconfig fail2ban on
+```
+
 ???
 
 ---
@@ -650,11 +1076,42 @@ class: content-odd
 
 # Creating Filters
 
-- Filters are stored in /etc/fail2ban/filters.d/
-- Create a filter that checks for users trying to access c99.php
+- Filters are stored in /etc/fail2ban/filter.d/
+- Create a filter that checks for users trying to access shell.php
+ - `<HOST>` - a pre-defined group that matches the host (IP or hostname) that will be banned
+ - Failban will automatically detect/match the timestamp
 
+```bash
+# vi /etc/fail2ban/filter.d/phpshell.conf
+```
 
 ???
+
+- There a lots of different example filters already available - some of which you might use out of the box
+ - The key points are to have a failregex -  this is the expression (or expresions which trigger a fail), and an ignoreregex that can contain patterns that should be allowed to pass (your own IP for example)
+ - Take a look at php_url_fopen.conf for inspiration
+
+---
+
+class: content-odd tinycode
+
+```regex
+[Definition]
+failregex = ^<HOST> -.*(GET|POST).*?/shell\.php(\?.*?)? HTTP\/.*$
+ignoreregex =
+```
+
+- Now we can test it - as long as we have a log file with an entry to match!
+
+```bash
+# fail2ban-regex /var/log/httpd/access_log /etc/fail2ban/filter.d/phpshell.conf
+```
+
+???
+
+- It's useful to be able to test your paterns - fail2ban has a tool for this
+- First of all, hit the shell script on your box to create a rule in your apache log file if you haven't already.
+
 
 ---
 
@@ -664,20 +1121,56 @@ class: content-even
 
 - Actions are stored in /etc/fail2ban/actions.d/
 - Probably little need to create new ones (unless you want to integrate with external APIs etc)
-- Review the act exist
+- Review the existing actions - we are going to use dummy to test
 
 ???
 
+- We are doing to use the dummy action - this just writes actions to a file. In real life, you'd probably use the iptables or iptables-allports actions
 
-class: content-odd
+---
+
+class: content-odd noheader
 
 # Creating Jails
 
-- You can have has many jails as you like watching different things
-- Jails are stored in
-- Create a jail for our c99.php filter that blocks the user for 1 hour if that jail is accessed once
+- Jails are stored in /etc/fail2ban/jails.d/*.local
+- Create a jail for our filter that blocks for 1 hour
+ - `filter` - the filters to use
+ - `action` - the action (or actions) to take
+ - `logpath` - which logs to scan
+ - `maxretry` - Number of matches to trigger action
+ - `findtime` - The length of time to find `maxretry` matches
+ - `bantime` - How long a ban should last
 
 ???
+
+- You can have as many jails as you like
+- Some of the pre-built jails are quite confusing, but do take a look to get an idea
+
+---
+
+class: content-odd noheader tinycode
+
+```bash
+# vi /etc/fail2ban/jail.d/phpfilter.conf
+
+[phpfilter]
+enabled=true
+filter=phpshell
+action=dummy
+logpath=/var/log/httpd/access_log
+maxretry=1
+findtime=10
+bantime=3600
+```
+
+---
+class: content-odd
+
+- Now let's test it:
+ - Start fail2ban `service fail2ban start`
+ - `tail -f /var/run/fail2ban/fail2ban.dummy`
+ - Hit the shell with your browser
 
 ---
 
