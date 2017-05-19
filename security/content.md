@@ -623,7 +623,7 @@ class: content-odd noheader tinycode
 - Scan for rootkits
 
 ```bash
-# wget http://www.rfxn.com/downloads/c-current.tar.gz
+# wget http://www.rfxn.com/downloads/maldetect-current.tar.gz
 # tar -xzf maldetect-current.tar.gz
 # cd maldetect-1.6/
 # chmod +x install.sh
@@ -761,6 +761,7 @@ class: content-even noheader
 - On the server (logged in as the user you are securing):
 ```bash
 # vi ~/.ssh/authorized_keys
+# chmod -R 600 ~/.ssh/
 ```
 - Paste the public key onto a new line
 - Only allow key based authentication:
@@ -778,19 +779,94 @@ Make sure you test your ssh key before you disable password login - if you don't
 
 class: content-odd
 
-# Apache - Todo
+# Apache
 
-- Install mod_security
 - Disable unwanted HTTP Methods
-- Only allow TLS encryption
-- Generate Unique DH Group
-- Disable weak ciphers
+- Enable SSL
+ - Only allow TLS encryption
+ - Generate Unique DH Group
+ - Disable weak ciphers
 - Enforce restrictive permissions
 - PHP SetHandler vs AddHandler
 - Disable ServerSignature and ServerTokens
 - Disable FileETag
+- Install mod_security
 
 ???
+
+- By default, apache can be quite 'open' - both in terms of things that could be useful to an attacker, and things that are not security holes in themselves, but could be used to find out more information about the system
+
+---
+
+class: content-odd noheader
+
+- Disable unwanted HTTP methods
+ - HTTP methods are not a vulnerability in themselves, but could leave expliots available
+ - Simplest way is to do a re-write - may need to be done for any vhosts you are runnings
+
+```bash
+# vi /etc/httpd/conf/httpd.conf
+
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} !^(GET|POST|HEAD)
+RewriteRule .* - [R=405,L]
+
+```
+
+---
+
+class: content-odd noheader
+
+- Enable SSL
+ - We are going to install mod_ssl for apache, and generate a free SSL certificate
+```bash
+# yum install mod_ssl
+```
+- The easiest way to install a LE certificate is using Certbot
+ - Different methods depending on OS and server
+ - Check out https://certbot.eff.org/
+
+---
+class: content-odd noheader
+
+```bash
+# cd ~
+# wget https://dl.eff.org/certbot-auto
+# chmod a+x certbot-auto
+# ./certbot-auto --apache
+```
+
+---
+
+class: content-odd noheader tinycode
+- Only allow TLS encryption
+ - Older encyption methods have various vulnerabilities
+
+```bash
+# vi /etc/httpd/conf.d/ssl.conf
+SSLProtocol -all +TLSv1.1 +TLSv1.2
+```
+- Generate unique DH group
+ - The default DH group can be insecure
+
+```bash
+# openssl dhparam -out /etc/pki/tls/dhparams.pem 2048
+# cat /etc/pki/tls/dhparams.pem >> /etc/pki/tls/certs/localhost.crt
+```
+
+
+???
+- Moreso on nginx - was part of the reason for the logjam issue
+
+---
+
+class: content-odd noheader tinycode
+- Disable weak ciphers
+ - A number of older ciphers have been proven to be weak or compromised, but are supported in default configurations
+
+```bash
+# vi /etc/httpd/conf.d/ssl.conf
+```
 
 ---
 
@@ -798,6 +874,10 @@ class: content-even
 
 # mySQL - Todo
 
+- Use `mysql_secure_installation`
+- Limit connection attempts
+- Disable local infile
+- Hide information from attackers
 
 ???
 
