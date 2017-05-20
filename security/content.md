@@ -1007,10 +1007,8 @@ class: content-even
 
 # SELinux
 
-- All too often, usrs disable SELinux as soon as it starts causing problems
- - Don't!!
+- All too often, usrs disable SELinux as soon as it starts causing problems - Don't!!
 - TL;DR - SELinux maintains access and transaction rights between users, processes and files
- - This is managed through the security policy for the machine
 - Helps prevent applications accessing files they shouldn't, or executing things they shouldn't
  - SELinux uses the least-privilege model - everything is denied by default, and then exceptions are made
 
@@ -1154,18 +1152,6 @@ There is a test script in vi /usr/share/doc/mod_evasive-1.10.1/test.pl that you 
 
 ---
 
-class: content-even
-
-.center[![](security/images/task.png)]
-
-- Install mod_evasive
- - Configure to block visitors for 1 minute if they:
-  - Hit the same page 5 or more times a second -or-
-  - Hit any page on the site more than 100 times a minute
-
-???
-
----
 
 class: content-odd
 
@@ -1411,6 +1397,30 @@ class: content-odd
  - `tail -f /var/run/fail2ban/fail2ban.dummy`
  - Hit the shell with your browser
 
+
+---
+class: content-even
+# Test Regularly
+
+- It's good to have some forms of benchmark on how will secured your platform is
+ - You could perform lots of manual tests, but there is a good chance something will get overlooked
+- There are a number of audit tools available - my preferred one is lynis
+ - https://cisofy.com/lynis/
+
+---
+class: content-even
+
+```bash
+# cd ~
+# wget https://cisofy.com/files/lynis-2.5.0.tar.gz
+# tar -xzf lynis-2.5.0.tar.gz
+# chmod +x lynis/lynis
+# cd lynis
+# ./lynis audit system
+```
+
+???
+- Run lynis - you might bb interested to know that the start box had a score of just 10!!
 ---
 
 class: summary-slide middle
