@@ -883,7 +883,8 @@ class: content-odd tinycode
 ???
 
 The problem comes that apache will recognise multiple externsions
- - Check the url /notanimage.php.jpg to see what I mean!
+ - Check the url /notanimage.php.jpg to see what I mean! (demo on your machine, as remi fixes it!!)
+ - The Remi module actually fixes this by replacing it with SetHandler, but its something that shoudl *always* be checked!!
  - This could be a security vulnability
   - Swapping Handler means we can create a rule that only loads the php handler if the file ends with .php
 ---
