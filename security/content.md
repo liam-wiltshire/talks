@@ -93,8 +93,6 @@ Think about your day-to-day server platform
 - List the things you do to satisfy each standards
 - List the things you could add to improve.
 
-TODO: Worksheet
-
 ---
 
 class: content-even
@@ -156,8 +154,6 @@ Think about your existing platform
  - What are you logging
  - What are you not logging
 
-
-TODO: Worksheet
 
 ---
 
@@ -786,7 +782,6 @@ class: content-odd
  - Only allow TLS encryption
  - Generate Unique DH Group
  - Disable weak ciphers
-- Enforce restrictive permissions
 - PHP SetHandler vs AddHandler
 - Disable ServerSignature and ServerTokens
 - Disable FileETag
@@ -844,14 +839,14 @@ class: content-odd noheader tinycode
 
 ```bash
 # vi /etc/httpd/conf.d/ssl.conf
-SSLProtocol -all +TLSv1.1 +TLSv1.2
+SSLProtocol -all +TLSv1 +TLSv1.1 +TLSv1.2
 ```
 - Generate unique DH group
  - The default DH group can be insecure
 
 ```bash
 # openssl dhparam -out /etc/pki/tls/dhparams.pem 2048
-# cat /etc/pki/tls/dhparams.pem >> /etc/pki/tls/certs/localhost.crt
+# cat /etc/pki/tls/dhparams.pem >> /etc/letsencrypt/live/phptek1.w.iltshi.re/cert.pem
 ```
 
 
@@ -866,29 +861,143 @@ class: content-odd noheader tinycode
 
 ```bash
 # vi /etc/httpd/conf.d/ssl.conf
+SSLCipherSuite ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256
+```
+- https://goo.gl/ujdHdI
+
+???
+- It goes on a bit - I'd never recommend you try to remember all the ciphers yourself. SSLLabs provide a good list
+---
+class: content-odd tinycode
+- SetHandler vs AddHandler
+ - Apache has two ways of handling scripts
+ - AddHandler defines a handler based on an extension
+ - SetHandler defines a single handler for a request
+- /notanimage.php.jpg
+```bash
+# vi /etc/httpd/conf.d/php.conf
+<FilesMatch \.php$>
+    SetHandler application/x-httpd-php
+</FilesMatch>
+```
+???
+
+The problem comes that apache will recognise multiple externsions
+ - Check the url /notanimage.php.jpg to see what I mean!
+ - This could be a security vulnability
+  - Swapping Handler means we can create a rule that only loads the php handler if the file ends with .php
+---
+class: content-odd tinycode noheader
+- Disable ServerSignature and ServerTokens
+ - Can might provide useful information to an attacker
+```bash
+# vi /etc/httpd/conf/httpd.conf
+ServerSignature Off
+ServerTokens Prod
+```
+- Disable FileETag
+ - ETag exposes information like inode number, MIME boundary, child process
+```bash
+# vi /etc/httpd/conf/httpd.conf
+FileETag Off
+```
+???
+
+Disabling ETag is required for PCI compliance
+
+---
+class: content-odd tinycode noheader
+- Install mod_security
+ - mod_security is a WAF that helps protect against common attacks
+ - It's designed to allow you to create your own rules, but comes with some default rules that we will use
+- /shell.php?user=<?php echo "hi"; ?>
+
+```bash
+# yum install mod_security
 ```
 
+???
+That's the easy bit - by default there are no rules, so we need to fetch all the rules, and set it up!
+
+
+
+---
+class: content-odd  noheader
+```bash
+# mkdir /etc/httpd/modsecurity.d/available-rules
+# cd /etc/httpd/modsecurity.d/available-rules
+# wget https://github.com/SpiderLabs/owasp-modsecurity-crs/archive/v3.0.2.tar.gz
+# tar -zxf v3.0.2.tar.gz
+# cd owasp-modsecurity-crs-3.0.2/
+# mv crs-setup.conf.example /etc/httpd/modsecurity.d/mod_security_crs.conf
+# ln -s /etc/httpd/modsecurity.d/available-rules/owasp-modsecurity-crs-3.0.2/rules/* /etc/httpd/modsecurity.d/activated_rules/
+```
+
+- The default rules will protect against common attacks, such as SQL injection, large post bodies, JS in the query string etc.
+
+???
+
+Download the core rules, use the core setup file
+ - We will link all the rules into the activated_rules directory
+ - Note, there a couple of rules that do not work, depending on your config
+ - Attempt to restart apache, then remove the rule/rules it complains about
+
 ---
 
 class: content-even
 
-# mySQL - Todo
+# mySQL
 
 - Use `mysql_secure_installation`
-- Limit connection attempts
+ - This will take you through some 'good practise' steps - setting passwords, removing remote access etc
+- Limit connection attempts - `max_connect_errors = 5`
 - Disable local infile
-- Hide information from attackers
-
-???
+ - By default, `LOAD DATA LOCAL` can be used to read DB files:
 
 ---
 
-class: content-odd
+class: content-even
 
-# PHP - ToDo
+```sql
+CREATE TABLE `exploit` (`path` longtext);
+LOAD DATA LOCAL INFILE '/etc/passwd'
+  INTO TABLE exploit;
+SELECT * FROM exploit;
+```
+---
 
-- Disable shell/OS functions if you don't need them
-- Enforce a basedir
+class: content-even noheader tinycode
+
+```sql
++----------------------------------------------------------------------+
+| path                                                                 |
++----------------------------------------------------------------------+
+| root:x:0:0:root:/root:/bin/bash                                      |
+| bin:x:1:1:bin:/bin:/sbin/nologin                                     |
+| daemon:x:2:2:daemon:/sbin:/sbin/nologin                              |
+| adm:x:3:4:adm:/var/adm:/sbin/nologin                                 |
+| lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin                             |
+| sync:x:5:0:sync:/sbin:/bin/sync                                      |
+| shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown                         |
+| halt:x:7:0:halt:/sbin:/sbin/halt                                     |
+| mail:x:8:12:mail:/var/spool/mail:/sbin/nologin                       |
+| uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin                      |
+| operator:x:11:0:operator:/root:/sbin/nologin                         |
+| gopher:x:13:30:gopher:/var/gopher:/sbin/nologin                      |
+| apache:x:48:48:Apache:/var/www:/sbin/nologin                         |
+| mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash                  |
+| clam:x:498:498:Clam Anti Virus Checker:/var/lib/clamav:/sbin/nologin |
++----------------------------------------------------------------------+
+```
+---
+
+class: content-even
+
+```bash
+# vi /etc/my.conf
+
+local-infile=0
+```
 
 ???
 
@@ -896,18 +1005,54 @@ class: content-odd
 
 class: content-even
 
-# SELinux - ToDo
+# SELinux
 
-- Use it!
+- All too often, usrs disable SELinux as soon as it starts causing problems
+ - Don't!!
+- TL;DR - SELinux maintains access and transaction rights between users, processes and files
+ - This is managed through the security policy for the machine
+- Helps prevent applications accessing files they shouldn't, or executing things they shouldn't
+ - SELinux uses the least-privilege model - everything is denied by default, and then exceptions are made
 
 ---
 
 class: content-even
 
-# Configuring SELinux  - ToDo
+# Configuring SELinux
+
+- First, we need to enable SELinux and reboot
+```bash
+# vi /etc/selinux/config
+SELINUX=enforcing
+```
 
 
 ???
+Rebooting takes a few minutes:
+- The usual reason - service has one context, trying to access files from nother context
+ - Services are installed with default rules, but to work outside those rules you need to add exceptions
+ - Common one is vhosts in the /home directory
+---
+
+class: content-even noheader tinycode
+
+```bash
+# ps axZ | grep httpd
+# ls -lahZ /home/test/
+# ls -lahZ /var/www/html
+# yum install policycoreutils-python
+# semanage fcontext -a -t httpd_sys_content_t "/home(/.*)?"
+# restorecon -Rv /home
+# ls -lahZ /home/test/
+```
+
+???
+
+You can find out the context  of a service, and the context of files using -Z
+ - If they are not part of the same domain, the service cannot access them!
+ - To fix this, we need to update the context of the files - this required a new tool
+ - We set the context, then 'restore' (so that it matches the new rules)
+ - If we check again now, the context is updated
 
 ---
 
@@ -934,8 +1079,6 @@ class: content-even
 .center[![](security/images/task.png)]
 
 - From the given list of servers, identify which zones they should go into
-
-TODO: Worksheet!
 
 ---
 
@@ -991,10 +1134,23 @@ class: content-odd noheader tinycode
 
 class: content-even
 
-# Frequency of access  - ToDo
+# Frequency of access restriction
 
-- If you know there is never a reason for more than 100 requests a minute to a section of your network, then don't alow more!
-- Use mod_evasive
+- If you know there is never a reason for more than 30 requests a second to a section of your network, then don't alow more!
+ - Mod_evasive is an apache module designed to apply basic rate limiting to your web-server
+```bash
+# yum install mod_evasive
+# vi /etc/httpd/conf.d/mod_evasive.conf
+```
+- Out of the box the settings are ok
+ - Suggest setting up email notifications
+ - Consider the per-page setting - in our modern world of AJAX, is 2 requests a second sufficient?
+
+
+???
+
+Play with some settings, and test it out :-)
+There is a test script in vi /usr/share/doc/mod_evasive-1.10.1/test.pl that you can use
 
 ---
 
@@ -1088,7 +1244,10 @@ class: content-even
 
 class: content-odd
 
-# Brute force  - ToDo
+# Brute force
+
+- Attackers with very fast (or lots of) machines can simply try every password until they find the right one
+- This hits you in two ways - potentially they can find your password, and the continuous requests also act as a semi-DDOS
 
 ---
 
