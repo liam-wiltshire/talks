@@ -464,6 +464,10 @@ sudo service httpd restart
 ```
 
 ---
+class: content-even middle center
+![](security/images/incident.png)
+
+---
 
 class: content-even tinycode
 
@@ -757,7 +761,8 @@ class: content-even noheader
 - On the server (logged in as the user you are securing):
 ```bash
 # vi ~/.ssh/authorized_keys
-# chmod -R 600 ~/.ssh/
+# chmod 0700 ~/.ssh/
+# chmod 0600 ~/.ssh/authorized_keys
 ```
 - Paste the public key onto a new line
 - Only allow key based authentication:
@@ -807,6 +812,10 @@ RewriteCond %{REQUEST_METHOD} !^(GET|POST|HEAD)
 RewriteRule .* - [R=405,L]
 
 ```
+
+???
+
+Can be tested using curl
 
 ---
 
@@ -867,6 +876,15 @@ SSLCipherSuite ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE
 
 ???
 - It goes on a bit - I'd never recommend you try to remember all the ciphers yourself. SSLLabs provide a good list
+
+
+---
+class: content-odd
+
+# Test
+- As with everything security, we should test regularly
+- SSLLabs has a create testing tool that covers all the main bases.
+
 ---
 class: content-odd tinycode
 - SetHandler vs AddHandler
@@ -900,7 +918,7 @@ ServerTokens Prod
  - ETag exposes information like inode number, MIME boundary, child process
 ```bash
 # vi /etc/httpd/conf/httpd.conf
-FileETag Off
+FileETag None
 ```
 ???
 
@@ -930,7 +948,7 @@ class: content-odd  noheader
 # wget https://github.com/SpiderLabs/owasp-modsecurity-crs/archive/v3.0.2.tar.gz
 # tar -zxf v3.0.2.tar.gz
 # cd owasp-modsecurity-crs-3.0.2/
-# mv crs-setup.conf.example /etc/httpd/modsecurity.d/mod_security_crs.conf
+# mv crs-setup.conf.example /etc/httpd/modsecurity.d/crs-setup.conf
 # ln -s /etc/httpd/modsecurity.d/available-rules/owasp-modsecurity-crs-3.0.2/rules/* /etc/httpd/modsecurity.d/activated_rules/
 ```
 
@@ -953,17 +971,19 @@ class: content-even
  - This will take you through some 'good practise' steps - setting passwords, removing remote access etc
 - Limit connection attempts - `max_connect_errors = 5`
 - Disable local infile
- - By default, `LOAD DATA LOCAL` can be used to read DB files:
+ - By default, `LOAD DATA LOCAL` can be used to read system files:
 
 ---
 
 class: content-even
 
 ```sql
+CREATE DATABASE `exploit`;
+USE `exploit`;
 CREATE TABLE `exploit` (`path` longtext);
 LOAD DATA LOCAL INFILE '/etc/passwd'
-  INTO TABLE exploit;
-SELECT * FROM exploit;
+  INTO TABLE `exploit`;
+SELECT * FROM `exploit`;
 ```
 ---
 
@@ -1421,7 +1441,7 @@ class: content-even
 ```
 
 ???
-- Run lynis - you might bb interested to know that the start box had a score of just 10!!
+- Run lynis - you might be interested to know that the start box had a score of about 55!
 ---
 
 class: summary-slide middle
