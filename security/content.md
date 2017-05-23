@@ -1,3 +1,15 @@
+class: vanity-cover
+
+background-image: url(logos/phptek-trainingslide.png)
+
+---
+
+class: vanity-cover
+
+background-image: url(logos/phptek-sponsor.png)
+
+---
+
 class: title-slide
 
 .conference[![](logos/%%conference%%.png)]
@@ -13,6 +25,9 @@ Scaling is one of those things that we're often guilty of ignoring early on.
 It's only when the spikes start happening, and your application gets slower and slower, that we realise we need to do something about it
 
 There are a lot of different ways we can scale - this talk covers some of the basic approaches, including how you can apply them to existing applications
+
+
+
 
 ---
 
@@ -1446,11 +1461,10 @@ class: content-even
 
 class: summary-slide middle
 
-- Fresh box, set up an automated attack on as many vectors as possible
-- Working in teams, identify the attacks and mitigate against them
-- Before the attacks start, 20 minutes to 'harden' the servers
-- Once the attacks of started, they will run for 25 minutes
-- Prizes for the team who mitigates the most
+- There are 7 fresh boxes with a set of different weaknesses
+- Working in teams, identify the weaknesses and mitigate against them
+ - Use the things we've covered, check the logs for clues
+- Prizes for the team who mitigates the most :-)
 
 ---
 
