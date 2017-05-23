@@ -20,11 +20,6 @@ class: title-slide
 
 ???
 
-Scaling is one of those things that we're often guilty of ignoring early on.
-
-It's only when the spikes start happening, and your application gets slower and slower, that we realise we need to do something about it
-
-There are a lot of different ways we can scale - this talk covers some of the basic approaches, including how you can apply them to existing applications
 
 
 
