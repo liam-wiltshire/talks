@@ -12,6 +12,13 @@ class: title-slide longtitle
 - Many projects use, you learn to persist data with mySQL very early on
 - However, if you're like me, you might not keep up to date with it
  - With our other tools, languages, frameworks, IDEs, we keep abreast of the latest goings-on, but mySQL can be forgotton
+
+---
+
+class: vanity-cover
+
+background-image: url(logos/phptek-sponsor.png)
+
 ---
 
 class: section-title-c bottom left vanity-slide
@@ -218,7 +225,7 @@ class: content-odd
 class: content-odd
 # Spatial Data Types
 
-- Geometry - The generic Geo Data Type
+- Geometry - Can hold any geo object:
  - Point
  - Linestring
  - Polygon
@@ -253,6 +260,11 @@ class: content-odd
 - mySQL has functions for both 'flat' spatial calculations, and spherical ones (since 5.7)
 - For most of our purposes, we are probably dealing with the Earth!
  - ST_Distance_Sphere
+
+???
+- By default ST_DISTANCE_SPHERE will assume we are talking about a spherical earth.
+ - However, it does take an optional third argument - a radius in meters,
+  - So when Elon Musk needs a Tesla store locator on Mars, he should be fine
 
 ---
 
