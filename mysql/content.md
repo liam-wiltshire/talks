@@ -114,8 +114,6 @@ class: content-even
 
 - Like other binary columns, you cannot index JSON columns
 - There are some alternative solutions
-- MySQL will do some type juggling of JSON data
-    - Review the documentation
 
 ???
 
@@ -159,6 +157,39 @@ SELECT id, data->"$.title" FROM talks;
  - mySQL also provides some shortcut methods
 - In all instances, the $ is used to represent the root of the document
 
+
+---
+
+class: content-even
+
+# A Note on Quotes
+
+- `JSON_EXTRACT` and `->` will return a quoted string:
+```sql
+mysql> SELECT data->"$.title" FROM talks;
++-----------------------+
+| data->"$.title"       |
++-----------------------+
+| "Adventures in mySQL" |
+| "This is a new test"  |
++-----------------------+
+```
+---
+class: content-even
+
+# A Note on Quotes
+
+- To unquote it, there is an additional method `JSON_UNQUOTE`
+ - Otherwise `->>` works like `JSON_UNQUOTE(JSON_EXTRACT())`
+```sql
+mysql> SELECT data->>"$.title" FROM talks;
++---------------------+
+| data->>"$.title"    |
++---------------------+
+| Adventures in mySQL |
+| This is a new test  |
++---------------------+
+```
 ---
 
 class: section-title-a center centralimg
@@ -187,19 +218,32 @@ class: content-odd
 class: content-odd
 # Spatial Data Types
 
-- Geometry
+- Geometry - The generic Geo Data Type
  - Point
  - Linestring
  - Polygon
 
-- Also has some multi data types that allow storage of multiple points, lines etc
+???
+- The thing to rememebr is that each piece of geometric data is an object, and each has a storage type that relates to that object
+- mySQL has a number of data types that allow representation of different data
+ - For our most common use cases, store locators, we'd be storing a point
+- The generic Geometry type can store any geometric object, the other types only allow storage of that specific type
+
+---
+
+class: content-odd
+# Spatial Collection Data Types
+
+- MySQL also has some multi data types that allow storage of collections:
+ - GeometryCollection
+  - MultiPoint
+  - MultiLinestring
+  - MultiPolygon
 
 ???
 
-- mySQL has a number of data types that allow representation of different data
- - For our most common use cases, store locators, we'd be storing a point
-- The generic Geometry type can store any geometric representation, the other types only allow storage of that specific type
-- There are also multiple entry types for each one, so you can store a collection of points, a collection of polygons etc
+- GeometryCollection can be a collection of objects of any of the other types (so it coul bd one point, one polygon and two strings)
+- The other ones are collections of just that object
 
 ---
 
@@ -468,6 +512,55 @@ class: content-even tinycode noheader
   }
 }
 ```
+---
+class: content-even tinycode noheader
+
+```sql
+EXPLAIN FORMAT=json SELECT * FROM slides WHERE talk_id = 5;
+```
+
+```json
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "1.20"
+    },
+    "table": {
+      "table_name": "slides",
+      "access_type": "ALL",
+      "possible_keys": [
+        "talk_id"
+      ],
+      "rows_examined_per_scan": 1,
+      "rows_produced_per_join": 1,
+      "filtered": "100.00",
+```
+---
+class: content-even tinycode noheader
+
+```json
+      "cost_info": {
+        "read_cost": "1.00",
+        "eval_cost": "0.20",
+        "prefix_cost": "1.20",
+        "data_read_per_join": "280"
+      },
+      "used_columns": [
+        "talk_id",
+        "url"
+      ],
+      "attached_condition": "(`mysqltest`.`slides`.`talk_id` = 5)"
+    }
+  }
+}
+```
+
+???
+
+- JSON Format explains are really powerful, as they can give you lots more hints than a standard explain would:
+ - WHERE covering indexes might be useful
+
 ---
 
 class: section-title-c middle center
