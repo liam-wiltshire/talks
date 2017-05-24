@@ -149,7 +149,7 @@ INSERT INTO talks values (
 class: content-even
 ```sql
 -- Find rows that contains this data
-SELECT * FROM talks 
+SELECT * FROM talks WHERE
 JSON_CONTAINS(data, '{"title": "Adventures in mySQL"}');
 -- Find rows that have any summary
 SELECT * FROM talks WHERE data->"$.summary" IS NOT NULL;
@@ -163,6 +163,35 @@ SELECT id, data->"$.title" FROM talks;
  - mySQL provides a number of functions JSON_CONTAINS, JSON_EXTRACT etc
  - mySQL also provides some shortcut methods
 - In all instances, the $ is used to represent the root of the document
+
+---
+class: content-even
+
+- In this example, let's say that you are looking to find something deeper within the object
+
+```sql
+INSERT INTO talks
+(id, data)
+values (
+unhex(replace(uuid(),'-','')),
+'{"talkdata":
+  {"title": "Lockdown: Linux Security 101",
+   "summary": "You missed my tutorial!"}
+  }');
+```
+---
+class: content-even
+
+```sql
+SELECT * FROM talks WHERE JSON_CONTAINS(
+  data,
+  '{"title": "Lockdown: Linux Security 101"}',
+  "$.talkdata"
+);
+
+SELECT * FROM talks WHERE
+data->"$.talkdata.title" = "Lockdown: Linux Security 101";
+```
 
 
 ---
@@ -197,6 +226,11 @@ mysql> SELECT data->>"$.title" FROM talks;
 | This is a new test  |
 +---------------------+
 ```
+
+???
+
+- If the data to be returned is a JSON object in itself, then both will work the same way.
+
 ---
 
 class: section-title-a center centralimg
