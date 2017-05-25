@@ -790,7 +790,7 @@ class: content-even
 
 - You probably have plenty of situations where you almost always want the data in descending order
  - Showing the neweset records first
- - Since mySQL 5.7 we can scan an index in reverse, but it is still slower than reading an index forwards
+ - Previously we have been able to scan an index in reverse, but it is still slower than reading an index forwards
 
 ---
 
