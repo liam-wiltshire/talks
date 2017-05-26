@@ -15,12 +15,6 @@ class: title-slide longtitle
 
 ---
 
-class: vanity-cover
-
-background-image: url(logos/phptek-sponsor.png)
-
----
-
 class: section-title-c bottom left vanity-slide
 
 .introimg[![](http://tebex.co.uk/img/tebex.svg)]

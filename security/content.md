@@ -1,15 +1,3 @@
-class: vanity-cover
-
-background-image: url(logos/phptek-trainingslide.png)
-
----
-
-class: vanity-cover
-
-background-image: url(logos/phptek-sponsor.png)
-
----
-
 class: title-slide
 
 .conference[![](logos/%%conference%%.png)]
