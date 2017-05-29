@@ -210,11 +210,11 @@ class: content-odd
 
 # Phone Number
 
-- Simple example, we are validating input of a Canadian phone number
-- 1-123-456-7890, 123-456-7890, 1 123 456-7890, (123) 456-7890
+- Simple example, we are validating input of a UK mobile number
+- 07123 456789, +44 7123 456789 with or wthout space
 
 ```regexp
-^(1(-| ))?\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
+^(\+44( )?|0)7[0-9]{3}( )?[0-9]{6}$
 ```
 
 ---
@@ -222,13 +222,13 @@ class: content-odd
 class: content-odd
 
 ```regexp
-^(1(-| ))?\(?[0-9]{3}\)?( |-)[0-9]{3}( |-)[0-9]{4}$
+^(\+44( )?|0)[0-9]{4}( )?[0-9]{6}$
 ```
 
 - `^...$` is the string anchor (must start and end)
-- `(1(-| ))?` optionally, there could be a 1 followed by a dash or a space
-- `\(?` optional open bracket
+- `(\+44( )?|0)` Either +44 (optionally with a space), or the number 0
     - `[\^$.|?*+()` are reserved characters
+- `7` - a single number 7
 - `[0-9]{3}` exactly 3 numbers between 0-9
     - `{3,6}` would mean between 3 and 6
 
@@ -444,8 +444,15 @@ class: content-odd
 
 - Let's assume we want to extract the filename and filesize from a *nix `ls -lah` command
 
+```
+drwxrwxr-x.  3 liam liam 4.0K May 29 21:00 .
+drwxrwxr-x. 12 liam liam 4.0K May 26 15:43 ..
+-rw-rw-r--.  1 liam liam  20K May 29 21:00 content.md
+drwxrwxr-x.  2 liam liam 4.0K Dec  7 14:44 images
+```
+
 ```regexp
-([0-9]+[MKG])\s+([a-z0-9:]+\s+){3}([^\n]+)
+([0-9\.]+[MKG])\s+([a-z]+)\s+([0-9]+)\s([0-9:]+\s+)([^\n]+)
 ```
 
 ???
@@ -454,13 +461,13 @@ class: content-odd
 
 ---
 
-class: content-odd
+class: content-odd tinycode
 #Non-Capturing Groups
 
-- We can use ?: at the start of the group to make it non-capturing:
+- We can use ?: at the start of a group to make it non-capturing:
 
 ```regexp
-([0-9]+[MKG])\s+(?:[a-z0-9:]+\s+){3}([^\n]+)
+([0-9\.]+[MKG])\s+(?:[a-z]+)\s+(?:[0-9]+)\s(?:[0-9:]+\s+)([^\n]+)
 ```
 
 ???
