@@ -221,7 +221,7 @@ class: content-odd
 class: content-odd
 
 ```regexp
-^(\+44( )?|0)[0-9]{4}( )?[0-9]{6}$
+^(\+44( )?|0)7[0-9]{3}( )?[0-9]{6}$
 ```
 
 - `^...$` is the string anchor (must start and end)
