@@ -8,10 +8,9 @@ class: title-slide
 ## is your friend
 
 ???
-
-I've spoken to alot of developers, and something I hear regularly is that they don't 'do' RegEx.
-
-They might call it scary, or slow, and I've seem some amazing attempts to avoid them.
+- RegEx is a funny old thing - for some developers, mentioning the words Regular Expressions generates a noise more usually heard fromr motor mechanics - (suck in teeth, tut, cost you...)
+- Why, why the sucky-iny noise?
+- Well, it's hard to maintain isn't it, well, it's slow
 
 However, this doesn't have to be the case - treated well, RegEx can be a powerful tool in your toolbox
 
