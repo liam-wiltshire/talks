@@ -384,6 +384,11 @@ class: content-odd
     
 ![](regex/images/regexsteps.png)
 
+???
+
+- This is because the * (0 or more) will 'give back' content to try to satisfy the pattern in as few as characters a possible
+ - These backtracks can be expensive in terms of requiring alot more steps
+
 ---
 
 class: content-odd
@@ -395,7 +400,8 @@ class: content-odd
     
 ???
 
-Where * is 0 or more, it involves alot more tests than + does, which must match at least once
+Where * is 0 or more, it involves a few more tests than + does, which must match at least once
+
 
 ---
 
@@ -419,7 +425,7 @@ It also means we don't need to use the lazy ? as it will automatically stop at t
 
 ---
 
-class: middle center
+class: middle center content-even
 
 ![](regex/images/negative.png)
 
@@ -529,6 +535,7 @@ class: content-odd
 
 - The ?> is the atomic group operator
 - We are essentially telling the engine that if the first option is matched, then the other two can't possibly be better options
+ - If you remember back to when we mentioned the + and * would 'give back' characters, this is the same thing - by default each 'failed' match will then give those characters back to try the next option - the atomic group means that they won't be given back
 
 ---
 
