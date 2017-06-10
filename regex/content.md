@@ -484,7 +484,7 @@ class: content-even
     - Adding ? to make the matchall lazy doesn't change the result, but brings it down to 84 steps
     
 ---
-class: content-event
+class: content-even
 #Lazy Is Good (Sometimes)
 - With a greedy selector, the engine has to check every character position to the end of the string in order to ensure that PHP doesn't appear again
 - Making the match lazy however means it can stop as soon as it hits the first PHP string, saving these additional lookups.
