@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysql/content.md" afterPath="$PROJECT_DIR$/mysql/content.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/regex/content.md" afterPath="$PROJECT_DIR$/regex/content.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/security/content.md" afterPath="$PROJECT_DIR$/security/content.md" />
     </list>
     <ignored path="talks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,50 +27,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="content.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mysql/content.md">
+        <entry file="file://$PROJECT_DIR$/regex/content.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="105">
-                <caret line="440" column="0" selection-start-line="440" selection-start-column="0" selection-end-line="440" selection-end-column="0" />
-                <folding>
-                  <marker date="1488124378560" expanded="true" signature="2473:2518" ph="CREATE TABLE... talks" />
-                  <marker date="1488124378560" expanded="true" signature="2521:2663" ph="INSERT INTO talks... " />
-                  <marker date="1488124378560" expanded="true" signature="2871:2947" ph="SELECT * FRO... talks" />
-                  <marker date="1488124378560" expanded="true" signature="2984:3039" ph="SELECT * FRO... talks" />
-                  <marker date="1488124378560" expanded="true" signature="3071:3108" ph="SELECT id, d... talks" />
-                  <marker date="1488124378560" expanded="true" signature="5653:5715" ph="SELECT * FRO... talks" />
-                  <marker date="1488124378560" expanded="true" signature="5653:5716" ph="SELECT * FRO... talks" />
-                  <marker date="1488124378560" expanded="true" signature="7267:7341" ph="GRANT SELECT... " />
-                  <marker date="1488124378560" expanded="true" signature="7343:7358" ph="GRANT SELECT... " />
-                  <marker date="1488124378560" expanded="true" signature="7343:7382" ph="GRANT SELECT... " />
-                  <marker date="1488124378560" expanded="true" signature="7343:7386" ph="GRANT SELECT... " />
-                  <marker date="1488124378560" expanded="true" signature="8185:8245" ph="SELECT * FRO... talks" />
-                  <marker date="1488124378560" expanded="true" signature="8288:8384" ph="ALTER TABLE talks... " />
-                  <marker date="1488124378560" expanded="true" signature="8387:8433" ph="ALTER TABLE talks... " />
-                  <marker date="1488124378560" expanded="true" signature="8468:8522" ph="SELECT * FRO... talks" />
-                </folding>
+              <first_editor relative-caret-position="260">
+                <caret line="785" column="0" selection-start-line="785" selection-start-column="0" selection-end-line="785" selection-end-column="0" />
+                <folding />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fonts.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fonts.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="core-styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core-styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -88,10 +53,11 @@
         <option value="$PROJECT_DIR$/fonts.css" />
         <option value="$PROJECT_DIR$/title-styles.css" />
         <option value="$PROJECT_DIR$/postgres/content.md" />
-        <option value="$PROJECT_DIR$/regex/content.md" />
         <option value="$PROJECT_DIR$/slide-styles.css" />
         <option value="$PROJECT_DIR$/core-styles.css" />
         <option value="$PROJECT_DIR$/mysql/content.md" />
+        <option value="$PROJECT_DIR$/security/content.md" />
+        <option value="$PROJECT_DIR$/regex/content.md" />
       </list>
     </option>
   </component>
@@ -106,6 +72,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1360" />
     <option name="y" value="27" />
     <option name="width" value="1366" />
     <option name="height" value="741" />
@@ -182,7 +149,21 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mysql" />
+              <option name="myItemId" value="security" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="talks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="talks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regex" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -267,18 +248,41 @@
       <workItem from="1479158384522" duration="12047000" />
       <workItem from="1488042011604" duration="3455000" />
       <workItem from="1488092906398" duration="6884000" />
-      <workItem from="1488120606969" duration="3965000" />
+      <workItem from="1488120606969" duration="4561000" />
+      <workItem from="1488191741469" duration="21000" />
+      <workItem from="1488891980912" duration="4483000" />
+      <workItem from="1489347798050" duration="3595000" />
+      <workItem from="1491122296917" duration="4120000" />
+      <workItem from="1491335214402" duration="86000" />
+      <workItem from="1492623044233" duration="6099000" />
+      <workItem from="1492864030251" duration="2183000" />
+      <workItem from="1493367035736" duration="63000" />
+      <workItem from="1493444427534" duration="8872000" />
+      <workItem from="1493970306550" duration="18000" />
+      <workItem from="1494611176755" duration="24911000" />
+      <workItem from="1495087431347" duration="6411000" />
+      <workItem from="1495204264266" duration="14352000" />
+      <workItem from="1495277492819" duration="3202000" />
+      <workItem from="1495295944655" duration="35000" />
+      <workItem from="1495453018645" duration="3924000" />
+      <workItem from="1495561220462" duration="3127000" />
+      <workItem from="1495649963743" duration="1735000" />
+      <workItem from="1495659060942" duration="24000" />
+      <workItem from="1495715815460" duration="13000" />
+      <workItem from="1495809704312" duration="706000" />
+      <workItem from="1496086967206" duration="3201000" />
+      <workItem from="1501739033534" duration="526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60802000" />
+    <option name="totallyTimeSpent" value="153105000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <frame x="1360" y="27" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3323217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20182094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -313,23 +317,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/postgres/content.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="315">
-            <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remark.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39795">
-          <caret line="2653" column="42" selection-start-line="2653" selection-start-column="36" selection-end-line="2653" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/regex/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -351,7 +338,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -424,7 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -470,7 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -516,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -555,7 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -594,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -678,16 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/regex/content.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="113">
-            <caret line="762" column="3" selection-start-line="762" selection-start-column="3" selection-end-line="762" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slide-styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -695,11 +665,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/security/images/overview/1.png" />
     <entry file="file://$PROJECT_DIR$/core-styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="420">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -707,32 +677,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysql/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="105">
-            <caret line="440" column="0" selection-start-line="440" selection-start-column="0" selection-end-line="440" selection-end-column="0" />
-            <folding>
-              <marker date="1488124378560" expanded="true" signature="2473:2518" ph="CREATE TABLE... talks" />
-              <marker date="1488124378560" expanded="true" signature="2521:2663" ph="INSERT INTO talks... " />
-              <marker date="1488124378560" expanded="true" signature="2871:2947" ph="SELECT * FRO... talks" />
-              <marker date="1488124378560" expanded="true" signature="2984:3039" ph="SELECT * FRO... talks" />
-              <marker date="1488124378560" expanded="true" signature="3071:3108" ph="SELECT id, d... talks" />
-              <marker date="1488124378560" expanded="true" signature="5653:5715" ph="SELECT * FRO... talks" />
-              <marker date="1488124378560" expanded="true" signature="5653:5716" ph="SELECT * FRO... talks" />
-              <marker date="1488124378560" expanded="true" signature="7267:7341" ph="GRANT SELECT... " />
-              <marker date="1488124378560" expanded="true" signature="7343:7358" ph="GRANT SELECT... " />
-              <marker date="1488124378560" expanded="true" signature="7343:7382" ph="GRANT SELECT... " />
-              <marker date="1488124378560" expanded="true" signature="7343:7386" ph="GRANT SELECT... " />
-              <marker date="1488124378560" expanded="true" signature="8185:8245" ph="SELECT * FRO... talks" />
-              <marker date="1488124378560" expanded="true" signature="8288:8384" ph="ALTER TABLE talks... " />
-              <marker date="1488124378560" expanded="true" signature="8387:8433" ph="ALTER TABLE talks... " />
-              <marker date="1488124378560" expanded="true" signature="8468:8522" ph="SELECT * FRO... talks" />
-            </folding>
+          <first_editor relative-caret-position="78">
+            <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="260">
+            <caret line="785" column="0" selection-start-line="785" selection-start-column="0" selection-end-line="785" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>

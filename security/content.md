@@ -27,6 +27,14 @@ class: vanity-cover
 
 background-image: url(logos/mcft.png)
 
+
+---
+
+class: section-title-a center middle
+
+## dpc??.w.iltshi.re
+## root / dpcpwd2017
+
 ---
 
 class: section-title-a center centralimage
@@ -1096,6 +1104,11 @@ class: content-even
 .center[![](security/images/task.png)]
 
 - From the given list of servers, identify which zones they should go into
+
+---
+
+class: center noheader content-even
+![](security/images/zoningworksheet.png)
 
 ---
 

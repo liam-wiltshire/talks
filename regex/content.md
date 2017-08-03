@@ -305,7 +305,7 @@ $data = file_get_contents(
 );
 
 preg_match_all(
-  "/<span class=\"temp\">(-?[0-9]+)&deg;</span>/i",
+  "/<span class=\"temp\">(-?[0-9]+)&deg;<\/span>/i",
   $data,
   $matches
 );
@@ -457,7 +457,7 @@ drwxrwxr-x.  2 liam liam 4.0K Dec  7 14:44 images
 ```
 
 ```regexp
-([0-9\.]+[MKG])\s+([a-z]+)\s+([0-9]+)\s([0-9:]+\s+)([^\n]+)
+([0-9\.]+[MKG])\s+([a-zA-Z]+)\s+([0-9]+)\s([0-9:]+\s+)([^\n]+)
 ```
 
 ???
@@ -472,7 +472,7 @@ class: content-odd tinycode
 - We can use ?: at the start of a group to make it non-capturing:
 
 ```regexp
-([0-9\.]+[MKG])\s+(?:[a-z]+)\s+(?:[0-9]+)\s(?:[0-9:]+\s+)([^\n]+)
+([0-9\.]+[MKG])\s+(?:[a-zA-Z]+)\s+(?:[0-9]+)\s(?:[0-9:]+\s+)([^\n]+)
 ```
 
 ???
@@ -751,7 +751,7 @@ This is useful if you are matching quite a few pieces of data to be extracted an
 
 ---
 
-class: middle center
+class: middle center section-title-b
 
 ![](regex/images/free-bonuses.gif)
 
