@@ -229,6 +229,13 @@ class: content-even
 - Current Directory - `.`
 - Parent Directory - `..`
 - Home Directory - `~`
+
+---
+
+class: content-even
+
+# Filesystem Navigation
+
 - Change Directories - `cd`
 ```bash
 cd /root/linux101
@@ -343,8 +350,8 @@ class: content-even noheader
 
 .center[![](security/images/task.png)]
 
-- Find files that have been editied in the lsat day
-- Find files that contain the word 'note' in their name
+- Find files that have been editied in the last day
+- Find files that contain the word 'note' in their name (case **insensitive**)
 
 ???
 
@@ -355,7 +362,15 @@ class: content-odd
 
 # Plumbing
 
+- The Linux OS is made up of lots of little applications that do one job well
+ - However, alot of the time you might need to perform multiple tasks - doing this one at a time would be horrible.
 - Linux allows you to pass the output of commands around
+---
+
+class: content-odd
+
+# Plumbing
+
 - You can pipe the output of one command to another:
 
 ```bash
@@ -442,8 +457,16 @@ class: content-even
 - As we've discussed, there are two different 'parts' to consider:
  - Who is the owner
  - What are the permissions
+- You may find that you have files that you need to change who the owner is, or change permissions
+
+---
+
+class: content-even
+# File Permissions
+
 - Changing owner - `chown`
  - `chown root:root /root/linux101.sh`
+ - Or shorter: `chown root. /root/linux101.sh`
 - Changing permissions - `chmod`
  - `chmod 755 /root/linux.sh`
 ---
@@ -498,6 +521,13 @@ class: content-even noheader
  +----- min (0-59)
 
 ```
+
+---
+
+class: content-even middle center
+
+![](linux/images/cron_mail.png)
+
 
 ---
 
@@ -563,7 +593,7 @@ class: content-odd
 # LAMP
 
 - LAMP is our standard server stack:
- - Linux ?
+ - Linux
  - Apache
  - MySQL
  - PHP
@@ -710,7 +740,18 @@ class: content-even
 ```bash
 service [servicename] start
 ```
-- This only starts one-time however - not on reboot
+
+---
+class: content-even
+
+- The problem with service ... start is that it only starts it one time.
+- You actually want to enable the service, so that it starts every time the maching boots
+
+
+```bash
+systemctl list-unit-files
+```
+
 ```bash
 chkconfig [servicename] on
 ```
@@ -860,7 +901,7 @@ NameVirtualHost *:443
 ---
 
 class: section-title-b  halfhalf middle reverse
-background-image: url(linux/images/ilovelamp.jpg)
+background-image: url(linux/images/ilovelemp.jpg)
 
 # LEMP
 
@@ -982,7 +1023,7 @@ class: content-odd
 ps aux
 ```
 
-- If you are looking for specific processes then you may pipe this to grep
+- If we want a specific process, what might we do?
 
 
 ???
@@ -1028,7 +1069,7 @@ class: content-even center
 
 ![](linux/images/loadaverage.png)
 
-- Load averages always assume 1 processor/core
+Load averages always assume 1 processor/core
 
 ???
 
@@ -1044,7 +1085,7 @@ class: content-odd
 
 # Memory
 
-- RAM usage is just as important to keep an eye on - arguably more so
+- RAM usage is just as important to keep an eye on
 - `free` allows you to identify the amount of memory being used
 ```bash
 free -m
@@ -1100,7 +1141,7 @@ class: section-title-b center
 
 # Without needing to be awake 24/7
 
-&nbsp;
+![](linux/images/sleepytux.png)
 
 
 
@@ -1160,12 +1201,9 @@ class: summary-slide middle
 # What Have We Covered?
 
 - Basic Linux Concepts
- - Distros
- - Permissions
- - Cron
- - Packages
 - Basic Linux Commands
 - Installing LAMP/LEMP
+- Introduction to Security
 - Logging and Performance Monitoring
 
 ---
