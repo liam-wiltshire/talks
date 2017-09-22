@@ -69,6 +69,12 @@ class: content-odd
 
 ---
 
+class: content-odd center middle
+
+![](linux/images/putty.png)
+
+---
+
 class: section-title-b middle halfhalf reverse
 background-image: url(linux/images/flavours.jpg)
 
@@ -226,6 +232,7 @@ class: content-even
 
 # Filesystem Navigation
 
+- Filesystem root - `/`
 - Current Directory - `.`
 - Parent Directory - `..`
 - Home Directory - `~`
@@ -244,6 +251,18 @@ cd /root/linux101
 ```bash
 ls
 ```
+
+---
+
+class: content-even
+
+# Filesystem Navigation
+
+- Show Current Directory - `pwd`
+```bash
+pwd
+```
+
 ---
 
 class: content-even noheader
@@ -296,7 +315,7 @@ class: content-even noheader
 
 .center[![](security/images/task.png)]
 
-Create a file in the home directory called "helloworld.txt" - add some content to it and save :)
+Create a file in the home directory called "myfirstfile.txt" - add some content to it and save :)
 
 ???
 
@@ -321,7 +340,7 @@ class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
-- Search for the string "madisonphp" within any file in the root directory (case insensitive)
+- Search for the string "MadisonPHP" within any file in your home directory (case insensitive)
 - Find a file that mentions a reward
 
 
@@ -390,9 +409,10 @@ class: content-odd noheader
 
 .center[![](security/images/task.png)]
 
-- Find files in the current directory that are also .txt files
+- Find files in ~/linux101 that are also .txt files
 - Append the contents of ~/linux101/instructions.txt to ~/linux101/story.txt
  - HINT: To output the full contents of the file check out `cat`
+ - Check the contents of the appended file
 
 ???
 
@@ -420,7 +440,7 @@ class: content-even noheader
 
 .center[![](security/images/task.png)]
 
-Get the last 20 lines of ~/linux101/bigfile.txt and append to ~/linux101/story.txt
+Get the last 5 lines of ~/linux101/bigfile.txt and append to ~/linux101/story.txt
 
 ???
 
@@ -579,6 +599,82 @@ class: content-even noheader center
 ???
 
 ---
+class: content-odd
+# Where Are The Packages?
+
+- Sometimes you might need to install something not in the default packages
+ - It may be that you can add additional repos to provide that package
+- Otherwise you may have to download and compile from source
+
+---
+class: content-odd
+# Compiling from source
+
+- Compiling from source can be different depending on what you are compiling, however the basic steps are the same:
+ - Download the source code
+ - Configure the options
+ - (try to) Compile
+ - Resolve dependencies
+ - Compile again
+
+---
+class: content-odd
+# Download the source
+
+```bash
+wget http://ftp.gnu.org/gnu/bc/bc-1.07.tar.gz
+```
+
+---
+class: content-odd
+# Extract the source
+```bash
+tar -zxf bc-1.07.tar.gz
+```
+
+---
+class: content-odd
+# Configuration
+
+```bash
+cd bc-1.07
+./configure
+```
+
+---
+class: content-odd
+# Build tools
+- Common build tools include:
+ - make
+ - cmake
+ - gcc
+ - cpp
+
+```bash
+yum install gcc cpp make cmake
+```
+---
+class: content-odd
+# Now?
+```bash
+./configure
+make
+```
+
+- Not quite, but getting there :)
+---
+class: content-odd
+# Rinse and repeat
+
+- Find out the missing dependncies, work out what provides them and install
+- Eventually, the install will work :)
+
+```bash
+make
+make install
+bc
+```
+---
 
 class: section-title-a  halfhalf middle
 background-image: url(linux/images/ilovelamp.jpg)
@@ -648,7 +744,7 @@ yum provides */mysqld
 ```
 
 ```bash
-yum install mysql-server
+yum install mariadb-server
 ```
 
 ???
@@ -936,10 +1032,27 @@ class: content-odd noheader
 - Hints:
  - The packages are called nginx and php-fpm
  - You can't run httpd and nginx at the same time (on the same port)
- - Nginx doesn't invoke php directly - it passes everything it needs off to php-fpm as a separate server (nginx has confix for this, but it's commented out!)
+ - Nginx doesn't invoke php directly - it passes everything it needs off to php-fpm as a separate server - You'll need to tell nginx how to do this
  - Nginx's default document root **isn't** /var/www/html
  - php-fpm is a service, so needs starting
 
+---
+
+class: content-odd noheader
+
+You'll need to add the following within nginx's server block to tell it how to handle php:
+
+```bash
+
+location ~ \.php$ {
+    root           html;
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+
+```
 
 ---
 
@@ -1185,7 +1298,7 @@ class: content-odd
 
 # Sar
 
-- Sar can be used to parse the log data for today, se the output for a previous day, and extract particular parts of the data:
+- Sar can be used to parse the log data for today, see the output for a previous day, and extract particular parts of the data:
  - By time - using start time (-s) and end time (-e)
  - Disk transfer (-b), (-d)
  - Network (-n)
