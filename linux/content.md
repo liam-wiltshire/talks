@@ -1083,7 +1083,7 @@ class: content-even
 # Tail
 
 - We use tail to read the last few lines of a file
- - We can also follow the lice action in real time - as we reproduce an issue for example
+ - We can also follow the live action in real time - as we reproduce an issue for example
 
 ```bash
 tail -f /var/log/nginx/access.log
