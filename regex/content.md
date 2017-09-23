@@ -136,6 +136,24 @@ class: section-title-b center centralimg
 
 If you've ever had to set up redirects on a web server (be that Apache or NGINX), you've probably had to work with regular expressions. Many different servers use regular expressions as a test for conditional rules, such as IP address matches, or partial URL matches, user agent matches etc. Understanding how regular expressions work makes this process substantially easier!
 
+---
+
+class: section-title-a
+
+```php
+
+    protected static $_tokens = array(
+        "/^(root)/" => "T_ROOT",
+        "/^(map)/" => "T_MAP",
+        "/^(\s+)/" => "T_WHITESPACE",
+        "/^(\/[A-Za-z0-9\/:]+[^\s])/" => "T_URL",
+        "/^(->)/" => "T_BLOCKSTART",
+        "/^(::)/" => "T_DOUBLESEPARATOR",
+        "/^(\w+)/" => "T_IDENTIFIER",
+        "/^\$(\w+)/" => "T_VARIABLE",
+    );
+    
+```
 
 ---
 
@@ -575,12 +593,12 @@ class: content-even
 
 ```regexp
 (?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
+ ? (?=.*GB)
+ ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ? [0-9][ABD-HJLNP-UW-Z]{2})
+ ? |
+ ? ([0-9]{5})
 )
 ```
 
@@ -595,12 +613,12 @@ class: content-even
 
 ```regexp
 * (?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
+ ? (?=.*GB)
+ ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ? [0-9][ABD-HJLNP-UW-Z]{2})
+ ? |
+ ? ([0-9]{5})
 * )
 ```
 
@@ -615,12 +633,12 @@ class: content-even
 
 ```regexp
 (?
-* ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
+* ? (?=.*GB)
+ ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ? [0-9][ABD-HJLNP-UW-Z]{2})
+ ? |
+ ? ([0-9]{5})
 )
 ```
 
@@ -636,12 +654,12 @@ class: content-even
 
 ```regexp
 (?
- ↳ (?=.*GB)
-* ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-*    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-*    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
- ↳ ([0-9]{5})
+ ? (?=.*GB)
+* ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+*    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+*    ? [0-9][ABD-HJLNP-UW-Z]{2})
+ ? |
+ ? ([0-9]{5})
 )
 ```
 
@@ -657,12 +675,12 @@ class: content-even
 
 ```regexp
 (?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
-* ↳ |
- ↳ ([0-9]{5})
+ ? (?=.*GB)
+ ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ? [0-9][ABD-HJLNP-UW-Z]{2})
+* ? |
+ ? ([0-9]{5})
 )
 ```
 
@@ -677,12 +695,12 @@ class: content-even
 
 ```regexp
 (?
- ↳ (?=.*GB)
- ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
- ↳ |
-* ↳ ([0-9]{5})
+ ? (?=.*GB)
+ ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ? [0-9][ABD-HJLNP-UW-Z]{2})
+ ? |
+* ? ([0-9]{5})
 )
 ```
 
@@ -739,7 +757,7 @@ class: content-odd
 
 ```regexp
 (?P<msg>[0-9]+)\|(?P<dock>[0-9]+)\|
- ↳ (?P<tstamp>[0-9]+)\|DOOR (?P<doorstate>OPEN|CLOSED)
+ ? (?P<tstamp>[0-9]+)\|DOOR (?P<doorstate>OPEN|CLOSED)
 ```
 
 - By default, capturing groups are numbered.
