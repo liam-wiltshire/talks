@@ -152,7 +152,7 @@ class: section-title-a
         "/^(\w+)/" => "T_IDENTIFIER",
         "/^\$(\w+)/" => "T_VARIABLE",
     );
-    
+
 ```
 
 ---
