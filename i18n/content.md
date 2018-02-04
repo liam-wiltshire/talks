@@ -9,6 +9,12 @@ class: title-slide longtitle
 
 ???
 
+- The world is a big place, and yet the internet can make it small
+- Every day our we might be conversing with users anywhere in the world without even knowing about it
+- From an ulteristic point of view we should make our applications uable by as many as people as possible
+- Commercially we must do
+
+- Thanks to organisers, voluenteers etc.
 
 ---
 
@@ -36,11 +42,13 @@ class: section-title-a middle center
 - Company logo?!
 - The world is a big place
  - Internet access is growing worldwide
- - In all corners of the globe there are massively expanding markets opening up
+ - In all corners of the globe (not that globes have corners!) there are massively expanding markets opening up
  - Most of these do not use English as their native tongue
   - Some might speak English anyway, but firstly that's a horrible assumption to make
+   - English holidaymaker in french restraunt
   - Secondly, it's certainly not true for everyone.
 - The internet makes any business potentially global, so we need to make the most of that opportunity
+
 
 ---
 class: summary-slide middle noheader
@@ -59,6 +67,25 @@ class: summary-slide middle noheader
 - [1] https://www.juniperresearch.com/press/press-releases/digital-games-reaches-next-level-becoming-$100-bi
 - [2] https://newzoo.com/insights/articles/the-global-games-market-will-reach-108-9-billion-in-2017-with-mobile-taking-42/
 - [3] https://ukie.org.uk/sites/default/files/UK%20Games%20Industry%20Fact%20Sheet%20February%202018.pdf
+
+---
+
+class: summary-slide middle noheader center
+
+# i18n
+>>> Internationalization is the process (or the concept of the process) to make an application "international"; that is, make it able to support virtually any language or local setting on Earth.
+
+
+---
+
+class: summary-slide middle noheader center
+
+# l10n
+>>> Localization is the process (or the concept of the process) to make an application "localized"; that is, work for a given local and concrete context, adapted to the user.
+    
+???
+
+In other words, internationalisation is providing the framework to allow te application to be localised, without require direct interaction every time
 
 ---
 
@@ -120,7 +147,7 @@ background-image: url(i18n/images/fixing_problems.png)
 
 ???
 
-While it's easy to find plenty of examples of regular expressions in use, and it's easy to list all sorts of things they can be used for, most uses boil down to one of the following:
+If this was perfect, this wouldn't be a very good talk!
 
 ---
 
@@ -133,13 +160,17 @@ class: section-title-a center
 
 ???
 
+- Only languages that we know, or have got translated
+ - We only know that a translation is needed if some tells us!
+ - If we get requests for translations we have to get everything translated ourselves
+  - And then trust it's accurate!
 
 
 ---
 
 class: section-title-b center centralimg
 
-# Only supports default strings
+# Only Supports Default Strings
 
 &nbsp;
 
@@ -147,7 +178,23 @@ class: section-title-b center centralimg
 
 ???
 
+- Translations only support the strings in the default template
+- Paying customers can build their own templates
+ - These might have different text 
+ - There is no way to then translate these other strings
 
+---
+
+class: section-title-b center centralimg
+
+# High Maintenance Cost
+
+![](i18n/images/maintenance.jpg)
+
+???
+
+- every time we add a new feature that changes teh template we need to go back through every language and source a translation
+ - More often than not we don't
 
 ---
 
@@ -158,6 +205,9 @@ class: section-title-c bottom center centralimg
 # No Fallbacks
 
 ???
+
+- For for whatever reason a certain placeholder doesn't exist in a certain language there is no fallback
+ - It will juut not display anything
 
 ---
 
@@ -234,6 +284,9 @@ sprintf(_('Are you sure you want to block %s?'),'Alice');
 
 - Not user friendly
 
+???
+- You have to constantly refer back to some type of documentation to know what the placeholders are
+ - Not ideal for users who are trying to make basic changes to their store
 ---
 
 class: content-odd noheader tinycode
@@ -283,6 +336,12 @@ class: section-title-b center
 # Option 2 - Illuminate\Translation 
 
 ![](i18n/images/laravel.png)
+
+???
+
+- Our codebase is Laravel, so it made sense to look at the built-in option
+ - That's right, Laravel - granted there are some bits of it we don't use 
+ (Facades, looking at you!), but it does a good job for our application
 
 ---
 
@@ -494,6 +553,11 @@ class: section-title-c top center
 
 ![](i18n/images/solution.png)
 
+???
+
+- We needed to come up with a solution that would handle any set of rules without our input
+ - Including rules that we didn't understand!
+
 ---
 
 class: content-odd
@@ -502,7 +566,15 @@ class: content-odd
 
 - While it's not the most straightforward, we decided to borrow gettext's rules
  - Not totally user-friendly, but we know they work
+ 
+```bash
+nplurals=2; plural=n != 1
+```
 - However, now we need a parser for those rules...
+
+???
+
+ - Also, there are published lists for the rules for almost every world language, so we accepted this was a resonable compromise
 
 ---
 class: content-odd
@@ -595,7 +667,10 @@ class: content-odd tinycode
 ```
 
 ???
-This is something that Laravel did very well, so we stole their idea!
+- This is something that Laravel did very well, so we stole their idea!
+- This was one of our top priorities - having that context when merchants are creating new templates simplifies the process
+- Just by reading it's easy to see what's waht
+ - Also means that a translation can easily reverse the placeholder order if required
 
 ---
 
@@ -886,7 +961,7 @@ class: content-even
 - We use CloudFlare to help with DDOS protection
  - As part of that, we also use them to cache webstore homepages
 - We don't have separate URLs based on language
- - The local you select is stored in a cookie
+ - The locale you select is stored in a cookie
  
 ???
 
@@ -909,6 +984,8 @@ end
 if not locale then
     locale = "default"
 end
+
+local cache_key_fmt = st_format('${scheme}://${host_header}${uri}::%s::%s::%s', currency:lower(), language:lower(), locale:lower())
 ```
 
 ???
@@ -986,7 +1063,19 @@ class: section-title-a center middle noheader
 
 class: section-title-a center middle noheader
 
+![](i18n/images/na.jpg)
+
+---
+
+class: section-title-a center middle noheader
+
 ![](i18n/images/sa.jpg)
+
+---
+
+class: section-title-a center middle noheader
+
+![](i18n/images/asia.jpg)
 
 ---
 
