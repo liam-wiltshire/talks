@@ -85,7 +85,8 @@ class: summary-slide middle noheader center
     
 ???
 
-In other words, internationalisation is providing the framework to allow te application to be localised, without require direct interaction every time
+- Lower case 'L'!
+- In other words, internationalisation is providing the framework to allow te application to be localised, without require direct interaction every time
 
 ---
 
@@ -112,7 +113,7 @@ class: summary-slide middle
 
 class: content-even
 
-# Current Solution
+# ~~Current~~ Solution
 
 - Each customer who visits a webstore can pick from a limited range of languages
  - We then have a centralised list of translations:
@@ -129,7 +130,7 @@ $lang['title.basket.free'] = "Palun kinnita, et oled inimene";
 
 class: content-even
 
-# Current Solution
+# ~~Current~~ Solution
 
 - Each webstore then can use a `lang()` function in their templates to reference one of the short codes
  - This will then display the translation (assuming it exists)
