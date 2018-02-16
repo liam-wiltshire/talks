@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/i18n/content.md" afterPath="$PROJECT_DIR$/i18n/content.md" />
-    </list>
+    <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="" />
     <ignored path="talks.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -351,12 +349,12 @@
       <workItem from="1517597496590" duration="6375000" />
       <workItem from="1517673017184" duration="153000" />
       <workItem from="1517676627978" duration="5298000" />
-      <workItem from="1518780847002" duration="1875000" />
+      <workItem from="1518780847002" duration="2472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228825000" />
+    <option name="totallyTimeSpent" value="229422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2111" y="339" width="1366" height="741" extended-state="6" />

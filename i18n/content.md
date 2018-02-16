@@ -8,7 +8,7 @@ class: title-slide longtitle
 ## <small>Creating a customisable, multi-tenanted i18n solution</small>
 
 ???
-
+- NOTE - to fix github, double { have an invisible character (Unicode 2063) in them
 - The world is a big place, and yet the internet can make it small
 - Every day our we might be conversing with users anywhere in the world without even knowing about it
 - From an ulteristic point of view we should make our applications uable by as many as people as possible
@@ -136,7 +136,7 @@ class: content-even
  - This will then display the translation (assuming it exists)
 
 ```twig
-<h2>{{ lang("title.username") }}</h2>
+<h2>{⁣{ lang("title.username") }}</h2>
 ```
 
 ---
@@ -598,7 +598,7 @@ class: content-odd noheader tinycode
  - Form 2 - You have items in your basket
 
 ```twig
-{{ _p("You have an item in your basket", basket.packages|length) }}
+{⁣{ _p("You have an item in your basket", basket.packages|length) }}
 ```
 
 ---
@@ -628,7 +628,7 @@ class: content-even tinycode
 - Also makes templates etc more readable without having to lookup what a shortcode means
 
 ```twig
-<a href='#'>{{ __("Click here to continue") }}</a>
+<a href='#'>{⁣{ __("Click here to continue") }}</a>
 ```
 
 ???
@@ -662,7 +662,7 @@ class: content-odd tinycode
 - Our merchants create their own templates by using the default to start, so everything needs to be self explanatory
  
 ```twig
-{{ __("Are you sure you wish to delete :itemname from your 
+{⁣{ __("Are you sure you wish to delete :itemname from your 
  ↳ basket, :username?",
  ↳ {'itemname' : package.name, 'username' : basket.username}) }}
 ```
@@ -1094,10 +1094,10 @@ class: content-odd
 # Numbers and Dates
 ```twig
 Purchase Date:
-{{ _d(purchase.date) }}
+{⁣{ _d(purchase.date) }}
 
 Purchase Value:
-{{ purchase.currency }}{{ _n(purchase.value) }} 
+{⁣{ purchase.currency }}{⁣{ _n(purchase.value) }} 
 ```
 
 ???
