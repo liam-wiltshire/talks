@@ -1028,6 +1028,101 @@ end
 ???
 - Step 3 - Oh, and if it came from a query string we best set a cookie
 
+
+---
+
+class: section-title-b middle center noheader
+
+
+![](i18n/images/winning.jpg)
+
+---
+
+class: section-title-b middle center noheader
+
+
+![](i18n/images/notwinning.jpg)
+
+
+---
+
+class: section-title-c middle center
+
+# 01/02/03
+
+???
+
+- What does this date show?
+- 1st Feb 2003?
+- 3rd Feb 2001?
+- 2nd Jan 2003?
+
+---
+
+class: content-odd
+
+# Beyond Language
+- Localisation is more than just language
+- We have different ways of handling numbers, dates, currency
+
+???
+
+- Our first step was to get the language side of things working
+ - But it's a much bigger job than that
+ - We still have a way to go, but we are now looking at improving other areas of the experience
+
+---
+
+class: content-odd
+# Numbers and Dates
+```json
+{  
+   "meta":{  
+      "locale":"en_GB",
+      "pluralrule":"plural=(n != 1)",
+      "name":"English",
+*     "dateformat":"d-m-Y",
+*     "decimalpoint":".",
+*     "thousandssep":","
+   }
+}
+```
+
+---
+class: content-odd
+# Numbers and Dates
+```twig
+Purchase Date:
+{{ _d(purchase.date) }}
+
+Purchase Value:
+{{ purchase.currency }}{{ _n(purchase.value) }} 
+```
+
+???
+
+- We then expose two additional methods to twig - _d (date) and _n (number).
+- This could (and probably will) be taken further still - control over where the currency symbol goes for example
+---
+class: content-odd tinycode
+```php
+public function formatDate($date)
+{
+    $date = $this->carbon->parse($date);
+    return $date->format($this->getDateFormat()); 
+}
+
+public function formatNumber($number)
+{
+    return number_format(
+        $number,
+        2,
+        $this->getDecimalPoint(),
+        $this->getThousandsSep()
+    ); 
+}
+```
+
 ---
 
 class: section-title-b middle center noheader
@@ -1158,6 +1253,11 @@ class: summary-slide noheader
 - We don't know everything - now our merchants are empowered to target their market in ways we would never think of
 - We reduce support requests for things like incorrect translations, translation of strings that haven't been, and new payment gateways
 - Our solutions are portable - we could use the same layers and approach to apply this to a SPA, or a mobile app
+
+???
+
+- And you know, we;re not finished yet - we are always having to talk to our merchants, there are always things that we can do better
+- Error messages, currencies, plugins - the more useable our applications are, the more successful they will be.
 
 ---
 

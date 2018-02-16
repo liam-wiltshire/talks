@@ -53,16 +53,19 @@
         <entry file="file://$PROJECT_DIR$/i18n/content.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="268">
-                <caret line="1065" column="18" lean-forward="false" selection-start-line="1065" selection-start-column="18" selection-end-line="1065" selection-end-column="18" />
+              <first_editor relative-caret-position="408">
+                <caret line="1259" column="0" lean-forward="false" selection-start-line="1259" selection-start-column="0" selection-end-line="1259" selection-end-column="0" />
                 <folding>
-                  <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-                  <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-                  <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-                  <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-                  <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-                  <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-                  <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+                  <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+                  <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+                  <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+                  <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+                  <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+                  <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+                  <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+                  <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+                  <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+                  <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -86,7 +89,10 @@
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
                 <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
+                <folding>
+                  <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+                  <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -107,6 +113,7 @@
       <find>nohea</find>
       <find>Solution</find>
       <find>Readable</find>
+      <find>bey</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,6 +215,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -344,27 +351,28 @@
       <workItem from="1517509905708" duration="4986000" />
       <workItem from="1517597496590" duration="6375000" />
       <workItem from="1517673017184" duration="153000" />
-      <workItem from="1517676627978" duration="5292000" />
+      <workItem from="1517676627978" duration="5298000" />
+      <workItem from="1518780847002" duration="1166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226944000" />
+    <option name="totallyTimeSpent" value="228116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2111" y="339" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16616085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16843702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -423,19 +431,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/security/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i18n/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="19170">
+            <caret line="1065" column="18" lean-forward="false" selection-start-line="1065" selection-start-column="18" selection-end-line="1065" selection-end-column="18" />
+            <folding>
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linux/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/i18n/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="198">
             <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -447,7 +524,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -488,7 +568,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -500,13 +583,16 @@
           <first_editor relative-caret-position="8874">
             <caret line="493" column="0" lean-forward="true" selection-start-line="493" selection-start-column="0" selection-end-line="493" selection-end-column="0" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -549,13 +635,16 @@
           <first_editor relative-caret-position="17118">
             <caret line="951" column="18" lean-forward="false" selection-start-line="951" selection-start-column="18" selection-end-line="951" selection-end-column="18" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -567,7 +656,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -608,7 +700,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -620,13 +715,16 @@
           <first_editor relative-caret-position="11790">
             <caret line="655" column="28" lean-forward="false" selection-start-line="655" selection-start-column="28" selection-end-line="655" selection-end-column="28" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -668,7 +766,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -680,13 +781,16 @@
           <first_editor relative-caret-position="4158">
             <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -729,13 +833,16 @@
           <first_editor relative-caret-position="4158">
             <caret line="231" column="0" lean-forward="true" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -747,7 +854,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -788,7 +898,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -800,13 +913,16 @@
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -837,7 +953,10 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -849,13 +968,16 @@
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -867,39 +989,6 @@
         <state relative-caret-position="36">
           <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security/content.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linux/content.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/regex/content.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -908,19 +997,58 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/security/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1498668277988" expanded="true" signature="22902:22942" ph="CREATE TABLE... exploit" />
+              <marker date="1498668277988" expanded="true" signature="23005:23028" ph="SELECT * FRO... exploit" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linux/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regex/content.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/i18n/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="268">
-            <caret line="1065" column="18" lean-forward="false" selection-start-line="1065" selection-start-column="18" selection-end-line="1065" selection-end-column="18" />
+          <first_editor relative-caret-position="408">
+            <caret line="1259" column="0" lean-forward="false" selection-start-line="1259" selection-start-column="0" selection-end-line="1259" selection-end-column="0" />
             <folding>
-              <marker date="1517691348571" expanded="true" signature="6716:6775" ph="..." />
-              <marker date="1517691348571" expanded="true" signature="17575:17991" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18150" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17575:18152" ph="{...}" />
-              <marker date="1517691348571" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
-              <marker date="1517691348571" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="6716:6775" ph="..." />
+              <marker date="1518782014001" expanded="true" signature="17575:17991" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18150" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17575:18152" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="17589:17682" ph="{&quot;name&quot;: &quot;English&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="17702:17991" ph="{&quot;Welcome&quot;: &quot;Welcome&quot;...}" />
+              <marker date="1518782014001" expanded="true" signature="18035:18138" ph="[...]" />
+              <marker date="1518782014001" expanded="true" signature="25678:25865" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25678:25867" ph="{...}" />
+              <marker date="1518782014001" expanded="true" signature="25692:25865" ph="{&quot;name&quot;: &quot;English&quot;...}" />
             </folding>
           </first_editor>
           <second_editor />
