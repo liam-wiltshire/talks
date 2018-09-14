@@ -24,11 +24,11 @@ class: section-title-c bottom left vanity-slide
 .introimg[![](http://tebex.co.uk/img/tebex.svg)]
 
 # Liam Wiltshire
-## Senior PHP Developer<br /> & Business Manager
+## CTO
 
 ---
 
-class: vanity-cover
+class: vanity-cover title-slide
 
 background-image: url(logos/mcft.png)
 
@@ -126,7 +126,7 @@ Want to sell your viagra and let people know about Nigerian princes, this is the
 
 class: section-title-b center centralimg
 
-# Pattern Matching/Configuration
+# Configuration/Routing
 
 &nbsp;
 
@@ -154,6 +154,10 @@ class: section-title-a
     );
 
 ```
+
+???
+
+Lexer - most lexers start of as something similar to (if not exactly) regular expressions
 
 ---
 
