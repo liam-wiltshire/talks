@@ -21,11 +21,11 @@ class: section-title-c bottom left vanity-slide
 .introimg[![](http://tebex.co.uk/img/tebex.svg)]
 
 # Liam Wiltshire
-## Senior PHP Developer<br /> & Business Manager
+## CTO
 
 ---
 
-class: vanity-cover
+class: vanity-cover title-slide
 
 background-image: url(logos/mcft.png)
 
@@ -89,7 +89,7 @@ background-image: url(scaling/images/overview/3.png)
 
 - Every single customer has one or more web stores - these are unique to each customer in that it shows their products, categories and content, and on the paid plans they can build their own themes and templates as well
 
-- At the moment we have around 500,000 of these
+- At the moment we have around 611,000 of these
 
 ---
 
@@ -97,22 +97,23 @@ class: section-title-b middle
 background-image: url(scaling/images/overview/4.png)
 
 ???
-- Every webstore than has at least one minecraft server attached to it
- - These phone home at different intervals depending on the account type, pulling down any commands to be run on the server
+- Every webstore than has at least one server attached to it - these could be game servers, mySQL servers, RCON etc.
+ - Game servers phone home at different intervals depending on the account type, pulling down any commands to be run on the server. Other server types we push requests to, which is also something we're working on for Game servers.
  - But also you can buy directly in game via commands, so on top of the phone home, there are other API calls being made all the time
-- We have just under 520,000 servers
+- We have just under 650,000 servers
 
 ---
 
 
 class: summary-slide middle
 
-- On an 'average' day, we serve 400k - 500k requests an hour
+- On an 'average' day, we serve 500k - 600k requests /hour
 - Regular spikes - up to 3 or 4x the traffic
  - Black Friday
  - Enterprise customer releases a new product / has a sale
- - Christmas Day (!) - at one point we served 1.2m requests in an hour
+ - Christmas Day (!) - at one point we served 1.4m requests in an hour
 - DOS attacks - up to 100k requests per hour
+ - Recent attack accounted for over 1m requests /hour
 
 ???
 
@@ -209,7 +210,7 @@ class: content-even
 # N+1 Issue
 
 ```php
-$users = User::where('company',5)->get();
+$users = User::where('company', 5)->get();
 
 foreach($users as $user) {
 	$departmentName = $user->relatedDepartment->name;
@@ -228,7 +229,7 @@ class: content-even
 # 2N+1 Issue
 
 ```php
-$users = User::where('company',5)->get();
+$users = User::where('company', 5)->get();
 
 foreach($users as $user) {
 	$departmentName = $user->relatedDepartment->name;
@@ -259,22 +260,23 @@ class: content-odd
 
 ---
 
-class: content-odd
+class: content-odd tinycode
 
 ```php
 public function getRelationshipFromMethod($method)
 {
    $relations = $this->$method();
-
-*  if ($this->parentCollection && count($this->parentCollection) > 1) {
-*     $this->parentCollection->load($method);
-*  }
-
    if (!$relations instanceof Relation) {
       throw new LogicException('Relationship method must return an object of type '
       . 'Illuminate\Database\Eloquent\Relations\Relation');
    }
-   return $this->relations[$method] = $relations->getResults();
+
+*   if ($this->parentCollection
+*       && count($this->parentCollection) > 1
+*       && count($this->parentCollection) <= $this->autoloadThreshold) {
+*       $this->parentCollection->load($method);
+*   }
+   return $this->$method()->getResults();
 }
 ```
 
@@ -351,6 +353,20 @@ class: content-even center
 
 
 ![](scaling/images/horizontal.png)
+
+---
+
+class: content-even
+
+# Know Your Architecture
+- Horizontal scaling as worked well for us
+- We do large amounts of communication with external servers
+ - Many of these want fixed IPs to whitelist
+
+???
+
+- Initially our scaling didn't allow for this - each EC2 instance would have it's own IP, and these would change as we scaled up and down.
+- The solution was to have 2 NAT gateways that the traffic goes through.
 
 ---
 
@@ -513,6 +529,8 @@ class: content-even
 Something that we don't currently do is full page caching.
 We cache static HTML pages, but actually, we could potentially full page cache quite a few webstore pages, even API outputs
  - This is something we are looking at for our new product
+
+Something we are also experementing with at the moment is caching until changed - so our cache has an essentially infinate lifetime, and it's held in cache until either redis kicks it out, or a change is made that invalidates it. 
 
 ---
 
