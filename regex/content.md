@@ -275,7 +275,7 @@ class: content-even
 
 - The forward slashes mark the start and end of the pattern
     - With some flags which we'll come to
-- `.*?` - match 0 or more of any character (except newlines *usualy*)
+- `.*?` - match 0 or more of any character (except newlines *usually*)
     - The `?` makes it lazy
     
 ---
@@ -364,7 +364,7 @@ class: content-even
 ```
 
 ???
-
+- There are in centergrade - I'm not going to die of exposure! (about 55)
 - Notice how we have both the full match, but also the part of the pattern we enclosed in brackets is extracted seperately.
 - If we had multiple groupings, each one would be extracted separately
 
@@ -596,13 +596,13 @@ class: content-even
 #GB/US Postal Code
 
 ```regexp
-(?
- ? (?=.*GB)
- ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ? [0-9][ABD-HJLNP-UW-Z]{2})
- ? |
- ? ([0-9]{5})
+(↳
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
 )
 ```
 
@@ -616,13 +616,13 @@ class: content-even
 #GB/US Postal Code
 
 ```regexp
-* (?
- ? (?=.*GB)
- ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ? [0-9][ABD-HJLNP-UW-Z]{2})
- ? |
- ? ([0-9]{5})
+* (↳
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
 * )
 ```
 
@@ -636,13 +636,13 @@ class: content-even
 #GB/US Postal Code
 
 ```regexp
-(?
-* ? (?=.*GB)
- ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ? [0-9][ABD-HJLNP-UW-Z]{2})
- ? |
- ? ([0-9]{5})
+(↳
+* ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
 )
 ```
 
@@ -657,13 +657,13 @@ class: content-even
 #GB/US Postal Code
 
 ```regexp
-(?
- ? (?=.*GB)
-* ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-*    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-*    ? [0-9][ABD-HJLNP-UW-Z]{2})
- ? |
- ? ([0-9]{5})
+(↳
+ ↳ (?=.*GB)
+* ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+*    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+*    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+ ↳ ([0-9]{5})
 )
 ```
 
@@ -678,13 +678,13 @@ class: content-even
 #GB/US Postal Code
 
 ```regexp
-(?
- ? (?=.*GB)
- ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ? [0-9][ABD-HJLNP-UW-Z]{2})
-* ? |
- ? ([0-9]{5})
+(↳
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+* ↳ |
+ ↳ ([0-9]{5})
 )
 ```
 
@@ -698,13 +698,13 @@ class: content-even
 #GB/US Postal Code
 
 ```regexp
-(?
- ? (?=.*GB)
- ? ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
-    ? ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
-    ? [0-9][ABD-HJLNP-UW-Z]{2})
- ? |
-* ? ([0-9]{5})
+(↳
+ ↳ (?=.*GB)
+ ↳ ([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]
+    ↳ ([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW]) ?
+    ↳ [0-9][ABD-HJLNP-UW-Z]{2})
+ ↳ |
+* ↳ ([0-9]{5})
 )
 ```
 
@@ -761,7 +761,7 @@ class: content-odd
 
 ```regexp
 (?P<msg>[0-9]+)\|(?P<dock>[0-9]+)\|
- ? (?P<tstamp>[0-9]+)\|DOOR (?P<doorstate>OPEN|CLOSED)
+ ↳ (?P<tstamp>[0-9]+)\|DOOR (?P<doorstate>OPEN|CLOSED)
 ```
 
 - By default, capturing groups are numbered.
@@ -792,7 +792,8 @@ class: content-even
 
 ---
 
-class: content-even
+class: content-even tinycode
+#Winning!
 
 ```regexp
 /# Match a 20th or 21st century date in yyyy-mm-dd format
