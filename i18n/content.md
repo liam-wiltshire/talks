@@ -23,11 +23,11 @@ class: section-title-c bottom left vanity-slide
 .introimg[![](http://tebex.co.uk/img/tebex.svg)]
 
 # Liam Wiltshire
-## Senior PHP Developer<br /> & Business Manager
+## CTO
 
 ---
 
-class: vanity-cover
+class: vanity-cover title-slide
 
 background-image: url(logos/mcft.png)
 
@@ -94,14 +94,14 @@ class: section-title-b middle halfhalf
 background-image: url(i18n/images/buycraft.png)
 
 # About
-# Buycraft
+# Tebex Store
 
 ---
 
 class: summary-slide middle
 
-- Buycraft is a gCommerce platform for sandbox games
-- We operate a SaaS platform (think Shopify for Minecraft)
+- Tebex Store is a gCommerce platform for sandbox games
+- We operate a SaaS platform (think Shopify for game servers)
 - Global - over half a million webstores from 169 different countries
  - Handled over 16 million payments from 255 counties
 
@@ -542,7 +542,7 @@ class: content-even
 class: section-title-b center middle
 
 
-![](i18n/images/confused.png)
+![](i18n/images/confused.jpg)
 
 ---
 
@@ -944,14 +944,14 @@ Fix all the things
 class: section-title-b middle center noheader
 
 
-![](i18n/images/winning.jpg)
+![](i18n/images/winning-2.png)
 
 ---
 
 class: section-title-b middle center noheader
 
 
-![](i18n/images/notwinning.jpg)
+![](i18n/images/notwinning-2.png)
 
 
 ---
@@ -1129,14 +1129,14 @@ public function formatNumber($number)
 class: section-title-b middle center noheader
 
 
-![](i18n/images/winning.jpg)
+![](i18n/images/winning3.png)
 
 ---
 
 class: section-title-b middle center noheader
 
 
-![](i18n/images/notwinning.jpg)
+![](i18n/images/notwinning3.jpg)
 
 
 ---
