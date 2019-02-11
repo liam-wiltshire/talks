@@ -58,3 +58,17 @@
 .vanity-cover {
  background-size: contain;   
 }
+
+.bigcentralimg img {
+    min-width:60%;
+    max-width:90%;
+    max-height:430px;
+}
+
+.content-even img, .content-odd img {
+    max-height:500px;
+}
+
+.noheader img {
+    max-height:590px;
+}

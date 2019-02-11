@@ -12,13 +12,13 @@ class: title-slide longtitle
 - We see far too many examples of data being used badly
 - Can we use data responsibly - protect players and server owners?
 
-- Thanks to organisers, voluenteers etc.
+- Thanks to organisers, volunteers etc.
 
 ---
 
 class: section-title-c bottom left vanity-slide
 
-.introimg[![](http://tebex.co.uk/img/tebex.svg)]
+.introimg[![](https://www.tebex.io/assets/img/logos/tebex.svg)]
 
 # Liam Wiltshire
 ## CTO
@@ -38,7 +38,7 @@ class: summary-slide middle center noheader
 ???
 
 - Tebex is primarily a payment processor
-- Like anyone in the payment or eCommerce industry, chargebacks are a significant problem.
+- As with anyone in the payment or eCommerce industry, chargebacks are a significant problem.
  - Braintree - yeah they don't like our merchants
  - Stripe are not exactly big fans either...
 - But, a few chargebacks are not a big deal right? What numbers are we talking about
@@ -48,6 +48,7 @@ class: summary-slide middle center noheader
 class: section-title-a middle center noheader
 
 # 0.5%
+## &nbsp;<sup>&nbsp;</sup>
 
 ???
 
@@ -68,6 +69,7 @@ class: section-title-a middle center noheader
 class: section-title-b middle center noheader
 
 # 0.56%
+## &nbsp;<sup>&nbsp;</sup>
 
 ???
 
@@ -87,6 +89,7 @@ class: section-title-b middle center noheader
 class: section-title-c middle center noheader
 
 # 0.65%
+## &nbsp;<sup>&nbsp;</sup>
 
 ???
 
@@ -106,6 +109,7 @@ class: section-title-c middle center noheader
 class: summary-slide middle noheader center
 
 # 0.85%
+## &nbsp;
 
 ---
 
@@ -116,8 +120,8 @@ class: summary-slide middle noheader center
 
 ???
 
-- That's alot of payments!
-- The problem is, alot of chargebacks are not legitimate
+- That's a lot of payments!
+- The problem is, a lot of chargebacks are not legitimate
 
 ---
 
@@ -142,7 +146,7 @@ class: summary-slide middle noheader center
 - Perhaps they broke a rule on the server 3 weeks later and got banned - chargeback
 - Perhaps they just decided to stop playing 2 months later - chargeback
 - Sometimes they just do it to try to grief another player
-- Clearly this isn't the server owner's fault, but these chargeback damage the servers and the honest players
+- Clearly, this isn't the server owner's fault, but these chargebacks damage the servers and the honest players
 
 ---
 
@@ -155,7 +159,7 @@ class: content-odd
 
 ???
 
-- We want to try to help our our server owners as much as possible, so this is a problem that we come back to regularly
+- We want to try to help our server owners as much as possible, so this is a problem that we come back to regularly
 - We have various tools to try to protect our server owners from fraud, but could we do more?
 - Then we had an idea. We have lots of data (some 19 million payment records at last count) - there must be a way to use them.
 - Right?
@@ -180,7 +184,7 @@ class: content-even
 ???
 
 - Thankfully, I vaguely remembered some snippets of a talk I went to a few years before, and from somewhere "Supervised Learning" came to mind.
-- Totally couldn't remember what it actually was however - Google to the rescue
+- Totally couldn't remember what it actually was, however - Google to the rescue!
 - It turns out that supervised learning was pretty much what we wanted - we had data that we knew the label for, so hopefully we can train a function
 - How hard can it be!
 
@@ -196,9 +200,19 @@ class: content-even
 ???
 
 - Example: Classification: Is a tumor benign or malign 
-- Example: Regression: Given a set of variables, where along a house price line would this proprty fit?
+- Example: Regression: Given a set of variables, where along a house price line would this property fit?
 
-- We are looking at classification
+- We are looking at classification - now we know what we are trying to do, we need to find an
+
+---
+class: content-odd center middle
+
+![](machinelearning/images/algorithms.png)
+
+???
+
+- There are many potential algorithms for Machine Learning and classification in particular
+- Given that we are engineers and not data-scientists, we wanted to look to use the simplest one that would do the job we wanted it to do
 
 ---
 
@@ -233,7 +247,7 @@ Return the category with the highest average percentage as our prediction
 ```
 ???
 
-- Standardising could include remocing punctuation, standardising plurals etc
+- Standardising could include removing punctuation, standardising plurals etc
 - The percentage of appearances is, in other words, calculating the probability that the given word belongs to that label
 
 
@@ -242,6 +256,7 @@ Return the category with the highest average percentage as our prediction
 class: section-title-c middle center noheader
 
 # 100%
+### &nbsp;<br />&nbsp;
 
 ???
 
@@ -261,7 +276,7 @@ class: section-title-a center
 
 # Live Demo
 
-![](machinelearning/images/fire.jpg)
+![](machinelearning/images/fire0a.gif)
 
 ???
 
@@ -286,1104 +301,1030 @@ class: content-even
 
 ---
 
-class: section-title-b center centralimg
+class: content-odd tinycode
 
-# Only Supports Default Strings
+# Attempt 1
 
-&nbsp;
-
-![](i18n/images/nectar.png)
+```php
+$str = "country:{$payment->country} gateway:{$payment->gateway}";
+$str .= "usddollars:".round($payment->usdamount)." sigfig:".$sigFig;
+$str .= " countrygateway:{$payment->country}{$payment->gateway}";
+$str .= " usernamesbyip:{$usernameCount->cnt} ".secondsToTime($timeSince)."";
+```
 
 ???
 
-- Translations only support the strings in the default template
-- Paying customers can build their own templates
- - These might have different text 
- - There is no way to then translate these other strings
+- Most of the values are prefixed - this is because where a number of the items are IDs, the same number could show up in multiple places
 
 ---
 
-class: section-title-b center centralimg
+class: content-odd tinycode
 
-# High Maintenance Cost
+# Attempt 1
 
-![](i18n/images/maintenance.jpg)
+```php
+$str = "country:{$payment->country} gateway:{$payment->gateway}";
+*$str .= "usddollars:".round($payment->usdamount)." sigfig:".$sigFig;
+$str .= " countrygateway:{$payment->country}{$payment->gateway}";
+$str .= " usernamesbyip:{$usernameCount->cnt} ".secondsToTime($timeSince)."";
+```
 
 ???
 
-- every time we add a new feature that changes teh template we need to go back through every language and source a translation
- - More often than not we don't
+- Notice the sigfig - this is the value of the first digit - was added as Benford's Law suggests some leading figures should be more common than others
+- Also, notice how country and gateway show up separately, then as a combined countrygateway
+ - With our Naive Bayes Classifier, the 'Naive' part relates to how there is no assumed relation between tokens.
+ - Obviously in our data set this might not be the case. A gateway that is used lots in Europe, but not in Asia wouldn't be suspicious for a European transaction but might be worth investigating if the transaction originates from Asia
+ - This will only be flagged with related tokens.
 
 ---
 
-class: section-title-c bottom center centralimg
+class: content-odd tinycode
 
-![](i18n/images/fallback.jpg)
+# Attempt 1
 
-# No Fallbacks
+```php
+$str = "country:{$payment->country} gateway:{$payment->gateway}";
+$str .= "usddollars:".round($payment->usdamount)." sigfig:".$sigFig;
+*$str .= " countrygateway:{$payment->country}{$payment->gateway}";
+$str .= " usernamesbyip:{$usernameCount->cnt} ".secondsToTime($timeSince)."";
+```
 
 ???
 
-- For for whatever reason a certain placeholder doesn't exist in a certain language there is no fallback
- - It will juut not display anything
+- Also, notice how country and gateway show up separately, then as a combined countrygateway
+ - With our Naive Bayes Classifier, the 'Naive' part relates to how there is no assumed relation between tokens.
+ - Obviously in our data set this might not be the case. A gateway that is used lots in Europe, but not in Asia wouldn't be suspicious for a European transaction but might be worth investigating if the transaction originates from Asia
+ - This will only be flagged with related tokens.
 
 ---
 
-class: summary-slide middle
+class: content-odd
 
-#Aims
+# Attempt 1 - Results
 
-- Produce an i18n layer that allows users to customise the translations to fit them
- - This includes supporting custom strings, or entirely new languages
-- It needs to be fast
-- It needs to be easy for non-technical store owners to update
-
+- Total Rows: 100
 
 ???
 
-We often hit 25-30k requests a minute, well over a million requests an hour, so we need a solution that's not going to cause undue load
+- We ran a test on 100 known chargebacks
 
 ---
 
-class: section-title-a
+class: content-odd
 
-# Option 1 - GNU gettext
+# Attempt 1 - Results
+
+- Total Rows: 100
+- False Positives 0
 
 ???
-Now, I had a problem with getting an image fr this slide 
+
+- So far so good
+
+---
+
+class: content-odd
+
+# Attempt 1 - Results
+
+- Total Rows: 100
+- False Positives 0
+- Identified Fraud 0
+- Missed Fraud 100
+
+???
+
+- In other words, it decided every single row _wasn't_ fraud!!
+---
+
+
+
+class: content-odd middle center noheader
+
+![](machinelearning/images/head-in-hands.jpg)
+
+
+???
+
+---
+
+class: section-title-a middle center
+
+# Lesson 1: Imbalanced Data Is The Enemy
+
+???
+
+
+---
+
+class: content-even
+
+# Imbalanced Data
+
+- With many datasets, you will likely find that some labels have more data than others
+- This results in the algorithm being skewed towards those labels with more data
+- Given that less than 1% of our data is fraud, the algorithm can just pick 'not fraud' every time and be over 99% accurate!
+
+???
+- Example: Some apples are red, and some are green. If you have 10,000 apples in your training data and only 2,000 cherries, anything that is red will have a higher probability of being an apple. 
+
+---
+
+class: content-even
+
+# Imbalanced Data - Solutions 
+
+???
+
+If we have an imbalanced dataset, there are a few potential solutions
+
+---
+
+class: content-even
+
+# Imbalanced Data - Solutions 
+
+- Collect more data
+
+???
+
+- If it's possible, you can collect more data for the categories with less data
+- Obviously for something like fraudulent transactions, that's not really possible!
+
+---
+
+class: content-even
+
+# Imbalanced Data - Solutions 
+
+- Collect more data
+- Change your metrics
+
+???
+
+- At the moment we're looking at returning a single answer - the label
+- Perhaps instead we can just look at the probability of it being in the 'fraud category', even if non-fraud is the highest rating
+
+---
+
+class: content-even
+
+# Imbalanced Data - Solutions 
+
+- Collect more data
+- Change your metrics
+- Resample your data
+
+???
+- This could be two options:
+- Undersampling the over-represented categories (only picking 1% of the records at random)
+- Oversampling the under-represented categories (adding each set of test data multiple times)
+ - For us, this would mean having to insert each fraud record over 100 times!!
+ 
+
+---
+
+class: content-odd
+
+# Attempt 2
+
+- We can't realistically collect more data, so we mixed resampling and changing our metric:
+- We upsampled fraud records by counting each record twice and then selected 48000 'Ok' records at random
+- We then returned the probability of the 'Fraud' label as part of our result, to see if there was a 'threshold' we could realistically set:
+
+???
+
+- Collecting more data isn't an option, so we decided to try a mix of re-sampling (we counted each fraud record twice and only used ) and looking at the probability of a fraud label even if it was tagged as Ok: 
+
+---
+
+class: content-odd
+
+# Attempt 2 - Results
+
+- Total Rows: 200
+- Not Fraud: 29
+- False Positives 71
+- Identified Fraud 70
+- Missed Fraud 30
+
+
+???
+
+We pulled 200 records at random from the DB (100 fraud and 100 successful).
+
+We can see that we are 'moving the needle' now, but accuracy is poor - 60% accuracy
+
+With the result being so mixed, there wasn't really any value in looking at the fraud probability - accepting anything with a fraud probability of 46% or more results in more fraud being caught, but also increases the number of false positives
+
+This was quite frustrating - we were sure there must be something obvious we were missing...
+
+---
+class: section-title-b middle center
+
+# Lesson 2: Understand Your Data
+
+???
+
+We played with the algorithm a bit, but we were not really getting anywhere.
+We realised there were two potential flaws in our approach
+- We had already recognised that the different tokens we were considering were related, perhaps it's more important than we thought - someone paying 30 USD in Germany is much less suspicious than in Argentina for example, where the average purchase price is around 8 USD.
+- Do we need to consider context more? A store where all items are $3 USD or less would make a $35 transaction look strange, where a store selling ranks for $35 each it would be perfectly normal.  
+
+---
+
+class: content-even
+
+# The Hunt For A New Algorithm
+
+- We know that we need to look for an algorithm treats the data as related
+- We're still looking for a supervised learning algorithm as we have training data with known results
+- Ideally also something that we don't have to be a math genius for!
+
+???
+
+
+---
+
+class: content-odd
+
+# Level 2: k-Nearest Neighbours
+
+- k-Nearest Neighbours (k-NN) is another fairly simple algorithm
+- The important thing for us is that the parameters are taken as a whole, rather than individually
+
+???
+
+- In short, k-NN means 'which k other results is this one most like'
+- We will have an issue with unbalanced datasets
+- The easiest way to show this is with a graph:
+
+---
+
+class: content-odd center middle
+
+# k-Nearest Neighbours
+
+![](machinelearning/images/knn1.png)
+
+???
+
+- This is a representation of some training data with two parameters
+ - it doesn't really matter what they are
+- Using this data, if we add another point, we can see which group it's most likely to be in
+
+---
+
+class: content-odd center middle
+
+# k-Nearest Neighbours
+
+![](machinelearning/images/knn2.png)
+
+???
+
+- The k in k-NN is the number of nearest neighbours to fetch. Each neighbour is a 'vote'
+- So if we had 1-NN...
+
+---
+
+class: content-odd center middle
+
+# k-Nearest Neighbours
+
+![](machinelearning/images/knn3.png)
+
+???
+
+- The result would be the 'white category'
+- 2-NN...
+
+---
+
+class: content-odd center middle
+
+# k-Nearest Neighbours
+
+![](machinelearning/images/knn4.png)
+
+???
+
+- Would be a tie (which is why as a rule you use an odd number of votes)
+- 3-NN...
+
+---
+
+class: content-odd center middle
+
+# k-Nearest Neighbours
+
+![](machinelearning/images/knn5.png)
+
+???
+
+- Would go back to the white category and so on
+- Whichever number you select for k, the category with the most votes...
+
+---
+
+class: content-odd center middle
+
+# k-Nearest Neighbours
+
+![](machinelearning/images/knn6.png)
+
+???
+
+- is the result
+- This example works using 2 axes/dimensions, however the k-NN algorithm can work with any number of dimensions, meaning we can apply it to our use case.
+- No pseudo-code this time, as I don't understand it enough!
+
+---
+
+class: content-odd tinycode noheader
+
+```php
+<?php
+require "vendor/autoload.php";
+
+$samples = [
+    [1, 3, 5, 1], [1, 4, 5, 2], [2, 4, 6, 2], [2, 3, 5, 1],
+    [3, 1, 2, 2], [4, 1, 2, 2], [4, 2, 1, 3], [3, 2, 1, 3]
+];
+$labels = ['a', 'a', 'a', 'a', 'b', 'b', 'b', 'b'];
+
+// php-ai/php-ml
+$classifier = new \Phpml\Classification\KNearestNeighbors(3);
+$classifier->train($samples, $labels);
+
+
+$test = [3, 2, 2, 1];
+
+echo $classifier->predict($test);
+
+```
+???
+
+- Thankfully there is a library for machine learning in PHP - it actually will do the Bayes Naive as well, but I understood that enough to write something!
+- This is fairly straightforward - we are using some 4-dimensional training data, then we can predict from our test
+
+---
+
+class: section-title-c middle center noheader
+
+# 1
+### &nbsp;
+
+???
+
+- Oh look, another statistic
+---
+
+class: section-title-c middle center noheader
+
+# 1
+### Number of Demos Liam Wishes He'd Avoided 
+
+???
 
 ---
 
 class: section-title-a center
 
-# Option 1 - GNU gettext 
+# Live Demo
 
-![](i18n/images/llama.jpg)
-
-???
-So here's a Llama!
-
----
-
-class: content-odd
-
-# GNU gettext
-
-- GNU gettext is a great set of tools and libraries 
-- Gives developers a framework for providing multi-lingual messages
-- Used by WordPress (and others)
+![](machinelearning/images/fire.gif)
 
 ???
 
----
+- You might have spotted in these demos, something specific about the data...
+- They are all numeric
 
-class: content-even
-
-# gettext - Pros
-
-- Mature
-- PHP already has a gettext - compatible library
-- Lots of examples of it in use
-- Everyone can provide their own translation files
-- Fast - machine readable 
-- Supports plurals
-
----
-class: content-odd
-# gettext - Cons
-
-- Placeholders are not supported directly:
-
-```php
-<?php
-sprintf(_('Are you sure you want to block %s?'),'Alice');
-?>
-```
-
-- Not user friendly
-
-???
-- You have to constantly refer back to some type of documentation to know what the placeholders are
- - Not ideal for users who are trying to make basic changes to their store
----
-
-class: content-odd noheader tinycode
-
-```bash
-msgid ""
-msgstr ""
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Loco-Target-Locale: de_DE\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: includes\n"
-
-#: options/index.php:59 utils/stcr_manage.php:230 utils/stcr_manage.php:413
-#: utils/stcr_manage.php:414
-msgid "Manage subscriptions"
-msgstr "Verwalte deine Abonnements"
-
-#: options/index.php:60 utils/stcr_manage.php:419 utils/stcr_manage.php:420
-msgid "Comment Form"
-msgstr "Kommentarformular"
-
-#: options/index.php:61 utils/stcr_manage.php:425 utils/stcr_manage.php:426
-msgid "Management Page"
-msgstr "Verwaltungsseite"
-
-#: options/index.php:62 utils/stcr_manage.php:431 utils/stcr_manage.php:432
-msgid "Notifications"
-msgstr "Benachrichtigungen"
-
-#: options/index.php:63 options/panel2.php:58 options/panel3.php:82
-#: options/panel4.php:89 utils/stcr_manage.php:437 utils/stcr_manage.php:438
-msgid "Options"
-msgstr "Optionen"
-```
-
-???
-
-- While most server owners are not completely technically inept, this would be something completely new to them
-
-
----
-
-class: section-title-b center
-
-# Option 2 - Illuminate\Translation 
-
-![](i18n/images/laravel.png)
-
-???
-
-- Our codebase is Laravel, so it made sense to look at the built-in option
- - That's right, Laravel - granted there are some bits of it we don't use 
- (Facades, looking at you!), but it does a good job for our application
-
----
-
-class: content-even
-
-# Illuminate\Translation
-
-- Laravel's built in L10n tool
-- Being built-in a number of Laravel extensions already support it
-- Has been around since version 4, so fairly mature now
-
-???
-
-- As a general rule, I'll try to use default where possible
-- Laravel has such an option, so we took a good look at the posiblity of using it
-
----
-
-class: content-odd tinycode noheader
-
-# Illuminate\Translation - Pros
-
-- Built in support in Laravel
-- Support plurals
-```php
-'apples' => 'There is one apple|There are many apples',
-```
-- Support readable placeholders
-```php
-'goodbye' => 'Goodbye, :Name', // Goodbye, Dayle
-```
-- Translations are stored as arrays - pretty fast
-???
-
-- Looking good - we were seriously considering this, as it seemed to tick most of our boxes
-
----
-
-class: content-odd tinycode noheader
-
-# Illuminate\Translation - Cons
-
-- Translations are stored as arrays
- - Not user friendly
-- Translations are stored on the filesystem
- - App scales across 10+ AWS instances?!
- - Storing files for every webstore?!
-- Translation 'key' is still a shortcode
- - This is actually fixed in newer versions of Laravel
- 
-???
-
-Writing arrays and plural formatting, neither ideal
-
----
-
-class: content-odd tinycode noheader
-
-# Storing Translations in a DB
-
-- It's fairly easy to replace Laravel's FileLoader
-- This means you *can* load the translations from a DB
- - You have to know which webstore to ensure the correct translations are loaded
-- We could then use whatever format we want for user input
-
-???
-
-We could even upgrade to a new version of Laravel?!
-
----
-
-class: section-title-b middle center noheader
-
-
-![](i18n/images/winning.jpg)
-
----
-
-class: section-title-b middle center noheader
-
-
-![](i18n/images/notwinning.jpg)
-
-
----
-
-class: content-odd
-
-# !Winning
-
-- Although we use Laravel, we don't use it everywhere
-- Some of the webstore code is legacy
-- Who says we'll always use Laravel?
- - What if we want to use a JS frontend?
- - Or mobile apps?
-
-???
-
-Couldn't bring myself to write CI2!
- 
-
----
-
-class: section-title-b middle halfhalf reverse
-background-image: url(i18n/images/onemore.jpg)
- 
-# Option 3 - Roll Our Own
-
-???
-
-I wouldn't normally condone the build your own solution
-However we had very specific ideas of what we wanted
-Everything else seemed to require some form of compromise
-
----
-
-class: summary-slide noheader
-
-# Requirements
-- Support plurals
-- The 'key' should be the default translation
- - With readable placeholders
-- Can be over-written and customised on a per user basis
- - In a format users can understand
-- Support languages we don't even know exist!
-- Translations should be loadable to arrays for speed
-    
-???
-
-Our final requirements were essentially combining things we liked from both gettext and Illuminate/Translation    
-    
----
-
-class: content-even center
-# Plurals
-
-
-![](i18n/images/plural.png)
-
-
-???
-Embarrassed to say how naieve I was about plurals
-I had always taken plurals for granted - even though actually I knew french handles plurals slightly differently
-
----
-
-class: content-even
-
-# Plural Rules
-- Only one form
-- Two forms, singular used for one only
-- Two forms, singular used for zero and one
-- Three forms, special case for zero
-
-???
-- Asian languages such as Japanese, Korean
-- Many languages, including English, German, Dutch, Italian, Spanish
-- French, Some forms of portuguese
-- Latvian
-
----
-class: content-even
-
-# Plural Rules
-- Three forms, special cases for one and two
-- Three forms, special case for numbers ending in 00 or [2-9][0-9]
-- Three forms, special case for numbers ending in 1[2-9]
-- Three forms, special cases for numbers ending in 1 and 2, 3, 4, except those ending in 1[1-4]
-
-???
-
-- Galic
-- Romanian
-- Lthuanian
-- Russian, Ukrainian etc
-
----
-
-class: content-even
-
-# Plural Rules
-- Three forms, special cases for 1 and 2, 3, 4
-- Three forms, special case for one and some numbers ending in 2, 3, or 4
-- Four forms, special case for one and all numbers ending in 02, 03, or 04
-- Six forms, special cases for one, two, all numbers ending in 02, 03, … 10, all numbers ending in 11 … 99, and others
-
-???
-
-- Czech, Slovak
-- Polish
-- Slovenian
-- Arabic
-
----
-
-
-class: section-title-b center middle
-
-
-![](i18n/images/confused.jpg)
-
----
-
-class: section-title-c top center
-
-#Our Solution
-
-&nbsp; 
-
-![](i18n/images/solution.png)
-
-???
-
-- We needed to come up with a solution that would handle any set of rules without our input
- - Including rules that we didn't understand!
-
----
-
-class: content-odd
-
-#Plurals
-
-- While it's not the most straightforward, we decided to borrow gettext's rules
- - Not totally user-friendly, but we know they work
- 
-```bash
-nplurals=2; plural=n != 1
-```
-- However, now we need a parser for those rules...
-
-???
-
- - Also, there are published lists for the rules for almost every world language, so we accepted this was a resonable compromise
-
----
-class: content-odd
-
-#Drupal to the rescue
-- Drupal has their own .po header handler
- - ... which of course includes parsing plural rules
-- Thanks Drupal!
-
-???
-
-We re-worked the code slightly to allow us to pass a plural rule as a constructor argument, then we can feed it a number and it will tell us which plural form we are using
-This is then fed into our i18n layer to use the correct plural form for the string we are translating
-
----
-
-class: content-odd noheader tinycode
-- Key: "You have an item in your basket"
- - Form 1 - You have an item your basket
- - Form 2 - You have items in your basket
-
-```twig
-{⁣{ _p("You have an item in your basket", basket.packages|length) }}
-```
-
----
-
-class: summary-slide noheader
-
-# Requirements
-- Support plurals &#10004;
-- The 'key' should be the default translation
- - With readable placeholders
-- Can be over-written and customised on a per user basis
- - In a format users can understand
-- Support languages we don't even know exist!
-- Translations should be loadable to arrays for speed
-    
-???
-
-Our final requirements were essentially combining things we liked from both gettext and Illuminate/Translation    
-    
----
-
-class: content-even tinycode
-# Default Translation
-
-- Considering we are allowing merchants to upload their own translations, we didn't want situations where there wasn't a default
- - With shortcodes this could be the case
-- Also makes templates etc more readable without having to lookup what a shortcode means
-
-```twig
-<a href='#'>{⁣{ __("Click here to continue") }}</a>
-```
-
-???
-
-- We know that our solution will use the key as the fallback - if no translation exists, then the text that has been entered here is what we will use
-
----
-
-class: content-even tinycode noheader
-
-```php
-    public function getTranslation($string, $replacements = false)
-    {
-        if (isset($this->translation->translations->$string)) {
-            return $this->doReplacements(
-                $this->translation->translations->$string,
-                $replacements
-            );
-        }
-
-        return $this->doReplacements($string, $replacements);
-    }
-```
-
----
-
-class: content-odd tinycode
-# With Readable Placeholders
-
-- Unlike gettext, we want the placeholders to be obvious as to their meaning without documentation
-- Our merchants create their own templates by using the default to start, so everything needs to be self explanatory
- 
-```twig
-{⁣{ __("Are you sure you wish to delete :itemname from your 
- ↳ basket, :username?",
- ↳ {'itemname' : package.name, 'username' : basket.username}) }}
-```
-
-???
-- This is something that Laravel did very well, so we stole their idea!
-- This was one of our top priorities - having that context when merchants are creating new templates simplifies the process
-- Just by reading it's easy to see what's waht
- - Also means that a translation can easily reverse the placeholder order if required
-
----
-
-class: content-odd tinycode
-
-```php
-private function doReplacements($string, $replacements = false)
-{
-    if ($replacements) {
-        foreach ($replacements as $placeholder => $value) {
-            $string = str_replace(":{$placeholder}", $value, $string);
-        }
-    }
-    return $string;
-}
-```
-
----
-
-class: summary-slide noheader
-
-# Requirements
-- Support plurals &#10004;
-- The 'key' should be the default translation &#10004;
- - With readable placeholders &#10004;
-- Can be over-written and customised on a per user basis
- - In a format users can understand
-- Support languages we don't even know exist!
-- Translations should be loadable to arrays for speed
-    
-???
-
-Our final requirements were essentially combining things we liked from both gettext and Illuminate/Translation    
-    
----
-
-class: content-even
-# Per-store customisation
-
-- We will create a set of initial translations, but stores should be able to add their own
- - If they want to replace our default translations
- - Or if they want to translate custom strings that appear in their template
- - Or even if they want to add a totally new language!
-
-???
-
----
-
-class: content-even
-# Format - json
-- We decided to use JSON for the translation files
- - Generally understood by our merchants already
- - Doesn't require any additional parsing to turn into an array
- 
----
-
-class: content-even tinycode noheader
-
-```json
-{  
-   "meta":{  
-      "locale":"en_GB",
-      "pluralrule":"plural=(n != 1)",
-      "name":"English"
-   },
-   "translations":{  
-      "Welcome":"Welcome",
-      "Please enter your username to continue":"Please enter your username to continue",
-      "Terms and conditions":"Terms and conditions",
-      "Empty basket":"Empty basket",
-      "Please confirm that you're a human":"Please confirm that you're a human",
-      ":count item for :amount :currency":[  
-         ":count item for :amount :currency",
-         ":count items for :amount :currency"
-      ],      
-   }
-}
-```
----
-class: content-even
-# Inheritance
-- If a merchant only wants to replace one or two translations, it is silly for them to have to provide every translation
- - Every translation has a full locale, so we can easily work out if there is a default to fallback to
- 
----
-
-class: content-even noheader center
-
-![](i18n/images/translations.png)
-
----
-
-class: content-even tinycode 
-
-# Inheritance
-- This provides a nice fallback chain:
-
-```php
-public function getTranslation($string, $replacements = false)
-{
-    if (isset($this->translation->translations->$string)) {
-        return $this->doReplacements($this->translation->translations->$string, $replacements);
-    }
-    if (isset($this->parentTranslation->translations->$string)) {
-        return $this->doReplacements($this->parentTranslation->translations->$string, $replacements);
-    }
-    return $this->doReplacements($string, $replacements);
-}
-```
-
----
-
-class: content-even tinycode
-
-# Inheritance
-- This provides a nice fallback chain:
-
-```php
-public function getTranslation($string, $replacements = false)
-{
-*    if (isset($this->translation->translations->$string)) {
-*        return $this->doReplacements($this->translation->translations->$string, $replacements);
-*    }
-    if (isset($this->parentTranslation->translations->$string)) {
-        return $this->doReplacements($this->parentTranslation->translations->$string, $replacements);
-    }
-    return $this->doReplacements($string, $replacements);
-}
-```
-
----
-
-class: content-even  tinycode
-
-# Inheritance
-- This provides a nice fallback chain:
-
-```php
-public function getTranslation($string, $replacements = false)
-{
-    if (isset($this->translation->translations->$string)) {
-        return $this->doReplacements($this->translation->translations->$string, $replacements);
-    }
-*    if (isset($this->parentTranslation->translations->$string)) {
-*        return $this->doReplacements($this->parentTranslation->translations->$string, $replacements);
-*    }
-    return $this->doReplacements($string, $replacements);
-}
-```
-
----
-
-class: content-even tinycode
-
-# Inheritance
-- This provides a nice fallback chain:
-
-```php
-public function getTranslation($string, $replacements = false)
-{
-    if (isset($this->translation->translations->$string)) {
-        return $this->doReplacements($this->translation->translations->$string, $replacements);
-    }
-    if (isset($this->parentTranslation->translations->$string)) {
-        return $this->doReplacements($this->parentTranslation->translations->$string, $replacements);
-    }
-*    return $this->doReplacements($string, $replacements);
-}
-```
-
----
-
-class: summary-slide noheader
-
-# Requirements
-- Support plurals &#10004;
-- The 'key' should be the default translation &#10004;
- - With readable placeholders &#10004;
-- Can be over-written and customised on a per user basis &#10004;
- - In a format users can understand &#10004;
-- Support languages we don't even know exist! &#10004;
-- Translations should be loadable to arrays for speed &#10004;
-    
-???
-
-Our final requirements were essentially combining things we liked from both gettext and Illuminate/Translation    
-    
----
-
-class: section-title-a halfhalf middle
-background-image:url(i18n/images/performance.jpg)
-
-# Performance
-
-???
-
-- So, we now have the basics of our system
-- We can provide translations, users can provide translations
- - But what about performance?
- - At peak times we serve alot of traffic, so we need to ensure there are no problems
-
----
-
-class: content-odd tinycode
-# Extra DB queries
-
-- Adding this new translation layer added 2 extra queries to each page load
- - 1 to fetch their translation file
- - 1 to try to fetch the base file (if it exists)
-
-???
-
-- Two extra queries doesn't sound like much
- - but that could be an extra 60k requests a minute!
- 
-
-
----
-
-class: content-odd tinycode
-# Extra Logic
-
-- Parsing two JSON objects on every page request
-  - Each translatable item could require checking two arrays
- 
-
-???
-
-- Again, we are talking tiny differences
- - But the key point is that we are doing everything twice
- - So it's not just speed, but memory as well - these json files can be large!
-
-
----
-
-class: section-title-b middle center
-
-# Does Any Of This Matter?
-    
 ---
 
 class: section-title-c middle center
 
-# Not Really.
+# Lesson 3: k-NN ❤️ Numbers
 
 ???
 
-- You know what? The performance was actually fine as it was.
- - The extra DB queries are the only 'real' problem - everything else, two json_decodes, two issets... big deal
-- However, it bugged me as it felt unfinished, so I 'fixed' it anyway! 
+- Because k-NN is based on calculating the distance, it needs to be based on numeric data.
+- Most of our data isn't!!
+- We need to find a way to convert it  
 
 ---
 
-class: content-odd
-#Merge and Cache
+class: content-even
 
-- These arrays both have sets of shared keys
- - Or at least, they might do
-- We can combine the two arrays, and then cache the result
+# Handling Nominal Data
 
+- We need to convert our textual data to numerical data
+- k-NN is interested in the _distance_ between different values
+ - We need to be careful about _how_ we convert the data
 
 ???
 
-Fix all the things
- - Merge the arrays - now we don't have two checks
- - Cache the result - now we don't have to hit the DB
+- First off, we thought - no problem - most of our data is normalised, so we have a country_id, a currency_id etc.
+- However, this brings challenges - the distance between country_id 1 and country_id 2 is less than between country_id 4 and country_id 50
+- This could then skew our results.
  
----
-
-class: section-title-b middle center noheader
-
-
-![](i18n/images/winning-2.png)
 
 ---
 
-class: section-title-b middle center noheader
+class: content-even
+ 
+# Sequential Data
 
+- In an ideal world, your nominal data will be sequential
+- In this situation, you need to estimate the distance between them
+- E.G. Intern -> Non-Management Employee -> Line Manager -> Department Manager -> Executive
+- 1 -> 3 -> 6 -> 10 -> 15 
 
-![](i18n/images/notwinning-2.png)
+???
 
 
 ---
 
 class: content-even
-#Gotcha - External Cache
 
-- We use CloudFlare to help with DDOS protection
- - As part of that, we also use them to cache webstore homepages
-- We don't have separate URLs based on language
- - The locale you select is stored in a cookie
- 
+# Non-Sequential Data
+
+- Non-sequential data makes this trickier
+- Countries
+ - Lat/Lon?
+ - Ordered by popularity?
+- Currencies
+- Gateways
+    
 ???
 
-- If Cloudflare has a cache, it won't serve a cookie
- -  Even if you have a cookie, if cloudflare has a cache for the main URL, you'll get that
-- Even better, if you visit the site for the first time, but the cache miss was generated by someone loading the page in german, you'll be confused! 
-
+- In our situation, we don't have sequential data. For countries, we thought about using Lat/Lon to measure the distance around the globe.
+- However that would give a distance between two points within Russia as 360 (straddle 180 deg), so that doesn't work 
+    
 ---
 
-class: content-even tinycode
-# Custom External Cache
+class: content-even
 
-```lua
-local currency = cookie_obj:get('buycraft_currency')
-local locale = cookie_obj:get('buycraft_locale')
+# Binary
 
-if not currency then
-    currency = "default"
-end
-if not locale then
-    locale = "default"
-end
+- The simplest solution is to make all the data binary
+- With only a simple 'on' or 'off', there is no risk of incorrect measurements
+ - Does result in a large number of dimensions
+- Usually you'll want to normalize all data to the same scale
+    
+???
 
-local cache_key_fmt = st_format('${scheme}://${host_header}${uri}::%s::%s::%s', currency:lower(), language:lower(), locale:lower())
+- After doing more research, the best method we could come up with was to binarise everything
+- This means turning the data into a series of yes/no options: 
+ - Is the country US
+ - Is the country GB
+ - Is the country FR
+ - Is the country DE
+- Obviously this results in many dimensions, so you certainly wouldn't want to do this by hand!
+
+- If you are not careful to normalize your data, some dimension will end up having a larger impact than others
+ - think about a 2D graph with is_red and length - if the length is between 0 and 100, but is_red is only 0 and 1, the length dimension will have a greater impact
+ - Of course, you can use this to your advantage to weight particular parameters - if one of your dimensions is more important, you could increase the scale of that dimension slightly to add more weight
+    
+---
+
+class: content-even noheader tinycode
+
+```php
+$trainingData = [
+   'apples' => [
+      ['length' => 6.5, 'color' => 'red', 'shape' => 'round'],
+      ['length' => 7, 'color' => 'green', 'shape' => 'round'],
+      ['length' => 6.6, 'color' => 'yellow', 'shape' => 'round'],
+      ['length' => 6.8, 'color' => 'red', 'shape' => 'round'],
+   ],
+   'bananas' => [
+      ['length' => 12, 'color' => 'yellow', 'shape' => 'crescent'],
+      ['length' => 12.5, 'color' => 'yellow', 'shape' => 'crescent'],
+      ['length' => 11.8, 'color' => 'yellow', 'shape' => 'crescent'],
+      ['length' => 11.5, 'color' => 'yellow', 'shape' => 'crescent'],      
+   ],
+   'oranges' => [
+      ['length' => 7, 'color' => 'orange', 'shape' => 'round'],
+      ['length' => 7.2, 'color' => 'red', 'shape' => 'round'],
+      ['length' => 6.9, 'color' => 'orange', 'shape' => 'round'],
+      ['length' => 7.5, 'color' => 'red', 'shape' => 'round'],      
+   ]
+];
 ```
 
 ???
-- Step 1 - include locale into a custom cache key
+- Given we have data in this format
 
 ---
+class: content-even noheader tinycode
 
-class: content-even tinycode
-# Custom External Cache
+```php
+$shapes = [];
+$colors = [];
+$maxLength = 0;
 
-```lua
-if args["currency"] and args["currency"] ~= true then
-    currency = args["currency"]
-    args_tab["buycraft_currency"] = args["currency"]
-end
-
-if args["locale"] and args["locale"] ~= true then
-    locale = args["locale"]
-    args_tab["buycraft_locale"] = args["locale"]
-end
+foreach ($trainingData as $fruits) {
+   foreach ($fruits as $fruit) {
+      $shapes[$fruit['shape']] = $fruit['shape'];
+      $colors[$fruit['color']] = $fruit['color'];
+      if ($fruit['length'] > $maxLength) {
+         $maxLength = $fruit['length'];
+      }
+   }
+}
 ```
 
 ???
-- Step 2 - If we have a new query string, this superceeds the cookie
+- First we need to get a list of shapes and colours and find the maximum length
 
 ---
+class: content-even noheader tinycode
 
-class: content-even tinycode
-# Custom External Cache
+```php
+$samples = [];
 
-```lua
-for key, value in pairs(args_tab) do
-    if value then
-       table.insert(cookie_push, key)
-       table.insert(cookie_push, st_format("%s; Max-Age=%s; Path=/; Domain=.%s", value:lower(), 2592000, regdom))
-    end
-end
+foreach ($trainingData as $label => $fruits) {
+   foreach ($fruits as $fruit) {
+      $data = [
+         'length' => $fruit['length'] / $maxLength
+      ];
+      foreach ($shapes as $shape) {
+         $data['is_' . $shape] = (int) ($fruit['shape'] == $shape);
+      }
+      foreach ($colors as $color) {
+         $data['is_' . $color] = (int) ($fruit['color'] == $color);
+      }
+      $samples[] = array_values($data);
+      
+      $labels[] = $label;
+   }
+}
 ```
 
 ???
-- Step 3 - Oh, and if it came from a query string we best set a cookie
+- Then we need to assign a binary value for each `is_` statement, and normalize the length into a scale between 0 and 1
 
+---
+class: content-even noheader tinycode
+
+```php
+//length, is_round, is_crescent, is_red, is_green, is_yellow, is_orange
+
+(0.52,1,0,1,0,0,0),
+(0.56,1,0,0,1,0,0),
+(0.528,1,0,0,0,1,0),
+(0.552,1,0,0,0,1,0),
+(0.544,1,0,1,0,0,0),
+(0.96,0,1,0,0,1,0),
+(1,0,1,0,0,1,0),
+(0.984,0,1,0,0,1,0),
+(0.944,0,1,0,0,1,0),
+(0.92,0,1,0,0,1,0),
+(0.56,1,0,0,0,0,1),
+(0.568,1,0,0,0,0,1),
+(0.576,1,0,1,0,0,0),
+(0.552,1,0,0,0,0,1),
+(0.6,1,0,1,0,0,0)
+```
+
+???
+
+- This will give us some data like this - essentially very complex, multi-dimensional co-ordinates
 
 ---
 
-class: section-title-b middle center noheader
+class: section-title-b center middle bigcentralimg
 
 
-![](i18n/images/winning.jpg)
+![](machinelearning/images/explode.gif)
 
 ---
 
-class: section-title-b middle center noheader
+class: content-odd
+
+# Attempt 3
 
 
-![](i18n/images/notwinning.jpg)
+
+???
+
+- So, this is what we did - we took our data, normalised the numeric values and binarized the nominal data
+- This resulted in quite a large test data - almost 200 dimensions!
+
+---
+
+class: content-odd
+
+# Attempt 3
+
+- Total Rows: 200
+- Not Fraud: 58
+- False Positives 42
+- Missed Fraud 33
+- Identified Fraud 67
+
+???
+
+With all the tests, the training data came from 2018 and the test data came from 2017
+A little better, but not great.
+The false positives dropped by 29 so that's good, but we also identified 3 fewer examples of fraud
+
 
 
 ---
 
 class: section-title-c middle center
 
-# 01/02/03
+# Lesson 4: Data Without Context is Meaningless
 
 ???
 
-- What does this date show?
-- 1st Feb 2003?
-- 3rd Feb 2001?
-- 2nd Jan 2003?
+- Now this last set of results was better in that it reduced false positive (and false positives are worse than missed fraud in many ways, as customers will start to ignore the warnings)
+- However, it still wasn't particularly accurate
+- We played with the specific data a little and we could make it a little better, but it was still quite hit and miss
+
+---
+
+class: content-even
+
+# Context
+
+- Consider 2 stores:
+ - Average price $3 and the highest priced item $5
+ - Average price $30 and the highest priced item $50
+ 
+- Consider a player who makes all their purchases from France with an average price of $20
+ - Suddenly now makes a purchase worth $40 from the USA
+ 
+???
+
+- The problem, we suspected was context - on a store where the average product price is $30 and there is a $60 rank, a  $50 purchase would be perfectly normal
+- On a store where the average product price was $3 and the highest priced item was $5, that would be more suspect.
+- Likewise, a player who makes all their purchases from France, who suddenly makes a purchase from the US may just be on holiday, but it's probably worth investigating further.
+- This is context - we need to provide a frame of reference to determine if something appears odd 
+
+
+---
+
+class: content-even
+
+# Just Add Context
+
+- We realised we needed to have a more 'representative' set of test data
+- Decided to use k-NN again, but for a payment test it in two contexts
+ - Is it normal for this store?
+ - Is it normal for this player? 
+
+???
+
+- Considering what is normal for one store or one player might be different for another store, we decided that we should be asking two questions
+- This will mean building 'per store' and 'per player' training data
+- However, this may mean we have bigger data issues - what if a player has never charged back?!
+
+---
+
+class: content-even
+
+# Per-Store Chargeback Detection
+
+- We created a custom test dataset for a single large store
+ - For 2018 the store had 1,144 chargebacks, so we quadruple sampled those and took 4,576 'good' payments
+- We then ran the same test (100 random chargebacks, 100 random 'good' payments from 2017):
+
+---
+
+class: content-even
+
+# Per-Store Chargeback Detection
+- Total Rows: 200
+- Not Fraud: 57
+- False Positives 43
+- Missed Fraud 22
+- Identified Fraud 78
+
+???
+- Our false positives are still quite high, but we do seem to be moving in the right direction.
+- At the moment we've not taken this any further, however our plan is to spend more time looking at the different dimensions, and see if changes to the weighting or adding/removing specific dimensions improve the accuracy
+
+---
+class: content-odd bigcentralimg center middle
+
+![](machinelearning/images/outlier.png)
+
+???
+
+- By applying a narrow context, it's likely that we won't have data for the two categories 
+ - Particularly when looking at players
+ 
 
 ---
 
 class: content-odd
+# Anomaly (Outlier) Detection
 
-# Beyond Language
-- Localisation is more than just language
-- We have different ways of handling numbers, dates, currency
-
-???
-
-- Our first step was to get the language side of things working
- - But it's a much bigger job than that
- - We still have a way to go, but we are now looking at improving other areas of the experience
-
----
-
-class: content-odd
-# Numbers and Dates
-```json
-{  
-   "meta":{  
-      "locale":"en_GB",
-      "pluralrule":"plural=(n != 1)",
-      "name":"English",
-*     "dateformat":"d-m-Y",
-*     "decimalpoint":".",
-*     "thousandssep":","
-   }
-}
-```
-
----
-class: content-odd
-# Numbers and Dates
-```twig
-Purchase Date:
-{⁣{ _d(purchase.date) }}
-
-Purchase Value:
-{⁣{ purchase.currency }}{⁣{ _n(purchase.value) }} 
-```
+- The main challenge with this approach is what happens if there is no data for a category?
+- Instead of classifying, you need to be able to detect if something is dissimilar to the standard
+- There are specific algorithms for anomaly detection, however we wanted to see first if we could use what we already had
 
 ???
 
-- We then expose two additional methods to twig - _d (date) and _n (number).
-- This could (and probably will) be taken further still - control over where the currency symbol goes for example
+
+- So in this situation we need to look at if the data doesn't match the pattern.
+- We could have looked at other algorithms for anomaly detection, however we wanted to try and build upon what we were already doing, rather than having to start over.
+ - Given that the k-NN is based on distances, could we use the distance to figure out if something was an outlier or not?
+
 ---
 class: content-odd tinycode
-```php
-public function formatDate($date)
-{
-    $date = $this->carbon->parse($date);
-    return $date->format($this->getDateFormat()); 
-}
+# Average Distance
+- Using the average distance that our test node is from its neighbours, we can see how close the relation is
 
-public function formatNumber($number)
-{
-    return number_format(
-        $number,
-        2,
-        $this->getDecimalPoint(),
-        $this->getThousandsSep()
-    ); 
+```php
+$this->distanceResults = [];
+
+foreach ($distances as $idx => $distance) {
+    $category = $this->targets[$idx];
+    if (!isset($this->distanceResults[$category])) {
+        $this->distanceResults[$category] = (object) ['count' => 0, 'total' => 0];
+    }
+    $this->distanceResults[$category]->count++;
+    $this->distanceResults[$category]->total += $distance;
 }
 ```
 
----
-
-class: section-title-b middle center noheader
-
-
-![](i18n/images/winning3.png)
+???
+- If we compare the average distance against a 'baseline', we can then consider if the relation to its neighbours is strong or not
+- In particular if we only have a single category, while it will be associated with that category, a high average distance suggests it's an outlier
+- To test this theory, we added a basic distance gather to the PHPML library
 
 ---
-
-class: section-title-b middle center noheader
-
-
-![](i18n/images/notwinning3.jpg)
+class: content-odd noheader
 
 
----
+```bash
+Enter values (length shape color):12 crescent red
+Classification: bananas
 
-class: section-title-a center middle noheader
-
-![](i18n/images/eu-nokey.jpg)
+/var/www/html/talks/machinelearning/demos/k-nnNominal/knn.php:84:
+array(1) {
+  'bananas' =>
+  class stdClass#4 (2) {
+    public $count =>
+    int(5)
+    public $total =>
+    double(7.0724930953961)
+  }
+}
+```
 
 ???
 
-- Can anyone guess what this map shows?
+Given something that will obviously end up in the banana area, but with a wrong colour, the average distance is 1.4
+At the moment we don't really know what this means 
 
 ---
+class: content-odd noheader
 
-class: section-title-a center middle noheader
 
-![](i18n/images/eu.jpg)
+```bash
+Enter values (length shape color):20 crescent green
+Classification: bananas
+
+/var/www/html/talks/machinelearning/demos/k-nnNominal/knn.php:84:
+array(1) {
+  'bananas' =>
+  class stdClass#4 (2) {
+    public $count =>
+    int(5)
+    public $total =>
+    double(7.7592234379052)
+  }
+}
+```
+
+???
+Given something even further out (longer than all measured bananas as well as the wrong colour), the average becomes 1.6
+
 
 ---
+class: content-odd noheader
 
-class: section-title-a center middle noheader
 
-![](i18n/images/na.jpg)
+```bash
+Enter values (length shape color):12 crescent yellow
+Classification: bananas
 
----
+/var/www/html/talks/machinelearning/demos/k-nnNominal/knn.php:84:
+array(1) {
+  'bananas' =>
+  class stdClass#4 (2) {
+    public $count =>
+    int(5)
+    public $total =>
+    double(0.12)
+  }
+}
+```
 
-class: section-title-a center middle noheader
-
-![](i18n/images/sa.jpg)
-
----
-
-class: section-title-a center middle noheader
-
-![](i18n/images/asia.jpg)
-
+???
+Now something that fits right in the middle of our definition, the average distance is 0.03 - clearly a much closer relationship
 ---
 
 class: content-even
-#Payments
 
-- Credit/Debit cards are *not* global
-- Neither is PayPal!
- - This applies double when we consider the market our merchants are targeting
+# Testing Outlier Data
+
+- Identify players who had chargebacks and payments
+- We used the same k-NN logic
+ - Slightly weighting towards the gateway and price
+- Our training data consisted of all their 'good' payments, minus 2 selected at random to provide a 'benchmark'
+- Calculate the average distances from the 3 closest nodes for each chargeback and the 2 benchmarks
 
 ???
 
----
-class: content-even
-# Payments
-
-- Different payment methods have strongholds in different regions
- - Speak to our merchants, discover what would make a difference for their players
-- Integrate as many gateways as possible
- - Including some multi-gateway providers such as Xsolla, Mollie who have broad reach 
-
+- We wanted to test our theory that we could use per user data and k-NN to detect outliers
+- We couldn't _just_ use the chargebacks in our tests - we needed a benchmark. 
+- The challenge is that we can't 're-use' nodes that are in the training data, as this would result in a direct node match
+ - So we hold back a few rows, but we don't want to do too many, as it will make the training data less accurate
+ 
 ---
 
-class: content-even
-# Payments
+class: content-odd noheader
 
-- We can't support every gateway however
- - With everything we do we are now aiming to provide ways for merchants to 'do it themselves'
-- This includes being able to integrate their own payment methods
- - Not a 'first class citizen', but provides a way to make it work
+```text
+Testing 5896ac9314ed427ba4c463af2f6fb110....
+==================================
+
+Chargeback Payment:0.93177764004865
+Chargeback Payment:0.40322269198409
+Chargeback Payment:0.19935800662875
+Chargeback Payment:1.2928766654763
+Chargeback Payment:0.87753781368947
+Chargeback Payment:0.91252922718385
+
+Good Payment:0.000028106993956996
+Good Payment:0.91962369711742
+```
+
+???
+
+- Fairly mixed first result - There is a lean towards higher distances for chargebacks, and we could at least detect some outliers, but not certain
+
+---
+class: content-even noheader
+
+```text
+Testing 3470fd984bcc460dae81aa3e6699f211....
+==================================
+
+Chargeback Payment:1.6141169384724
+Chargeback Payment:0.67722567103165
+
+Good Payment:1.237857747094
+Good Payment:0.93758071922941
+```
+???
+
+
+---
+class: content-odd noheader
+
+```text
+Testing 918f5d40b471405fac712902fd47d4f9....
+==================================
+
+Chargeback Payment:0.65867694583238
+Chargeback Payment:7.6473447883328
+Chargeback Payment:1.1754211312542
+Chargeback Payment:1.1764882133228
+
+Good Payment:0.044502995982871
+Good Payment:0.31600928915261
+```
+
+???
+
+- This is more like it - there are some clear outliers here that we could flag
+
+---
+class: content-even noheader
+
+```text
+Testing 00000000000000000000001748DC9ACF....
+==================================
+
+Chargeback Payment:1.2171267348379
+
+Good Payment:0.46735852494971
+Good Payment:0.90059395341273
+```
+
+???
+- Looking good!
+
+---
+class: content-odd noheader
+
+```text
+Testing 739d4889ad554011bf21f48d61d1f1ec....
+Chargeback Payment:1.0090155901255
+
+Good Payment:0.11299422052381
+Good Payment:0.0015446063066326
+```
+
+???
+- And yes, again a good outlier
 
 ---
 
 class: content-odd
-# Self-Integration
 
-- Player go through the checkout as normal
-- Instead of going to one of our gateways at the end of the process, we create a payment with a pending state
-- We then redirect the player to a page that the merchant controls the content of
- - Could be a button to redirect to their payment method, or some Javascript etc
+# Testing Outlier Data
+
+- Based on our tests, if we considered an outlier to have an average distance > 1
+ - 1 false positive
+ - 7 flagged payments
+ - 7 missed payments
 
 ???
 
-
-
-
+- Most of the missed payments (5) were from that first example
+- Flagging 50% might not seem like a great result, but actually if we could reduce fraud even by 20% without flagging many false positives that would relate to 4,700 payments in 2018
+- Knowing what you are trying to achieve is important - in our situation avoiding false positives and reducing chargebacks by 30% is a better win than reducing chargebacks by 60% but flagging 30% of legitimate payments   
+ 
 ---
-
-
 
 class: content-odd center
-#Self-Integration
 
-![](i18n/images/manual.png)
+# Progress!
 
----
-
-class: content-odd
-#Self-Integration
-
-- We then provide two APIs to be able to confirm the purchase when they receive the money:
- - Check the details of a purchase, to confirm the amount they received matches the purchase price 
- - Set the status of the payment
- 
+![](machinelearning/images/progress.jpg)
 
 ???
 
-- Once the payment status is changed, we start with the standard fulfilment processes
-
+- Ok, so we're not at the end yet, but we've managed to go from something totally unusable to something that has benefits
+ 
 ---
 
-class: middle center content-odd
-
-![](i18n/images/api.png)
-
----
 
 class: summary-slide noheader
 
-- We don't know everything - now our merchants are empowered to target their market in ways we would never think of
-- We reduce support requests for things like incorrect translations, translation of strings that haven't been, and new payment gateways
-- Our solutions are portable - we could use the same layers and approach to apply this to a SPA, or a mobile app
+- Have an aim before you start - understand what you are trying to achieve
+- Machine Learning is hard! Use the simplest techniques that will achieve your aims
+- Supervised learning algorithms are sensitive to misleading data - data will need processing to remedy this
+- Experiment! Trying ideas, testing theory and iterating will help you learn more and more as you progress
+
 
 ???
 
-- And you know, we;re not finished yet - we are always having to talk to our merchants, there are always things that we can do better
-- Error messages, currencies, plugins - the more useable our applications are, the more successful they will be.
+- For Tebex, this is very much the beginning - we've continually re-defined what we want to achieve, and this has helped us better refine our algorithm and data choices
+ - From trying these things out, we know that certain dimensions are a better pointer than others, and that localised per-user and per-store testing is better than global testing
+- Perhaps we will consider more complex algorithms in future, but if we can reduce our merchants chargebacks even by 30-40% while keeping our choices simple, that's a win for us
+ - It makes it easier for us to understand (we are engineers, not data scientists!) and maintain
+- We are only using supervised learning algorithms - for categorisation and regression nothing else is really needed.
+- We learned so much doing this - we've made many mistakes, and learned many lessons during our journey. We're still on this journey ourselves -
+now comes the easy bit - working out how to integrate this into our application (!), and iterating and improving some more.
 
+ 
+ 
 ---
 
 
-class: section-title-b middle center noheader
+class: summary-slide noheader
+
+- Have an aim before you start - understand what you are trying to achieve
+- Machine Learning is hard! Use the simplest techniques that will achieve your aims
+- Supervised learning algorithms are sensitive to misleading data - data will need processing to remedy this
+- Experiment! Trying ideas, testing theory and iterating will help you learn more and more as you progress
 
 
-![](i18n/images/winning.jpg)
+???
+
+- Perhaps we will consider more complex algorithms in future, but if we can reduce our merchants chargebacks even by 30-40% while keeping our choices simple, that's a win for us
+ - It makes it easier for us to understand (we are engineers, not data scientists!) and maintain
+- We are only using supervised learning algorithms - for categorisation and regression nothing else is really needed.
+- We learned so much doing this - we've made many mistakes, and learned many lessons during our journey. We're still on this journey ourselves -
+now comes the easy bit - working out how to integrate this into our application (!), and iterating and improving some more.
+
+ 
+---
+
+
+class: summary-slide noheader
+
+- Have an aim before you start - understand what you are trying to achieve
+- Machine Learning is hard! Use the simplest techniques that will achieve your aims
+- Supervised learning algorithms are sensitive to misleading data - data will need processing to remedy this
+- Experiment! Trying ideas, testing theory and iterating will help you learn more and more as you progress
+
+
+???
+
+- We learned so much doing this - we've made many mistakes, and learned many lessons during our journey. We're still on this journey ourselves -
+now comes the easy bit - working out how to integrate this into our application (!), and iterating and improving some more.
+
  
 ---
 
