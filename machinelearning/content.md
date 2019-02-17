@@ -367,11 +367,11 @@ class: content-odd
 
 # Attempt 1 - Results
 
-- Total Rows: 100
+- Total Rows: 200
 
 ???
 
-- We ran a test on 100 known chargebacks
+- For most of our tests we picked 100 rows of 'good' paymetns and 100 rows of chargebacks at random from 2017 (training data came from 2018)
 
 ---
 
@@ -379,7 +379,7 @@ class: content-odd
 
 # Attempt 1 - Results
 
-- Total Rows: 100
+- Total Rows: 200
 - False Positives 0
 
 ???
@@ -392,10 +392,10 @@ class: content-odd
 
 # Attempt 1 - Results
 
-- Total Rows: 100
+- Total Rows: 200
 - False Positives 0
 - Identified Fraud 0
-- Missed Fraud 100
+- Missed Fraud 200
 
 ???
 
@@ -532,9 +532,10 @@ class: section-title-b middle center
 ???
 
 We played with the algorithm a bit, but we were not really getting anywhere.
-We realised there were two potential flaws in our approach
+We realised there were a number of potential flaws in our approach
 - We had already recognised that the different tokens we were considering were related, perhaps it's more important than we thought - someone paying 30 USD in Germany is much less suspicious than in Argentina for example, where the average purchase price is around 8 USD.
-- Do we need to consider context more? A store where all items are $3 USD or less would make a $35 transaction look strange, where a store selling ranks for $35 each it would be perfectly normal.  
+- Do we need to consider context more? A store where all items are $3 USD or less would make a $35 transaction look strange, where a store selling ranks for $35 each it would be perfectly normal.
+- What about prices? Purchase prices are not discrete, but continuous - a $3 purchase and a $4 purchase are probably not that exceptional, but in token classifier terms they are totally different.  
 
 ---
 
@@ -542,7 +543,8 @@ class: content-even
 
 # The Hunt For A New Algorithm
 
-- We know that we need to look for an algorithm where the combination of data points has an affect 
+- We know that we need to look for an algorithm where the combination of data points has an affect
+- An algorithm that can handle discrete data and continuous data
 - We're still looking for a supervised learning algorithm as we have training data with known results
 - Ideally also something that we don't have to be a math genius for!
 
@@ -1008,7 +1010,7 @@ class: content-even
 
 # Per-Store Chargeback Detection
 - Total Rows: 200
-- Not Fraud: 60 (60%)
+- Not Fraud: 60
 - False Positives 40
 - Missed Fraud 22
 - Identified Fraud 78
@@ -1317,10 +1319,10 @@ class: content-even
 
 # Testing Outlier Data
 
-- Total 'good' payments in test: 162
-- Total 'chargeback' payments in test: 371
-- 'Good' payments correctly identified: 138 (85%)
-- 'Chargeback' payments correctly identified: 115 (31%)
+- Total 'good' payments in test: 336
+- Total 'chargeback' payments in test: 786
+- 'Good' payments correctly identified: 286 (85%)
+- 'Chargeback' payments correctly identified: 242 (31%)
 
 ???
 
