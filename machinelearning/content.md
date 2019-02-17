@@ -269,7 +269,7 @@ class: section-title-c middle center noheader
 class: section-title-c middle center noheader
 
 # 100%
-### Percentage of talks with live demos where Liam has criticised or called the speaker brave for a live demo
+### Percentage of talks where Liam hasn't done a live demo
 
 ???
 
