@@ -109,14 +109,14 @@ class: section-title-c middle center noheader
 class: summary-slide middle noheader center
 
 # 0.85%
-## &nbsp;
+## &nbsp;<sup>&nbsp;</sup>
 
 ---
 
 class: summary-slide middle noheader center
 
 # 0.85%
-## 23,844 payments
+## 23,844 payments<sup>&nbsp;</sup>
 
 ???
 
@@ -153,7 +153,7 @@ class: summary-slide middle noheader center
 class: content-odd 
 
 # The Challenge
-- Use our existing data to try to predict if a given payment is likely to be charged back in future
+- Use our existing data to predict if a given payment is likely to be charged back in future
 - Avoid false positives as far as possible
 - Ideally, provide feedback to the store owner about why the payment has been flagged for manual review
 
@@ -178,7 +178,7 @@ class: content-even
 
 # Supervised Learning
 
-- Supervised learning involves giving your learning function set of pre-labeled data as training data
+- Supervised learning involves giving your learning function a set of pre-labeled data as training data
 - Your learning function will analyze the training data to classify previously unseen data.
 
 ???
@@ -194,7 +194,7 @@ class: content-even
 # Classification
 
 - Within supervised learning there are two problems we could be solving:
- - Classification - Analyze a piece of data to predict the probability of it belonging in a discreet category
+ - Classification - Analyze a piece of data to predict which category it is most similar to
  - Regression - Analyze a piece of data to predict where along a continuous line it would fit
  
 ???
@@ -202,7 +202,7 @@ class: content-even
 - Example: Classification: Is a tumor benign or malign 
 - Example: Regression: Given a set of variables, where along a house price line would this property fit?
 
-- We are looking at classification - now we know what we are trying to do, we need to find an
+- We are looking at classification - now we know what we are trying to do, we need to find an...
 
 ---
 class: content-odd center middle
@@ -225,6 +225,9 @@ class: content-odd
 - Calculates the probability of a block of text belonging to a category based on word frequency
 
 ???
+
+- If you do any research around ML, the algorithm that comes up the most as being the most straightforawrd and easy to understand is the Naive Bayes Classifier
+- So that's where we started
 
 ---
 
@@ -298,6 +301,7 @@ class: content-even
 
 - It's all very well being able to classify text, but we are not dealing with words
 - If we assume words are actually tokens, could we use this to categorise other things
+- Let's assume for a second we are describing fruit
 
 ---
 
@@ -315,7 +319,7 @@ $str .= " usernamesbyip:{$usernameCount->cnt} ".secondsToTime($timeSince)."";
 ???
 
 - Most of the values are prefixed - this is because where a number of the items are IDs, the same number could show up in multiple places
-
+- PHP-ML actually has a tokenizer function
 ---
 
 class: content-odd tinycode
@@ -514,7 +518,7 @@ class: content-odd
 
 We pulled 200 records at random from the DB (100 fraud and 100 successful).
 
-We can see that we are 'moving the needle' now, but accuracy is poor - 60% accuracy
+We can see that we are 'moving the needle' now, but accuracy is poor - 50% accuracy
 
 With the result being so mixed, there wasn't really any value in looking at the fraud probability - accepting anything with a fraud probability of 46% or more results in more fraud being caught, but also increases the number of false positives
 
@@ -538,7 +542,7 @@ class: content-even
 
 # The Hunt For A New Algorithm
 
-- We know that we need to look for an algorithm treats the data as related
+- We know that we need to look for an algorithm where the combination of data points has an affect 
 - We're still looking for a supervised learning algorithm as we have training data with known results
 - Ideally also something that we don't have to be a math genius for!
 
@@ -552,12 +556,13 @@ class: content-odd
 # Level 2: k-Nearest Neighbours
 
 - k-Nearest Neighbours (k-NN) is another fairly simple algorithm
-- The important thing for us is that the parameters are taken as a whole, rather than individually
+- k-NN is less naive, because distances between data points is considered.
+- Data imbalance isn't as big a problem (but too much of an imbalance will still cause issues)
 
 ???
 
 - In short, k-NN means 'which k other results is this one most like'
-- We will have an issue with unbalanced datasets
+- Because the data is looking at which points are closest, it is less sensitive to a data imbalance, but a large imbalance will still affect results
 - The easiest way to show this is with a graph:
 
 ---
@@ -710,6 +715,7 @@ class: section-title-c middle center
 ???
 
 - Because k-NN is based on calculating the distance, it needs to be based on numeric data.
+- It is possible to use different distance functions to allow for mixed data, but that starts getting beyond our knowledge! 
 - Most of our data isn't!!
 - We need to find a way to convert it  
 
@@ -720,7 +726,7 @@ class: content-even
 # Handling Nominal Data
 
 - We need to convert our textual data to numerical data
-- k-NN is interested in the _distance_ between different values
+- k-NN is concerned with distance, so a larger distance means data is less related than a smaller distance
  - We need to be careful about _how_ we convert the data
 
 ???
@@ -742,7 +748,7 @@ class: content-even
 - 1 -> 3 -> 6 -> 10 -> 15 
 
 ???
-
+- Although if you ask an executive, they'd probably give their distance to be 100!
 
 ---
 
@@ -770,7 +776,7 @@ class: content-even
 
 - The simplest solution is to make all the data binary
 - With only a simple 'on' or 'off', there is no risk of incorrect measurements
- - Does result in a large number of dimensions
+ - Does result in a large number of dimensions, which can result in it's own issues
 - Usually you'll want to normalize all data to the same scale
     
 ???
@@ -786,6 +792,8 @@ class: content-even
 - If you are not careful to normalize your data, some dimension will end up having a larger impact than others
  - think about a 2D graph with is_red and length - if the length is between 0 and 100, but is_red is only 0 and 1, the length dimension will have a greater impact
  - Of course, you can use this to your advantage to weight particular parameters - if one of your dimensions is more important, you could increase the scale of that dimension slightly to add more weight
+ 
+- PHPML has a normalizing pre-processor
     
 ---
 
@@ -896,6 +904,7 @@ class: content-even noheader tinycode
 ---
 
 class: section-title-b center middle bigcentralimg
+# Stop, Demotime
 
 
 ![](machinelearning/images/explode.gif)
@@ -928,7 +937,7 @@ class: content-odd
 ???
 
 With all the tests, the training data came from 2018 and the test data came from 2017
-A little better, but not great.
+A little better, but not great. Accuracy has improved to 62.5%
 The false positives dropped by 29 so that's good, but we also identified 3 fewer examples of fraud
 
 
@@ -990,7 +999,7 @@ class: content-even
 # Per-Store Chargeback Detection
 
 - We created a custom test dataset for a single large store
- - For 2018 the store had 1,144 chargebacks, so we quadruple sampled those and took 4,576 'good' payments
+ - For 2018 the store had 1,144 chargebacks, so we quadruple sampled those and took 5,000 'good' payments
 - We then ran the same test (100 random chargebacks, 100 random 'good' payments from 2017):
 
 ---
@@ -999,17 +1008,34 @@ class: content-even
 
 # Per-Store Chargeback Detection
 - Total Rows: 200
-- Not Fraud: 57
-- False Positives 43
+- Not Fraud: 60 (60%)
+- False Positives 40
 - Missed Fraud 22
 - Identified Fraud 78
 
 ???
 - Our false positives are still quite high, but we do seem to be moving in the right direction.
-- At the moment we've not taken this any further, however our plan is to spend more time looking at the different dimensions, and see if changes to the weighting or adding/removing specific dimensions improve the accuracy
+- Accuracy is 69%, so we're getting there
 
 ---
-class: content-odd bigcentralimg center middle
+class: content-even
+
+# Next Steps
+- Weighting dimensions
+- Using different dimensions
+- Different values for `k`
+- Removing outliers from training data
+- Different distance functions
+- Weighted distance
+
+???
+
+- Weighted distance we're particularly interested in - in standard kNN all votes are equal, but with a weighted distance, the closer the neighbour, the higher the vote.
+
+---
+class: content-odd bigcentralimg center
+
+# Per-Customer Chargeback Detection
 
 ![](machinelearning/images/outlier.png)
 
@@ -1153,36 +1179,39 @@ class: content-even
 class: content-odd noheader
 
 ```text
-Testing 5896ac9314ed427ba4c463af2f6fb110....
+Testing 190xxxxxxxxxxxxxxxxxxxxxxx....
 ==================================
 
-Chargeback Payment:0.93177764004865
-Chargeback Payment:0.40322269198409
-Chargeback Payment:0.19935800662875
-Chargeback Payment:1.2928766654763
-Chargeback Payment:0.87753781368947
-Chargeback Payment:0.91252922718385
+Chargeback Payment:1.1872336570396
+Chargeback Payment:1.4779211824791
+Chargeback Payment:1.6229499861217
+Chargeback Payment:1.5236747120244
+Chargeback Payment:1.5237703564851
+Chargeback Payment:0.60773455316207
 
-Good Payment:0.000028106993956996
-Good Payment:0.91962369711742
+Good Payment:0.1679864461184
+Good Payment:0.14942297231428
+
 ```
 
 ???
 
-- Fairly mixed first result - There is a lean towards higher distances for chargebacks, and we could at least detect some outliers, but not certain
 
 ---
 class: content-even noheader
 
 ```text
-Testing 3470fd984bcc460dae81aa3e6699f211....
+Testing 02exxxxxxxxxxxxxxxxxxxxxxx....
 ==================================
 
-Chargeback Payment:1.6141169384724
-Chargeback Payment:0.67722567103165
+Chargeback Payment:3.0020142747812
+Chargeback Payment:1.1864034895882
+Chargeback Payment:0.87523976545558
+Chargeback Payment:2.1651125859505
 
-Good Payment:1.237857747094
-Good Payment:0.93758071922941
+Good Payment:0.55511596217409
+Good Payment:0.81945260174838
+
 ```
 ???
 
@@ -1191,51 +1220,67 @@ Good Payment:0.93758071922941
 class: content-odd noheader
 
 ```text
-Testing 918f5d40b471405fac712902fd47d4f9....
+Testing 831xxxxxxxxxxxxxxxxxxxxxxx....
 ==================================
 
-Chargeback Payment:0.65867694583238
-Chargeback Payment:7.6473447883328
-Chargeback Payment:1.1754211312542
-Chargeback Payment:1.1764882133228
+Chargeback Payment:0.63938892472403
+Chargeback Payment:0.019601099746028
+Chargeback Payment:0.019600041892108
 
-Good Payment:0.044502995982871
-Good Payment:0.31600928915261
+Good Payment:0.48301644066744
+Good Payment:0.000003491556342439
 ```
 
 ???
 
-- This is more like it - there are some clear outliers here that we could flag
 
 ---
 class: content-even noheader
 
 ```text
-Testing 00000000000000000000001748DC9ACF....
+Testing 000xxxxxxxxxxxxxxxxxxxxxxx....
 ==================================
 
-Chargeback Payment:1.2171267348379
+Chargeback Payment:0.32017785763205
+Chargeback Payment:1.6980250494606
+Chargeback Payment:1.0208325570467
+Chargeback Payment:0.37633747952314
+Chargeback Payment:0.18633733492969
+Chargeback Payment:0.15680374121066
+Chargeback Payment:1.4603719860593
+Chargeback Payment:0.60438004711323
 
-Good Payment:0.46735852494971
-Good Payment:0.90059395341273
+Good Payment:0.0000015421118358009
+Good Payment:0.0066896309102721
+
 ```
 
 ???
-- Looking good!
+
 
 ---
 class: content-odd noheader
 
 ```text
-Testing 739d4889ad554011bf21f48d61d1f1ec....
-Chargeback Payment:1.0090155901255
+Testing 6A7xxxxxxxxxxxxxxxxxxxxxxx....
+==================================
 
-Good Payment:0.11299422052381
-Good Payment:0.0015446063066326
+Chargeback Payment:0.56366499476764
+Chargeback Payment:1.8057199858974
+Chargeback Payment:2.0016497657224
+Chargeback Payment:2.0098944414866
+Chargeback Payment:2.0825587191076
+Chargeback Payment:2.5291528630334
+Chargeback Payment:2.5000000421223
+Chargeback Payment:2.5291796811078
+Chargeback Payment:2.5019182493386
+
+Good Payment:0.000093996082221433
+Good Payment:0.000055741862712711
+
 ```
 
 ???
-- And yes, again a good outlier
 
 ---
 
@@ -1243,17 +1288,44 @@ class: content-odd
 
 # Testing Outlier Data
 
-- Based on our tests, if we considered an outlier to have an average distance > 1
- - 1 false positive
- - 7 flagged payments
- - 7 missed payments
+- In many situations, the distance for a chargeback is greater than the distance of our 'control' payments
+- We can use this to detect outliers - however there isn't a 'fixed' value we can use:
+- We have to calculate what 'outlier' means for each customer
 
 ???
 
-- Most of the missed payments (5) were from that first example
-- Flagging 50% might not seem like a great result, but actually if we could reduce fraud even by 20% without flagging many false positives that would relate to 4,700 payments in 2018
-- Knowing what you are trying to achieve is important - in our situation avoiding false positives and reducing chargebacks by 30% is a better win than reducing chargebacks by 60% but flagging 30% of legitimate payments   
- 
+---
+
+class: content-odd
+
+# Testing Outlier Data
+
+- Calculate the average 3-NN distance between the 'known' values
+- If the 3-NN distance of this payment is greater than the average + standard deviation, then flag the payment
+- So, how did this work?
+
+???
+
+- In reality, we're not going to pick up on every payment, but that's not the target
+- If we reduced chargebacks by 20% that would relate to 4,700 payments in 2018
+  Knowing what you are trying to achieve is important - in our situation avoiding false positives and reducing chargebacks by 30% is a better win than reducing chargebacks by 60% but flagging 30% of legitimate payments
+
+
+---
+
+class: content-even
+
+# Testing Outlier Data
+
+- Total 'good' payments in test: 162
+- Total 'chargeback' payments in test: 371
+- 'Good' payments correctly identified: 138 (85%)
+- 'Chargeback' payments correctly identified: 115 (31%)
+
+???
+
+- As much as 31% doesn't sound impressive, this seems to be moving in the right direction - we're reducing false positives which is a big priority, and over 2018 that would equate to 7,000 payments - still a big improvement! 
+
 ---
 
 class: content-odd center
@@ -1265,9 +1337,15 @@ class: content-odd center
 ???
 
 - Ok, so we're not at the end yet, but we've managed to go from something totally unusable to something that has benefits
- 
----
+- We still have a way to go, sure, but applying some of the ideas we discussed before:
+    - Weighting dimensions /  different dimensions
+    - Different values for `k`
+    - Removing outliers from training data
+- we should be able to improve this further.
 
+
+
+---
 
 class: summary-slide noheader
 
