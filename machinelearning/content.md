@@ -229,7 +229,7 @@ class: content-odd
 
 ???
 
-- If you do any research around ML, the algorithm that comes up the most as being the most straightforawrd and easy to understand is the Naive Bayes Classifier
+- If you do any research around ML, the algorithm that comes up the most as being the most straightforward and easy to understand is the Naive Bayes Classifier
 - Based around categorising text, and in particular used quite a bit for spam filters and similar
 - So that's where we started
 
@@ -402,9 +402,10 @@ class: content-odd
 # Attempt 1 - Results
 
 - Total Rows: 200
-- False Positives 0
-- Identified Fraud 0
-- Missed Fraud 200
+- False Positives: 0
+- Identified Fraud: 0
+- Missed Fraud: 100
+- Identified Ok: 100
 
 ???
 
@@ -538,10 +539,10 @@ class: content-odd
 # Attempt 2 - Results
 
 - Total Rows: 200
-- Not Fraud: 29
 - False Positives 71
 - Identified Fraud 70
 - Missed Fraud 30
+- Identified Ok: 29
 
 
 ???
@@ -1002,10 +1003,10 @@ class: content-odd
 # Attempt 3
 
 - Total Rows: 200
-- Not Fraud: 58
-- False Positives 42
-- Missed Fraud 33
-- Identified Fraud 67
+- False Positives: 42
+- Missed Fraud: 33
+- Identified Fraud: 67
+- Identified Ok: 58
 
 ???
 
@@ -1093,10 +1094,10 @@ class: content-even
 
 # Per-Store Detection
 - Total Rows: 200
-- Not Fraud: 60
 - False Positives 40
 - Missed Fraud 22
 - Identified Fraud 78
+- Identified Ok: 60
 
 ???
 - We're making more progress - false positives are still high, but they are moving in the right direction, so we're on the right track

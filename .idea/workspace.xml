@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/machinelearning/content.md" line="622" />
+    <bookmark url="file://$PROJECT_DIR$/machinelearning/content.md" line="623" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/core-styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/machinelearning/content.md" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/content.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/machinelearning/demos/1-lang-classifier/dataset" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/demos/1-lang-classifier/dataset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn1.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn3.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn4.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn5.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn6.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn6.png" afterDir="false" />
     </list>
     <ignored path="talks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +30,8 @@
         <entry file="file://$PROJECT_DIR$/machinelearning/content.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="563">
-                <caret line="1486" selection-start-line="1486" selection-end-line="1486" />
+              <first_editor relative-caret-position="582">
+                <caret line="1099" column="15" selection-start-line="1099" selection-start-column="15" selection-end-line="1099" selection-end-column="15" />
               </first_editor>
               <second_editor />
             </state>
@@ -332,12 +324,12 @@
       <workItem from="1549706563614" duration="22643000" />
       <workItem from="1550085796035" duration="8000" />
       <workItem from="1550392112951" duration="9950000" />
-      <workItem from="1550518029989" duration="6218000" />
+      <workItem from="1550518029989" duration="8464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306492000" />
+    <option name="totallyTimeSpent" value="308738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -729,8 +721,8 @@
     <entry file="file://$PROJECT_DIR$/machinelearning/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="563">
-            <caret line="1486" selection-start-line="1486" selection-end-line="1486" />
+          <first_editor relative-caret-position="582">
+            <caret line="1099" column="15" selection-start-line="1099" selection-start-column="15" selection-end-line="1099" selection-end-column="15" />
           </first_editor>
           <second_editor />
         </state>
