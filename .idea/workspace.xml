@@ -1,682 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/machinelearning/content.md" line="622" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/knn.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/autoload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/ClassLoader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/autoload_classmap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/autoload_namespaces.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/autoload_psr4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/autoload_real.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/autoload_static.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/composer/installed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/code-coverage.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/handle_brew_pkg.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-predict" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-predict-osx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-predict.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-scale" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-scale-osx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-scale.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-train" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-train-osx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/libsvm/svm-train.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/bin/prepare_osx_env.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/data/glass.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/data/iris.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/data/wine.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/assets/php-ml-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/association/apriori.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/classification/k-nearest-neighbors.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/classification/naive-bayes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/classification/svc.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/clustering/dbscan.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/clustering/k-means.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/cross-validation/random-split.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/cross-validation/stratified-random-split.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/datasets/array-dataset.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/datasets/csv-dataset.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/datasets/demo/glass.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/datasets/demo/iris.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/datasets/demo/wine.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/datasets/files-dataset.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/feature-extraction/tf-idf-transformer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/feature-extraction/token-count-vectorizer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/feature-selection/selectkbest.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/feature-selection/variance-threshold.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/metric/accuracy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/metric/classification-report.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/metric/confusion-matrix.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/model-manager/persistency.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/neural-network/multilayer-perceptron-classifier.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/preprocessing/imputation-missing-values.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/preprocessing/normalization.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/regression/least-squares.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/regression/svr.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/machine-learning/workflow/pipeline.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/math/distance.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/math/matrix.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/math/set.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/docs/math/statistic.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/easy-coding-standard.neon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/mkdocs.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/phpstan.neon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Association/Apriori.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Association/Associator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Classifier.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/DecisionTree.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/DecisionTree/DecisionTreeLeaf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Ensemble/AdaBoost.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Ensemble/Bagging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Ensemble/RandomForest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Linear/Adaline.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Linear/DecisionStump.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Linear/LogisticRegression.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/Linear/Perceptron.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/MLPClassifier.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/NaiveBayes.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/SVC.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Classification/WeightedClassifier.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Clustering/Clusterer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Clustering/DBSCAN.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Clustering/FuzzyCMeans.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Clustering/KMeans.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Clustering/KMeans/Cluster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Clustering/KMeans/Point.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Clustering/KMeans/Space.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/CrossValidation/RandomSplit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/CrossValidation/Split.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/CrossValidation/StratifiedRandomSplit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Dataset/ArrayDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Dataset/CsvDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Dataset/Dataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Dataset/Demo/GlassDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Dataset/Demo/IrisDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Dataset/Demo/WineDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Dataset/FilesDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/DimensionReduction/EigenTransformerBase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/DimensionReduction/KernelPCA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/DimensionReduction/LDA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/DimensionReduction/PCA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Estimator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/DatasetException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/FileException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/InvalidArgumentException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/InvalidOperationException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/LibsvmCommandException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/MatrixException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/NormalizerException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Exception/SerializeException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/English.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/French.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/Polish.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureExtraction/TfIdfTransformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureExtraction/TokenCountVectorizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/ANOVAFValue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/UnivariateLinearRegression.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureSelection/SelectKBest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/FeatureSelection/VarianceThreshold.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/OneVsRest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Optimizer/ConjugateGradient.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Optimizer/GD.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Optimizer/Optimizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Optimizer/StochasticGD.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Predictable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Trainable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/IncrementalEstimator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Comparison.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Distance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Distance/Chebyshev.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Distance/Euclidean.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Distance/Manhattan.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Distance/Minkowski.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Kernel/RBF.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/LinearAlgebra/EigenvalueDecomposition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/LinearAlgebra/LUDecomposition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Matrix.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Set.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Statistic/ANOVA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Statistic/Correlation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Statistic/Covariance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Statistic/Gaussian.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Statistic/Mean.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Statistic/StandardDeviation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Math/Statistic/Variance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Metric/Accuracy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Metric/ClassificationReport.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Metric/ConfusionMatrix.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/ModelManager.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/BinaryStep.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Gaussian.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/HyperbolicTangent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/PReLU.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Sigmoid.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/ThresholdedReLU.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Layer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Network.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Network/LayeredNetwork.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Network/MultilayerPerceptron.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Node.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Bias.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Input.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron/Synapse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Training.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation/Sigma.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Pipeline.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Preprocessing/Imputer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MeanStrategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MedianStrategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MostFrequentStrategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Preprocessing/Normalizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Preprocessing/Preprocessor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Regression/LeastSquares.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Regression/Regression.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Regression/SVR.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/SupportVectorMachine/DataTransformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/SupportVectorMachine/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/SupportVectorMachine/SupportVectorMachine.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/SupportVectorMachine/Type.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Tokenization/Tokenizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Tokenization/WhitespaceTokenizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Tokenization/WordTokenizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Transformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Association/AprioriTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/DecisionTree/DecisionTreeLeafTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/DecisionTreeTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/Ensemble/AdaBoostTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/Ensemble/BaggingTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/Ensemble/RandomForestTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/KNearestNeighborsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/Linear/AdalineTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/Linear/DecisionStumpTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/Linear/LogisticRegressionTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/Linear/PerceptronTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/MLPClassifierTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/NaiveBayesTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Classification/SVCTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Clustering/DBSCANTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Clustering/FuzzyCMeansTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Clustering/KMeansTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/CrossValidation/RandomSplitTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/CrossValidation/StratifiedRandomSplitTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/ArrayDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/CsvDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Demo/GlassDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Demo/IrisDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Demo/WineDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/FilesDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/dataset.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Dataset/Resources/longdataset.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/DimensionReduction/KernelPCATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/DimensionReduction/LDATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/DimensionReduction/PCATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/FeatureExtraction/StopWordsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/FeatureExtraction/TfIdfTransformerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/FeatureExtraction/TokenCountVectorizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/FeatureSelection/ScoringFunction/ANOVAFValueTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/FeatureSelection/ScoringFunction/UnivariateLinearRegressionTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/FeatureSelection/SelectKBestTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/FeatureSelection/VarianceThresholdTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Helper/Optimizer/ConjugateGradientTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Helper/Optimizer/GDTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Helper/Optimizer/StochasticGDTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/ComparisonTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Distance/ChebyshevTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Distance/EuclideanTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Distance/ManhattanTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Distance/MinkowskiTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Kernel/RBFTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/LinearAlgebra/EigenvalueDecompositionTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/MatrixTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/ProductTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/SetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Statistic/ANOVATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Statistic/CorrelationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Statistic/CovarianceTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Statistic/GaussianTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Statistic/MeanTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Statistic/StandardDeviationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Math/Statistic/VarianceTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Metric/AccuracyTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Metric/ClassificationReportTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Metric/ConfusionMatrixTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/ModelManagerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/BinaryStepTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/GaussianTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/HyperboliTangentTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/PReLUTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/SigmoidTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/ThresholdedReLUTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/LayerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/Network/LayeredNetworkTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/Network/MultilayerPerceptronTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/BiasTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/InputTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/Neuron/SynapseTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/NeuronTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/PipelineTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Preprocessing/ImputerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Preprocessing/NormalizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Regression/LeastSquaresTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Regression/SVRTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/SupportVectorMachine/DataTransformerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/SupportVectorMachine/SupportVectorMachineTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Tokenization/WhitespaceTokenizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/tests/Tokenization/WordTokenizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/var/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/knn.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/autoload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/ClassLoader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/autoload_classmap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/autoload_namespaces.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/autoload_psr4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/autoload_real.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/autoload_static.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/composer/installed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/code-coverage.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/handle_brew_pkg.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-predict" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-predict-osx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-predict.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-scale" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-scale-osx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-scale.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-train" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-train-osx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/libsvm/svm-train.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/bin/prepare_osx_env.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/data/glass.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/data/iris.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/data/wine.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/assets/php-ml-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/association/apriori.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/classification/k-nearest-neighbors.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/classification/naive-bayes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/classification/svc.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/clustering/dbscan.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/clustering/k-means.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/cross-validation/random-split.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/cross-validation/stratified-random-split.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/datasets/array-dataset.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/datasets/csv-dataset.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/datasets/demo/glass.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/datasets/demo/iris.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/datasets/demo/wine.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/datasets/files-dataset.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/feature-extraction/tf-idf-transformer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/feature-extraction/token-count-vectorizer.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/feature-selection/selectkbest.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/feature-selection/variance-threshold.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/metric/accuracy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/metric/classification-report.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/metric/confusion-matrix.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/model-manager/persistency.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/neural-network/multilayer-perceptron-classifier.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/preprocessing/imputation-missing-values.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/preprocessing/normalization.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/regression/least-squares.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/regression/svr.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/machine-learning/workflow/pipeline.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/math/distance.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/math/matrix.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/math/set.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/docs/math/statistic.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/easy-coding-standard.neon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/mkdocs.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/phpstan.neon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Association/Apriori.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Association/Associator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Classifier.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/DecisionTree.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/DecisionTree/DecisionTreeLeaf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Ensemble/AdaBoost.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Ensemble/Bagging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Ensemble/RandomForest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Linear/Adaline.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Linear/DecisionStump.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Linear/LogisticRegression.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/Linear/Perceptron.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/MLPClassifier.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/NaiveBayes.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/SVC.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/WeightedClassifier.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Clustering/Clusterer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Clustering/DBSCAN.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Clustering/FuzzyCMeans.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Clustering/KMeans.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Clustering/KMeans/Cluster.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Clustering/KMeans/Point.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Clustering/KMeans/Space.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/CrossValidation/RandomSplit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/CrossValidation/Split.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/CrossValidation/StratifiedRandomSplit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Dataset/ArrayDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Dataset/CsvDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Dataset/Dataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Dataset/Demo/GlassDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Dataset/Demo/IrisDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Dataset/Demo/WineDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Dataset/FilesDataset.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/DimensionReduction/EigenTransformerBase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/DimensionReduction/KernelPCA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/DimensionReduction/LDA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/DimensionReduction/PCA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Estimator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/DatasetException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/FileException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/InvalidArgumentException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/InvalidOperationException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/LibsvmCommandException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/MatrixException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/NormalizerException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Exception/SerializeException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/English.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/French.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureExtraction/StopWords/Polish.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureExtraction/TfIdfTransformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureExtraction/TokenCountVectorizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/ANOVAFValue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureSelection/ScoringFunction/UnivariateLinearRegression.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureSelection/SelectKBest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/FeatureSelection/VarianceThreshold.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/OneVsRest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Optimizer/ConjugateGradient.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Optimizer/GD.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Optimizer/Optimizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Optimizer/StochasticGD.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Predictable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Trainable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/IncrementalEstimator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Comparison.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Distance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Distance/Chebyshev.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Distance/Euclidean.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Distance/Manhattan.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Distance/Minkowski.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Kernel/RBF.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/LinearAlgebra/EigenvalueDecomposition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/LinearAlgebra/LUDecomposition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Matrix.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Set.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Statistic/ANOVA.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Statistic/Correlation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Statistic/Covariance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Statistic/Gaussian.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Statistic/Mean.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Statistic/StandardDeviation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Math/Statistic/Variance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Metric/Accuracy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Metric/ClassificationReport.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Metric/ConfusionMatrix.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/ModelManager.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/BinaryStep.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Gaussian.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/HyperbolicTangent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/PReLU.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/Sigmoid.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/ActivationFunction/ThresholdedReLU.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Layer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Network.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Network/LayeredNetwork.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Network/MultilayerPerceptron.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Node.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Bias.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Input.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Node/Neuron/Synapse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Training.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/NeuralNetwork/Training/Backpropagation/Sigma.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Pipeline.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Preprocessing/Imputer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MeanStrategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MedianStrategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Preprocessing/Imputer/Strategy/MostFrequentStrategy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Preprocessing/Normalizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Preprocessing/Preprocessor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Regression/LeastSquares.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Regression/Regression.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Regression/SVR.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/SupportVectorMachine/DataTransformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/SupportVectorMachine/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/SupportVectorMachine/SupportVectorMachine.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/SupportVectorMachine/Type.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Tokenization/Tokenizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Tokenization/WhitespaceTokenizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Tokenization/WordTokenizer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Transformer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Association/AprioriTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/DecisionTree/DecisionTreeLeafTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/DecisionTreeTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/Ensemble/AdaBoostTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/Ensemble/BaggingTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/Ensemble/RandomForestTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/KNearestNeighborsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/Linear/AdalineTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/Linear/DecisionStumpTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/Linear/LogisticRegressionTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/Linear/PerceptronTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/MLPClassifierTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/NaiveBayesTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Classification/SVCTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Clustering/DBSCANTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Clustering/FuzzyCMeansTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Clustering/KMeansTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/CrossValidation/RandomSplitTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/CrossValidation/StratifiedRandomSplitTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/ArrayDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/CsvDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Demo/GlassDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Demo/IrisDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Demo/WineDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/FilesDatasetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/business/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/entertainment/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/politics/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/sport/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/001.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/002.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/003.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/004.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/005.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/006.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/007.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/008.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/009.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/bbc/tech/010.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/dataset.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Dataset/Resources/longdataset.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/DimensionReduction/KernelPCATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/DimensionReduction/LDATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/DimensionReduction/PCATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/FeatureExtraction/StopWordsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/FeatureExtraction/TfIdfTransformerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/FeatureExtraction/TokenCountVectorizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/FeatureSelection/ScoringFunction/ANOVAFValueTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/FeatureSelection/ScoringFunction/UnivariateLinearRegressionTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/FeatureSelection/SelectKBestTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/FeatureSelection/VarianceThresholdTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Helper/Optimizer/ConjugateGradientTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Helper/Optimizer/GDTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Helper/Optimizer/StochasticGDTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/ComparisonTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Distance/ChebyshevTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Distance/EuclideanTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Distance/ManhattanTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Distance/MinkowskiTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Kernel/RBFTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/LinearAlgebra/EigenvalueDecompositionTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/MatrixTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/ProductTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/SetTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Statistic/ANOVATest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Statistic/CorrelationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Statistic/CovarianceTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Statistic/GaussianTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Statistic/MeanTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Statistic/StandardDeviationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Math/Statistic/VarianceTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Metric/AccuracyTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Metric/ClassificationReportTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Metric/ConfusionMatrixTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/ModelManagerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/BinaryStepTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/GaussianTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/HyperboliTangentTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/PReLUTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/SigmoidTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/ActivationFunction/ThresholdedReLUTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/LayerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/Network/LayeredNetworkTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/Network/MultilayerPerceptronTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/BiasTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/InputTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/Neuron/SynapseTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/NeuralNetwork/Node/NeuronTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/PipelineTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Preprocessing/ImputerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Preprocessing/NormalizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Regression/LeastSquaresTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Regression/SVRTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/SupportVectorMachine/DataTransformerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/SupportVectorMachine/SupportVectorMachineTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Tokenization/WhitespaceTokenizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/tests/Tokenization/WordTokenizerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/var/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/lang-classifier/classifier-a.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/lang-classifier/dataset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/lang-classifier/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/lang-classifier/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/machinelearning/demos/lang-classifier/serve" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/core-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/content.md" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/content.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/demos/1-lang-classifier/dataset" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/demos/1-lang-classifier/dataset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn1.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn3.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn4.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn5.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machinelearning/images/knn6.png" beforeDir="false" afterPath="$PROJECT_DIR$/machinelearning/images/knn6.png" afterDir="false" />
     </list>
     <ignored path="talks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -696,22 +34,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="content.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="content.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/machinelearning/content.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="19065">
-                <caret line="1271" column="24" selection-start-line="1271" selection-start-column="21" selection-end-line="1271" selection-end-column="24" />
+              <first_editor relative-caret-position="563">
+                <caret line="1486" selection-start-line="1486" selection-end-line="1486" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slide-styles.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="core-styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core-styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fonts.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fonts.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slide-styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slide-styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
+            <state relative-caret-position="750">
               <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
             </state>
           </provider>
@@ -732,7 +97,6 @@
       <find>Solution</find>
       <find>Readable</find>
       <find>bey</find>
-      <find>Lesson</find>
       <find>nbsp</find>
       <find>test</find>
       <find>5,</find>
@@ -744,6 +108,10 @@
       <find>Demo</find>
       <find>Outlier</find>
       <find>noh</find>
+      <find>Norm</find>
+      <find>Under</find>
+      <find>Unders</find>
+      <find>Lesson</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -758,10 +126,8 @@
         <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/remark.js" />
-        <option value="$PROJECT_DIR$/fonts.css" />
         <option value="$PROJECT_DIR$/title-styles.css" />
         <option value="$PROJECT_DIR$/postgres/content.md" />
-        <option value="$PROJECT_DIR$/core-styles.css" />
         <option value="$PROJECT_DIR$/mysql/content.md" />
         <option value="$PROJECT_DIR$/security/content.md" />
         <option value="$PROJECT_DIR$/linux/content.md" />
@@ -770,8 +136,10 @@
         <option value="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
         <option value="$USER_HOME$/Projects/MachineLearning/k-nnNominalOutlier/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
         <option value="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/knn.php" />
-        <option value="$PROJECT_DIR$/machinelearning/content.md" />
         <option value="$PROJECT_DIR$/slide-styles.css" />
+        <option value="$PROJECT_DIR$/fonts.css" />
+        <option value="$PROJECT_DIR$/core-styles.css" />
+        <option value="$PROJECT_DIR$/machinelearning/content.md" />
       </list>
     </option>
   </component>
@@ -816,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -824,17 +191,30 @@
               <item name="talks" type="b2602c69:ProjectViewProjectNode" />
               <item name="talks" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="talks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="talks" type="462c0819:PsiDirectoryNode" />
+              <item name="machinelearning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="talks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="talks" type="462c0819:PsiDirectoryNode" />
+              <item name="machinelearning" type="462c0819:PsiDirectoryNode" />
+              <item name="demos" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Projects/MachineLearning/k-nnNominalOutlier" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -951,17 +331,19 @@
       <workItem from="1549531641180" duration="17000" />
       <workItem from="1549706563614" duration="22643000" />
       <workItem from="1550085796035" duration="8000" />
+      <workItem from="1550392112951" duration="9950000" />
+      <workItem from="1550518029989" duration="6218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290324000" />
+    <option name="totallyTimeSpent" value="306492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24166666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17083333" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -997,14 +379,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/regex/content.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1264,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/i18n/images/notwinning.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1308,13 +675,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Predictable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nn/vendor/php-ai/php-ml/src/Helper/Predictable.php" />
     <entry file="file://$USER_HOME$/Projects/MachineLearning/k-nnNominalOutlier/knn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1322,20 +683,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Predictable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
+    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Predictable.php" />
     <entry file="file://$USER_HOME$/Projects/MachineLearning/k-nnNominalOutlier/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1343,43 +692,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nn/knn.php">
+    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nn/knn.php" />
+    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/composer.lock" />
+    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/knn.php" />
+    <entry file="file://$PROJECT_DIR$/title-styles.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/composer.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/knn.php">
+    <entry file="file://$PROJECT_DIR$/slide-styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        <state relative-caret-position="750">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fonts.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core-styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="696">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/title-styles.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/machinelearning/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="19065">
-            <caret line="1271" column="24" selection-start-line="1271" selection-start-column="21" selection-end-line="1271" selection-end-column="24" />
+          <first_editor relative-caret-position="563">
+            <caret line="1486" selection-start-line="1486" selection-end-line="1486" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slide-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
         </state>
       </provider>
     </entry>
