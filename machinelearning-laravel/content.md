@@ -5,7 +5,7 @@ class: title-slide longtitle
 .introimg[![](machinelearning/images/lightbulb.png)]
 
 # Learning
-## <small>the Hows and Whys of Machine Learning</small>
+## <small>Machine Learning</small>
 
 ???
 - Data is everywhere
@@ -30,6 +30,13 @@ class: vanity-cover title-slide
 background-image: url(logos/mcft.png)
 
 ---
+
+class: vanity-cover title-slide
+
+background-image: url(logos/mcft-hiring.png)
+
+---
+
 
 class: summary-slide middle center noheader
 
@@ -259,28 +266,6 @@ Return the category with the highest average percentage as our prediction
 - Standardising could include removing punctuation, standardising plurals, in some languages standardising gender (french) etc
 - The percentage of appearances is, in other words, calculating the probability that the given word belongs to that label
 
-
----
-
-class: section-title-c middle center noheader
-
-# 100%
-### &nbsp;<br />&nbsp;
-
-???
-
-- Oh look, another statistic
----
-
-class: section-title-c middle center noheader
-
-# 100%
-### Percentage of previous talks where Liam hasn't done a live demo
-
-???
-
-- I don't do live demos - I don't trust the computer to not do something stupid
-
 ---
 
 class: section-title-a center
@@ -389,7 +374,7 @@ class: content-odd
 # Attempt 1 - Results
 
 - Total Rows: 200
-- False Positives 0
+- False Positives: 0
 
 ???
 
@@ -708,48 +693,29 @@ class: content-odd center middle
 class: content-odd tinycode noheader
 
 ```php
-<?php
-require "vendor/autoload.php";
+    $classifier = $this->app->makeWith(
+        KNearestNeighbors::class,
+        ['k' => 3]
+    );
 
-$samples = [
-    [1, 3, 5, 1], [1, 4, 5, 2], [2, 4, 6, 2], [2, 3, 5, 1],
-    [3, 1, 2, 2], [4, 1, 2, 2], [4, 2, 1, 3], [3, 2, 1, 3]
-];
-$labels = ['a', 'a', 'a', 'a', 'b', 'b', 'b', 'b'];
+    $samples = [
+        [1, 3, 5, 1], [1, 4, 5, 2], [2, 4, 6, 2], [2, 3, 5, 1],
+        [3, 1, 2, 2], [4, 1, 2, 2], [4, 2, 1, 3], [3, 2, 1, 3]
+    ];
+    $labels = [
+        'a', 'a', 'a', 'a',
+        'b', 'b', 'b', 'b'
+    ];
 
-// php-ai/php-ml
-$classifier = new \Phpml\Classification\KNearestNeighbors(3);
-$classifier->train($samples, $labels);
+    $classifier->train($samples, $labels);
 
-
-$test = [3, 2, 2, 1];
-
-echo $classifier->predict($test);
-
+    $test = [1, 3, 2, 1];
+    $this->comment("Classification: " . $classifier->predict($test));
 ```
 ???
 
 - Thankfully there is a library for machine learning in PHP - it actually will do the Bayes Naive as well, but I understood that enough to write something!
 - This is fairly straightforward - we are using some 4-dimensional training data, then we can predict from our test
-
----
-
-class: section-title-c middle center noheader
-
-# 1
-### &nbsp;
-
-???
-
-- Oh look, another statistic
----
-
-class: section-title-c middle center noheader
-
-# 1
-### Number of Demos Liam Wishes He'd Avoided 
-
-???
 
 ---
 
