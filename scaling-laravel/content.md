@@ -31,6 +31,12 @@ background-image: url(logos/mcft.png)
 
 ---
 
+class: vanity-cover title-slide
+
+background-image: url(logos/mcft-hiring.png)
+
+---
+
 class: section-title-a center centralimage
 # What We Will Cover
 ![](scaling/images/film-shot.jpg)
@@ -59,7 +65,7 @@ class: summary-slide middle
 ---
 
 class: section-title-b middle
-background-image: url(scaling/images/overview/1.png)
+background-image: url(scaling-laravel/images/overview/1.png)
 
 ???
 
@@ -69,7 +75,7 @@ background-image: url(scaling/images/overview/1.png)
 ---
 
 class: section-title-b middle
-background-image: url(scaling/images/overview/2.png)
+background-image: url(scaling-laravel/images/overview/2.png)
 
 ???
 
@@ -83,7 +89,7 @@ background-image: url(scaling/images/overview/2.png)
 ---
 
 class: section-title-b middle
-background-image: url(scaling/images/overview/3.png)
+background-image: url(scaling-laravel/images/overview/3.png)
 
 ???
 
@@ -94,7 +100,7 @@ background-image: url(scaling/images/overview/3.png)
 ---
 
 class: section-title-b middle
-background-image: url(scaling/images/overview/4.png)
+background-image: url(scaling-laravel/images/overview/4.png)
 
 ???
 - Every webstore than has at least one server attached to it - these could be game servers, mySQL servers, RCON etc.
@@ -167,20 +173,16 @@ class: content-even
 
 - Not just web/db
  - Separate server to handle queued tasks/cron
-- When you work out your architecture, consider if different componants of your platform could be standalone
+- When you work out your architecture, consider if different components of your platform could be standalone
  - These can then communicate using APIs when required
 
 ???
 
+- Story: Magento
 - Separating your platform out onto different servers provides more resources
 - Allows you to scale just the parts of the application that need it
 - Also means that if one part was to go down, it doesn't take everything else down with it
 - On our existing application, we have a separate web server handing the Laravel Queue
-- In the new version of the product we are building, we are building wholly separate platforms for different parts of the product, which will be hosted separately, and then use OAuth and APIs when we need to communicate between them
-
----
-
-TODO: Laravel makes this easy :-)
 
 ---
 
@@ -217,7 +219,7 @@ class: content-even
 $users = User::where('company', 5)->get();
 
 foreach($users as $user) {
-	$departmentName = $user->relatedDepartment->name;
+	$departmentName = $user->department->name;
 }
 ```
 
@@ -236,9 +238,8 @@ class: content-even
 $users = User::where('company', 5)->get();
 
 foreach($users as $user) {
-	$departmentName = $user->relatedDepartment->name;
-	$supervisorName = $user->relatedDepartment
-						↳	->relatedSupervisor->name;
+	$departmentName = $user->department->name;
+	$supervisorName = $user->department->supervisor->name;
 }
 ```
 
@@ -264,35 +265,58 @@ class: content-odd
 
 ---
 
-TODO: I have a package that does this :-)
+class: section-title-c center middle
+
+# liam-wiltshire/laravel-jit-loader
+
+## `use \LiamWiltshire\JitLoader\Concerns\AutoloadsRelationships;`
+
+???
+
+- I originally got the idea from a Ruby talk (!) in Vancouver, wrote the initial version of the flight back
+- Originally it was a Model class in it's own right, but now it's a trait
 
 ---
 
 class: content-odd tinycode
 
-TODO: Replace with trait code and add usage example
+
+# <br>
 
 ```php
-public function getRelationshipFromMethod($method)
+private function shouldAutoLoad(): bool
 {
-   $relations = $this->$method();
-   if (!$relations instanceof Relation) {
-      throw new LogicException('Relationship method must return an object of type '
-      . 'Illuminate\Database\Eloquent\Relations\Relation');
-   }
-
-*   if ($this->parentCollection
-*       && count($this->parentCollection) > 1
-*       && count($this->parentCollection) <= $this->autoloadThreshold) {
-*       $this->parentCollection->load($method);
-*   }
-   return $this->$method()->getResults();
+    return ($this->parentCollection
+        && count($this->parentCollection) > 1
+        && count($this->parentCollection) <= $this->autoloadThreshold);
 }
 ```
 
 ???
 
+---
 
+class: content-odd tinycode
+
+```php
+public function getRelationshipFromMethod($method)
+{
+    $relation = $this->$method();
+    if (!$relation instanceof Relation) {
+        throw new LogicException(
+            sprintf('%s::%s must return a relationship instance.', static::class, $method)
+        );
+    }
+*    if ($this->shouldAutoLoad()) {
+*        $this->parentCollection->loadMissing($method);
+*    }
+    return tap($relation->getResults(), function ($results) use ($method) {
+        $this->setRelation($method, $results);
+    });
+}
+```
+
+???
 
 ---
 
@@ -352,7 +376,6 @@ class: content-even
 - Horizontal scaling allows you to have many smaller, cheaper servers
 - We are focusing on horizontal scaling of web services at the moment
 - Will come onto applying this to DBs in more detail in a minute
-- Potential issues: Storing things to filesystem - file uploads, user sessions
 - You can add and remove nodes as demand requires, and if a node fails, the whole system doesn't go down
 
 ---
@@ -366,8 +389,18 @@ class: content-even center
 
 
 ---
+class: content-even
 
-TODO: Horizontal scaling - sessions (use redis or DB), file uploads - use FileSystem with S3 or similar!
+# Potential Challenges
+
+- The filesystem behaves differently now!
+- Sessions
+    - Use `database` or `redis`
+- Uploaded Files
+ - Use `Storage` with `s3`
+ - `Storage::disk('s3')->put('avatars/1', $fileContents);`
+
+
 
 ---
 
@@ -473,7 +506,25 @@ Using HAproxy again to monitor the health of the nodes and to route the traffic 
 
 ---
 
-TODO: Multiple DB connections read/write in Laravel
+class: content-odd tinycode
+```php
+'mysql' => [
+    'read' => [
+        'host' => [
+*           '192.168.1.1',
+*           '196.168.1.2',
+        ],
+    ],
+    'write' => [
+        'host' => [
+*           '196.168.1.3',
+         ],
+    ],
+*   'sticky'    => true,
+    'driver'    => 'mysql',
+    ...    
+],
+```
 
 ---
 
