@@ -103,7 +103,7 @@ class: section-title-b middle
 background-image: url(scaling-laravel/images/overview/4.png)
 
 ???
-- Every webstore than has at least one server attached to it - these could be game servers, mySQL servers, RCON etc.
+- Every webstore then has at least one server attached to it - these could be game servers, mySQL servers, RCON etc.
  - Game servers phone home at different intervals depending on the account type, pulling down any commands to be run on the server. Other server types we push requests to, which is also something we're working on for Game servers.
  - But also you can buy directly in game via commands, so on top of the phone home, there are other API calls being made all the time
 - We have just under 650,000 servers
@@ -123,7 +123,7 @@ class: summary-slide middle
 
 ???
 
-- One client on xmas day did nearly $200k
+- One client on Christmas day did nearly $200k
 
 ---
 
@@ -137,7 +137,7 @@ background-image: url(scaling/images/worst-case.jpg)
 ???
 
 - Scaling is something that I wouldn't do if I didn't have to!
-- We do it becuase we are too successful!
+- We do it because we are too successful!
 - We get to a point where we are handling too much data, too much traffic - our servers are under too much load
 
 ---
@@ -171,18 +171,19 @@ class: content-even
 
 # Separation Of Concerns
 
-- Not just web/db
+- Not just web/DB
  - Separate server to handle queued tasks/cron
 - When you work out your architecture, consider if different components of your platform could be standalone
  - These can then communicate using APIs when required
 
 ???
 
-- Story: Magento
+- Story: Magento importer - XML, bleh
 - Separating your platform out onto different servers provides more resources
 - Allows you to scale just the parts of the application that need it
 - Also means that if one part was to go down, it doesn't take everything else down with it
-- On our existing application, we have a separate web server handing the Laravel Queue
+- On our existing application, we have a separate web server handling the Laravel Queue
+ - sending commands to servers, sending abandoned basket emails etc
 
 ---
 
@@ -262,6 +263,7 @@ class: content-odd
 ???
 
 - When you change your views, new relationships might be needed, or a relationship you previously needed might become redundant
+- We started working out how we could solve this problem, thankfully someone had already built the solution
 
 ---
 
@@ -273,8 +275,9 @@ class: section-title-c center middle
 
 ???
 
+- Oh, it was me!
 - I originally got the idea from a Ruby talk (!) in Vancouver, wrote the initial version of the flight back
-- Originally it was a Model class in it's own right, but now it's a trait
+- Originally it was a Model class in its own right, but now it's a trait
 
 ---
 
@@ -327,7 +330,7 @@ background-image: url(scaling/images/scaling.jpg)
 
 ???
 
-Improving the nperformance of your application will probably get you so far, but there will be a point where you need more hardware.
+Improving the performance of your application will probably get you so far, but there will be a point where you need more hardware.
 
 Hardware scaling can be quite straightforward, but needs to be well thought out before you just jump in to be successful
 
@@ -367,7 +370,7 @@ class: content-even
 # Horizontal Scaling
 
 - Lots of smaller servers working in unison
-- You might have different clusters of servers for web, db etc
+- You might have different clusters of servers for web, DB etc
 - More complicated to set up
  - Particularly if you rely on storing things to the filesystem 
 - Built in redundancy, burstable
@@ -407,13 +410,13 @@ class: content-even
 class: content-even
 
 # Know Your Architecture
-- Horizontal scaling as worked well for us
+- Horizontal scaling has worked well for us
 - We do large amounts of communication with external servers
  - Many of these want fixed IPs to whitelist
 
 ???
 
-- Initially our scaling didn't allow for this - each EC2 instance would have it's own IP, and these would change as we scaled up and down.
+- Initially our scaling didn't allow for this - each EC2 instance would have its own IP, and these would change as we scaled up and down.
 - The solution was to have 2 NAT gateways that the traffic goes through.
 
 ---
@@ -430,9 +433,9 @@ class: content-odd
 
 ???
 
-- Scaling DBs is something that can be quite trickey
+- Scaling DBs is something that can be quite tricky
 - Blog post - "Relational DBs are not designed to scale"
- - We have a few ways we can go about it, but non of them are really 'complete' - there are usually compomises to be made
+ - We have a few ways we can go about it, but non of them are really 'complete' - there are usually compromises to be made
 
 ---
 
@@ -440,7 +443,7 @@ class: content-odd
 
 # Sharding
 
-- The data is shared accross different servers
+- The data is shared across different servers
  - Each server contains different data
 - Either the database server or your application layer need to know which DB to use to fetch the specific data
 
@@ -490,22 +493,6 @@ This should give you an infinitely scalable read-throughput (as long as you can 
 
 ---
 
-class: content-odd
-
-# Master -> Master Replication
-
-- Galera Cluster allows for Master -> Master replication
-- It works synchronously, allowing writes to be to any node
-- We had three DB nodes and used Galera to keep them in sync
-
-???
-
-This is what we did - we set up three nodes with master -> master -> master replication
-
-Using HAproxy again to monitor the health of the nodes and to route the traffic as appropriate.
-
----
-
 class: content-odd tinycode
 ```php
 'mysql' => [
@@ -528,7 +515,21 @@ class: content-odd tinycode
 
 ---
 
-TODO: Same can be done with caching - multiple cache servers in Laravel
+class: content-odd
+
+# Master -> Master Replication
+
+- Galera Cluster allows for Master -> Master replication
+- It works synchronously, allowing writes to be to any node
+- We had three DB nodes and used Galera to keep them in sync
+
+???
+
+This is what we did - we set up three nodes with master -> master -> master replication
+
+Using HAproxy again to monitor the health of the nodes and to route the traffic as appropriate.
+
+Other option is to have each database be the master for *some* tables - still means if you are not careful that you end up opening a write connection to each database in one request!
 
 ---
 
@@ -536,9 +537,8 @@ class: section-title-c center
 
 # Caching
 
-&nbsp;
 
-![](scaling/images/cache.jpg)
+![](scaling-laravel/images/cache.jpg)
 
 ---
 
@@ -584,11 +584,52 @@ Something that we don't currently do is full page caching.
 We cache static HTML pages, but actually, we could potentially full page cache quite a few webstore pages, even API outputs
  - This is something we are looking at for our new product
 
-Something we are also experementing with at the moment is caching until changed - so our cache has an essentially infinate lifetime, and it's held in cache until either redis kicks it out, or a change is made that invalidates it. 
+Something we are also experimenting with at the moment is caching until changed - so our cache has an essentially infinate lifetime, and it's held in cache until either redis kicks it out, or a change is made that invalidates it. 
 
 ---
 
-TODO: Cache example with invalidation
+class: content-even tinycode noheader nudgeup
+
+```php
+public function getCategories(Request $request, int $accountId): array
+{
+    $account = $this->accountRepository->getAccountById($accountId);
+    //... pre-build steps to allow for build per-user trees as required    
+    $cacheKey = "categorytree-$accountId-$username";
+    //Tag the cache so we can invalidate it -- otherwise cache forever!
+*   return Cache::tags(['categories-' . $accountId])->rememberForever(
+        $cacheKey,
+        function () use ($account, $request, $basket, $actions) {
+            $categories = $account->categories();
+            //... steps to check restrictions, sales, per-user etc,
+            return $this->transform(
+                $categories->get(),
+                new categoryTransformer()
+            );
+        }
+    );
+}      
+```
+---
+
+class: content-even tinycode noheader
+```php
+/**
+ * Save a category
+ *
+ * @param Category $category
+ * @return Category
+ */
+public function update(Category $category, Request $request)
+{
+    //... Update the category as required
+    $category->save();
+    
+    // Flush any category trees we currently have for this account
+*   Cache::tags(['categories-' . $category->account->id])->flush();
+    return $category;
+}  
+```
 
 ---
 
@@ -623,7 +664,7 @@ class: content-odd
 
 # Threat Protection
 
-- Without realising it, you could potentially be burning requests on illegitamate traffic
+- Without realising it, you could potentially be burning requests on illegitimate traffic
  - DDOS attacks
  - API consumers gone mad
  - Rougue crawlers

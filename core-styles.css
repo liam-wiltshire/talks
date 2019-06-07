@@ -28,6 +28,10 @@ h3 {
 
 .noheader pre, .noheader p { margin-top: 0em; }
 
+.nudgeup .remark-code {
+    margin-top:-1em;
+}
+
 li {
     line-height:160%;
 }
