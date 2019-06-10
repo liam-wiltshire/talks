@@ -1,10 +1,9 @@
 class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
-.introimg[![](scaling/images/shark.png)]
 
-# We Need A Bigger Boat
-## Introduction to application scaling
+# Laravel At Large
+## Introduction to<br />Application Scaling
 
 ???
 
@@ -39,7 +38,7 @@ background-image: url(logos/mcft-hiring.png)
 
 class: section-title-a center centralimage
 # What We Will Cover
-![](scaling/images/film-shot.jpg)
+![](scaling-laravel/images/film-shot.jpg)
 
 ???
 
