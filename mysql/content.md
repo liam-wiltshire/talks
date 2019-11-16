@@ -52,28 +52,6 @@ class: summary-slide middle
 - Or you look at the online resources, mySQL is probably where it'll lead you.
 - However, (and this doesn't apply to everyone), many developers just us it to persist data, and perhaps don't look at how it could actually make your apps better, and your development lives easier
 - So, in the next 45 minutes, we are going to look at 10 features from mySQl you may not know
-- I'm going to start with what I think is the biggest new feature:
-
-
----
-
-class: middle center section-title-b
-
-# New Storage Engine: IRLdb
-
-![](mysql/images/query.png)
-
----
-
-class: middle center section-title-b
-
-# New Storage Engine: IRLdb
-
-![](mysql/images/query-no.png)
-
-???
-
-- In real life DB... ok, so that doens't exist yet, but I'm sure we'll get there!
 
 ---
 
