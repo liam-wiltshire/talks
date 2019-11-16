@@ -18,7 +18,7 @@ There are a lot of different ways we can scale - this talk covers some of the ba
 
 class: section-title-c bottom left vanity-slide
 
-.introimg[![](https://www.tebex.io/assets/img/logos/tebex.svg)]
+.introimg[![](logos/tebex.svg)]
 
 # Liam Wiltshire
 ## CTO

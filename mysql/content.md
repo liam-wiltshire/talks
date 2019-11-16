@@ -17,7 +17,7 @@ class: title-slide longtitle
 
 class: section-title-c bottom left vanity-slide
 
-.introimg[![](https://www.tebex.io/assets/img/logos/tebex.svg)]
+.introimg[![](logos/tebex.svg)]
 
 
 # Liam Wiltshire
@@ -173,6 +173,7 @@ class: content-even
 # A Note on Quotes
 
 - `JSON_EXTRACT` and `->` will return a quoted string:
+
 ```sql
 mysql> SELECT data->"$.title" FROM talks;
 +-----------------------+
@@ -189,6 +190,7 @@ class: content-even
 
 - To unquote it, there is an additional method `JSON_UNQUOTE`
  - Otherwise `->>` works like `JSON_UNQUOTE(JSON_EXTRACT())`
+
 ```sql
 mysql> SELECT data->>"$.title" FROM talks;
 +---------------------+
@@ -226,8 +228,8 @@ GROUP BY game;
 +-------------------------------------------+
 | game      | players                       |
 +-------------------------------------------+
-| pacman    | {"Notch": 100, "binky": 5000} |
-| minecraft | {"Notch": 10000, "binky": 5}  |
+| pacman    | {"Notch": 100, "Clyde": 5000} |
+| minecraft | {"Notch": 10000, "Clyde": 5}  |
 +-------------------------------------------+
 ```
 
@@ -847,11 +849,32 @@ class: content-odd
 - Only allow UPDATE or DELETE to be used with a WHERE clause that specifies a key
 - In other words, you can't accidently UPDATE or DELETE everything!
 - Only available in the mySQL CLI
+- Also called `--safe-updates`
 
 ???
 
 - The i am a dummy CLI flag has been around forever more or less
  - And yet, I only found out about it 6 months ago
+- Can also use --safe-mode
+
+---
+class: content-odd
+```sql
+[liam@liam talks]$ mysql -u root testdb --i-am-a-dummy
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current
+input statement.
+
+root@localhost:[testdb]> UPDATE users SET
+    -> email = 'test@test.com';
+root@localhost:[testdb]> -- Ctrl+C, Ctrl+C!!!!!!
+
+
+ERROR 1175 (HY000): You are using safe update mode and you
+tried to update a table without a WHERE that uses a KEY column
+
+root@localhost:[testdb]> -- 🎉
+```
 
 ---
 
