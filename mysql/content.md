@@ -17,7 +17,7 @@ class: title-slide longtitle
 
 class: section-title-c bottom left vanity-slide
 
-.introimg[![](http://tebex.co.uk/img/tebex.svg)]
+.introimg[![](https://www.tebex.io/assets/img/logos/tebex.svg)]
 
 
 # Liam Wiltshire
@@ -25,7 +25,7 @@ class: section-title-c bottom left vanity-slide
 
 ---
 
-class: vanity-cover
+class: vanity-cover section-title-a
 
 background-image: url(logos/mcft.png)
 
@@ -224,6 +224,39 @@ mysql> SELECT data->>"$.title" FROM talks;
 ???
 
 - If the data to be returned is a JSON object in itself, then both will work the same way.
+
+---
+
+class: content-even
+
+# Aggregation
+
+- As well as being able to store JSON, mySQL can also create JSON
+- In particular, two aggregation methods `JSON_OBJECTAGG` and `JSON_ARRAYAGG` can create JSON objects out of datasets
+- These allow you to cast multiple rows into a JSON object or array
+
+---
+
+class: content-even
+
+```sql
+mysql> SELECT
+  game, JSON_OBJECTAGG(username, highscore) AS 'players'
+FROM highscores
+GROUP BY game;
+
++-------------------------------------------+
+| game      | players                       |
++-------------------------------------------+
+| pacman    | {"Notch": 100, "binky": 5000} |
+| minecraft | {"Notch": 10000, "binky": 5}  |
++-------------------------------------------+
+```
+
+???
+
+- Imagine you have a table that contains games, players and high-scores
+- You can use this to return an object for each game, containing all the players and scores
 
 ---
 

@@ -1,8 +1,9 @@
 class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
+.introimg[![](scaling/images/shark.png)]
 
-# Laravel At Large
+# We Need A Bigger Boat
 ## Introduction to<br />Application Scaling
 
 ???
@@ -17,7 +18,7 @@ There are a lot of different ways we can scale - this talk covers some of the ba
 
 class: section-title-c bottom left vanity-slide
 
-.introimg[![](http://tebex.co.uk/img/tebex.svg)]
+.introimg[![](https://www.tebex.io/assets/img/logos/tebex.svg)]
 
 # Liam Wiltshire
 ## CTO
@@ -30,15 +31,9 @@ background-image: url(logos/mcft.png)
 
 ---
 
-class: vanity-cover title-slide
-
-background-image: url(logos/mcft-hiring.png)
-
----
-
 class: section-title-a center centralimage
 # What We Will Cover
-![](scaling-laravel/images/film-shot.jpg)
+![](scaling/images/film-shot.jpg)
 
 ???
 
