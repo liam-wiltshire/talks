@@ -89,7 +89,7 @@ background-image: url(scaling-laravel/images/overview/3.png)
 
 - Every single customer has one or more web stores - these are unique to each customer in that it shows their products, categories and content, and on the paid plans they can build their own themes and templates as well
 
-- At the moment we have around 611,000 of these
+- At the moment we have around 670,000 of these
 
 ---
 
@@ -100,7 +100,7 @@ background-image: url(scaling-laravel/images/overview/4.png)
 - Every webstore then has at least one server attached to it - these could be game servers, mySQL servers, RCON etc.
  - Game servers phone home at different intervals depending on the account type, pulling down any commands to be run on the server. Other server types we push requests to, which is also something we're working on for Game servers.
  - But also you can buy directly in game via commands, so on top of the phone home, there are other API calls being made all the time
-- We have just under 650,000 servers
+- We have just over 710,000 servers
 
 ---
 
@@ -116,8 +116,6 @@ class: summary-slide middle
  - Recent attack accounted for over 1m requests /hour
 
 ???
-
-- One client on Christmas day did nearly $200k
 
 ---
 
