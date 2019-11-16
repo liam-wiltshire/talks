@@ -447,9 +447,60 @@ However, Sharding is very difficult to get right
 
 You have to come up with a scheme of sharding your data - doing queries that involve getting data from multiple shards becomes complex, and your sharding scheme needs to avoid it as far as possible.
 
+For example, user table, requires unique email address - every shard would have to be queried
+
 If you have an existing application, sharding is even more difficult - you'd have to migrate your existing data onto multiple shards, then update your application logic to know which shard to go to etc.
 
 Not normally a route I'd recommend unless you've exahusted all other options.
+
+---
+
+class: content-odd
+
+# Partitioning
+
+- Similar to sharding, partitioning creates multiple copies of a table with a 'slice' of data in each
+ - Uses a single instance. 
+- Partitioning (and knowing which partitions are needed) is handled by MySQL
+
+???
+
+Similar to sharding, partitioning creates multiple copies of a table on a single instance.
+It has a similar benefit to sharding in that each table then has less data and smaller indexes, and
+increasing read and write performance.
+
+It doesn’t, however, allow you to scale resources in the same way.
+
+The partitioning (and knowing if you can query just one
+partition or need to query multiple partitions) is handled by
+MySQL, which simplifies the process.
+
+It is possible to have the partitions on different disks, so if
+you are hitting limits on disk reads and writes, partitioning
+can also help with that.
+
+---
+
+class: content-odd
+
+# Partitioning
+
+```sql
+--Split users table into 6 partitions based on id
+ALTER TABLE users
+PARTITION BY HASH(id)
+PARTITIONS 6
+```
+
+???
+
+Using MySQL as an example, setting up partitions is
+straightforward.
+
+As with sharding, there are potential performance downsides if multiple partitions must be queried to get the
+appropriate data. However, since all the partitions are on a single DB instance, the overhead is smaller.
+
+Note, all the columns used in your PARTITION BY statement must exist in all unique indexes for the table.
 
 ---
 
@@ -511,7 +562,8 @@ class: content-odd
 
 # Master -> Master Replication
 
-- Galera Cluster allows for Master -> Master replication
+- There are a few different approaches to Master -> Master replication
+- We used Galera Cluster - allows writes to any node, then syncs accross all nodes
 - It works synchronously, allowing writes to be to any node
 - We had three DB nodes and used Galera to keep them in sync
 
@@ -521,7 +573,26 @@ This is what we did - we set up three nodes with master -> master -> master repl
 
 Using HAproxy again to monitor the health of the nodes and to route the traffic as appropriate.
 
-Other option is to have each database be the master for *some* tables - still means if you are not careful that you end up opening a write connection to each database in one request!
+So, how did it go?
+
+---
+
+class: content-odd
+
+# Master -> Master Replication
+
+- Sometimes, simpler is better!
+- Anther option is to make each database the master of _some_ tables
+- Be careful with how you split responsibilities
+ - May end up opening a write connection to each server!
+
+???
+
+- Not great - worst. christmas. ever!
+
+- Anther option is to have each database be the master for *some* tables - still means if you are not careful that you end up opening a write connection to each database in one request!
+
+- Again, only do it if you need to - Tebex uses Aurora, great write throuput, mostly negated the need to scale writes
 
 ---
 
