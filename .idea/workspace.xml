@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/machinelearning/content.md" line="623" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/core-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaling-laravel/content.md" beforeDir="false" afterPath="$PROJECT_DIR$/scaling-laravel/content.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaling-laravel/images/cache.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/scaling-laravel/images/cache.jpg" afterDir="false" />
-    </list>
+    <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="" />
     <ignored path="talks.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -375,12 +370,12 @@
       <workItem from="1553726476160" duration="1301000" />
       <workItem from="1557519595927" duration="9793000" />
       <workItem from="1559835274858" duration="3148000" />
-      <workItem from="1559932455990" duration="3751000" />
+      <workItem from="1559932455990" duration="4356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327433000" />
+    <option name="totallyTimeSpent" value="328038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1360" height="768" extended-state="6" />
