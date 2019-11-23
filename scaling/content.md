@@ -359,7 +359,7 @@ class: content-even center
 class: content-even
 
 # Know Your Architecture
-- Horizontal scaling as worked well for us
+- Horizontal scaling has worked well for us
 - We do large amounts of communication with external servers
  - Many of these want fixed IPs to whitelist
 

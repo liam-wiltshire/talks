@@ -17,7 +17,7 @@ class: title-slide longtitle
 
 class: section-title-c bottom left vanity-slide
 
-.introimg[![](http://tebex.co.uk/img/tebex.svg)]
+.introimg[![](logos/tebex.svg)]
 
 
 # Liam Wiltshire
@@ -25,7 +25,7 @@ class: section-title-c bottom left vanity-slide
 
 ---
 
-class: vanity-cover
+class: vanity-cover section-title-a
 
 background-image: url(logos/mcft.png)
 
@@ -52,28 +52,6 @@ class: summary-slide middle
 - Or you look at the online resources, mySQL is probably where it'll lead you.
 - However, (and this doesn't apply to everyone), many developers just us it to persist data, and perhaps don't look at how it could actually make your apps better, and your development lives easier
 - So, in the next 45 minutes, we are going to look at 10 features from mySQl you may not know
-- I'm going to start with what I think is the biggest new feature:
-
-
----
-
-class: middle center section-title-b
-
-# New Storage Engine: IRLdb
-
-![](mysql/images/query.png)
-
----
-
-class: middle center section-title-b
-
-# New Storage Engine: IRLdb
-
-![](mysql/images/query-no.png)
-
-???
-
-- In real life DB... ok, so that doens't exist yet, but I'm sure we'll get there!
 
 ---
 
@@ -195,6 +173,7 @@ class: content-even
 # A Note on Quotes
 
 - `JSON_EXTRACT` and `->` will return a quoted string:
+
 ```sql
 mysql> SELECT data->"$.title" FROM talks;
 +-----------------------+
@@ -211,6 +190,7 @@ class: content-even
 
 - To unquote it, there is an additional method `JSON_UNQUOTE`
  - Otherwise `->>` works like `JSON_UNQUOTE(JSON_EXTRACT())`
+
 ```sql
 mysql> SELECT data->>"$.title" FROM talks;
 +---------------------+
@@ -224,6 +204,39 @@ mysql> SELECT data->>"$.title" FROM talks;
 ???
 
 - If the data to be returned is a JSON object in itself, then both will work the same way.
+
+---
+
+class: content-even
+
+# Aggregation
+
+- As well as being able to store JSON, mySQL can also create JSON
+- In particular, two aggregation methods `JSON_OBJECTAGG` and `JSON_ARRAYAGG` can create JSON objects out of datasets
+- These allow you to cast multiple rows into a JSON object or array
+
+---
+
+class: content-even
+
+```sql
+mysql> SELECT
+  game, JSON_OBJECTAGG(username, highscore) AS 'players'
+FROM highscores
+GROUP BY game;
+
++-------------------------------------------+
+| game      | players                       |
++-------------------------------------------+
+| pacman    | {"Notch": 100, "Clyde": 5000} |
+| minecraft | {"Notch": 10000, "Clyde": 5}  |
++-------------------------------------------+
+```
+
+???
+
+- Imagine you have a table that contains games, players and high-scores
+- You can use this to return an object for each game, containing all the players and scores
 
 ---
 
@@ -836,11 +849,32 @@ class: content-odd
 - Only allow UPDATE or DELETE to be used with a WHERE clause that specifies a key
 - In other words, you can't accidently UPDATE or DELETE everything!
 - Only available in the mySQL CLI
+- Also called `--safe-updates`
 
 ???
 
 - The i am a dummy CLI flag has been around forever more or less
  - And yet, I only found out about it 6 months ago
+- Can also use --safe-mode
+
+---
+class: content-odd
+```sql
+[liam@liam talks]$ mysql -u root testdb --i-am-a-dummy
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current
+input statement.
+
+root@localhost:[testdb]> UPDATE users SET
+    -> email = 'test@test.com';
+root@localhost:[testdb]> -- Ctrl+C, Ctrl+C!!!!!!
+
+
+ERROR 1175 (HY000): You are using safe update mode and you
+tried to update a table without a WHERE that uses a KEY column
+
+root@localhost:[testdb]> -- 🎉
+```
 
 ---
 
