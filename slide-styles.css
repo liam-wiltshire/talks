@@ -32,7 +32,7 @@
     max-height:430px;
 }
 
-.halfhalf h1, .halfhalf h2{
+.halfhalf h1, .halfhalf h2, .halfhalf .withtitle {
     display:block;
     width:50%;
     float:left;

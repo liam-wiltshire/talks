@@ -4,15 +4,19 @@
     <bookmark url="file://$PROJECT_DIR$/machinelearning/content.md" line="623" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="" />
-    <ignored path="talks.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path=".idea/dataSources.local.xml" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/core-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slide-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/slide-styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -33,58 +37,6 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="talks" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/machinelearning-laravel/content.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="495">
-                <caret line="33" selection-start-line="33" selection-end-line="37" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scaling-laravel/content.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="129">
-                <caret line="713" lean-forward="true" selection-start-line="713" selection-end-line="713" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core-styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scaling-laravel/images/overview/1.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scaling-laravel/images/overview/2.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scaling-laravel/images/overview/3.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -140,7 +92,7 @@
         <option value="$PROJECT_DIR$/linux/content.md" />
         <option value="$PROJECT_DIR$/regex/content.md" />
         <option value="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
-        <option value="$USER_HOME$/Projects/MachineLearning/k-nnNominalOutlier/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
+        <option value="$PROJECT_DIR$/../MachineLearning/k-nnNominalOutlier/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
         <option value="$PROJECT_DIR$/machinelearning/demos/k-nnNominal/knn.php" />
         <option value="$PROJECT_DIR$/slide-styles.css" />
         <option value="$PROJECT_DIR$/fonts.css" />
@@ -171,9 +123,6 @@
       </list>
     </option>
   </component>
-  <component name="PhpServers">
-    <servers />
-  </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
@@ -187,6 +136,7 @@
     <option name="width" value="1360" />
     <option name="height" value="768" />
   </component>
+  <component name="ProjectId" id="1wOQPnVsGH3UvFkiAhObsz0uVyT" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -239,34 +189,28 @@
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/machinelearning-laravel/demos/app/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/imposter" />
     <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/imposter" />
+      <recent name="$PROJECT_DIR$/machinelearning-laravel/demos/app/Models" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/machinelearning-laravel/demos/app/Models" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/machinelearning-laravel/demos/app/Models" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="js.build_tools.gulp">
@@ -279,6 +223,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -371,6 +316,7 @@
       <workItem from="1557519595927" duration="9793000" />
       <workItem from="1559835274858" duration="3148000" />
       <workItem from="1559932455990" duration="4356000" />
+      <workItem from="1628327135554" duration="20299000" />
     </task>
     <servers />
   </component>
@@ -404,7 +350,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -415,7 +361,7 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Projects/MachineLearning/k-nnNominalOutlier/knn.php">
+    <entry file="file://$PROJECT_DIR$/../MachineLearning/k-nnNominalOutlier/knn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="128" column="30" selection-start-line="128" selection-start-column="30" selection-end-line="128" selection-end-column="30" />
@@ -424,7 +370,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php" />
     <entry file="file://$PROJECT_DIR$/machinelearning/demos/k-nnNominal/vendor/php-ai/php-ml/src/Helper/Predictable.php" />
-    <entry file="file://$USER_HOME$/Projects/MachineLearning/k-nnNominalOutlier/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php">
+    <entry file="file://$PROJECT_DIR$/../MachineLearning/k-nnNominalOutlier/vendor/php-ai/php-ml/src/Classification/KNearestNeighbors.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
