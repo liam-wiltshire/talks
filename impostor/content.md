@@ -453,8 +453,25 @@ class: content-odd halfhalf
 
 - Remember, record all the learning you do in your achievement log, so that can can build up this 'portfolio of proof' to show your brain when it's trying to screw you over.
 ---
+class: halfhalf reverse content-even
 
-class: content-even
+# Teach Others
+
+.withtitle[.smallish[- Teaching something you've learned to others helps you to fully understand it
+- Explaining concepts to another person is a different way of learning - the more methods you use, the more effective it will be]]
+
+.left[![](impostor/images/teaching.png)]
+
+???
+
+- We've already discussed how mentoring and sharing knowledge is a method of retaining your brain
+- By using this method to share something you've just learned, you get two effects for the price of one:
+ - Explaining new concepts is a common method of consolidating and internalizing learning, as well as proving to yourself that you have learned this new topic at the same time!
+
+
+---
+
+class: content-odd
 
 # Observations
 

@@ -50,7 +50,7 @@
     background-position:left;
 }
 
-.halfhalf.reverse h1, .halfhalf.reverse h2 {
+.halfhalf.reverse h1, .halfhalf.reverse h2, .halfhalf.reverse .withtitle {
     float:right;
     clear:right;
 }
