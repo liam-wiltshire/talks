@@ -106,3 +106,7 @@ ul ul {
 .xsmall {
     font-size:50%;
 }
+
+.highres img {
+    zoom:50%;
+}

@@ -66,7 +66,7 @@ class: section-title-c bottom left vanity-slide
 
 class: section-title-a center centralimage
 # Do I Have (or Have I Had) Impostor Syndrome?
-![](impostor/images/question.png)
+.highres[![](impostor/images/question.png)]
 
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
 
@@ -100,7 +100,7 @@ class: section-title-a center centralimage
 class: section-title-b center centralimage
 
 # So, What Does Impostor Syndrome Look Like?
-![](impostor/images/angry.png)
+.highres[![](impostor/images/angry.png)]
 
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
 
@@ -209,7 +209,7 @@ class: content-odd center
 class: section-title-b center centralimage
 
 # What Should I Do? (To Battle!)
-![](impostor/images/battle.png)
+.highres[![](impostor/images/battle.png)]
 
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
 
@@ -249,7 +249,7 @@ class: content-odd halfhalf
 # Bias
 
 .withtitle[.small["A **systematic error** in thinking that occurs when people are **processing and interpreting** information in the world around them, **affecting the decisions and judgments** they make"]]
-
+.withtitle[.xsmall[Cherry, K (2020)]]
 .right[![](impostor/images/brain.png)]
 
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
@@ -373,7 +373,7 @@ class: content-even
 class: section-title-c center centralimage
 
 # Impostor Syndrome As A Superpower
-![](impostor/images/success.png)
+.highres[![](impostor/images/success.png)]
 
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
 

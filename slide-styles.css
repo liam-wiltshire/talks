@@ -69,6 +69,11 @@
     max-height:500px;
 }
 
+
+.halfhalf img {
+    max-width:48%;
+}
+
 .noheader img {
     max-height:590px;
 }
