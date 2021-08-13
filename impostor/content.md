@@ -3,8 +3,8 @@ class: title-slide
 .conference[![](logos/%%conference%%.png)]
 .introimg[![](impostor/images/loo.png)]
 
-# Some Title
-## Impostor Syndrome
+# You're Not Faking
+## Tackling Impostor Syndrome
 
 .reference[InnerSloth innersloth.com]
 
@@ -31,8 +31,8 @@ class: title-slide
 .conference[![](logos/%%conference%%.png)]
 .introimg[![](impostor/images/loo.png)]
 
-# Some Title
-## Impostor Syndrome
+# You're Not Faking
+## Tackling Impostor Syndrome
 
 .reference[InnerSloth innersloth.com]
 
