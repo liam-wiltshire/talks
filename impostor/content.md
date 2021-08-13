@@ -1,4 +1,4 @@
-class: title-slide
+class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
 .introimg[![](impostor/images/loo.png)]
@@ -26,7 +26,7 @@ class: title-slide
 
 ---
 
-class: title-slide
+class: title-slide longtitle
 
 .conference[![](logos/%%conference%%.png)]
 .introimg[![](impostor/images/loo.png)]

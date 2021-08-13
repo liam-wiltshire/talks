@@ -7,6 +7,7 @@
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/impostor/content.md" beforeDir="false" afterPath="$PROJECT_DIR$/impostor/content.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/title-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/title-styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +327,7 @@
       <workItem from="1628501909825" duration="14000" />
       <workItem from="1628502828458" duration="2632000" />
       <workItem from="1628613147591" duration="4007000" />
-      <workItem from="1628870524021" duration="66000" />
+      <workItem from="1628870524021" duration="588000" />
     </task>
     <servers />
   </component>
