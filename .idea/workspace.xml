@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/impostor/content.md" beforeDir="false" afterPath="$PROJECT_DIR$/impostor/content.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/title-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/title-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slide-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/slide-styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +136,7 @@
     <option name="height" value="768" />
   </component>
   <component name="ProjectId" id="1wOQPnVsGH3UvFkiAhObsz0uVyT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -327,7 +328,11 @@
       <workItem from="1628501909825" duration="14000" />
       <workItem from="1628502828458" duration="2632000" />
       <workItem from="1628613147591" duration="4007000" />
-      <workItem from="1628870524021" duration="588000" />
+      <workItem from="1628870524021" duration="1219000" />
+      <workItem from="1629123198226" duration="11000" />
+      <workItem from="1633627284785" duration="638000" />
+      <workItem from="1634143564663" duration="4397000" />
+      <workItem from="1634320236006" duration="2014000" />
     </task>
     <servers />
   </component>

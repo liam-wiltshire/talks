@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hackthesystem/tools/phpggc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hackthesystem/tools/sqlmap-dev" vcs="Git" />
   </component>
 </project>

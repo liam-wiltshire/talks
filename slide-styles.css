@@ -77,3 +77,11 @@
 .noheader img {
     max-height:590px;
 }
+
+.halfleft {
+    width:50%;float:left;
+}
+
+.halfright {
+    width:50%;float:right;
+}
