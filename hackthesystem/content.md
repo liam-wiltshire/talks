@@ -8,7 +8,9 @@ class: title-slide longtitle
 
 ???
 
-@TODO
+- As PHP developers, almost everything that we build is connected to the internet
+- Or, to put it another way, a huge old network of people who want to break your stuff!!
+- *Everyone* involved in development, from the person writing the code, to the CS team who might get the first hint that something is wrong, have a part to play.
 
 ---
 
@@ -46,8 +48,8 @@ class: section-title-c bottom left vanity-slide
 
 - Checkout and payments platform in the gaming space
 - We do all the boring 'business' - 100 int'l payment methods, tax, compliance, AML, so our partners can focus on what they do best - making awesome games and experiences
-
-- For the context of this talk, when we refer to a 'hack' or 'hacker', we're referring to the type that is involved in system vulnerabilities, breaking into systems etc - not the developer sort! 
+- In my earlier career, I was described as a hacker - I was fast, and my code got the job done, but ..... maybe I wouldn't admit to having written it a month later!
+- For the context of this talk however, when we refer to a 'hack' or 'hacker', we're referring to the type that is involved in system vulnerabilities, breaking into systems etc - not the developer sort! 
 
 ---
 
