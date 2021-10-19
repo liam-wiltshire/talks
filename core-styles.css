@@ -24,6 +24,8 @@ h3 {
 }
 .remark-code, .remark-inline-code { font-family: 'Source Code Pro'; font-size:21pt !important; line-height:140%}
 
+.smallcode .remark-code { font-size:20pt !important; }
+
 .tinycode .remark-code { font-size:18pt !important; }
 
 .noheader pre, .noheader p { margin-top: 0em; }
@@ -109,4 +111,8 @@ ul ul {
 
 .highres img {
     zoom:50%;
+}
+
+.content-odd .highres img, .content-even .highres img {
+    max-height:1000px;
 }

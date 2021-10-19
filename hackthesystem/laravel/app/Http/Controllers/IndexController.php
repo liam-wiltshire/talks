@@ -22,13 +22,14 @@ class IndexController extends Controller
 
     public function mysql(Request $request)
     {
-
-
-        $books = Book::where('title', 'LIKE', $request->get('title'))
+        $books = Book::where('title', 'LIKE', '%' . $request->get('title') . '%')
             ->whereRaw("era_id IN (SELECT id FROM eras WHERE year = {$request->get('year')})")->get();
 
         return response()->json($books);
     }
+
+
+
 
     public function rce($file)
     {
@@ -36,10 +37,15 @@ class IndexController extends Controller
         unserialize($payload);
     }
 
+
+
+
+
+
     public function image(Request $request)
     {
 
-        var_dump(mime_content_type("loaded.jpg"));
+        var_dump(mime_content_type("loaded-mono.jpg"));
 
         if (file_exists($request->get("filename"))) {
             echo "File exists";
