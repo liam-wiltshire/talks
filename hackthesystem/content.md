@@ -65,6 +65,10 @@ class: section-title-a center centralimage
 
 ???
 
+- I'm sure some of you have been to a security talk before
+- I've certainly seem some very good ones
+- So you might be wondering "What's Special About This Talk"
+
 ---
 class: section-title-a centralimage
 # What This Talk Is
@@ -79,7 +83,7 @@ class: section-title-a centralimage
 
 - The aim of this talk isn't necessarily to show off the newest, craziest attacks - there isn't a 'mic drop moment' - instead this is designed to provide real-world help to real-world problems
     - We're going to look at the sorts of vulnerabilities that could well be in your system, and the sorts of attacks that an average organisation might see, and how to deal with them
-- So, before we look at some actual examples of attacks, I want to help you find vulnerabilities in your own systems, and know what to do when you find one (or have one reported to you)
+- The reason I'm here is to help you find vulnerabilities in your own systems, and to help you know what to do when you find one (or have one reported to you)
     - In order to do this, it's often helpful to think like a hacker.
 ---
 
