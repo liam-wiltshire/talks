@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hackthesystem/laravel/app/Http/Controllers/loaded-mono.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hackthesystem/laravel/app/Http/Controllers/payload" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hackthesystem/content.md" beforeDir="false" afterPath="$PROJECT_DIR$/hackthesystem/content.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,7 +332,7 @@
       <workItem from="1633627284785" duration="638000" />
       <workItem from="1634143564663" duration="4397000" />
       <workItem from="1634320236006" duration="28017000" />
-      <workItem from="1634659415468" duration="1896000" />
+      <workItem from="1634659415468" duration="6829000" />
     </task>
     <servers />
   </component>
