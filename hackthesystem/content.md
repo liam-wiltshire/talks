@@ -77,7 +77,7 @@ class: section-title-a centralimage
 
 ???
 
-- The aim of this talk isn't necessarily to show off the newest, crazyiest attacks - there isn't a 'mic drop moment' - instead this is designed to provide real-world help to real-world problems
+- The aim of this talk isn't necessarily to show off the newest, craziest attacks - there isn't a 'mic drop moment' - instead this is designed to provide real-world help to real-world problems
     - We're going to look at the sorts of vulnerabilities that could well be in your system, and the sorts of attacks that an average organisation might see, and how to deal with them
 - So, before we look at some actual examples of attacks, I want to help you find vulnerabilities in your own systems, and know what to do when you find one (or have one reported to you)
     - In order to do this, it's often helpful to think like a hacker.
@@ -94,7 +94,7 @@ class: section-title-b center centralimage
 
 - To start to identify likely vectors, it's useful to think about _why_ a hacker might attack a system.
 - After all, a hacker is unlikely to waste time trying to find a way into a particular part of the system if it's not worthwhile for them
-    - So what are some of the reasons a hacker might attack a system?
+    - So what are some reasons a hacker might attack a system?
 
 ---
 
@@ -113,9 +113,9 @@ class: content-even
     - Profit could be ransom
     - It could also be a DDOS service that is being purchased by someone else
     - If this is the case, they are going to look for ways to make the most impact with the least effort
-        - DDOS to chew up network (not strickly hacking, but is still an attack)
+        - DDOS to chew up network (not strictly hacking, but is still an attack)
         - Something that will cause loss of service by chewing up CPU - an expensive action
-            - Ideally something that will self replicate - if they can trick an action into keep spawning new processes, then the server will become unavilable very quickly
+            - Ideally something that will self replicate - if they can trick an action into keep spawning new processes, then the server will become unavailable very quickly
 - If an attack is for fun, then it's likely to be against an easier target
 
 ---
@@ -134,7 +134,7 @@ class: content-odd
 - Data is valuable - this doesn't have to be login data.
 - You might think the data you have isn't worthwhile, but what if that data was combined with other sources?
     - Imagine you had a service that allowed you to send yourself birthday reminders
-        - Those dates might be 'memorable details' associated with that email address on another system (or a PIN number etc)
+        - Those dates might be 'memorable details' associated with that email address on another system (or a PIN etc)
 
 ---
 
@@ -165,7 +165,7 @@ class: content-odd
    - They can (and will) write code, but they don't want to. As such they will look to automate and use tools as much as possible
 - (frameworks, CMSes, libraries etc)
 - Most of these are combated by keeping third party code, libraries etc up to date
-- Some of the others are the sorts of attacks we'll talk about in 'level 1'
+- Others are the sorts of attacks we'll talk about in 'level 1'
 
 ---
 
@@ -199,7 +199,7 @@ class: content-even halfhalf middle
 
 ???
 
-- VRT is a resource that outlines baseline priority ratings for common vulnerabilites
+- VRT is a resource that outlines baseline priority ratings for common vulnerabilities
  - Was originally designed by Bugcrowd to assist bug hunters and Bugcrowd's triagers to assign severity to vulnerabilities 
 - Examples:
 
@@ -325,7 +325,7 @@ class: content-even noheader tinycode
 
 - The delete is just a regular link - this means that it's going to be triggered by a GET request
     - Let's say (for example in Tebex's case), we have a fairly large community of users, and many of them know each other or hang out in shared discord, tweet each other etc
-- You could create URLs that you send to others (presumably using a shortner to hide what it's linking to) - and if they click on them, and they're logged in (which they probably are), that's going to immediately go to the delete page 
+- You could create URLs that you send to others (presumably using a shortener to hide what it's linking to) - and if they click on them, and they're logged in (which they probably are), that's going to immediately go to the delete page 
     - If you've got a confirmation step then great, but if not that product is now gone!
 - In short, any action (anything where the user _does_ something) should be a POST request (in other words, a form), and should use CSRF tokens
 
@@ -341,7 +341,7 @@ class: content-odd
 
 ???
 
-- In my opinion, 2FA should be mandatory on every site, although I do understand the commercial realities between putting off non-tech-savy users and doing everything perfectly!
+- In my opinion, 2FA should be mandatory on every site, although I do understand the commercial realities between putting off non-tech-savvy users and doing everything perfectly!
 - Who here implements a time-based OTP (Google Auth, Authy)?
 - How big is your 'window'? 2 minutes? 5 minutes?
 
@@ -352,7 +352,7 @@ class: content-odd
 
 - 5 minute window (in each direction) = 20 valid OTPs
 - Total possible OTPs = 1,000,000 - 1 in 50,000
-- On average you'd need 25,000 guesses to find a valid OTP
+- On average, you'd need 25,000 guesses to find a valid OTP
 - 2,500 requests a minute - not that many!
 
 ???
@@ -388,7 +388,7 @@ class: content-even
 
 ???
 
-- Alot of platforms will send the user  an email when a login happens or certain details change
+- A lot of platforms will send the user  an email when a login happens or certain details change
 - If you get a message from a user saying that they didn't login, what would you recommend?
 
 ---
@@ -442,8 +442,8 @@ class: content-odd
 # Open Redirect
 - This is called an open redirect - the redirect can be changed to send the user wherever the attacker wants
  - Restrict redirect to just this domain
- - Created signed redirerct URLs that cannot be changed/spoofed
- - Only allow redirects to a pre-defined list of allowable URLs
+ - Created signed redirect URLs that cannot be changed/spoofed
+ - Only allow redirects to a pre-defined list of allowed URLs
 
 ???
 
@@ -454,7 +454,7 @@ class: content-odd
     - Create signed URLs, so the redirect URL comes with a signature that is verified before the redirect happens - this still allows for external redirects when required, but provides confidence that the links are approved
     - This is something that Tebex does, as we have to perform external redirects   
     - Similar to this, actually store all the redirect URLs in a database, and only provide a linkId or similar, and fetch the redirect out of the DB - could be DB heavy if you generate alot of redirect links
- - If there are only a limited number of places a user should be redirected to, maintain a list of these, and only accept redirects to one of these URLs - again potentially idenfitied by an ID
+ - If there are only a limited number of places a user should be redirected to, maintain a list of these, and only accept redirects to one of these URLs - again potentially identified by an ID
 
 ---
 
@@ -467,7 +467,7 @@ class: section-title-c center middle
 - So we've been through some basic vulnerabilities - in scope they're all fairly small, but quite common
     - perhaps some of you are thinking to your own codebases and realising that some of them exist
 - The good news is that they're all simple to fix!
-- Now we're going to look at a few vulerabilities that could have wider impacts
+- Now we're going to look at a few vulnerabilities that could have wider impacts
 
 ---
 class: content-odd center
@@ -491,7 +491,7 @@ class: content-odd center
 
 ???
 
-- "Everyone uses an ORM these days - SQL injection isn't really a thing any more" - and most of the time you'd be right
+- "Everyone uses an ORM these days - SQL injection isn't really a thing anymore" - and most of the time you'd be right
     - However, I'll be the first to admit that sometimes I can be lazy - and the complicated, abstracted codebases we work on can hide potential gotchas
 
 ---
@@ -524,7 +524,7 @@ class: content-odd
 
 # sqlmap
 
-- Manually finding and exploting a vulnerability would be very difficult
+- Manually finding and exploiting a vulnerability would be very difficult
 - sqlmap automates the process - simply provide a URL that _could_ have vulnerable params, and it'll do everything else 
 
 ???
@@ -692,7 +692,7 @@ class: content-even
 ???
 - So, how do we defend against them?
 - For anything that requires lots of requests, rate limiting is a good call
-    - As we've touched upon before, many large botnets have thousands of IPs - so they can work around the rate limit, however the likelyhood is those different connections will be in different locations, have different latency, making averaging out the variability much harder
+    - As we've touched upon before, many large botnets have thousands of IPs - so they can work around the rate limit, however the likelihood is those different connections will be in different locations, have different latency, making averaging out the variability much harder
 - Fixed execution time - forcing a function to run for a specific amount of time is a double-edged sword - on the one hand it can work, however, if you set it too short then it won't make all calls last the same amount of time, and if you set it too long you are making users wait unnecessarily.
     - Remember, one of our aims is to make an attack not worthwhile for a hacker, so adding this as an additional layer might be something you consider
 
@@ -716,7 +716,7 @@ http://yoursite.com/page.php
 
 - Session fixation is tricking a user into using a known session (that the attacker controls). The idea is that, if the user logs in using that session, the hacker than then use that same session key to gain access to the users account
 - Once upon a time, it was fairly common to see ?PHPSESSSID= as a query string param, passing sessions IDS around - obviously made it very easy to trick a user into using your session
-    - Thanksfully, that's almost completely unheard of today!
+    - Thankfully, that's almost completely unheard of today!
 - However, that doesn't mean there are not other ways - consider this URL.
   - Again, the potential weakness is invalidated user input - imagine this `q` param is being output to the page
   - Perhaps you thought (as I have before) "well, if the user puts something in that query string, they're only breaking their own experience"
@@ -760,7 +760,7 @@ class: content-even center centralimage
 ???
 
 - RCEs are the nightmare we hope we don't have to face - where an attacker can get our application (or server) to run code they want it to
- - Once the attacker can run one piece of code, it's likely they can use that to give themselves greater access to allow them to run further commands, download sensitve data, potentially even make changes to the application
+ - Once the attacker can run one piece of code, it's likely they can use that to give themselves greater access to allow them to run further commands, download sensitive data, potentially even make changes to the application
 
 ---
 class: content-even
@@ -778,7 +778,7 @@ class: content-even
   - it could be by using an infected third party library - a "supply chain attack"
     - (such as incidents over the past few years with the event-stream npm package and various wordpress plugins that have been purchased by bad actors to inject spam into hundreds of thousands of sites)
   - Also, human error in software that we use
-    - There have been numerious potential RCE vectors in software including openssl, apache, nginx and PHP
+    - There have been numerous potential RCE vectors in software including openssl, apache, nginx and PHP
 - For both of these, keeping your libraries and other software you use up to date is your main defense, as well as monitoring security advisories
    - For PHP specifically, Roave have a composer package that deals with alot of this, and if you are using private packagist they will send you advisories on packages you have installed
    - Other languages and package managers have other ways of doing it, such as `npm audit`
@@ -826,13 +826,13 @@ class SaasCompiler
 
 ???
 
-- When an object is unserialized, PHP will check for the existance of a `__wakeup()` or `__unserialize()` function, and will run them
+- When an object is unserialized, PHP will check for the existence of a `__wakeup()` or `__unserialize()` function, and will run them
   - In poorly designed code, this can lead to remote code being executed
 - So, consider if an attacker can create a serialized string that represents this SassCompiler class:
    - we could set `cacheFile` to something malicious - say the config file or passwd file 
    - Then on wakeup it would grab that file and assign it to compiledSass, which is presumably going to be output somewhere
    - Obviously this could be bad!
-- In theory, _any_ function call that uses information taken from the serialized class could be exploited (since the real weakness is the fact the serialized properties were poluted), but in most situations it's methods that are called automatically, including `__destruct()`, `__toString()` etc
+- In theory, _any_ function call that uses information taken from the serialized class could be exploited (since the real weakness is the fact the serialized properties were polluted), but in most situations it's methods that are called automatically, including `__destruct()`, `__toString()` etc
 
 ---
 class: content-even
@@ -846,8 +846,8 @@ class: content-even
 
 ???
 
-- Now, in reality, an attacker isn't going to try to 'guess' at completely unknown classes that _might_ be able to be expoited
-  - Wouldn't make sense from a cost/benifit point of view
+- Now, in reality, an attacker isn't going to try to 'guess' at completely unknown classes that _might_ be able to be exploited
+  - Wouldn't make sense from a cost/benefit point of view
 - Knowing the source code makes this much easier - and with open source libraries that are installed on thousands of applications, that is a good potential source of vectors
   - Even better for the attackers, there are tools that will do most of the work for them!
 
@@ -951,7 +951,7 @@ class: content-even
 
 ???
 
-- Again, there is a reliance here on a piece of user information - unless we tell php it's an archive using the phar:// warpper, which came from the user-provided query string, we wouldn't be able to exploit that.
+- Again, there is a reliance here on a piece of user information - unless we tell php it's an archive using the phar:// wrapper, which came from the user-provided query string, we wouldn't be able to exploit that.
 - But, the potentially is pretty bad - now, consider how it could get worse!
   - Imagine you have an app that uploads an image and saves the filename, then later on that image is processed by a scheduled task.
     - Perhaps you didn't write the original code that adds the image to the database - do you know if it was validated? Perhaps it wasn't, and now the filename in the DB is phar:// something?
