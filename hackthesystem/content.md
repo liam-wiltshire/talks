@@ -221,16 +221,8 @@ class: content-even middle
 
 ???
 
-- The highre the 'P' score, the more critical
-- P1: Broken Authentication and Session Management >> Authentication Bypass
-    - Obviously bypassing authentication is bad!!
-- P2: Application-Level Denial-of-Service (DoS) >> Critical Impact and/or Easy Difficulty
-    - Application-level DOS (rather than being at the network-level) - it's more critical because it's either wide-reaching or easy to do - there is another (lower) rating for harder or narrower in scope attacks
-- P3: Broken Authentication and Session Management >> Session Fixation >> Remote Attack Vector
-    - Session Fixation - requires quite a few things to go 'right' (we'll look at what session fixation is shortly), and usually only catches a single user at a time, hence lower rating
-- P4: Server Security Misconfiguration >> No Rate Limiting on Form >> Email-Triggering
-    - Email triggering - most likely not going to have a major impact, more annoying for the recipient, with a potential loss of goodwill for the company
-- There are also P5s, which in most uses are effectively ignored (no reward on a bug bounty, not really addressed unless a developer literally has nothing else to do)
+- The lower the 'P' score, the more critical
+  - Takes into consideration how big an impact the attack could have, as well as how easy it would be to do
 
 ---
 
@@ -244,7 +236,8 @@ class: content-odd
 
 - Another way to assess is with a risk-impact matrix
 _ Here you assess the probability of a given exploit being used (consider how easy it is and how readily discoverable it is) and the impact
-   - Something that would be difficult to exploit and would (for example) only result in some emails being sent would likely be 'Very Low', whereas the ability to bypass authentication using a query string that gave full admin access to all your customer a would be Critical!
+   - Something that would be difficult to exploit and would (for example) only result in some emails being sent would likely be 'Very Low'
+   - whereas the ability to bypass authentication using a query string that gave full admin access to all your customer a would be Critical!
 
 ---
 
@@ -328,7 +321,7 @@ class: content-even noheader tinycode
 ???
 
 - The delete is just a regular link - this means that it's going to be triggered by a GET request
-    - Let's say (for example in Tebex's case), we have a fairly large community of users, and many of them know each other or hang out in shared discord, tweet each other etc
+    - If we have a fairly large community of users, and many of them know each other or hang out in shared discord, tweet each other etc
 - You could create URLs that you send to others (presumably using a shortener to hide what it's linking to) - and if they click on them, and they're logged in (which they probably are), that's going to immediately go to the delete page 
     - If you've got a confirmation step then great, but if not that product is now gone!
 - In short, any action (anything where the user _does_ something) should be a POST request (in other words, a form), and should use CSRF tokens
@@ -340,8 +333,8 @@ class: content-odd
 # 2FA
 
 - 2FA is great
- - Every website should support it
-- However, we need to make sure it's secure
+- Who here works on an app or website that implements time-based 2FA?
+- What size is your window?
 
 ???
 
@@ -383,25 +376,12 @@ class: content-odd
 - In this situation, the rate limit should be against the account - so when a user logs in they only have a certain number of 2FA attempts before a cooldown kicks in
 
 ---
-
 class: content-even
 
 # What Do You Suggest?
 
 - If someone sees a login that they don't recognise, what do we usually suggest?
-
-???
-
-- A lot of platforms will send the user  an email when a login happens or certain details change
-- If you get a message from a user saying that they didn't login, what would you recommend?
-
----
-class: content-even
-
-# What Do You Suggest?
-
-- If someone sees a login that they don't recognise, what do we usually suggest?
-- Password resetting
+- Password/2FA resetting
  - But is that enough?
  - What do you do with any existing sessions?
 
@@ -456,9 +436,7 @@ class: content-odd
 - Various solutions exists
     - Restricting redirects to just the domain in question is one option - however if you have GET-based actions as we described before, that's still a potential risk
     - Create signed URLs, so the redirect URL comes with a signature that is verified before the redirect happens - this still allows for external redirects when required, but provides confidence that the links are approved
-    - This is something that Tebex does, as we have to perform external redirects   
-    - Similar to this, actually store all the redirect URLs in a database, and only provide a linkId or similar, and fetch the redirect out of the DB - could be DB heavy if you generate alot of redirect links
- - If there are only a limited number of places a user should be redirected to, maintain a list of these, and only accept redirects to one of these URLs - again potentially identified by an ID
+      - This is something that Tebex does, as we have to perform external redirects
 
 ---
 
@@ -548,10 +526,9 @@ class: content-odd center middle
 
 - Show example code
 - http://localhost:9999/mysql?title=pride&year=1810
-- cd /home/liam/Projects/talks/hackthesystem/tools/sqlmap-dev
-- ./sqlmap.py  --purge
-- ./sqlmap.py -u "http://localhost:9999/mysql?title=pride&year=1810" --sql-shell
+- ./sqlmapdemo.sh
 - SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.TABLES
+- SELECT email, passowrd FROM hackme.users;
 
 ---
 class: content-odd
@@ -570,23 +547,9 @@ class: content-odd
 - In case you are wondering, there are such things as NoSQL injections, so if you are using NoSQL databases, you should definitely look into that too!
 
 ---
-class: content-even
+class: content-even tinycode
 
-# Timing Attacks
-
-- The initial aim of many hacks is to enumerate something
- - Like email addresses, to know which email addresses have accounts that could potentially be exploited
-- One way of doing this if you don't have DB access is using timing attacks.
-
-???
-
-- There are various types of timing attacks
-  - comparison attacks (where the more of a string that matches, the longer it takes) and index attacks (where the more of an index is consumed, the longer it takes) are two of them
-    - These are covered in many different resources, and comparison functions such as hash_equals and password_verify are timing safe
-- So instead, let's think about how we write code - we will often have different logic branches that do different things, for example:
-
----
-class: content-even noheader
+# Logic-Based Timing Attacks
 
 ```php
 $user = User::where('email', $email)->first();
@@ -606,10 +569,15 @@ if (!password_verify($password, $user->password)) {
 
 ???
 
+- Nothing in an application runs in isolation - everything has an impact on something else, which can often be measured 
+- This is a fairly standarrd piece of code to check if a user can login
+  - Imagine you want to find out which email addresses exist on a platform, but you don't have DB access
 - In this code, we've actually thought about security...
 
 ---
-class: content-even noheader
+class: content-even tinycode
+
+# Logic-Based Timing Attacks
 
 ```php
 $user = User::where('email', $email)->first();
@@ -646,17 +614,18 @@ $tests = ['nouser@test.com', 'liam@tebex.co.uk', 'anothernonuser@example.com']; 
 
 foreach ($tests as $test) {
     $times[$test] = 0; $x = 1;
+    
     while ($x <= 10) {
-        $start = microtime(true);
-        usleep(rand(10000,99999));
-        $user = $users[$test] ?? false;
+        $start = microtime(true);   //Get the start time
+        usleep(rand(10000,99999));  //Simulate jitter - will average out
+        
+        $user = $users[$test] ?? false; //Check if the user exists
         if ($user) { password_verify('aksjdhkasjdh81', $user); }
-        $times[$test] += (microtime(true) - $start);
-        $x++;
+        
+        $times[$test] += (microtime(true) - $start); $x++;
     }
     $times[$test] /= 10;
 }
-var_dump($times);
 ```
 
 ???
@@ -683,22 +652,24 @@ array(3) {
 ???
 
 - You can see that the valid user took a clearly detectable amount of additional time
- - In the real world, in order to average around network lag, DB query variation etc you'd need to run the query significantly more than 10 times, but the the power of some botnets etc these days, that's entirely possible!
+ - In the real world, in order to average around network lag, DB query variation etc you'd need to run the query significantly more than 10 times, but that's entirely possible!
 
 ---
 class: content-even
 
 # Timing Attacks
+
 - Rate Limit
-  <br /><br />
+  - Requiring attackers to use a network of different devices, from different countries makes it significantly harder to filter out the noise
 - Fixed execution time functions
  
 ???
-- So, how do we defend against them?
-- For anything that requires lots of requests, rate limiting is a good call
-    - As we've touched upon before, many large botnets have thousands of IPs - so they can work around the rate limit, however the likelihood is those different connections will be in different locations, have different latency, making averaging out the variability much harder
-- Fixed execution time - forcing a function to run for a specific amount of time is a double-edged sword - on the one hand it can work, however, if you set it too short then it won't make all calls last the same amount of time, and if you set it too long you are making users wait unnecessarily.
-    - Remember, one of our aims is to make an attack not worthwhile for a hacker, so adding this as an additional layer might be something you consider
+
+- As we've touched upon before, many large botnets have thousands of IPs - so they can work around the rate limit
+    - however the likelihood is those different connections will be in different locations, different types of devices - IP cameras, doorbells etc, have different latency, making averaging out the variability much harder
+    - And if it's not worth the attackers time, they'll move on
+- Fixed execution time - forcing a function to run for a specific amount of time is a double-edged sword
+  - on the one hand it can work, however, if you set it too short then it won't make all calls last the same amount of time, and if you set it too long you are making users wait unnecessarily. 
 
 ---
 
@@ -874,9 +845,7 @@ class: section-title-b center middle
 ???
 
 - Show example code
-- cd /home/liam/Projects/talks/hackthesystem/tools/phpggc
-- ./phpggc Guzzle/RCE1 system "cat /etc/passwd > ../../../public/passwd" > payload
-- mv payload ../../laravel/app/Http/Controllers/
+- ./rcedemo.sh
 - http://localhost:9999/rce/payload
 - http://localhost:9999/passwd
 
