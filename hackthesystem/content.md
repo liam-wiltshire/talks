@@ -387,6 +387,7 @@ class: content-even
 
 ???
 
+- If someone sees a login that they don't recognise, what do we usually suggest?
 - The standard answer is to reset your password and enable 2FA
 - I've seen plenty of applications where changing your password (both through forgotten password and profile editing) either:
     - Doesn't log anyone out - you can carry on doing whatever you are doing 
@@ -518,9 +519,22 @@ class: content-odd
 
 ---
 
-class: content-odd center middle
+class: content-odd tinycode
 
 # DEMO
+
+```php
+public function mysql(Request $request)
+{
+    $title = $request->get("title");
+    $year = $request->get("year");
+    $books = Book::where('title', 'LIKE', "%{$title}%")
+      ->whereRaw("era_id IN (SELECT id FROM eras WHERE year = {$year})")
+      ->get();
+
+    return response()->json($books);
+}
+```
 
 ???
 
@@ -569,7 +583,9 @@ if (!password_verify($password, $user->password)) {
 
 ???
 
-- Nothing in an application runs in isolation - everything has an impact on something else, which can often be measured 
+- Nothing in an application runs in isolation - everything has an impact on something else, which can often be measured
+  - If the action that is taken changes the amount of time required, and this can be measured, this is a timing attack
+  
 - This is a fairly standarrd piece of code to check if a user can login
   - Imagine you want to find out which email addresses exist on a platform, but you don't have DB access
 - In this code, we've actually thought about security...
@@ -596,7 +612,6 @@ if (!password_verify($password, $user->password)) {
 ```
 
 ???
-
 - We return the same error for either no user found or no password, so an attacker can't see if the email exists or not based on the message
 - But is there another way of getting that information?
 - In this code, password_verify takes an additional nonzero amount of time to run - so any time there is a matching email address, regardless of if the password is right or not, it will take longer
@@ -664,8 +679,8 @@ class: content-even
 - Fixed execution time functions
  
 ???
-
-- As we've touched upon before, many large botnets have thousands of IPs - so they can work around the rate limit
+- As we've already mentioned, any time an attack involves lots of requests, rate limiting is going to help
+- As we mentioned before, many large botnets have thousands of IPs - so they can work around the rate limit
     - however the likelihood is those different connections will be in different locations, different types of devices - IP cameras, doorbells etc, have different latency, making averaging out the variability much harder
     - And if it's not worth the attackers time, they'll move on
 - Fixed execution time - forcing a function to run for a specific amount of time is a double-edged sword
@@ -838,9 +853,17 @@ class: content-odd
 
 ---
 
-class: section-title-b center middle
+class: section-title-b tinycode
 
 # DEMO
+
+```php
+public function rce($file)
+{
+    $payload = file_get_contents($file);
+    unserialize($payload);
+}
+```
 
 ???
 
@@ -897,9 +920,20 @@ class: content-even
 
 ---
 
-class: section-title-c center middle
+class: section-title-c tinycode
 
 # DEMO
+
+```php
+public function image(Request $request)
+{
+    var_dump(mime_content_type("loaded-mono.jpg"));
+
+    if (file_exists($request->get("filename"))) {
+        echo "File exists";
+    }
+}
+```
 
 ???
 
