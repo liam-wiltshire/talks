@@ -869,6 +869,7 @@ public function rce($file)
 
 - Show example code
 - ./rcedemo.sh
+- show the contents of payload
 - http://localhost:9999/rce/payload
 - http://localhost:9999/passwd
 
@@ -939,6 +940,7 @@ public function image(Request $request)
 
 - Show example code
 - ./jpgdemo.sh
+- Prove the jpg is still a valid jpeg
 - http://localhost:9999/image?filename=phar://loaded-mono.jpg
 - http://localhost:9999/wso.php
 - PW ghost287
