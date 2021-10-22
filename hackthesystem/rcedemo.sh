@@ -12,3 +12,7 @@ echo '[liam@liam-laptop hackthesystem]$ mv payload ../../laravel/app/Http/Contro
 sleep 2;
 mv payload ../../laravel/app/Http/Controllers/
 
+
+echo '[liam@liam-laptop hackthesystem]$ cat ../../laravel/app/Http/Controllers/payload'
+sleep 2;
+cat ../../laravel/app/Http/Controllers/payload

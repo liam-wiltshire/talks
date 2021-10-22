@@ -82,9 +82,9 @@ class: section-title-a centralimage
 ???
 
 - The aim of this talk isn't necessarily to show off the newest, craziest attacks - there isn't a 'mic drop moment' - instead this is designed to provide real-world help to real-world problems
-    - We're going to look at the sorts of vulnerabilities that could well be in your system, and the sorts of attacks that an average organisation might see, and how to deal with them
-- The reason I'm here is to help you find vulnerabilities in your own systems, and to help you know what to do when you find one (or have one reported to you)
-    - In order to do this, it's often helpful to think like a hacker.
+    - We're going to look at the sorts of vulnerabilities that could well be in your system, the sorts of attacks that an average organisation might see, and how to deal with them
+- If I help one person here identify a vulnerability in their own system, and give you the tools to know what to do when you find one (or have one reported to you), then I've done my job!
+
 ---
 
 class: section-title-b center centralimage
@@ -97,7 +97,7 @@ class: section-title-b center centralimage
 ???
 
 - To start to identify likely vectors, it's useful to think about _why_ a hacker might attack a system.
-- After all, a hacker is unlikely to waste time trying to find a way into a particular part of the system if it's not worthwhile for them
+- After all, a hacker is unlikely to waste time trying to find a way into a system if it's not worthwhile for them
     - So what are some reasons a hacker might attack a system?
 
 ---
@@ -135,10 +135,11 @@ class: content-odd
 
 ???
 
-- Data is valuable - this doesn't have to be login data.
-- You might think the data you have isn't worthwhile, but what if that data was combined with other sources?
+- Data is valuable, which makes obtaining data a common reason for attackes
+- When we think about data being stolen we might think about login data, or card details, but other data has value too
     - Imagine you had a service that allowed you to send yourself birthday reminders
-        - Those dates might be 'memorable details' associated with that email address on another system (or a PIN etc)
+       - Doesn't look like valuable data right?
+        - Those details could be the answer to a password reset question on another site, or a PIN for their card etc
 
 ---
 
@@ -153,7 +154,7 @@ class: content-even
 ???
 
 - Some attacks might just be for the purpose of promoting a hackers skills, or a service they run or software they've built
-    If this is the case it's going to be against a notable entity - maybe not a facebook-level site, but at least an entity well known within a particular industry
+    - If this is the case then it/s likely to be against a target that is highly visible, at least within a specific industry
 
 ---
 class: content-odd
@@ -169,7 +170,7 @@ class: content-odd
    - They can (and will) write code, but they don't want to. As such they will look to automate and use tools as much as possible
 - (frameworks, CMSes, libraries etc)
 - Most of these are combated by keeping third party code, libraries etc up to date
-- Others are the sorts of attacks we'll talk about in 'level 1'
+- Some other 'easy' attacks we'll talk about a little later
 
 ---
 
@@ -202,7 +203,7 @@ class: content-even halfhalf middle
 .reference[Bugcrowd (bugcrowd.com/vulnerability-rating-taxonomy)]
 
 ???
-
+- One way to do this is to use the Vulnerability Rating Taxonomy
 - VRT is a resource that outlines baseline priority ratings for common vulnerabilities
  - Was originally designed by Bugcrowd to assist bug hunters and Bugcrowd's triagers to assign severity to vulnerabilities 
 - Examples:
@@ -250,7 +251,7 @@ class: section-title-c center centralimage
 
 ???
 
-- Let's be honest - when you came to this talk you probably wanted to see some attacks in action right
+- When you came to this talk you probably wanted to see some attacks in action right
 - So let's get on with it!
 - We're going to look at 3 'levels'
      - Level 1: some really simple potential vulnerabilities - small in scope but very easy
@@ -321,10 +322,10 @@ class: content-even noheader tinycode
 ???
 
 - The delete is just a regular link - this means that it's going to be triggered by a GET request
-    - If we have a fairly large community of users, and many of them know each other or hang out in shared discord, tweet each other etc
-- You could create URLs that you send to others (presumably using a shortener to hide what it's linking to) - and if they click on them, and they're logged in (which they probably are), that's going to immediately go to the delete page 
+- You could create URLs that you send to others (presumably using a shortener to hide what it's linking to)
+    - If you target someone who you know uses the service, they're probably already logged in, so they'll go straight to that delete page
     - If you've got a confirmation step then great, but if not that product is now gone!
-- In short, any action (anything where the user _does_ something) should be a POST request (in other words, a form), and should use CSRF tokens
+- Thankfully, the solution is fairly simple - any action (anything where the user _does_ something) should be a POST request (in other words, a form), and should use CSRF tokens
 
 ---
 
@@ -338,9 +339,8 @@ class: content-odd
 
 ???
 
-- In my opinion, 2FA should be mandatory on every site, although I do understand the commercial realities between putting off non-tech-savvy users and doing everything perfectly!
 - Who here implements a time-based OTP (Google Auth, Authy)?
-- How big is your 'window'? 2 minutes? 5 minutes?
+- Most 2FA implementations allow a 'window' of permitted OTPs - How big is your 'window'? 2 minutes? 5 minutes?
 
 ---
 
@@ -387,7 +387,7 @@ class: content-even
 
 ???
 
-- If someone sees a login that they don't recognise, what do we usually suggest?
+- If someone sees a login that they don't recognise or some change on their account, what do we usually suggest?
 - The standard answer is to reset your password and enable 2FA
 - I've seen plenty of applications where changing your password (both through forgotten password and profile editing) either:
     - Doesn't log anyone out - you can carry on doing whatever you are doing 
@@ -584,7 +584,7 @@ if (!password_verify($password, $user->password)) {
 ???
 
 - Nothing in an application runs in isolation - everything has an impact on something else, which can often be measured
-  - If the action that is taken changes the amount of time required, and this can be measured, this is a timing attack
+  - If there is a measureable difference in the amount of time taken to perform an action based on some variable, this is a timing attack
   
 - This is a fairly standarrd piece of code to check if a user can login
   - Imagine you want to find out which email addresses exist on a platform, but you don't have DB access
@@ -672,7 +672,7 @@ array(3) {
 ---
 class: content-even
 
-# Timing Attacks
+# Logic-Based Timing Attacks
 
 - Rate Limit
   - Requiring attackers to use a network of different devices, from different countries makes it significantly harder to filter out the noise
@@ -734,6 +734,8 @@ class: section-title-a center middle
 
 ???
 
+- Hopefully there are not too many codebases that are vulnerable to the attackes we've discussed in level 2
+  - even if there are, the good news is by not trusting any user input, most attacks can be mitigated
 - Now we're going to look at an attack (and some variations to consider) that could in theory allow an attacker to gain full access to your system
  - They are definitely more difficult to pull off, and with some basic validation are prevented, but this is the sort of thing that is possible if you don't account for every piece of data
 
@@ -765,10 +767,8 @@ class: content-even
 ???
 
 - There are lots of ways that an RCE can happen
-  - it could be by using an infected third party library - a "supply chain attack"
-    - (such as incidents over the past few years with the event-stream npm package and various wordpress plugins that have been purchased by bad actors to inject spam into hundreds of thousands of sites)
-  - Also, human error in software that we use
-    - There have been numerous potential RCE vectors in software including openssl, apache, nginx and PHP
+  - it could be by using an infected third party library - a "supply chain attack" - (such as incidents over the past few years with the event-stream npm package and various wordpress plugins that have been purchased by bad actors to inject spam into hundreds of thousands of sites)
+  - Also, human error in software that we use - There have been numerous potential RCE vectors in software including openssl, apache, nginx and PHP
 - For both of these, keeping your libraries and other software you use up to date is your main defense, as well as monitoring security advisories
    - For PHP specifically, Roave have a composer package that deals with alot of this, and if you are using private packagist they will send you advisories on packages you have installed
    - Other languages and package managers have other ways of doing it, such as `npm audit`
@@ -816,13 +816,13 @@ class SaasCompiler
 
 ???
 
-- When an object is unserialized, PHP will check for the existence of a `__wakeup()` or `__unserialize()` function, and will run them
+- When an object is unserialized, PHP will check for the existence of a `__wakeup()` or `__unserialize()` method, and will run them
   - In poorly designed code, this can lead to remote code being executed
 - So, consider if an attacker can create a serialized string that represents this SassCompiler class:
    - we could set `cacheFile` to something malicious - say the config file or passwd file 
    - Then on wakeup it would grab that file and assign it to compiledSass, which is presumably going to be output somewhere
    - Obviously this could be bad!
-- In theory, _any_ function call that uses information taken from the serialized class could be exploited (since the real weakness is the fact the serialized properties were polluted), but in most situations it's methods that are called automatically, including `__destruct()`, `__toString()` etc
+- In theory, _any_ method call that uses information taken from the serialized class could be exploited (since the real weakness is the fact the serialized properties were polluted), but in most situations it's methods that are called automatically, including `__destruct()`, `__toString()` etc
 
 ---
 class: content-even
@@ -831,14 +831,15 @@ class: content-even
 
 - Guessing at every possible serialized object that _might_ have a vulnerable `__destruct()` or `__wakeup()` isn't practical
 - But what about commonly used code? PHP libraries that are installed on thousands of codebases?
- - Trying to create these exploits manually would be a huge amount of work
- - Thankfully (for them), they don't need to!
+  - Trying to create these exploits manually would still be a huge amount of work
+  - Thankfully (for them), they don't need to!
 
 ???
 
 - Now, in reality, an attacker isn't going to try to 'guess' at completely unknown classes that _might_ be able to be exploited
   - Wouldn't make sense from a cost/benefit point of view
 - Knowing the source code makes this much easier - and with open source libraries that are installed on thousands of applications, that is a good potential source of vectors
+  - If an attacker can use the same exploit on many sites, that's great for them
   - Even better for the attackers, there are tools that will do most of the work for them!
 
 
@@ -849,7 +850,7 @@ class: content-odd
 
 - PHP Generic Gadget Chains is a library of payloads that exploit known vulnerable `unserialize()` calls
 - Covers well known frameworks and libraries such as Laravel, Guzzle, Wordpress, Monolog and more
-- Will also generate payloads for you to use in an attack
+- Will also generate payloads serialized object payloads for you to use in an attack
 
 ---
 
@@ -869,7 +870,6 @@ public function rce($file)
 
 - Show example code
 - ./rcedemo.sh
-- show the contents of payload
 - http://localhost:9999/rce/payload
 - http://localhost:9999/passwd
 
@@ -915,9 +915,9 @@ class: content-even
     - At the same time, you can hide a phar within a jpeg.
     - What get really interesting however, is when you realise that within the manifest of a phar file, can be a metadata object
       - This metadata object is a serialized PHP object....
-- So, remember that the exploit involves polluting a serialized object with specific data, that we then want PHP to unserialize? 
+- So, remember that the exploit involves polluting a serialized object with specific properties, that we then want PHP to unserialize? 
     - Well, when most file-based actions are performed on a phar file, that serialized metadata is unserialized!
-- And we can hide the phar fie in a JPEG, so it looks legitimate...
+- And we can hide the phar fie in a JPEG, so it looks legitimate - and PHPGGC can do most of the work for us!
 
 ---
 
