@@ -1,6 +1,6 @@
 [submodule "hackthesystem/tools/phpggc"]
 path = hackthesystem/tools/phpggc
-url = git://github.com/ambionics/phpggc/
+url = https://github.com/ambionics/phpggc/
 [submodule "hackthesystem/tools/sqlmap-dev"]
 path = hackthesystem/tools/sqlmap-dev
-url = git://github.com/sqlmapproject/sqlmap/
+url = https://github.com/sqlmapproject/sqlmap/
