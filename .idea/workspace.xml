@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a53c3e02-59ca-4c57-9741-ca0e6d226f2a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hackthesystem/content.md" beforeDir="false" afterPath="$PROJECT_DIR$/hackthesystem/content.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/core-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/title-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/title-styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +77,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -196,7 +205,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/imposter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -209,9 +218,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/imposter" />
       <recent name="$PROJECT_DIR$/machinelearning-laravel/demos/app/Models" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/machinelearning-laravel/demos/app/Models" />
@@ -332,7 +341,16 @@
       <workItem from="1633627284785" duration="638000" />
       <workItem from="1634143564663" duration="4397000" />
       <workItem from="1634320236006" duration="28017000" />
-      <workItem from="1634659415468" duration="8057000" />
+      <workItem from="1634659415468" duration="17513000" />
+      <workItem from="1634913401089" duration="1238000" />
+      <workItem from="1635069579893" duration="13000" />
+      <workItem from="1654596309174" duration="8066000" />
+      <workItem from="1654617611816" duration="2112000" />
+      <workItem from="1655201848667" duration="2896000" />
+      <workItem from="1655287630419" duration="971000" />
+      <workItem from="1659802785377" duration="8015000" />
+      <workItem from="1659898711917" duration="15000" />
+      <workItem from="1659899269101" duration="7714000" />
     </task>
     <servers />
   </component>

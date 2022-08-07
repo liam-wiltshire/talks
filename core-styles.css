@@ -116,3 +116,9 @@ ul ul {
 .content-odd .highres img, .content-even .highres img {
     max-height:1000px;
 }
+
+.bottomright {
+    position: absolute;
+    bottom:10%;
+    right:5%;
+}
