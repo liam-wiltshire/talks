@@ -52,6 +52,15 @@ ul ul {
     padding: 1em 2em 1em 2em !important;
 }
 
+.remark-slide-content::after{
+    content:url('logos/overwolf-icon.png'); /* with class ModalCarrot ??*/
+    position:absolute; /*or absolute*/
+    z-index:100000; /*a number that's more than the modal box*/
+    left:-1.5rem;
+    top:-1.5rem;
+    transform: scale(.5);
+}
+
 
 .remark-notes-area {
     font-size:60% !important;
