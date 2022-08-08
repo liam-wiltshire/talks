@@ -10,7 +10,9 @@ class: title-slide longtitle
 
 ???
 
-- @TODO
+- From the moment we're born, we're learning. Be that learning how the world around us works, how to stack blocks or how to read and write, it's an ongoing, lifelong process.
+- Learning has so many benifits - some obvious, but many less so
+- If we can maximise our learning, making it efficient and effective, learning can be our superpower.
 
 ---
 
