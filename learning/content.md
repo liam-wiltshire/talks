@@ -75,7 +75,8 @@ class: section-title-a center centralimage
 .bottomright[.xsmall[Nadin, G. 2021]]
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
 ???
-- higher levels of eudaimonia wellbeing, hedonic wellbeing, and reduced psychological stress, and no studies have found a negative impact on wellbeing
+- higher levels of eudaimonia (You-deh-monia) wellbeing (well-being, happiness and flourishing), hedonic wellbeing, and reduced psychological stress
+  - no studies have found a negative impact on wellbeing
 - High wellbeing directly relates to good health and longevity
 - Another study in the UK (Aldridge, F & Lavender, P, 2020) found that, in their study 87 percent of respondents reported benefits to their physical health and 89 percent felt they had experienced positive emotional or mental health benefits from learning.
 
