@@ -111,7 +111,8 @@ class: section-title-a center centralimage
 
 ???
 
-- It sounds cliche, but brain exercise. Studies, such as one done by the National Academies of Sciences, Engineering, and Medicine in America have shown the learning actually changes the physical structure of the brain
+- I don't know how well it translates, but there is a cliche in English - "your brain is a muscle" - however, the idea that 'exercising' your brain makes it stronger is actually true
+- Studies, such as one done by the National Academies of Sciences, Engineering, and Medicine in America have shown the learning actually changes the physical structure of the brain
 - Learning strenghtens pathways in the brain, improving memory retreval, and information processing amongst other things.
 
 - Of course, there are other benifits too - adding more skills makes you potentially more flexible, increase job opportunities etc, but that's not what I'm focusing on right now
