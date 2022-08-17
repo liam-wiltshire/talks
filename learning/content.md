@@ -176,6 +176,9 @@ class: section-title-a center
 # Steps To Learning
 .highres[![](learning/images/idea.png)]
 
+???
+- Learning can be broken down into three parts in a loop: 
+
 ---
 
 class: content-even
@@ -187,8 +190,6 @@ class: content-even
 - Application
 
 ???
-
-- Learning can be broken down into three parts in a loop.
 - Firstly Motivation - this is often the hardest part, as getting started, when there are many barriers (real and constructed) that get in the way
   - Once you start, continuing often gets much easier
 - Once you start, you need to remember what you've learned - learning and memory are actually very closely related, so understanding how you can maximise memory retention will help you learn much quicker
@@ -310,7 +311,9 @@ class: summary-slide middle
 ???
 
 - The relationship between learning and memory is incredibly close and intertwined.
-- It is almost impossible for an individual to truly learn something without also having the memory to retain what they have learned, although learning also concerns with the application of that knowledge, which we will consider later - but still requires memory
+   - This makes sense when you think about it - it's great to read something, but to be able to use it, you need to be able to recall it later
+- Learning concerns _more_ than just memory for sure - we also have to be able to apply that knowledge, which we will consider later
+- But if you can't remember it, you can't apply it!
 
 
 ---
@@ -390,7 +393,7 @@ class: content-odd center middle
 ???
 
 - Some of you might have some recollection, but it's probably still no-where near as clear as knowing how to ride a bike!
-
+ - Studies have shown that active learning is more effective in a whole range of situations
 - You've probably noticed that all of these are essentially making your brain process information in different ways!
 
 ---
@@ -418,6 +421,9 @@ class: content-odd
 
 ???
 
+- While we can remember what we've learned, in many situations we need to be able to use that in different ways
+  - Going back to riding a bike, every corner is a little different - you might be carrying some shopping which changes your balance, or some dumbass in a car might pull out in front of you!
+  - This requires taking what you know (how to ride a bike) and apply it to the current situation as a skill.
 - We've already talked a little about applying what you learn - teaching others and learning by going are two ways to take your theoretical knowledge and use it
 - However, how do you know if you are using it correctly?
 
@@ -497,6 +503,8 @@ class: content-even
 
 ???
 
+- Repeating things in our 'ability' circle are great to practice and perfect existing skills, but they won't help you learn new things - you have to go out to that middle ring, to learn the next step
+  
 - An example of this is learning to read - a child who knows the letters of the alphabet won't gain too much (other than confidence) by repeating the letters of the alphabet over and over.
 - They are likewise not going to be able to go from knowing the individual letters to reading war and peace, no matter how much help they get.
 - However, with a little bit of guidance and help from a teacher or an older student, could read words like 'dog' or 'cat'.
@@ -517,11 +525,12 @@ class: content-odd
 
 ???
 
-- The study found, somewhat predictably, that the correct type of assistance depended on the ability of the subject
-- If the subject was brand new to a topic or idea, then direct demonstration was valuable
-- If the subject already had some exposure to the topic or idea, but was still in the learning stage, then instructions were most helpful
-- Finally, once the knowledge was acquired and the aim was application, then general encouragement, allowed the subject to process the informaton for themselves
-- Just as scaffolding is removed as a building is completed, support should be reduced and removed as knowledge is built.
+- In the 1970s, two researchers (probably) observed that different people learned at different rates.
+  - So, they got some study grant, and decided to pick one variable (the concept of assistance) and see how it impacted learning
+- The study found, somewhat predictably, that the correct type of assistance depended on the ability of the subject - research funding well spent!
+  - If the subject was brand new to a topic or idea, then direct demonstration was valuable
+  - If the subject already had some exposure to the topic or idea, but was still in the learning stage, then instructions were most helpful
+  - Finally, once the knowledge was acquired and the aim was application, then general encouragement, allowed the subject to process the informaton for themselves
 
 ---
 
@@ -537,6 +546,7 @@ class: content-odd
 
 ???
 
+- Just as scaffolding is removed as a building is completed, support should be reduced and removed as knowledge is built.
 - While you might not have someone assessing your progress and providing direct assistance, consider how different learning resources are useful at different stages of learning:
 - Watching and Copying a YouTube tutorial step-by-step might be useful the first time, but watching and copying the same tutortial 10 times won't add any further benifit - at that point finding resources that 'deep dive' into specific parts of the process that allow you to understand the underlying knowledge, to eventually be able to apply it in different situations will produce better outcomes.
 
