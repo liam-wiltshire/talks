@@ -205,9 +205,12 @@ class: content-even center middle
 
 ???
 
-- By learning something, you'll often experience a sense of achievement which makes it easier to motivate to learn the next thing
-- By being able to apply what you've already learned, identifying patterns and rules, it is easier to learn and retain related information in the next cycle, which results in a greater sense of achievement "how quickly did I learn that?!", more motivation etc!
-- So let's address these on at a time:
+- That initial motivation is hard, but if you can motivate yourself to actively invest in your learning - using different techniques, maximising your efficiency then....
+- You will retain that information better. If you can retain that information better, you will be able to recall it easier, meaning...
+- That you will be able to apply it in different situations. If you apply that information successfully, then that will give you a sense of achivement, which gives you more...
+- Motivation, to learn the next thing - and so on!
+
+- So let's tackle these one by one....
 
 ---
 class: section-title-b center
