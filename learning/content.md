@@ -50,7 +50,8 @@ class: section-title-c bottom left vanity-slide
 ???
 
 - Tebex became an Overwolf company in February this year
-- We aim to supercharge the UGC space - creating the "guild of creators" - one day being an "in-game creator" will be recognisable as a career
+- We aim to supercharge the UGC space - Overwolf has created the "guild of creators", always looking at ways to support in-game creators of all types
+  - one day being an "in-game creator" will be recognisable as a career, much like a programmer, or an accountant
 - Tebex specifically specialises in payments and gCommerce - we do all the boring 'business' - 100 int'l payment methods, tax, compliance, AML, so our partners can focus on what they do best - making awesome games and experiences
 
 ---
@@ -63,7 +64,9 @@ class: section-title-a center centralimage
 
 ???
 
-- Last year, talk on impostor syndrome, mentioned using impostor syndrome as a superpower - desire to continually improve skills
+- Last year I delivered a talk on impostor syndrome
+   - Specifically, I noted that while yes IS is horrid to live with, we can also use it to our advantage
+   - That desire to always improve, to better ourselves - continous learning
 - If we are always learning, and can find ways to learn effectively, we gain a whole range of benefits
 
 ---
@@ -75,7 +78,7 @@ class: section-title-a center centralimage
 .bottomright[.xsmall[Nadin, G. 2021]]
 .reference[Human Vectors by Vecteezy (vecteezy.com/free-vector/human)]
 ???
-- higher levels of eudaimonia (You-deh-monia) wellbeing (well-being, happiness and flourishing), hedonic wellbeing, and reduced psychological stress
+- Studies such as Nadin, 2021 show that individuals who actively learn have higher levels of eudaimonia (You-deh-monia) wellbeing (well-being, happiness and flourishing), hedonic wellbeing, and reduced psychological stress
   - no studies have found a negative impact on wellbeing
 - High wellbeing directly relates to good health and longevity
 - Another study in the UK (Aldridge, F & Lavender, P, 2020) found that, in their study 87 percent of respondents reported benefits to their physical health and 89 percent felt they had experienced positive emotional or mental health benefits from learning.
