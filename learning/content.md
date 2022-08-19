@@ -28,11 +28,11 @@ class: title-slide longtitle
 
 ???
 
-- Before I go on, I just want to say, it's so difficult to arrange an event like this
-- Especially with the challenges of the past few years - it's brilliant to finally be able to meet with everyone face-to-face, share ideas
-- So many people are needed to make these things happens - organisers, sponsors, technical and more
+
+- With everything that's happened over the past few years - it's brilliant to finally be able to meet with everyone face-to-face, share ideas and just hand out
+- Running a conference is _hard_ - so many people are needed to make these things happens - organisers, sponsors, technical and more
 - So from me, a personal thank you
-- If you get an opportunity to speak to any of the organisers in the hangouts, let them know how much you appreciate it, and also provide feedback
+- If you get an opportunity to speak to any of the organisers, let them know how much you appreciate it
 
 - So, who am I?
 
@@ -49,10 +49,10 @@ class: section-title-c bottom left vanity-slide
 
 ???
 
-- Tebex became an Overwolf company in February this year
-- We aim to supercharge the UGC space - Overwolf has created the "guild of creators", always looking at ways to support in-game creators of all types
-  - one day being an "in-game creator" will be recognisable as a career, much like a programmer, or an accountant
-- Tebex specifically specialises in payments and gCommerce - we do all the boring 'business' - 100 int'l payment methods, tax, compliance, AML, so our partners can focus on what they do best - making awesome games and experiences
+- Tebex became an Overwolf company in February this year, and together we aim to supercharge the UGC space
+  - Overwolf has created the "guild of creators", always looking at ways to support in-game creators of all types - modders, map makers, app developers, server owners and more
+  - one day saying "I'm an in-game creator" as your career will be just as recognisable as a programmer, or an accountant
+- Tebex specifically specialises in payments and gCommerce - we do all the boring 'business' stuff - 100 int'l payment methods, tax, compliance, AML, so our partners can focus on what they do best - making awesome games and experiences
 
 ---
 
@@ -80,8 +80,7 @@ class: section-title-a center centralimage
 ???
 - Studies such as Nadin, 2021 show that individuals who actively learn have higher levels of eudaimonia (You-deh-monia) wellbeing (well-being, happiness and flourishing), hedonic wellbeing, and reduced psychological stress
   - no studies have found a negative impact on wellbeing
-- High wellbeing directly relates to good health and longevity
-- Another study in the UK (Aldridge, F & Lavender, P, 2020) found that, in their study 87 percent of respondents reported benefits to their physical health and 89 percent felt they had experienced positive emotional or mental health benefits from learning.
+- High wellbeing directly relates to good health and longevity - this was supported by another study in the UK (Aldridge, F & Lavender, P, 2020) where almost 90% of participants reported mental and physical wellbeing benefits after undertaking a scheme of learnring.
 
 ---
 class: section-title-a center centralimage
@@ -97,8 +96,7 @@ class: section-title-a center centralimage
 - Multiple studies have found that the achivement felt when learning a new skill, or leveling up an existing skill helps improve confidence and self-belief
  - This then feeds back into how learning can help our mental health - combating impostor syndrome and increasing our self-worth.
 - The impact of the past few years has been profound - leaving many feeling unmotivated, struggling to find purpose or direction
- - There is much that we cannot control, even in our own environment. However if we make the most of what we can control - and learning can be a part of this - we can jump-start our passion and motivation, even with just some small successes
-- Learning can help us shape our own lives and re-enforce our self-confidence and sense of self-worth and confidence. Improving our self view and self esteem are significant factors in combatting many mental-health issues, and learning is one way to do this.
+ - There is much that we cannot control, even in our own environment. However if we make the most of what we can control - and learning can be a part of this - we can jump-start our passion and motivation, even with just some small successes, shaping our own lives, taking back some control.
 
 ---
 class: section-title-a center centralimage
@@ -115,7 +113,7 @@ class: section-title-a center centralimage
 - Studies, such as one done by the National Academies of Sciences, Engineering, and Medicine in America have shown the learning actually changes the physical structure of the brain
 - Learning strenghtens pathways in the brain, improving memory retreval, and information processing amongst other things.
 
-- Of course, there are other benifits too - adding more skills makes you potentially more flexible, increase job opportunities etc, but that's not what I'm focusing on right now
+- Of course, there are other benifits too - adding more skills makes you potentially more flexible, increase job opportunities etc, but I wanted to share some of the lesser considered beneifts
 
 ---
 
@@ -244,7 +242,8 @@ Motivation involves the **biological, emotional, social, and cognitive** forces 
  - Not all of these will apply at the same time:
  - Biological is more apparent in "survival situations" - feeling thirsty because you need hydration, etc
  - Emotional motivation is powerful - as much as we might see ourselves as logical beings (cognitive forces), emotions often overpower this:
-  - I am currently trying to lose weight - 3.5kgs and counting! As much as the reason for this _should_ be that I know that currently I am at risk of various illnesses, heart issues and potentially even early death, my motivation is actually that when I went on holiday at the start of August, I wouldn't go to the beach unless I was wearing a top, even in the sea - the emotional driver is more powerful than the logical one, although both are important 
+  - I am currently trying to lose weight - 2kgs and counting!
+  - As much as the reason for this _should_ be that I know that currently I am at risk of various illnesses, heart issues and potentially even early death - logical, my motivation is actually that when I went on holiday at the start of August, I wouldn't go to the beach unless I was wearing a top, even in the sea - the emotional driver is more powerful than the logical one, although both are important 
 
 ---
 class: summary-slide middle
