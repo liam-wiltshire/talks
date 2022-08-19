@@ -258,7 +258,6 @@ Motivation involves the **biological, emotional, social, and cognitive** forces 
 - Social is a double edged sword - on the one hand we shouldn't be comparing ourselves to others - anyone who has seen my Impostor Syndrome talk knows this is a major trigger of IS
  - However at the same time, if you are looking for that promotion, or you feel that someone you know has skills in an area that you'd like to find out more about, that can be a powerful motivator
  - It's important in this situation to try to remain as objective as possible - recognise your strengths, realise that it's ok to want to improve your skills in an area, but that doesn't mean that you don't bring your own value in other areas
- - If this sounds familiar to anyone who has experienced IS, that's because it is - we'll touch upon that again a little later!
 
 ---
 class: content-odd
