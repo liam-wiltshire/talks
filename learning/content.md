@@ -10,7 +10,7 @@ class: title-slide longtitle
 
 ???
 
-- From the moment we're born, we're learning. Be that learning how the world around us works, how to stack blocks or how to read and write, it's an ongoing, lifelong process.
+- From the moment we're born, we're learning - it's an ongoing, lifelong process.
 - Learning has so many benifits - some obvious, but many less so
 - If we can maximise our learning, making it efficient and effective, learning can be our superpower.
 
@@ -50,7 +50,7 @@ class: section-title-c bottom left vanity-slide
 
 ???
 
-- Overwolf has created the "guild of creators" in the UGC space, always looking at ways to support in-game creators of all types - modders, map makers, app developers, server owners and more
+- Overwolf has created the "guild of creators" in the UGC space, working with studios to support in-game creators of all types - modders, map makers, app developers, server owners and more
 - one day saying "I'm an in-game creator" as your career will be just as recognisable as a programmer, or an accountant
 - Tebex specifically specialises in payments and gCommerce - we do all the boring 'business' stuff - 100 int'l payment methods, tax, compliance, AML, so our partners can focus on what they do best - making awesome games and experiences
 
@@ -218,9 +218,9 @@ class: section-title-b center
 ---
 class: summary-slide middle
 
-"Motivation is the process that initiates, guides, and maintains goal-oriented behaviors. It is what causes you to act, whether it is getting a glass of water to reduce thirst or reading a book to gain knowledge.
+"Motivation is the process that initiates, guides, and maintains goal-oriented behaviors ... whether it is getting a glass of water to reduce thirst or reading a book to gain knowledge.
 
-Motivation involves the biological, emotional, social, and cognitive forces that activate behavior. In everyday usage ... is ... used to describe why a person does something. It is the driving force behind human actions."
+Motivation involves the biological, emotional, social, and cognitive forces that activate behavior."
 .xsmall[Cherry, K. 2022]
 
 ???
@@ -231,9 +231,9 @@ Motivation involves the biological, emotional, social, and cognitive forces that
 ---
 class: summary-slide middle
 
-"Motivation is the process that initiates, guides, and maintains goal-oriented behaviors. It is what causes you to act, whether it is getting a glass of water to reduce thirst or reading a book to gain knowledge.
+"Motivation is the process that initiates, guides, and maintains goal-oriented behaviors ... whether it is getting a glass of water to reduce thirst or reading a book to gain knowledge.
 
-Motivation involves the **biological, emotional, social, and cognitive** forces that activate behavior. In everyday usage ... is ... used to describe why a person does something. It is the driving force behind human actions."
+Motivation involves the **biological, emotional, social, and cognitive forces** that activate behavior."
 .xsmall[Cherry, K. 2022]
 
 ???
@@ -248,9 +248,9 @@ Motivation involves the **biological, emotional, social, and cognitive** forces 
 ---
 class: summary-slide middle
 
-"Motivation is the process that initiates, guides, and maintains goal-oriented behaviors. It is what causes you to act, whether it is getting a glass of water to reduce thirst or reading a book to gain knowledge.
+"Motivation is the process that initiates, guides, and maintains goal-oriented behaviors ... whether it is getting a glass of water to reduce thirst or reading a book to gain knowledge.
 
-Motivation involves the **biological, emotional, social, and cognitive** forces that activate behavior. In everyday usage ... is ... used to describe why a person does something. It is the driving force behind human actions."
+Motivation involves the **biological, emotional, social, and cognitive forces** that activate behavior."
 .xsmall[Cherry, K. 2022]
 
 ???
@@ -311,10 +311,8 @@ class: summary-slide middle
 "Learning and memory are closely related concepts. Learning is the acquisition of skill or knowledge, while memory is the expression of what you’ve acquired" .xsmall[Kazdin, A (Ed.) 2000]
 ???
 
-- The relationship between learning and memory is incredibly close and intertwined.
-   - This makes sense when you think about it - it's great to read something, but to be able to use it, you need to be able to recall it later
-- Learning concerns _more_ than just memory for sure - we also have to be able to apply that knowledge, which we will consider later
-- But if you can't remember it, you can't apply it!
+- The relationship between learning and memory is incredibly close and intertwined - it's great to read something, but to be able to use it, you need to be able to recall it later
+- Learning concerns _more_ than just memory for sure - the applicaiton of knowledge is something we'll look at a little later, but if you can't remember it, you can't apply it!
 
 
 ---
@@ -326,7 +324,7 @@ class: content-even middle center
 ???
 
  - For many years, I've gone on vacation to the same place - Swanage
- - I can feel, standing here, like I am on the seafront - I can *hear* the sounds from the arcades over my right shoulder
+ - I can feel, standing here, like I am on the seafront - I can *hear* the sounds from the arcades over my right shoulder, and the people walking down the street behind the beach
   - I can *smell* the town - salty
   - I can *feel* the sand - slightly more corse than some places - under my feet
 
@@ -346,7 +344,6 @@ class: content-even
 - A similar concept applies to learning - by using multiple parts of our brain to rehearse the information, we create multiple pathways, and different interpretations of the same information to make recalling it easier
   - For example you might listen to an audio book, read a transcription, then print it out and hand-write notes on it - by using these multiple methods, you are procesing the information in different ways
   - I still hunt out physical books as well as digital resources - I can write on it, make notes, highlight, underline etc, interacting with it in a way not possible with digital media.
-- You could take this even further - I'm sure at school you might have had rhymes or songs to remember certain things - this is using yet another part of the brain
 
 
 ---
@@ -363,7 +360,6 @@ class: halfhalf reverse content-even
 
 - Explaining new concepts is a common method of consolidating and internalizing learning, as well as proving to yourself that you have learned this new topic at the same time!
 - The person you are explaning it to may then have other questions, which force you to think about what you've learned in different ways, or highlight the next area you might focus on
-- In addition, successfully sharing knowledge with others can help increase your motivation to learn more
 
 ---
 class: content-even
@@ -489,13 +485,10 @@ class: content-even
 
 ???
 
-- Repeating things in our 'ability' circle are great to practice and perfect existing skills, but they won't help you learn new things - you have to go out to that middle ring, to learn the next step
-  
-- An example of this is learning to read - a child who knows the letters of the alphabet won't gain too much (other than confidence) by repeating the letters of the alphabet over and over.
-- They are likewise not going to be able to go from knowing the individual letters to reading war and peace, no matter how much help they get.
+- An example of this is learning to read - a child who knows the letters of the alphabet can improve confidence and perfect a skill by repeating them (and this is important), but they won't learn anything new 
+- They are likewise not going to be able to go from knowing the individual letters to reading war and peace or the works of shakespeare!
 - However, with a little bit of guidance and help from a teacher or an older student, could read words like 'dog' or 'cat'.
  - By breaking it up into these small steps, it also means you have regular 'wins', feeding your motivation to learn more - think back to our learning flywheel
-
 
 ---
 
@@ -504,20 +497,14 @@ class: content-odd
 # Scaffolding
 
 - Wood and Middleton (1975) wanted to discover _how_ Vygotsky's 'assistance' should be given
-- Found there are three main types of assistance:
-  - General encouragement
-  - Specific instructions
-  - Direct demonstration
+- Found there are three main types of assistance
+
 
 ???
 
 - In the 1970s, two researchers (probably) observed that different people learned at different rates.
-  - So, they got some study grant, and decided to pick one variable (the concept of assistance) and see how it impacted learning
+  - So, they went to a University to get some funding, and decided to pick one variable (the concept of assistance) and see how it impacted learning
 - The study found, somewhat predictably, that the correct type of assistance depended on the ability of the subject - research funding well spent!
-  - If the subject was brand new to a topic or idea, then direct demonstration was valuable
-  - If the subject already had some exposure to the topic or idea, but was still in the learning stage, then instructions were most helpful
-  - Finally, once the knowledge was acquired and the aim was application, then general encouragement, allowed the subject to process the informaton for themselves
-
 ---
 
 class: content-odd
@@ -526,9 +513,13 @@ class: content-odd
 
 - Wood and Middleton (1975) wanted to discover _how_ Vygotsky's 'assistance' should be given
 - Found there are three main types of assistance:
-  - General encouragement
-  - Specific instructions
   - Direct demonstration
+    - Useful to someone just starting out learning something new
+  - Specific instructions
+    - Useful to build upon and further existing knowledge
+  - General encouragement
+    - Useful once knowledge is acquirered and is being applied
+
 
 ???
 
@@ -548,6 +539,10 @@ class: content-even
 - Make your 15 minutes of learning 15 solid minutes, assess your progress, then reward yourself for your work
 
 ???
+
+- It sounds obvious, but if you only have a small amount of time, then make sure you can use that time learning - not preparing!
+- Make sure you've got all your resources ready, grab your drink or anything else you need, and dedicate that 15 minutes, or however long it is
+- And then reward yourself for doing it - actually sitting down and getting to it is a _massive_ achievement in itself!
 
 ---
 
