@@ -512,11 +512,11 @@ class: content-odd
 # Scaffolding
 
 - Direct demonstration
-  - Useful to someone just starting out learning something new
+  - Useful to someone just starting out
 - Specific instructions
   - Useful to build upon and further existing knowledge
 - General encouragement
-  - Useful once knowledge is acquirered and is being applied
+  - Useful once knowledge is acquired and is being applied
 
 
 ???
