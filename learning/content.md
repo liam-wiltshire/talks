@@ -511,14 +511,12 @@ class: content-odd
 
 # Scaffolding
 
-- Wood and Middleton (1975) wanted to discover _how_ Vygotsky's 'assistance' should be given
-- Found there are three main types of assistance:
-  - Direct demonstration
-    - Useful to someone just starting out learning something new
-  - Specific instructions
-    - Useful to build upon and further existing knowledge
-  - General encouragement
-    - Useful once knowledge is acquirered and is being applied
+- Direct demonstration
+  - Useful to someone just starting out learning something new
+- Specific instructions
+  - Useful to build upon and further existing knowledge
+- General encouragement
+  - Useful once knowledge is acquirered and is being applied
 
 
 ???
