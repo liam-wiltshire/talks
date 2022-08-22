@@ -46,12 +46,12 @@ class: section-title-c bottom left vanity-slide
 
 # Liam Wiltshire
 ## Director of Tech & Ops
+### @l_wiltshire
 
 ???
 
-- Tebex became an Overwolf company in February this year, and together we aim to supercharge the UGC space
-  - Overwolf has created the "guild of creators", always looking at ways to support in-game creators of all types - modders, map makers, app developers, server owners and more
-  - one day saying "I'm an in-game creator" as your career will be just as recognisable as a programmer, or an accountant
+- Overwolf has created the "guild of creators" in the UGC space, always looking at ways to support in-game creators of all types - modders, map makers, app developers, server owners and more
+- one day saying "I'm an in-game creator" as your career will be just as recognisable as a programmer, or an accountant
 - Tebex specifically specialises in payments and gCommerce - we do all the boring 'business' stuff - 100 int'l payment methods, tax, compliance, AML, so our partners can focus on what they do best - making awesome games and experiences
 
 ---
@@ -80,7 +80,7 @@ class: section-title-a center centralimage
 ???
 - Studies such as Nadin, 2021 show that individuals who actively learn have higher levels of eudaimonia (You-deh-monia) wellbeing (well-being, happiness and flourishing), hedonic wellbeing, and reduced psychological stress
   - no studies have found a negative impact on wellbeing
-- High wellbeing directly relates to good health and longevity - this was supported by another study in the UK (Aldridge, F & Lavender, P, 2020) where almost 90% of participants reported mental and physical wellbeing benefits after undertaking a scheme of learnring.
+- High wellbeing directly relates to good health and longevity - both physical and mental, making learning a powerful self-care tool
 
 ---
 class: section-title-a center centralimage
@@ -325,9 +325,6 @@ class: content-even middle center
 
 ???
 
-- Does anyone feel comfortable sharing a powerful memory?
- - Tell me as much as possible about it
-- If not
  - For many years, I've gone on vacation to the same place - Swanage
  - I can feel, standing here, like I am on the seafront - I can *hear* the sounds from the arcades over my right shoulder
   - I can *smell* the town - salty
@@ -348,7 +345,7 @@ class: content-even
 - Many of the strongest memories have multiple senses - our brain can use multiple pathways to unlock the memory, and multiple pieces of information combined to make it strong
 - A similar concept applies to learning - by using multiple parts of our brain to rehearse the information, we create multiple pathways, and different interpretations of the same information to make recalling it easier
   - For example you might listen to an audio book, read a transcription, then print it out and hand-write notes on it - by using these multiple methods, you are procesing the information in different ways
-  - This is one of the reasons if I am learning a new subject I still hunt out physical books as well as digital resources - I can write on it, make notes, highlight, underline etc, interacting with it in a way not possible with digital media.
+  - I still hunt out physical books as well as digital resources - I can write on it, make notes, highlight, underline etc, interacting with it in a way not possible with digital media.
 - You could take this even further - I'm sure at school you might have had rhymes or songs to remember certain things - this is using yet another part of the brain
 
 
@@ -383,20 +380,8 @@ class: content-even
 - Ok, now put your hand up if you were taught about quadratic equasions at school
    - And who can still remember and apply that?
 - Skills that you develop by doing are better ingraned in your memory, and retrival is easier, even a long time in the future
-   - Your memoeries of quadratic equations are probably still in there somewhere - if I showed this:
+   - Your memoeries of quadratic equations are probably still in there somewhere, but retriving and applying is a challenge!
   
----
-
-class: content-odd center middle
-
-![](learning/images/quadratic.png)
-
-???
-
-- Some of you might have some recollection, but it's probably still no-where near as clear as knowing how to ride a bike!
- - Studies have shown that active learning is more effective in a whole range of situations
-- You've probably noticed that all of these are essentially making your brain process information in different ways!
-
 ---
 
 class: section-title-a center
