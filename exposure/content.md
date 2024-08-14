@@ -96,7 +96,7 @@ class: section-title-a center centralimage
 
 ---
 
-class: section-title-a center centralimage
+class: section-title-b center centralimage
 # Building Relationships
 .highres[![](exposure/images/team.png)]
 
@@ -107,7 +107,7 @@ class: section-title-a center centralimage
 
 ---
 
-class: section-title-a center centralimage
+class: section-title-c center centralimage
 # Personal Growth
 .highres[![](exposure/images/growth.png)]
 
@@ -129,7 +129,7 @@ class: section-title-a center centralimage
 
 ---
 
-class: section-title-a center centralimage
+class: section-title-b center centralimage
 # Money
 .highres[![](exposure/images/money.png)]
 
@@ -141,7 +141,7 @@ class: section-title-a center centralimage
 
 ---
 
-class: section-title-b center centralimage
+class: section-title-c center centralimage
 
 # Why Do YOU Work?
 .highres[![](exposure/images/you.png)]
@@ -156,7 +156,7 @@ class: section-title-b center centralimage
 
 ---
 
-class: section-title-c center centralimage
+class: section-title-a center centralimage
 
 # Jobs vs Career
 
@@ -236,7 +236,7 @@ class: content-even
 
 ---
 
-class: section-title-a center
+class: section-title-b center
 
 # So, What Have I Learned?
 .highres[![](exposure/images/idea.png)]
@@ -250,7 +250,7 @@ class: section-title-a center
 
 ---
 
-class: section-title-b center
+class: section-title-c center
 
 # Be Your Own Cheerleader
 .highres[![](exposure/images/cheerleader.png)]
@@ -264,7 +264,7 @@ class: section-title-b center
  - Your work won't always speak for itself - document your wins, and make sure you share them when you get the opportunity (1:1s, annual reviews etc)
  
 ---
-class: section-title-c center
+class: section-title-a center
 
 # Do the Role You Aspire to Do
 
@@ -279,7 +279,7 @@ class: section-title-c center
 
 ---
 
-class: section-title-c center
+class: section-title-a center
 
 # Do the Role You Aspire to Do
 
@@ -292,7 +292,7 @@ class: section-title-c center
 
 ---
 
-class: section-title-c center
+class: content-odd center
 
 
 .coverimg[![](exposure/images/email1.png)]
@@ -303,7 +303,7 @@ class: section-title-c center
 
 ---
 
-class: section-title-c center
+class: content-odd center
 
 
 .coverimg[![](exposure/images/email2.png)]
@@ -317,7 +317,7 @@ class: section-title-c center
 
 ---
 
-class: section-title-a center
+class: section-title-b center
 
 # Know Your Value
 .highres[![](exposure/images/contract.png)]
@@ -331,7 +331,7 @@ class: section-title-a center
 
 ---
 
-class: content-odd
+class: content-even
 
 # Know Your Value
 
@@ -371,7 +371,7 @@ class: content-even
 
 ---
 
-class: section-title-b center
+class: section-title-c center
 
 # Own Your Mistakes
 .highres[![](exposure/images/embarrised.png)]
@@ -387,7 +387,7 @@ class: section-title-b center
  - But more than that, I've always presented a way to solve it
 
 ---
-class: section-title-b
+class: content-odd
 
 # Own Your Mistakes
 
@@ -397,7 +397,7 @@ class: section-title-b
 
 ---
 
-class: section-title-c center
+class: section-title-a center
 
 # Your Work Should Work For You
 .highres[![](exposure/images/work-balance.png)]
@@ -408,7 +408,7 @@ class: section-title-c center
 
 ---
 
-class: section-title-a center
+class: section-title-b center
 
 # "Am I in the right job for me?"
 .highres[![](exposure/images/question2.png)]
@@ -423,7 +423,7 @@ class: section-title-a center
 
 ---
 
-class: section-title-b
+class: section-title-c
 
 # "What Does Your Company Owe You?"
 
@@ -442,20 +442,10 @@ class: section-title-b
 - You deserve to be safe at work, and in an enviroment where you know where you stand, your route to progression (or not), and support and attention to help you grow
 - And most of all, to be treated fairly in the above.
 
-class: summary-slide
-
-- Effective learning can be your superpower
-- Improve your physical, emotional and mental wellbeing
-- Learning doesn't have to require huge chunks of time, but it does need dedication
-- Getting started is the hardest part, but once you do, make the most of the learning flywheel to keep it going
-- Learn smart, not hard
-- Good luck, you'll smash it!
-
-???
 
 ---
 
-class: section-title-b
+class: section-title-c
 
 # "What Does Your Company Owe You?"
 
@@ -476,7 +466,7 @@ class: section-title-b
 
 ---
 
-class: section-title-c
+class: section-title-a
 
 # What Do You Owe Your Company?
 
@@ -493,7 +483,7 @@ class: section-title-c
 
 ---
 
-class: section-title-a
+class: section-title-b
 
 # What DON'T You Owe Your Company?
 
@@ -510,7 +500,7 @@ class: section-title-a
 
 ---
 
-class: section-title-a
+class: section-title-b
 
 # What DON'T You Owe Your Company?
 
