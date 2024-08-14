@@ -27,7 +27,7 @@ class: title-slide longtitle
 
 ???
 
-
+- Before I go on, I just want to talk about how great it is t be here - 
 - My role is full time remote - which is awesome, but it's so amazing to be able to spend time in person with friends, colleagues and people far far smarter than I am!!
 - Running a conference is _hard_ - so many people are needed to make these things happens - organisers, sponsors, technical and more
 - So from me, a personal thank you
@@ -124,7 +124,7 @@ class: section-title-a center centralimage
 
 .bottomright[.xsmall[Yuan, L. 2022]]
 ???
-- Being recognised for our contribution to something bigger than ourselves contributes to that same sense of wellbeing
+- Tying back into that sense of wellbeing, and also our personal growth, being recognised for our contribution to something bigger than ourselves is important for many people
 - This might be internal recognition, industry awards (personally or part of a team), or just that sense of seeing someone using or playing something you've had a hand in making
 
 ---
@@ -166,6 +166,8 @@ class: section-title-c center centralimage
 
 - Are you in a job, or are you in a career?
 - What's the difference?
+- Sometimes we can feel like these words are interchangable, but actually they have very distinct meanings.
+ - I'm not smart enough to know what they are though - so I found some people who did!!!
 
 ---
 
@@ -176,6 +178,10 @@ class: summary-slide middle
 
 ???
 
+- READ QUOTE
+- I'm not a big fan of this definition - a career that leaves you out on the street isn't a very good career!
+ - But it does make a good point - oftentimes a job will be _just_ for the money, but a career is something more.
+
 ---
 
 class: summary-slide middle
@@ -184,6 +190,10 @@ class: summary-slide middle
 .xsmall[Jonus Group, 2023]
 
 ???
+
+- READ QUOTE
+- This feels more like it - a career feels like something worth doing - something you were born to do
+ - This doesn't mean that a career is the same for everyone - one persons idea of a job might be someone elses dream career - but understanding where you are in your life helps you decide the direction you want to go in
 
 ---
 
@@ -200,8 +210,8 @@ class: content-even
 
 - Despite what the media may say, there is no right or wrong - a career is no better or worse than 'just a job', they are just different things
 - At different times in your life, what you want will change
- - My first job was just that - it was a job - I wanted money, and I didn't know what I wanted to do with the rest of my life
- - I spent a year freelancing - I needed a break from working for a boss - and I took alot of work that wasn't important to me - it was a means to an end, but it gave me the mental space to reset, and re-scope what I wanted in my life,
+ - My first job was just that - it was a job - I wanted money to go out, take my girlfriend on dates, and I didn't know what I wanted to do with the rest of my life
+ - A few years into my 'career', I spent a year freelancing - I needed a break from working for a boss, from office politics. I took alot of work that wasn't important to me - it was a means to an end, but it gave me the mental space to reset, and re-scope what I wanted in my life,
 
 ---
 
@@ -216,6 +226,7 @@ class: content-even
 
 ???
 
+- It's important to recognise that what you want from your career - or indeed what your career actually is - might change over time:
 - Story:
  - Spent most of my 'career' as a developer - or so I thought
  - Now I almost never touch code, none of my responsibilities are in technlogy - why?
@@ -362,6 +373,32 @@ class: content-even
 
 class: section-title-b center
 
+# Own Your Mistakes
+.highres[![](exposure/images/embarrised.png)]
+
+???
+
+- I thought about making a CrowdStrike reference here - but maybe it's too soon!!
+- I'm far, far, far from perfect - I have made huge mistakes in my Career....
+ - I once updated an entire production database to set every product at 5 dollars
+ - I've copied a client into an email thread where we talked about dropping them as a client
+ - And many others besides!
+- However, I've always been upfront, and honest to ensuring the right people knew about it
+ - But more than that, I've always presented a way to solve it
+
+---
+class: section-title-b
+
+# Own Your Mistakes
+
+- Everyone is going to make mistakes
+- Be the person with the reputation for honesty - the person other can trust
+- And be the person with the reputation for fixing those mistakes - not just making it someone else's problem
+
+---
+
+class: section-title-c center
+
 # Your Work Should Work For You
 .highres[![](exposure/images/work-balance.png)]
 
@@ -371,7 +408,7 @@ class: section-title-b center
 
 ---
 
-class: section-title-b center
+class: section-title-a center
 
 # "Am I in the right job for me?"
 .highres[![](exposure/images/question2.png)]
@@ -386,7 +423,7 @@ class: section-title-b center
 
 ---
 
-class: section-title-c
+class: section-title-b
 
 # "What Does Your Company Owe You?"
 
@@ -418,7 +455,7 @@ class: summary-slide
 
 ---
 
-class: section-title-c
+class: section-title-b
 
 # "What Does Your Company Owe You?"
 
@@ -439,7 +476,7 @@ class: section-title-c
 
 ---
 
-class: section-title-a
+class: section-title-c
 
 # What Do You Owe Your Company?
 
@@ -456,7 +493,7 @@ class: section-title-a
 
 ---
 
-class: section-title-b
+class: section-title-a
 
 # What DON'T You Owe Your Company?
 
@@ -473,7 +510,7 @@ class: section-title-b
 
 ---
 
-class: section-title-b
+class: section-title-a
 
 # What DON'T You Owe Your Company?
 
