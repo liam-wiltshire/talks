@@ -373,7 +373,7 @@ class: content-even
 
 class: section-title-c center
 
-# Own Your Mistakes
+# Own Your ~Mitsakes~ Mistakes
 .highres[![](exposure/images/embarrised.png)]
 
 ???
