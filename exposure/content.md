@@ -392,7 +392,7 @@ class: content-odd
 # Own Your Mistakes
 
 - Everyone is going to make mistakes
-- Be the person with the reputation for honesty - the person other can trust
+- Be the person with the reputation for honesty - the person others can trust
 - And be the person with the reputation for fixing those mistakes - not just making it someone else's problem
 
 ---
@@ -515,16 +515,18 @@ class: section-title-b
 - But you certainly shouldn't stay in a role just because you feel bad for leaving your colleagues to pick up the slack, or because the company hired you when you were looking - they hired you becaue they needed you just as much as you needed them! 
 
 ---
-class: summary-slide
+class: summary-slide middle center
 
-- Only you can decide what matters to you
-- Your work should drive your personal and professional goals forward
-- Work is a commercial transacton
+- Work is something that most of us have to do, but it certainly shouldn't be a one way street.
+ - Only YOU can decide what matters to you - but remember, what matters now might be different in the future.
+ - It should help progress your personal and professional goals - be that through what you learn, who you meet, the money you earn, or something else.
+- Work is a commercial transacton - you owe your company your focus, integrety and effort, but they also need to work hard so that you _want_ to be there!
+
 
 ???
-
+- Work is something that most of us have to do, but it certainly shouldn't be a one way street.
 - Before you can answer if a job is right or wrong, if you are on the right career path or not, you need to decide what matters to you
- - And what matters now might not be what matters in 1 years, or 5 years
+ - And what matters now might not be what matters in 1 years, or 5 years, so make sure you take stock of what you want regularly.
 - You should be driving your personal and work goals forward - be your own cheerleader, be aware of your own value, and work towards the role you strive for.
 - Work is a commercial transaction - know what you and your company owe each other, and what you don't.
 - Be brave, Be bold, Be awesome.
