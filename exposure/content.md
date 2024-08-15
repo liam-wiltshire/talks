@@ -519,8 +519,8 @@ class: summary-slide middle
 
 - Work is something that most of us have to do, but it certainly shouldn't be a one way street.
  - Only YOU can decide what matters to you - what matters now might be different in the future.
- - It should help progress personal and professional goals - what you learn, who you meet, the money you earn, or anything else
-- Work is a commercial transacton - you owe your company your focus, integrety and effort, but they also need to work hard so that you _want_ to be there!
+ - Helping progress personal and professional goals - learning, relationships, money or anything else
+- Work is a commercial transacton - you owe your focus, integrety and effort, but they need to work hard so that you _want_ to be there!
 
 
 ???
