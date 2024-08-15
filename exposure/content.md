@@ -515,10 +515,10 @@ class: section-title-b
 - But you certainly shouldn't stay in a role just because you feel bad for leaving your colleagues to pick up the slack, or because the company hired you when you were looking - they hired you becaue they needed you just as much as you needed them! 
 
 ---
-class: summary-slide middle center
+class: summary-slide middle
 
 - Work is something that most of us have to do, but it certainly shouldn't be a one way street.
- - Only YOU can decide what matters to you - but remember, what matters now might be different in the future.
+ - Only YOU can decide what matters to you - what matters now might be different in the future.
  - It should help progress your personal and professional goals - be that through what you learn, who you meet, the money you earn, or something else.
 - Work is a commercial transacton - you owe your company your focus, integrety and effort, but they also need to work hard so that you _want_ to be there!
 
