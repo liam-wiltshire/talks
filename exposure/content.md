@@ -93,6 +93,7 @@ class: section-title-a center centralimage
 ???
 - Psychologists such as Lily Yuan suggest that work improve our sense of wellbeing
  - Giving us a purpose or meaning, and giving us a sense of fulfilment as we achieve tasks successfully
+ - For me this is seeing someone use Tebex 
 
 ---
 
@@ -177,10 +178,11 @@ class: summary-slide middle
 .xsmall[CareerSmarter, 2023]
 
 ???
-
+- "This is the first definition I found"
 - READ QUOTE
 - I'm not a big fan of this definition - a career that leaves you out on the street isn't a very good career!
  - But it does make a good point - oftentimes a job will be _just_ for the money, but a career is something more.
+- "As I said, I wasn't a big fan, so I continued digging...."
 
 ---
 
@@ -211,7 +213,7 @@ class: content-even
 - Despite what the media may say, there is no right or wrong - a career is no better or worse than 'just a job', they are just different things
 - At different times in your life, what you want will change
  - My first job was just that - it was a job - I wanted money to go out, take my girlfriend on dates, and I didn't know what I wanted to do with the rest of my life
- - A few years into my 'career', I spent a year freelancing - I needed a break from working for a boss, from office politics. I took alot of work that wasn't important to me - it was a means to an end, but it gave me the mental space to reset, and re-scope what I wanted in my life,
+ - A few years into my 'career', I spent a year freelancing - I needed a break from working for a boss, from office politics. I took alot of work that wasn't important to me - it was a means to an end, but it gave me the mental space to reset, and re-scope what I wanted in my life because I wasn't invested
 
 ---
 
@@ -231,7 +233,7 @@ class: content-even
  - Spent most of my 'career' as a developer - or so I thought
  - Now I almost never touch code, none of my responsibilities are in technlogy - why?
  - Actually, my careers is 'solving problems' - it's only taken me 16 years to figure that out!!!
- - Code was a tool I used to solve problems - writing code was my job, solving problems is my career
+ - Code was a tool I used to solve problems - writing code was my job, solving problems is my career - "Wasn't the sort of person to spend hours learning about new design patterns, or keeping on top of the latest in the microservice vs monolith wars"
  - Now I use spreadsheets - I'll let you decide if that's better or worse!! 
 
 ---
@@ -312,7 +314,7 @@ class: content-odd center
 
 - Setting better expections, holding staff to account, providing support if they are being set up to fail etc
 - In short, showing that I could think like a leader and a business owner
-- A number of years later, Lee told me _this_ was the moment he knew that I would always try to act in the company's best interest, and that I could have a significant role in helping Tebex mature and scale.
+- It's something that in a company that isn't open to feedback could have got my fired, but for a company that wants to grow or improve... let's just say that a number of years later, Lee told me _this_ was the moment he knew that I would always try to act in the company's best interest, and that I could have a significant role in helping Tebex mature and scale.
 
 
 ---
