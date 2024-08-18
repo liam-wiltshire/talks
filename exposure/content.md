@@ -541,6 +541,6 @@ class: thanks-slide-ow
 # Thank You
 .highres[![](logos/anvil.png)]
 ## Liam Wiltshire, Head of Payments & Compliance
-### linkedin.com/in/liam**s**wiltshire | liam.wiltshire@overwolf.com
 
+![](logos/li-qr.png)
 .conference[![](logos/%%conference%%.png)]
