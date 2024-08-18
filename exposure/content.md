@@ -540,12 +540,12 @@ class: thanks-slide-ow
 
 # Thank You
 .highres[![](logos/anvil.png)]
-<div style='width:64%;float:left'>
+<div style='width:64%;float:left; text-align:left;'>
 ## Liam Wiltshire
 ### Head of Payments & Compliance
 </div>
 <div style='width:35%;float:left;'>
-![](logos/li-qr.png)
+.highres[![](logos/li-qr.png)]
 </div>
 <div style='clear:both'></div>
 .conference[![](logos/%%conference%%.png)]
