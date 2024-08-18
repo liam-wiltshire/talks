@@ -544,7 +544,7 @@ class: thanks-slide-ow
 ## Liam Wiltshire
 ### Head of Payments & Compliance
 </div>
-<div style='width:35%;float:left;position:relative;top:-5%;'>
+<div style='width:35%;float:left;position:relative;top:-2.5rem;'>
 .highres[![](logos/li-qr.png)]
 </div>
 <div style='clear:both'></div>
